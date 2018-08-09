@@ -1,0 +1,1705 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/20/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/20/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/06/react-Handling-Events/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/06/react-Handling-Events/" itemprop="url">react-Handling Events</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-06T00:00:00+08:00">
+                2017-07-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="事件处理函数"><a href="#事件处理函数" class="headerlink" title="事件处理函数"></a>事件处理函数</h1><blockquote>
+<p>采用驼峰命名</p>
+</blockquote>
+<blockquote>
+<p>使用JSX，将一个函数作为事件处理程序传递，而不是一个字符串</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Button extends Component&#123;</span><br><span class="line">    constructor (props) &#123;</span><br><span class="line">        super(props)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;button onClick=&#123;changeColor&#125;&gt;</span><br><span class="line">                        我是按钮</span><br><span class="line">                &lt;/button&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function changeColor ()&#123;</span><br><span class="line">    console.log(&quot;我被执行了&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在jsx语法中，必须要小心this，我们如果不绑定this。这个this将为undefined</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Toggle extends Component&#123;</span><br><span class="line">     constructor(props)&#123;</span><br><span class="line">         super(props)</span><br><span class="line">         this.state = &#123;isToggleOn:true&#125;</span><br><span class="line">     // This binding is necessary to make `this` work in the callback</span><br><span class="line">         this.handleClick = this.handleClick.bind(this)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     handleClick()&#123;</span><br><span class="line">         // var that = this;</span><br><span class="line">         this.setState(prevState =&gt;(&#123;</span><br><span class="line">             isToggleOn:!prevState.isToggleOn</span><br><span class="line">         &#125;));</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     render()&#123;</span><br><span class="line">         return (</span><br><span class="line">             &lt;div&gt;</span><br><span class="line">                 &lt;button onClick=&#123;this.handleClick&#125;&gt;</span><br><span class="line">                     &#123;this.state.isToggleOn ? &apos;ON&apos; : &apos;OFF&apos;&#125;</span><br><span class="line">                 &lt;/button&gt;</span><br><span class="line">             &lt;/div&gt;</span><br><span class="line">         )</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="两种方式解决-this的指向问题"><a href="#两种方式解决-this的指向问题" class="headerlink" title="两种方式解决 this的指向问题"></a>两种方式解决 this的指向问题</h1><blockquote>
+<p>属性初始化语法property initializer syntax </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">class Toggle extends Component&#123;</span><br><span class="line">     constructor(props)&#123;</span><br><span class="line">         super(props)</span><br><span class="line">         this.state = &#123;isToggleOn:true&#125;</span><br><span class="line">     // This binding is necessary to make `this` work in the callback</span><br><span class="line">     //     this.handleClick = this.handleClick.bind(this)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     /*handleClick()&#123;</span><br><span class="line">         // var that = this;</span><br><span class="line">         this.setState(prevState =&gt;(&#123;</span><br><span class="line">             isToggleOn:!prevState.isToggleOn</span><br><span class="line">         &#125;));</span><br><span class="line">     &#125;*/</span><br><span class="line"></span><br><span class="line">    handleClick = () =&gt;&#123;</span><br><span class="line">        this.setState(prevState =&gt;(&#123;</span><br><span class="line">            isToggleOn:!prevState.isToggleOn</span><br><span class="line">        &#125;));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">     render()&#123;</span><br><span class="line">         return (</span><br><span class="line">             &lt;div&gt;</span><br><span class="line">                 &lt;button onClick=&#123;this.handleClick&#125;&gt;</span><br><span class="line">                     &#123;this.state.isToggleOn ? &apos;ON&apos; : &apos;OFF&apos;&#125;</span><br><span class="line">                 &lt;/button&gt;</span><br><span class="line">             &lt;/div&gt;</span><br><span class="line">         )</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>arrow function 箭头函数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">class Toggle extends Component&#123;</span><br><span class="line">     constructor(props)&#123;</span><br><span class="line">         super(props)</span><br><span class="line">         this.state = &#123;isToggleOn:true&#125;</span><br><span class="line">     // This binding is necessary to make `this` work in the callback</span><br><span class="line">     //     this.handleClick = this.handleClick.bind(this)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     handleClick()&#123;</span><br><span class="line">         // var that = this;</span><br><span class="line">         this.setState(prevState =&gt;(&#123;</span><br><span class="line">             isToggleOn:!prevState.isToggleOn</span><br><span class="line">         &#125;));</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     render()&#123;</span><br><span class="line">         return (</span><br><span class="line">             &lt;div&gt;</span><br><span class="line">                 &lt;button onClick=&#123;(e) =&gt;this.handleClick(e)&#125;&gt;</span><br><span class="line">                     &#123;this.state.isToggleOn ? &apos;ON&apos; : &apos;OFF&apos;&#125;</span><br><span class="line">                 &lt;/button&gt;</span><br><span class="line">             &lt;/div&gt;</span><br><span class="line">         )</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//这种箭头函数方法每次执行都会创建不同的回调，大多数情况下是好的，但是在向子组件传递时，会导致子组件的再一次渲染。</span><br></pre></td></tr></table></figure>
+<p># </p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/04/react-State-and-Lifecycle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/04/react-State-and-Lifecycle/" itemprop="url">react-State and Lifecycle</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T00:00:00+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="利用定时器实现UI的刷新"><a href="#利用定时器实现UI的刷新" class="headerlink" title="利用定时器实现UI的刷新"></a>利用定时器实现UI的刷新</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function Clock(props) &#123;</span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;h1&gt;Hello, world!&lt;/h1&gt;</span><br><span class="line">      &lt;h2&gt;It is &#123;props.date.toLocaleTimeString()&#125;.&lt;/h2&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function tick() &#123;</span><br><span class="line">  ReactDOM.render(</span><br><span class="line">    &lt;Clock date=&#123;new Date()&#125; /&gt;,</span><br><span class="line">    document.getElementById(&apos;root&apos;)</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick, 1000);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样的方法导致ui每秒都在更新，即时用户没有改变数据也在实时刷新，导致性能差，替代的方法是定义一个state作为一个定时器，他类似于props，但是他是私有的，控制着整个组件。</p>
+</blockquote>
+<h1 id="从函数到类的转变-Converting-a-Function-to-a-Class"><a href="#从函数到类的转变-Converting-a-Function-to-a-Class" class="headerlink" title="从函数到类的转变 Converting a Function to a Class"></a>从函数到类的转变 Converting a Function to a Class</h1><blockquote>
+<p>function的写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Add(props)&#123;</span><br><span class="line">    return (&lt;div&gt;</span><br><span class="line">         &#123;props.a&#125;+&#123;props.b&#125;=&#123;props.a+props.b&#125;</span><br><span class="line">    &lt;/div&gt;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>es6写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Add extends Component &#123;</span><br><span class="line">    render() &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                这是es6的语法哦</span><br><span class="line">                &#123;this.props.a&#125;+&#123;this.props.b&#125; = &#123;this.props.a+this.props.b&#125;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新增一个class constructor 来初始化 this.state</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class Show extends Component&#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            name:&apos;ly&apos;,</span><br><span class="line">            age:18</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;p&gt;name:&#123;this.state.name&#125;&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;age:&#123;this.state.age&#125;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="生命周期-Adding-Lifecycle-Methods-to-a-Class"><a href="#生命周期-Adding-Lifecycle-Methods-to-a-Class" class="headerlink" title="生命周期 Adding Lifecycle Methods to a Class"></a>生命周期 Adding Lifecycle Methods to a Class</h1><blockquote>
+<p>componentDidMount执行的条件是在第一次加载组件完成时触发</p>
+</blockquote>
+<blockquote>
+<p>componentWillUnmount 执行的条件是组件即将被销毁</p>
+</blockquote>
+<blockquote>
+<p>利用这两个钩子函数可以实现时钟的实时更新，仅在局部的更新</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">class Show extends Component&#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            name:&apos;ly&apos;,</span><br><span class="line">            age:18,</span><br><span class="line">            date: new Date().toLocaleString()</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentDidMount()&#123;</span><br><span class="line">        this.timer = setInterval(() =&gt; this.show(),1000)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    show () &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            date:new Date().toLocaleString()</span><br><span class="line">        &#125;)</span><br><span class="line">        </span><br><span class="line">        //状态不能通过this.state.date=new Date().toLocalString() The only place where you can assign this.state is the constructor. 构造器可以直接操作</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillUnmount()&#123;</span><br><span class="line">            clearInterval(this.timer)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render () &#123;</span><br><span class="line">        return (</span><br><span class="line">            &lt;div&gt;</span><br><span class="line">                &lt;p&gt;name:&#123;this.state.name&#125;&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;age:&#123;this.state.age&#125;&lt;/p&gt;</span><br><span class="line">                &lt;p&gt;现在的时间:&#123;this.state.date&#125;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="state-状态的改变是异步的-State-Updates-May-Be-Asynchronous"><a href="#state-状态的改变是异步的-State-Updates-May-Be-Asynchronous" class="headerlink" title="state 状态的改变是异步的 State Updates May Be Asynchronous"></a>state 状态的改变是异步的 State Updates May Be Asynchronous</h1><blockquote>
+<p>我们在使用props 和state 时 不应该依赖它们的值来计算下一个状态</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//wrong</span><br><span class="line"></span><br><span class="line">componentDidMount () &#123;</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            counter1:this.state.counter1+this.state.counter2</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// correct</span><br><span class="line">componentDidMount () &#123;</span><br><span class="line">        this.setState(function (prevState,props) &#123;</span><br><span class="line">            console.log(prevState,props);</span><br><span class="line">             return &#123;</span><br><span class="line">                 counter1:prevState.counter1+props.counter2</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="父元素向子元素传递信息-The-Data-Flows-Down"><a href="#父元素向子元素传递信息-The-Data-Flows-Down" class="headerlink" title="父元素向子元素传递信息 The Data Flows Down"></a>父元素向子元素传递信息 The Data Flows Down</h1><blockquote>
+<p>A component may choose to pass its state down as props to its child components</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">class Down extends Component&#123;</span><br><span class="line">     constructor(props)&#123;</span><br><span class="line">         super(props)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     render () &#123;</span><br><span class="line">         return (</span><br><span class="line">             &lt;div&gt;</span><br><span class="line">                 &lt;p&gt;从父元素传数据过来了&#123;this.props.data&#125;&lt;/p&gt;</span><br><span class="line">             &lt;/div&gt;</span><br><span class="line">         )</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            data:&quot;飞呀飞呀&quot;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">            &lt;Show/&gt;</span><br><span class="line">            &lt;Add/&gt;</span><br><span class="line">            &lt;Down data=&#123;this.state.data&#125;/&gt;</span><br><span class="line"></span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>This is commonly called a “top-down” or “unidirectional” data flow</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/03/react-Components-and-Props/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/03/react-Components-and-Props/" itemprop="url">react-Components and Props</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T00:00:00+08:00">
+                2017-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="定义组件-Functional-and-Class-Components"><a href="#定义组件-Functional-and-Class-Components" class="headerlink" title="定义组件 Functional and Class Components"></a>定义组件 Functional and Class Components</h1><blockquote>
+<p>组件类似于一个函数，可以是function 也可以是class 他们返回的结果是一个组件（jsx）</p>
+</blockquote>
+<blockquote>
+<p>第一种写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>第二种写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">class Welcome extends React.Component &#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    return &lt;h1&gt;Hello, &#123;this.props.name&#125;&lt;/h1&gt;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="渲染组件"><a href="#渲染组件" class="headerlink" title="渲染组件"></a>渲染组件</h1><blockquote>
+<p>通过ReactDOM.render()方法进行渲染 Rendering a Component,</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Welcome(props) &#123;</span><br><span class="line">  return &lt;h1&gt;Hello, &#123;props.name&#125;&lt;/h1&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const element = &lt;Welcome name=&quot;Sara&quot; /&gt;;</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  element,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <div>只是一个普通的dom元素，但是<welcome>这是一个具有自己作用域的组件</welcome></div></p>
+</blockquote>
+<h1 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h1><blockquote>
+<p>组件之间是可以重复使用的，看下面这个例子 Composing Components</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">function formatDate() &#123;</span><br><span class="line">    return Date.now()+Math.random();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function DateNow(props) &#123;</span><br><span class="line">     return (</span><br><span class="line">         &lt;div&gt;</span><br><span class="line">             &lt;h1&gt;Hello1,&#123;props.date&#125;&lt;/h1&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">     )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">          &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">          &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">          &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function tick() &#123;</span><br><span class="line">    ReactDOM.render(&lt;App /&gt;, document.getElementById(&apos;root&apos;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick,1000)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>组件与组件之间的提取与嵌套 Extracting Components</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">//渲染页面</span><br><span class="line">function formatDate() &#123;</span><br><span class="line">    return Date.now()+Math.random();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function DateNow(props) &#123;</span><br><span class="line">     return (</span><br><span class="line">         &lt;div&gt;</span><br><span class="line">             &lt;h1&gt;Hello1,&#123;props.date&#125;&lt;/h1&gt;</span><br><span class="line">         &lt;/div&gt;</span><br><span class="line">     )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Show() &#123;</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">            &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">            &lt;DateNow date=&#123;formatDate()&#125;/&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line"></span><br><span class="line">  render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      &lt;div className=&quot;App&quot;&gt;</span><br><span class="line">            &lt;Show/&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function tick() &#123;</span><br><span class="line">    ReactDOM.render(&lt;App /&gt;, document.getElementById(&apos;root&apos;));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">setInterval(tick,1000)</span><br></pre></td></tr></table></figure>
+<h1 id="组件传入的的属性必须是纯的-Props-are-Read-Only"><a href="#组件传入的的属性必须是纯的-Props-are-Read-Only" class="headerlink" title="组件传入的的属性必须是纯的 Props are Read-Only"></a>组件传入的的属性必须是纯的 Props are Read-Only</h1><blockquote>
+<p>正确的写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function sum(a, b) &#123;</span><br><span class="line">  return a + b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>错误的写法 不能改变props的值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function withdraw(account, amount) &#123;</span><br><span class="line">  account.total -= amount;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>All React components must act like pure functions with respect to their props.<br>react 的另一个属性state将可以间接的改变状态值，但是不违背它的初衷。<br><code>`</code></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/06/20/面试问题小计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/20/面试问题小计/" itemprop="url">面试问题小计</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-20T15:07:04+08:00">
+                2017-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<ol>
+<li>说一下undefind和null那个是全局变量</li>
+</ol>
+</blockquote>
+<p>答:javaScript权威指南： null 和 undefined 都表示“值的空缺”，你可以认为undefined是表示系统级的、出乎意料的或类似错误的值的空缺，而null是表示程序级的、正常的或在意料之中的值的空缺。<br>javaScript高级程序设计： 在使用var声明变量但未对其加以初始化时，这个变量的值就是undefined。   null值则是表示空对象指针。<br>所以undefind是全局变量</p>
+<blockquote>
+<p>一个页面适合写多少行代码？</p>
+</blockquote>
+<p>答：我记得是300行。</p>
+<blockquote>
+<p>后台返回一个对象包含null怎么处理?</p>
+</blockquote>
+<p>答:对所有使用到的json中的对象做判断,或者使用第三方json解析库<br><a href="http://www.cnblogs.com/LQCQ-Silent/p/6763264.html" target="_blank" rel="noopener">http://www.cnblogs.com/LQCQ-Silent/p/6763264.html</a> 参考</p>
+<blockquote>
+<p>require和import的区别，那个是按需加载</p>
+</blockquote>
+<p>答:require按需加载</p>
+<blockquote>
+<p>为什么vue不能和jquery一起使用?</p>
+</blockquote>
+<p>答:因为jquery是操作dom的，而vue是虚拟dom</p>
+<blockquote>
+<p>let var const 区别</p>
+</blockquote>
+<p>答:let是块级作用域，函数内部使用let定义后，对函数外部无影响。<br>var定义的变量可以修改，如果不初始化会输出undefined，不会报错。<br>const定义的变量不可以修改，而且必须初始化。</p>
+<blockquote>
+<p>vue如何做权限认证?</p>
+</blockquote>
+<p>答:在路由阶段定义一个校验的阈值，然后在登录阶段保存状态信息，路由进行跳转，进行校验</p>
+<blockquote>
+<p>良好的编程习惯体现在哪里?</p>
+</blockquote>
+<p>答:打注释，代码整洁，函数命名要有意义</p>
+<blockquote>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/02/11/async与await体验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/11/async与await体验/" itemprop="url">async与await体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-11T00:00:00+08:00">
+                2017-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="async与await体验"><a href="#async与await体验" class="headerlink" title="async与await体验"></a>async与await体验</h1><blockquote>
+<p>第一次用es7的语法，在实际的开发中可能用的比较少，但是作为前端这也算是一个趋势，先留个坑，以后慢慢学习</p>
+</blockquote>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><blockquote>
+<p>async是一个异步的函数，通过它进行定义</p>
+</blockquote>
+<blockquote>
+<p>await只能用在async函数的里面，它的出现必须要等到一个promise返回结构才能继续执行</p>
+</blockquote>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123;</span><br><span class="line">			  resolve(&quot;ok&quot;);</span><br><span class="line">		&#125;,time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const test = async() =&gt; &#123;</span><br><span class="line">       console.log(&quot;start&quot;);</span><br><span class="line">       const ok = await sleep(3000);</span><br><span class="line"></span><br><span class="line">       console.log(ok);</span><br><span class="line"></span><br><span class="line">       console.log(&quot;end&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();  //start   ok  end</span><br></pre></td></tr></table></figure>
+<h2 id="捕捉错误"><a href="#捕捉错误" class="headerlink" title="捕捉错误"></a>捕捉错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt;&#123;</span><br><span class="line">		setTimeout(() =&gt; reject(&quot;你错了&quot;),time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const run = async() =&gt; &#123;</span><br><span class="line"></span><br><span class="line">	 try&#123;</span><br><span class="line"></span><br><span class="line">	 	console.log(&apos;start&apos;);</span><br><span class="line">	 	await sleep(3000);</span><br><span class="line">	 	console.log(&apos;end&apos;);</span><br><span class="line"></span><br><span class="line">	 &#125;catch(err)&#123;</span><br><span class="line">		console.log(err);</span><br><span class="line">	 &#125;finally&#123;</span><br><span class="line">	 	console.log(&apos;over&apos;);</span><br><span class="line">	 &#125;</span><br><span class="line">	 console.log(&apos;over1&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run();//	start  你错了  over  over1</span><br></pre></td></tr></table></figure>
+<h2 id="循环多个await-它类似于同步代码-不用担心需要闭包才能解决问题"><a href="#循环多个await-它类似于同步代码-不用担心需要闭包才能解决问题" class="headerlink" title="循环多个await 它类似于同步代码 不用担心需要闭包才能解决问题"></a>循环多个await 它类似于同步代码 不用担心需要闭包才能解决问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt;&#123;</span><br><span class="line">		setTimeout(() =&gt; resolve(true),time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var run = async() =&gt; &#123;</span><br><span class="line">		for (let i = 0;i&lt;3;i++) &#123;</span><br><span class="line">			  console.log(`当前是第$&#123;i&#125;次等待..`);</span><br><span class="line">			  await sleep(1000);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">run();//当前是第0次等待..	当前是第1次等待..	当前是第2次等待..</span><br></pre></td></tr></table></figure>
+<h2 id="async返回的是什么-返回的是promise对象！！！！"><a href="#async返回的是什么-返回的是promise对象！！！！" class="headerlink" title="async返回的是什么  返回的是promise对象！！！！"></a>async返回的是什么  返回的是promise对象！！！！</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const add =async() =&gt; &#123;</span><br><span class="line">		return &quot;hello world&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add()); //Promise &#123;[[PromiseStatus]]: &quot;resolved&quot;, [[PromiseValue]]: &quot;hello world&quot;&#125;</span><br><span class="line"></span><br><span class="line">add().then((value)=&gt;console.log(value));  //hello world</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/16/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/16/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/09/node-常用的包/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/09/node-常用的包/" itemprop="url">node 常用的包</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T17:07:11+08:00">
+                2017-08-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="cnpm-i-g-supervisor"><a href="#cnpm-i-g-supervisor" class="headerlink" title="cnpm i -g supervisor"></a>cnpm i -g supervisor</h1><blockquote>
+<p> 这个命令不用自己重新运行修改后的代码，它会监视你对代码的改动,当代码被改动时，运行的脚本会被终止，然后重新启动</p>
+</blockquote>
+<h1 id="superagent"><a href="#superagent" class="headerlink" title="superagent"></a>superagent</h1><blockquote>
+<p>用于抓取整个网页</p>
+</blockquote>
+<h1 id="cheerio"><a href="#cheerio" class="headerlink" title="cheerio"></a>cheerio</h1><blockquote>
+<p>类似jquery</p>
+</blockquote>
+<h1 id="supertest"><a href="#supertest" class="headerlink" title="supertest"></a>supertest</h1><blockquote>
+<p>用于请求数据</p>
+</blockquote>
+<h1 id="nodemon"><a href="#nodemon" class="headerlink" title="nodemon"></a>nodemon</h1><blockquote>
+<p>热启动 自动检测代码</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/05/几种自适应布局/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/05/几种自适应布局/" itemprop="url">几种自适应布局</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T00:00:00+08:00">
+                2017-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>由于现在电脑屏幕分辨率不同的原因,页面布局就不能写死宽度了，否自在分辨率高的屏幕可能会有留白的情况，所以页面一般采用自适应布局.主流的有三栏布局，和两栏布局.下面便是两种布局的几种方法(我写的demo地址<a href="http://www.aymfx.cn/ife-2018/layout/index.html)。" target="_blank" rel="noopener">http://www.aymfx.cn/ife-2018/layout/index.html)。</a></p>
+</blockquote>
+<h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><h4 id="圣杯布局-双飞翼布局"><a href="#圣杯布局-双飞翼布局" class="headerlink" title="圣杯布局(双飞翼布局)"></a>圣杯布局(双飞翼布局)</h4><blockquote>
+<p>这个好像淘宝UED的工程师写的，淘宝页面也基本可以看到这种布局的影子，它的几个特点</p>
+<ul>
+<li>三列布局，中间宽度自适应，两边定宽；</li>
+<li>中间栏要在浏览器中优先展示渲染；</li>
+<li>允许任意列的高度最高</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo9"</span>&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"center-div"</span>&gt;</span><br><span class="line">               &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"content"</span>&gt;</span><br><span class="line">                   我是中间的aaaaaaaaaa</span><br><span class="line">               &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           &lt;/</span>div&gt;</span><br><span class="line">           &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">               我是左边的（负边距布局)</span><br><span class="line">           &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">           &lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">               我是右边的</span></span><br><span class="line"><span class="regexp">           &lt;/</span>div&gt;     </span><br><span class="line"> &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主意看顺序啊，中间内容分的在最上面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.demo9 &#123;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  width: <span class="number">100</span>%; &#125;</span><br><span class="line">  .demo9 .left-div &#123;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    float: left;</span><br><span class="line">    margin-left: <span class="number">-100</span>%; &#125;</span><br><span class="line">  .demo9 .center-div &#123;</span><br><span class="line">    background: #fff;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    float: left;</span><br><span class="line">    width: <span class="number">100</span>%; &#125;</span><br><span class="line">    .demo9 .center-div .content &#123;</span><br><span class="line">      padding: <span class="number">0</span> <span class="number">100</span>px; &#125;</span><br><span class="line">  .demo9 .right-div &#123;</span><br><span class="line">    float: left;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    margin-left: <span class="number">-100</span>px; &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>三块都要加浮动，中间的一块宽度为100%,通过margin-left: -100%;将左边的div放到最前面，通过margin-left: -100px;方到右边，要主意一个问题,位置是对的，但是我们的写内容的时候，会被左右两块挡住，所以我们必须在加一个div在中间块，通过给它设置padding: 0 100px; ,来确保内容不会被遮盖</p>
+</blockquote>
+<h4 id="浮动的方式"><a href="#浮动的方式" class="headerlink" title="浮动的方式"></a>浮动的方式</h4><blockquote>
+<p>这个就是通过左右两块浮动，来解决自适应布局的问题，我们来看下代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo8"</span>&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">                我是左边的（浮动布局)</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">            &lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">                我是右边的</span></span><br><span class="line"><span class="regexp">            &lt;/</span>div&gt;</span><br><span class="line">            &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"center-div"</span>&gt;</span><br><span class="line">                 我是中间的</span><br><span class="line">            &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>section&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>主意还是顺序哈，这回中间的在最后了<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.demo8 .left-div &#123;</span><br><span class="line">  background: #99d;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  float: left; &#125;</span><br><span class="line"></span><br><span class="line">.demo8 .center-div &#123;</span><br><span class="line">  margin: <span class="number">0</span> <span class="number">100</span>px;</span><br><span class="line">  background: #fff;</span><br><span class="line">  height: <span class="number">60</span>px; &#125;</span><br><span class="line"></span><br><span class="line">.demo8 .right-div &#123;</span><br><span class="line">  float: right;</span><br><span class="line">  background: #cfc;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  width: <span class="number">100</span>px; &#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p> margin: 0 100px;这个也是必须加的防止内容被挡住</p>
+</blockquote>
+<h4 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h4><blockquote>
+<p>这个是比较好理解的了，通过脱离文档流使得中间的div不会被挤下来<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo11"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">            我是左边的（定位)</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div class="center-div"&gt;</span></span><br><span class="line"><span class="regexp">            我是中间的</span></span><br><span class="line"><span class="regexp">        </span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"right-div"</span>&gt;</span><br><span class="line">            我是右边的</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>section&gt;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>顺序不用变了。–</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">.demo11 &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  width: <span class="number">100</span>%; &#125;</span><br><span class="line">  .demo11 .left-div &#123;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    left: <span class="number">0</span>;</span><br><span class="line">    top: <span class="number">0</span>; &#125;</span><br><span class="line">  .demo11 .center-div &#123;</span><br><span class="line">    background: #fff;</span><br><span class="line">    margin: <span class="number">0</span> <span class="number">100</span>px;</span><br><span class="line">    height: <span class="number">60</span>px; &#125;</span><br><span class="line">  .demo11 .right-div &#123;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    right: <span class="number">0</span>;</span><br><span class="line">    top: <span class="number">0</span>;</span><br><span class="line">    height: <span class="number">60</span>px; &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这就是三栏布局比较常用的布局了</p>
+</blockquote>
+<h3 id="两栏布局"><a href="#两栏布局" class="headerlink" title="两栏布局"></a>两栏布局</h3><blockquote>
+<p>两栏布局有好多种方式，我就写写我记得的几种</p>
+</blockquote>
+<h4 id="浮动布局"><a href="#浮动布局" class="headerlink" title="浮动布局"></a>浮动布局</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo4"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">            我是左边的（浮动布局）</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        &lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">            我是右边的</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.demo4 .left-div &#123;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  background: #99d;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  float: left; &#125;</span><br><span class="line"></span><br><span class="line">.demo4 .right-div &#123;</span><br><span class="line">  margin-left: <span class="number">100</span>px;</span><br><span class="line">  background: #cfc;</span><br><span class="line">  height: <span class="number">60</span>px; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h4> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo5"</span>&gt;</span><br><span class="line">      &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">          我是左边的（flex布局）</span><br><span class="line">      &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">      &lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">          我是右边的</span></span><br><span class="line"><span class="regexp">      &lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.demo5 &#123;</span><br><span class="line">  display: flex; &#125;</span><br><span class="line">  .demo5 .left-div &#123;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px; &#125;</span><br><span class="line">  .demo5 .right-div &#123;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    flex: <span class="number">1</span> <span class="number">1</span> auto; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="calc布局"><a href="#calc布局" class="headerlink" title="calc布局"></a>calc布局</h4><blockquote>
+<p>calc 是css的一种计算方式 css3新增的属性，兼容性ie10以上啦<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo12"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">            我是左边的（calc布局）</span><br><span class="line">        &lt;<span class="regexp">/div&gt;&lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">            我是右边的</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.demo12 .left-div &#123;</span><br><span class="line">  width: <span class="number">100</span>px;</span><br><span class="line">  background: #99d;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  vertical-align: top;</span><br><span class="line">  box-sizing: border-box; &#125;</span><br><span class="line"></span><br><span class="line">.demo12 .right-div &#123;</span><br><span class="line">  box-sizing: border-box;</span><br><span class="line">  background: #cfc;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  width: calc(<span class="number">100</span>% - <span class="number">100</span>px); &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="定位布局"><a href="#定位布局" class="headerlink" title="定位布局"></a>定位布局</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo13"</span>&gt;</span><br><span class="line">       &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">           我是左边的（定位布局）</span><br><span class="line">       &lt;<span class="regexp">/div&gt;&lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">           我是右边的</span></span><br><span class="line"><span class="regexp">       &lt;/</span>div&gt;</span><br><span class="line">   &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.demo13 &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  height: <span class="number">60</span>px;</span><br><span class="line">  width: <span class="number">100</span>%; &#125;</span><br><span class="line">  .demo13 .left-div &#123;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    left: <span class="number">0</span>;</span><br><span class="line">    top: <span class="number">0</span>; &#125;</span><br><span class="line">  .demo13 .right-div &#123;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    margin-left: <span class="number">100</span>px;</span><br><span class="line">    height: <span class="number">60</span>px; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="bfc布局"><a href="#bfc布局" class="headerlink" title="bfc布局"></a>bfc布局</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo14"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">            我是左边的（bfc布局）</span><br><span class="line">        &lt;<span class="regexp">/div&gt;&lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">            我是右边的</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>主要是利用float和overflow触发了bfc,实现自适应的</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.demo14 &#123;</span><br><span class="line">  overflow: auto; &#125;</span><br><span class="line">  .demo14 .left-div &#123;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    width: <span class="number">100</span>px;</span><br><span class="line">    float: left; &#125;</span><br><span class="line">  .demo14 .right-div &#123;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    overflow: auto; &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="grid布局"><a href="#grid布局" class="headerlink" title="grid布局"></a>grid布局</h4><blockquote>
+<p>这是比较新的布局，有点类似bootstrap的布局特色，网格布局，自适应能力超强，不仅仅用来做这个，还有很强大的功能</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"demo15"</span>&gt;</span><br><span class="line">        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-div"</span>&gt;</span><br><span class="line">            我是左边的（grad布局）</span><br><span class="line">        &lt;<span class="regexp">/div&gt;&lt;div class="right-div"&gt;</span></span><br><span class="line"><span class="regexp">            我是右边的</span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    &lt;<span class="regexp">/section&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.demo15 &#123;</span><br><span class="line">  display: grid;</span><br><span class="line">  grid-template-columns: <span class="number">100</span>px auto;</span><br><span class="line">  align-items: start; &#125;</span><br><span class="line">  .demo15 .left-div &#123;</span><br><span class="line">    background: #99d;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    grid-column: <span class="number">1</span>; &#125;</span><br><span class="line">  .demo15 .right-div &#123;</span><br><span class="line">    background: #cfc;</span><br><span class="line">    height: <span class="number">60</span>px;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    grid-column: <span class="number">2</span>; &#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/02/解决下面点击时出现图片轮廓的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/解决下面点击时出现图片轮廓的问题/" itemprop="url">解决下面点击时出现图片轮廓的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T00:00:00+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="解决下面点击时出现图片轮廓的问题"><a href="#解决下面点击时出现图片轮廓的问题" class="headerlink" title="解决下面点击时出现图片轮廓的问题"></a>解决下面点击时出现图片轮廓的问题</h1><blockquote>
+<p><a><img src=""></a></p>
+</blockquote>
+<blockquote>
+<p>解决方式</p>
+</blockquote>
+<pre><code>a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+</code></pre><blockquote>
+<p>tips： 适合pc和移动端的</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/01/node-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/01/node-review/" itemprop="url">node-review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T00:00:00+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="建一个简单的express"><a href="#建一个简单的express" class="headerlink" title="建一个简单的express"></a>建一个简单的express</h1><blockquote>
+<p>对于学习node的人来说首先node安装是必备的，这里就跳过了</p>
+</blockquote>
+<blockquote>
+<p><a href="http://expressjs.com/" target="_blank" rel="noopener">http://expressjs.com/</a>  它的官网</p>
+</blockquote>
+<blockquote>
+<p>安装 express npm i express</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//引入 `express` 模块</span><br><span class="line">var express = require(&apos;express&apos;); </span><br><span class="line"></span><br><span class="line">// 调用 express 实例，它是一个函数，不带参数调用时，会返回一个 express 实例，将这个变量赋予 app 变量</span><br><span class="line"></span><br><span class="line">var app = express(); </span><br><span class="line"></span><br><span class="line">//调用get方法，当我们访问/这个根目录时，我们会执行回调，send用于向网页输出字符串</span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    res.send(&apos;Hello,world&apos;);</span><br><span class="line">&#125;)</span><br><span class="line">// 定义好我们 app 的行为之后，让它监听本地的 3000 端口。这里的第二个函数是个回调函数，会在 listen 动作成功后执行，我们这里执行了一个命令行输出操作，告诉我们监听动作已完成。</span><br><span class="line">app.listen(3000, function() &#123;</span><br><span class="line">    console.log(&quot;app is listen at port 3000&quot;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考</p>
+</blockquote>
+<blockquote>
+<p>// app 本身有很多方法，其中包括最常用的 get、post、put/patch、delete，在这里我们调用其中的 get 方法，为我们的 <code>/</code> 路径指定一个 handler 函数。</p>
+</blockquote>
+<blockquote>
+<p>// 这个 handler 函数会接收 req 和 res 两个对象，他们分别是请求的 request 和 response。</p>
+</blockquote>
+<blockquote>
+<p>// request 中包含了浏览器传来的各种信息，比如 query 啊，body 啊，headers 啊之类的，都可以通过 req 对象访问到。</p>
+</blockquote>
+<blockquote>
+<p>// res 对象，我们一般不从里面取信息，而是通过它来定制我们向浏览器输出的信息，比如 header 信息，比如想要向浏览器输出的内容。这里我们调用了它的 #send 方法，向浏览器输出一个字符串。</p>
+</blockquote>
+<blockquote>
+<p>执行 node app.js</p>
+</blockquote>
+<blockquote>
+<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a></p>
+</blockquote>
+<h1 id="学习使用外部模块"><a href="#学习使用外部模块" class="headerlink" title="学习使用外部模块"></a>学习使用外部模块</h1><blockquote>
+<p>npm init 初始化</p>
+</blockquote>
+<blockquote>
+<p>cnpm i express utility -S 安装两个依赖块</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/node-modules/utility" target="_blank" rel="noopener">https://github.com/node-modules/utility</a>  utility是一个工具类，在这个地方用于加密哦</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var utility = require(&apos;utility&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    //query用来获取地址栏后面的参数</span><br><span class="line">    var message = req.query.message;</span><br><span class="line">    //使用工具函数进行加密处理</span><br><span class="line">    var md5Value = utility.md5(message);</span><br><span class="line">    res.send(md5Value);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行 node app.js</p>
+</blockquote>
+<blockquote>
+<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/?message=&#39;liuyang&#39;" target="_blank" rel="noopener">http://localhost:3000/?message=&#39;liuyang&#39;</a></p>
+</blockquote>
+<h1 id="使用-superagent-与-cheerio-完成简单爬虫"><a href="#使用-superagent-与-cheerio-完成简单爬虫" class="headerlink" title="使用 superagent 与 cheerio 完成简单爬虫"></a>使用 superagent 与 cheerio 完成简单爬虫</h1><blockquote>
+<p>superagent  superagent(<a href="http://visionmedia.github.io/superagent/" target="_blank" rel="noopener">http://visionmedia.github.io/superagent/</a> ) 是个 http 方面的库，可以发起 get 或 post 请求。</p>
+</blockquote>
+<blockquote>
+<p>cheerio   (<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">https://github.com/cheeriojs/cheerio</a> ) 大家可以理解成一个 Node.js 版的 jquery，用来从网页中以 css selector 取数据，使用方式跟 jquery 一样一样的。</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line">    //用superagent去抓取页面内容</span><br><span class="line">    superagent.get(&apos;http://www.qdfuns.com/&apos;).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        //加载取到的页面，然后创建一个类似jquery的实例</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        var items = [];</span><br><span class="line">        $(&quot;.media-body&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            items.push(&#123;</span><br><span class="line">                title: $ele.text()</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        res.send(items);</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用这两个模块，我们能抓取我们所需要的数据</p>
+</blockquote>
+<h1 id="使用-eventproxy-控制并发"><a href="#使用-eventproxy-控制并发" class="headerlink" title="使用 eventproxy 控制并发"></a>使用 eventproxy 控制并发</h1><blockquote>
+<p>这一小节内容，利用eventproxy，实现并发抓取1+40,1就是抓取40个主题，40是抓取每个主题链接下面的评论，也就是说我们要发起1+40个请求，后四十个请求一起发起</p>
+</blockquote>
+<blockquote>
+<p>eventproxy  <a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">https://github.com/JacksonTian/eventproxy</a>    并发执行异步回调，移除被广为诟病的深度callback嵌套问题，将串行等待变成并行等待，提升多异步协作场景下的执行效率</p>
+</blockquote>
+<blockquote>
+<p>eventproxy 提供了不少其他场景所需的 API，但最最常用的用法就是以上的这种，即：</p>
+</blockquote>
+<blockquote>
+<p>先 var ep = new eventproxy(); 得到一个 eventproxy 实例。</p>
+</blockquote>
+<blockquote>
+<p>告诉它你要监听哪些事件，并给它一个回调函数。ep.all(‘event1’, ‘event2’, function (result1, result2) {})。</p>
+</blockquote>
+<blockquote>
+<p>在适当的时候 ep.emit(‘event_name’, eventData)。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line">var eventproxy = require(&apos;eventproxy&apos;);</span><br><span class="line">var url = require(&apos;url&apos;);</span><br><span class="line">var cnodeUrl = &apos;https://cnodejs.org/&apos;</span><br><span class="line">var app = express();</span><br><span class="line">var topicUrls = [];</span><br><span class="line">var topicsS = [];</span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    superagent.get(cnodeUrl).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        $(&quot;#topic_list .topic_title&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            //url.resolve，可以补全前面的域名，进行拼接操作</span><br><span class="line">            var href = url.resolve(cnodeUrl, $ele.attr(&apos;href&apos;));</span><br><span class="line">            topicUrls.push(href);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        topicUrls.forEach(function(topiculr) &#123;</span><br><span class="line">            superagent.get(topiculr).end(function(err, res) &#123;</span><br><span class="line">                console.log(&quot;fetch&quot; + topiculr + &apos;successful&apos;);</span><br><span class="line">                ep.emit(&apos;topic_html&apos;, [topiculr, res.text])</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        //创建一个eventproxy实例</span><br><span class="line">        var ep = new eventproxy();</span><br><span class="line">        //这个表示重复监听topic_html事件40次后执行回调函数</span><br><span class="line">        ep.after(&apos;topic_html&apos;, topicUrls.length, function(topics) &#123;</span><br><span class="line">            console.log(1212);</span><br><span class="line">            //它将emit过来东西全部保存在数组里，然后用map将它遍历</span><br><span class="line">            topicsS = topics.map(function(topicPair) &#123;</span><br><span class="line">                var topicUrl = topicPair[0];</span><br><span class="line">                var topicHtml = topicPair[1];</span><br><span class="line">                var $ = cheerio.load(topicHtml);</span><br><span class="line">                return (&#123;</span><br><span class="line">                    title: $(&apos;.topic_full_title&apos;).text().trim(),</span><br><span class="line">                    href: topicUrl,</span><br><span class="line">                    commit1: $(&apos;.reply_content&apos;).eq(0).text().trim()</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            res.send(topicsS);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="使用-async-控制并发"><a href="#使用-async-控制并发" class="headerlink" title="使用 async 控制并发"></a>使用 async 控制并发</h1><blockquote>
+<p>async <a href="https://github.com/caolan/async" target="_blank" rel="noopener">https://github.com/caolan/async</a> 用于延迟并发，减少一起并发导致网站出问题</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var async = require(&apos;async&apos;);</span><br><span class="line"></span><br><span class="line">var concurrencyCount = 0;</span><br><span class="line"></span><br><span class="line">//模拟假的数据请求，返回一个callback值</span><br><span class="line"></span><br><span class="line">var fetchUrl = function(url, callback) &#123;</span><br><span class="line">    var delay = parseInt((Math.random() * 10000000) % 2000, 10);</span><br><span class="line">    concurrencyCount++;</span><br><span class="line">    console.log(&apos;现在的并发数是&apos;, concurrencyCount, &apos;，正在抓取的是&apos;, url, &apos;，耗时&apos; + delay + &apos;毫秒&apos;);</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        concurrencyCount--;</span><br><span class="line">        //用这个做拼接</span><br><span class="line">        callback(null, url + &apos;html content&apos;)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var urls = [];</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; 30; i++) &#123;</span><br><span class="line">    urls.push(&apos;http://datasource_&apos; + i);</span><br><span class="line">&#125;</span><br><span class="line">//限制并发的次数</span><br><span class="line">async.mapLimit(urls, 5, function(url, callback) &#123;</span><br><span class="line">    fetchUrl(url, callback);</span><br><span class="line">&#125;, function(err, result) &#123;</span><br><span class="line">    console.log(&apos;final:&apos;);</span><br><span class="line">    //最终结果汇总</span><br><span class="line">    console.log(result);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="测试用例：mocha，should，istanbul"><a href="#测试用例：mocha，should，istanbul" class="headerlink" title="测试用例：mocha，should，istanbul"></a>测试用例：mocha，should，istanbul</h1><blockquote>
+<p>学习使用测试框架 mocha : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用断言库 should : <a href="https://github.com/tj/should.js" target="_blank" rel="noopener">https://github.com/tj/should.js</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用测试率覆盖工具 istanbul : <a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="noopener">https://github.com/gotwarlost/istanbul</a></p>
+</blockquote>
+<blockquote>
+<p>简单 Makefile 的编写 : <a href="http://blog.csdn.net/haoel/article/details/2886" target="_blank" rel="noopener">http://blog.csdn.net/haoel/article/details/2886</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用断言库 expect :<a href="https://github.com/LearnBoost/expect.js/" target="_blank" rel="noopener">https://github.com/LearnBoost/expect.js/</a> </p>
+</blockquote>
+<blockquote>
+<p>先建一个文件 main.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function(n) &#123;</span><br><span class="line">    if (n === 0) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (n === 1) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    // 如果是直接执行 main.js，则进入此处</span><br><span class="line">    // 如果 main.js 被其他文件 require，则此处不会执行。</span><br><span class="line">    var n = Number(process.argv[2]);</span><br><span class="line">    console.log(&apos;fibonacci(&apos; + n + &apos;) is&apos;, fibonacci(n));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.fibonacci = fibonacci;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在同级目录下建一个文件夹命名必须为test 在它的子目录建一个文件main-test.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var main = require(&apos;../main&apos;);</span><br><span class="line">var should = require(&apos;should&apos;);</span><br><span class="line"></span><br><span class="line">describe(&apos;test/main.test.js&apos;, function() &#123;</span><br><span class="line">    it(&apos;should equal 0 when n === 0&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 1 when n === 1&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(1).should.equal(1);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 55 when n === 10&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(10).should.equal(55);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &gt; 10&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(11);</span><br><span class="line">        &#125;).should.throw(&apos;n should &lt;= 10&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &lt; 0&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(-1);</span><br><span class="line">        &#125;).should.throw(&apos;n should &gt;= 0&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n isnt Number&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(&apos;呵呵&apos;);</span><br><span class="line">        &#125;).should.throw(&apos;n should be a Number&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于node的计算能力以及边界值得原因后三个可能过不了，需要修补下代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function (n) &#123;</span><br><span class="line">  if (typeof n !== &apos;number&apos;) &#123;</span><br><span class="line">    throw new Error(&apos;n should be a Number&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &lt; 0) &#123;</span><br><span class="line">    throw new Error(&apos;n should &gt;= 0&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &gt; 10) &#123;</span><br><span class="line">    throw new Error(&apos;n should &lt;= 10&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 0) &#123;</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 1) &#123;</span><br><span class="line">    return 1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return fibonacci(n-1) + fibonacci(n-2);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>测试用例的覆盖率</p>
+</blockquote>
+<blockquote>
+<p>安装  npm i istanbul -g</p>
+</blockquote>
+<blockquote>
+<p>执行 $ istanbul cover _mocha （有大问题，window有坑）</p>
+</blockquote>
+<h1 id="浏览器端测试：mocha，chai，phantomjs"><a href="#浏览器端测试：mocha，chai，phantomjs" class="headerlink" title="浏览器端测试：mocha，chai，phantomjs"></a>浏览器端测试：mocha，chai，phantomjs</h1><blockquote>
+<p>学习使用测试框架 mocha 进行前端测试 : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>了解全栈的断言库 chai: <a href="http://chaijs.com/" target="_blank" rel="noopener">http://chaijs.com/</a></p>
+</blockquote>
+<blockquote>
+<p>了解 headless 浏览器 phantomjs: <a href="http://phantomjs.org/" target="_blank" rel="noopener">http://phantomjs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>第一步需要安装mocha cnpm i mocha -g</p>
+</blockquote>
+<blockquote>
+<p>初始化mocha mocha init .</p>
+</blockquote>
+<blockquote>
+<p>会生成几个初始化的文件</p>
+</blockquote>
+<blockquote>
+<p>引入chai,在index.html</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引入 断言库 chaijs --&gt;</span><br><span class="line">    &lt;script src=&apos;https://cdn.rawgit.com/chaijs/chai/master/chai.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!--需要测试的代码--&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var fibonacci = function(n) &#123;</span><br><span class="line">            if (n === 0) &#123;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (n === 1) &#123;</span><br><span class="line">                return 1;</span><br><span class="line">            &#125;</span><br><span class="line">            return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在test.js中写测试用例</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var should = chai.should();</span><br><span class="line"></span><br><span class="line">describe(&apos;我只是一个测试&apos;, function() &#123;</span><br><span class="line">    it(&quot;测试是否等于0&quot;, function() &#123;</span><br><span class="line">        window.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行index看结果</p>
+</blockquote>
+<blockquote>
+<p>测试反馈</p>
+</blockquote>
+<blockquote>
+<p>初始化 npm init </p>
+</blockquote>
+<blockquote>
+<p>安装依赖 cnpm i mocha-phantomjs –save-dev</p>
+</blockquote>
+<blockquote>
+<p>在package.json 加入这么一句话</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;test&quot;: &quot;mocha-phantomjs index.html --ssl-protocol=any --ignore-ssl-errors=true&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>npm test</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/29/jQuery源码学习（2）-构造jquery对象（1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/29/jQuery源码学习（2）-构造jquery对象（1）/" itemprop="url">jQuery源码学习（2）-构造jquery对象（1）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T00:00:00+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="构造函数jQuery"><a href="#构造函数jQuery" class="headerlink" title="构造函数jQuery"></a>构造函数jQuery</h1><blockquote>
+<p>jQuery(select [,context])</p>
+</blockquote>
+<ul>
+<li>第一个参数是选择器，用于选择docunment里面的html元素，当传入的参数不是选择器时，会返回一个空的jquery对象</li>
+<li>第二个是上下文对象，也就是限制从哪个范围开始查找元素，默认从document</li>
+<li>当指定了第二个参数，实际上就是调用了$(selsect).find(xxx)</li>
+</ul>
+<blockquote>
+<p>jQuery(html[,ownerDocument])、jQuery(html,props)</p>
+</blockquote>
+<ul>
+<li>html 表示如果是html代码，jquery将其转换成一个jquery对象，可以进行插入dom 操作<ul>
+<li>类似于:$(“<div>ly</div>“).appendTo(‘body’),可以是单标签</li>
+</ul>
+</li>
+<li>ownerDocument 表示可以创建新的文档对象，默认当前文档</li>
+<li>props 必须是单标签写法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;&lt;div/&gt;&quot;, &#123;　　　　</span><br><span class="line">            &quot;class&quot;: &quot;test&quot;,</span><br><span class="line">            　　　　text: &quot;Click me!&quot;,</span><br><span class="line">            　　　　click: function() &#123;　　　　</span><br><span class="line">                $(this).toggleClass(&quot;bar&quot;);　　　</span><br><span class="line">            &#125;　　</span><br><span class="line">        &#125;).appendTo(&quot;body&quot;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>jQuery(element) jQuery(elementArray)</p>
+</blockquote>
+<ul>
+<li>该方法是将dom元素封装成jquery元素然年调用jquery方法</li>
+<li>多用于事件的监听</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;div&apos;).click(function()&#123;</span><br><span class="line">    $(this).show();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>jQuery(object)</p>
+<ul>
+<li>对于普通的js对象也可以包装成jquery对象的</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var names = &#123;</span><br><span class="line">            first: &apos;liu&apos;,</span><br><span class="line">            last: &apos;yang&apos;</span><br><span class="line">        &#125;</span><br><span class="line">        var $names = $(names);</span><br><span class="line">        console.log($names);</span><br><span class="line">        $names.on(&apos;binds&apos;, function() &#123;</span><br><span class="line">            console.log(&apos;我叫&apos;, $names[0].first + $names[0].last);</span><br><span class="line">        &#125;)</span><br><span class="line">    $names.trigger(&apos;binds&apos;); //自动触发</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> jQuery(callback) </p>
+</blockquote>
+<ul>
+<li>如果传入一个函数，在document绑定一个ready事件监听函数，当dom加载时执行</li>
+<li>ready比load早执行，不是原生函数,它由DOMContentLoaded事件onreadystatechange事件以及函数doScrollCheck()的统称</li>
+</ul>
+<blockquote>
+<p>jQuery(jQuery object)</p>
+</blockquote>
+<ul>
+<li>如归传入的是jquery对象，会创建一个一样的副本，并且返回，他们引用的同一个地址</li>
+</ul>
+<blockquote>
+<p>jQuery()</p>
+</blockquote>
+<ul>
+<li>不传参则返回一个空的jquery对象</li>
+</ul>
+<h2 id="jQuery-fn-init-selector-context-rootjQuery"><a href="#jQuery-fn-init-selector-context-rootjQuery" class="headerlink" title="jQuery.fn.init(selector,context,rootjQuery)"></a>jQuery.fn.init(selector,context,rootjQuery)</h2><blockquote>
+<p>12个分支</p>
+</blockquote>
+<ul>
+<li>也就是有12种处理方式的写法，具体参考书吧</li>
+<li>以下也有讲解</li>
+</ul>
+<blockquote>
+<p>selector:接收的是dom对象</p>
+</blockquote>
+<blockquote>
+<p>context : 上下文对象</p>
+</blockquote>
+<blockquote>
+<p>rootjQuery</p>
+</blockquote>
+<ul>
+<li>用于以下情况</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//id查找失败</span><br><span class="line">if (elem.id !== match[2]) &#123;</span><br><span class="line">    return rootjQuery.find(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//selector是选择器且没有context</span><br><span class="line"></span><br><span class="line">if (!context || context.jquery) &#123;</span><br><span class="line">        return (context || rootjQuery).find(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//selector是函数</span><br><span class="line"></span><br><span class="line">if (jQuery.isFunction(selector)) &#123;</span><br><span class="line">        return rootjQuery.ready(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//怎么定义rootjQuery？</span><br><span class="line"> rootjQuery = jQuery(document);</span><br><span class="line"></span><br><span class="line">//如果判断选择器是false，返回的是空的$();</span><br><span class="line">    if (!selector) &#123;</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">//如果字符串是body，则获取document.body</span><br><span class="line">    if (selector === &quot;body&quot; &amp;&amp; !context &amp;&amp; document.body) &#123;</span><br><span class="line">        console.log(&quot;是我呀&quot;);</span><br><span class="line">        this.context = document;</span><br><span class="line">        this[0] = document.body;</span><br><span class="line">        this.selector = selector;</span><br><span class="line">        this.length = 1;</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//用于匹配html代码以及id,第一个是selector 第二个是html或者undefind </span><br><span class="line">    quickExpr = /^(?:[^#&lt;]*(&lt;[\w\W]+&gt;)[^&gt;]*$|#([\w\-]*)$)/,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//  匹配单标记</span><br><span class="line"></span><br><span class="line"> rsingleTag = /^&lt;(\w+)\s*\/?&gt;(?:&lt;\/\1&gt;)?$/,</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/15/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/17/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/22/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/22/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/模板语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/08/模板语法/" itemprop="url">模板语法</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-08T00:00:00+08:00">
+                2016-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!--markdown--># 模板语法<br>&gt; Vue.js 使用了基于 HTML 的模版语法，允许开发者声明式地将 DOM 绑定至底层 Vue 实例的数据。所有 Vue.js 的模板都是合法的 HTML ，所以能被遵循规范的浏览器和 HTML 解析器解析。在底层的实现上， Vue 将模板编译成虚拟 DOM 渲染函数。结合响应系统，在应用状态改变时， Vue 能够智能地计算出重新渲染组件的最小代价并应用到 DOM 操作上<br><br># 插值<br>&gt;文本    Mustache 标签将会被替代为对应数据对象上 msg 属性的值。无论何时，绑定的数据对象上 msg 属性发生了改变，插值处的内容都会更新。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span&gt; Message: &#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-once 指令，你也能执行一次性地插值，当数据改变时，插值处的内容不会更新。但请留心这会影响到该节点上所有的数据绑定：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-once&gt;This will never change: &#123;&#123; msg &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>纯 HTML    双大括号会将数据解释为纯文本，而非 HTML 。为了输出真正的 HTML ，你需要使用 v-html 指令：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;p v-html=<span class="string">"finishedLink"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line">        &lt;p v-html=<span class="string">"list"</span>&gt;</span><br><span class="line">        &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'家具'</span>,</span><br><span class="line">                list: <span class="string">"&lt;a href='www.baidu.com'&gt;&lt;/a&gt;"</span>,</span><br><span class="line">                finishedLink: <span class="string">'你好，vue。&lt;a href="http://www.baidu.com"&gt;baidu&lt;/a&gt;，怎么想想呢?'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>属性     Mustache 不能在 HTML 属性中使用，应使用 v-bind 指令：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:id=<span class="string">"dynamicId"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>使用 JavaScript 表达式  模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。你不应该在模板表达式中试图访问用户定义的全局变量。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123; number + <span class="number">1</span> &#125;&#125;</span><br><span class="line">&#123;&#123; ok ? <span class="string">'YES'</span> : <span class="string">'NO'</span> &#125;&#125;</span><br><span class="line">&#123;&#123; message.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>) &#125;&#125;</span><br><span class="line">&lt;div v-bind:id=<span class="string">"'list-' + id"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h1><blockquote>
+<p>指令（Directives）是带有 v- 前缀的特殊属性。指令属性的值预期是单一 JavaScript 表达式（除了 v-for，之后再讨论）。指令的职责就是当其表达式的值改变时相应地将某些行为应用到 DOM 上。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;Now you see me&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">v-if 指令将根据表达式 seen 的值的真假来移除/</span>插入 &lt;p&gt; 元素</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参数     一些指令能接受一个“参数”，在指令后以冒号指明。例如， v-bind 指令被用来响应地更新 HTML 属性</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;a v-bind:href=<span class="string">"url"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">href 是参数，告知 v-bind 指令将该元素的 href 属性与表达式 url 的值绑定。</span><br><span class="line"></span><br><span class="line">&lt;a v-on:click=<span class="string">"doSomething"</span>&gt;</span><br><span class="line"></span><br><span class="line">v-on 指令，它用于监听 DOM 事件</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>修饰符    （Modifiers）是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;form v-on:submit.prevent=<span class="string">"onSubmit"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h1><blockquote>
+<p>Vue.js 允许你自定义过滤器，可被用作一些常见的文本格式化。过滤器可以用在两个地方：mustache 插值和 v-bind 表达式。过滤器应该被添加在 JavaScript 表达式的尾部，由“管道”符指示：</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- <span class="keyword">in</span> mustaches --&gt;</span><br><span class="line">&#123;&#123; message | capitalize &#125;&#125;</span><br><span class="line">&lt;!-- <span class="keyword">in</span> v-bind --&gt;</span><br><span class="line">&lt;div v-bind:id=<span class="string">"rawId | formatId"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>自定义过滤器     类似于自定义指令，可以用全局方法 Vue.filter() 注册一个自定义过滤器，它接收两个参数：过滤器 ID 和过滤器函数。过滤器函数以值为参数，返回转换后的值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;li v-<span class="keyword">for</span>=<span class="string">"item in list"</span>&gt;</span><br><span class="line">                &#123;&#123;item | vuefilter&#125;&#125;</span><br><span class="line">            &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">          </span></span><br><span class="line"><span class="regexp">        &lt;/u</span>l&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        Vue.filter(<span class="string">'vuefilter'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> value &gt; <span class="number">4</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'家具'</span>,</span><br><span class="line">                list: [<span class="string">'6'</span>, <span class="string">'5'</span>, <span class="string">'4'</span>],</span><br><span class="line">                finishedLink: <span class="string">'你好，vue。&lt;a href="http://www.baidu.com"&gt;baidu&lt;/a&gt;，怎么想想呢?'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h1 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h1><blockquote>
+<p>v- 前缀在模板中是作为一个标示 Vue 特殊属性的明显标识。当你使用 Vue.js 为现有的标记添加动态行为时，它会很有用，但对于一些经常使用的指令来说有点繁琐。同时，当搭建 Vue.js 管理所有模板的 SPA 时，v- 前缀也变得没那么重要了。因此，Vue.js 为两个最为常用的指令提供了特别的缩写：</p>
+</blockquote>
+<blockquote>
+<p>v-bind 缩写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-bind:href=<span class="string">"url"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a :href=<span class="string">"url"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>v-on 缩写<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 完整语法 --&gt;</span><br><span class="line">&lt;a v-on:click=<span class="string">"doSomething"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br><span class="line">&lt;!-- 缩写 --&gt;</span><br><span class="line">&lt;a @click=<span class="string">"doSomething"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">a</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/vue2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/08/vue2/" itemprop="url">vue2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-08T00:00:00+08:00">
+                2016-11-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!--markdown--># 条件与循环<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;我是显示的&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p v-else&gt;当条件不满足时我显示&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/unpkg.com/</span>vue/dist/vue.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">    var app = new Vue(&#123;</span></span><br><span class="line"><span class="string">        el: '#app',</span></span><br><span class="line"><span class="string">        data: &#123;</span></span><br><span class="line"><span class="string">            seen: false</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-if v-else 这两个指令 进行条件的判断</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">for</span>=<span class="string">"(ingredient,i) in ingredients"</span> :key=<span class="string">"i"</span>&gt;</span><br><span class="line">            &lt;h1&gt;&#123;&#123;ingredient&#125;&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">            &lt;p&gt;(&#123;&#123;i&#125;&#125;)&lt;/</span>p&gt;</span><br><span class="line">         &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">"person in persons"</span>&gt;</span><br><span class="line">            </span><br><span class="line">            &lt;span v-<span class="keyword">for</span>=<span class="string">"(value,key,index) in person"</span>&gt; <span class="xml"><span class="comment">&lt;!-- value 是键值,key是键名，index是下标--&gt;</span></span></span><br><span class="line"><span class="xml">                &#123;&#123;key&#125;&#125;: &#123;&#123;value&#125;&#125;--&#123;&#123;index&#125;&#125;</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">        &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span v-<span class="keyword">for</span>=<span class="string">"n in 10"</span>&gt;&#123;&#123;n&#125;&#125;,&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">		el:<span class="string">"#app"</span>,</span><br><span class="line">		data:&#123;</span><br><span class="line">		   ingredients:[<span class="string">'meat'</span>,<span class="string">'fruit'</span>,<span class="string">'cookies'</span>],</span><br><span class="line">           persons:[</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'vane'</span>,<span class="attr">age</span>:<span class="number">38</span>,<span class="attr">color</span>:<span class="string">'red'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'rose'</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">color</span>:<span class="string">'blue'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'jack'</span>,<span class="attr">age</span>:<span class="number">28</span>,<span class="attr">color</span>:<span class="string">'green'</span>&#125;</span><br><span class="line">           ]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&gt; v-for 进行循环判断 </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` javascript</span></span><br><span class="line"><span class="regexp">    &lt;div id="app"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;button v-on:click=<span class="string">"reserve"</span>&gt;翻转字符串&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'Ｉ　ＬＯＶＥ　ＹＯＵ'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line">                reserve() &#123;</span><br><span class="line">                    <span class="keyword">this</span>.value = <span class="keyword">this</span>.value.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-on 指令绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法</p>
+</blockquote>
+<h1 id="表单的指令"><a href="#表单的指令" class="headerlink" title="表单的指令"></a>表单的指令</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input v-model="value" /</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            value: <span class="string">'家具'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定</p>
+</blockquote>
+<h1 id="组件化应用构建"><a href="#组件化应用构建" class="headerlink" title="组件化应用构建"></a>组件化应用构建</h1><blockquote>
+<p>组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、自包含和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树<br><img src="http://cn.vuejs.org/images/components.png" alt="请输入图片描述"></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;todolist v-<span class="keyword">for</span>=<span class="string">"item in list"</span> v-bind:todo=<span class="string">"item"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">todolist</span>&gt;</span></span></span><br><span class="line">        &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        Vue.component(<span class="string">'todolist'</span>, &#123;</span><br><span class="line">            props: [<span class="string">'todo'</span>],</span><br><span class="line">            template: <span class="string">'&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'家具'</span>,</span><br><span class="line">                list: [&#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/03/vue实例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/03/vue实例/" itemprop="url">vue实例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-03T00:00:00+08:00">
+                2016-11-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!--markdown--># vue实例<br># 构造器<br>&gt; 每个 Vue.js 应用都是通过构造函数 Vue 创建一个 Vue 的根实例 启动的<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line"><span class="comment">// 选项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>扩展 Vue 构造器，从而用预定义选项创建可复用的组件构造器</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</span><br><span class="line"><span class="comment">// 扩展选项</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建</span></span><br><span class="line"><span class="keyword">var</span> myComponentInstance = <span class="keyword">new</span> MyComponent()</span><br></pre></td></tr></table></figure>
+<h1 id="属性与方法"><a href="#属性与方法" class="headerlink" title="属性与方法"></a>属性与方法</h1><blockquote>
+<p>data 属性<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">data: data</span><br><span class="line">&#125;)</span><br><span class="line">vm.a === data.a <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// 设置属性也会影响到原始数据</span></span><br><span class="line">vm.a = <span class="number">2</span></span><br><span class="line">data.a <span class="comment">// -&gt; 2</span></span><br><span class="line"><span class="comment">// ... 反之亦然</span></span><br><span class="line">data.a = <span class="number">3</span></span><br><span class="line">vm.a <span class="comment">// -&gt; 3</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>Vue 实例暴露了一些有用的实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">el: <span class="string">'#example'</span>,</span><br><span class="line">data: data</span><br><span class="line">&#125;)</span><br><span class="line">vm.$data === data <span class="comment">// -&gt; true</span></span><br><span class="line">vm.$el === <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>) <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// $watch 是一个实例方法</span></span><br><span class="line">vm.$watch(<span class="string">'a'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newVal, oldVal</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 这个回调将在 `vm.a`  改变后调用</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，不要在实例属性或者回调函数中（如 vm.$watch(‘a’, newVal =&gt; this.myMethod())）使用箭头函数。因为箭头函数绑定父上下文，所以 this 不会像预想的一样是 Vue 实例，而是 this.myMethod 未被定义。</p>
+</blockquote>
+<h1 id="实例生命周期"><a href="#实例生命周期" class="headerlink" title="实例生命周期"></a>实例生命周期</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// -&gt; "a is: 1"</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://cn.vuejs.org/images/lifecycle.png" alt="生命周期"></p>
+<p>原文:<a href="http://vuejs.org/guide/instance.html" target="_blank"></a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/28/es6学习-let和const命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/28/es6学习-let和const命令/" itemprop="url">es6学习-let和const命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-28T00:00:00+08:00">
+                2016-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><pre><code>做的学习笔记，参考的是http://es6.ruanyifeng.com/#docs/intro，里面的博客
+</code></pre><h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h1><pre><code>let:它所声明的变量，只在本代码块内有效
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 10; i++) &#123;&#125;</span><br><span class="line">	console.log(i);</span><br><span class="line">	//ReferenceError: i is not define</span><br></pre></td></tr></table></figure>
+<pre><code>for循环还有一个特别之处，就是循环语句部分是一个父作用域，而循环体内部是一个单独的子作用域
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">	  <span class="built_in">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">	  console.log(i);</span><br><span class="line">	&#125;</span><br><span class="line">	// abc</span><br><span class="line">	// abc</span><br><span class="line">	// abc</span><br></pre></td></tr></table></figure>
+<pre><code>不存在变量提升 let 它所声明的变量一定要在声明后使用，否则报错。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// var 的情况</span><br><span class="line">	console.log(foo); // 输出undefined</span><br><span class="line">	var foo = 2;</span><br><span class="line">	</span><br><span class="line">	// <span class="built_in">let</span> 的情况</span><br><span class="line">	console.log(bar); // 报错ReferenceError</span><br><span class="line">	<span class="built_in">let</span> bar = 2;</span><br></pre></td></tr></table></figure>
+<pre><code>暂时性死区（temporal dead zone，简称 TDZ）：只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响，对于typeof来说不再是安全的操作了
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var tmp = 123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">	  tmp = <span class="string">'abc'</span>; // ReferenceError</span><br><span class="line">	  <span class="built_in">let</span> tmp;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">typeof x; // ReferenceError</span><br><span class="line"><span class="built_in">let</span> x;</span><br></pre></td></tr></table></figure>
+<pre><code>不允许重复声明 
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line">	<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	  <span class="built_in">let</span> a = 10;</span><br><span class="line">	  var a = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	// 报错</span><br><span class="line">	<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	  <span class="built_in">let</span> a = 10;</span><br><span class="line">	  <span class="built_in">let</span> a = 1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h1><pre><code>const声明一个只读的常量。一旦声明，常量的值就不能改变。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const PI = 3.1415;</span><br><span class="line">PI // 3.1415</span><br><span class="line"></span><br><span class="line">PI = 3;</span><br><span class="line">// TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure>
+<pre><code>const的作用域与let命令相同：只在声明所在的块级作用域内有效。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  const MAX = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MAX // Uncaught ReferenceError: MAX is not defined</span><br></pre></td></tr></table></figure>
+<pre><code>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  console.log(MAX); // ReferenceError</span><br><span class="line">  const MAX = 5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>本质：实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// 为 foo 添加一个属性，可以成功</span><br><span class="line">foo.prop = 123;</span><br><span class="line">foo.prop // 123</span><br><span class="line"></span><br><span class="line">// 将 foo 指向另一个对象，就会报错</span><br><span class="line">foo = &#123;&#125;; // TypeError: <span class="string">"foo"</span> is <span class="built_in">read</span>-only</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const a = [];</span><br><span class="line">a.push(<span class="string">'Hello'</span>); // 可执行</span><br><span class="line">a.length = 0;    // 可执行</span><br><span class="line">a = [<span class="string">'Dave'</span>];    // 报错</span><br></pre></td></tr></table></figure>
+<pre><code>如果真的想将对象冻结，应该使用Object.freeze方法。
+</code></pre><p>const foo = Object.freeze({});</p>
+<p>// 常规模式时，下面一行不起作用；<br>// 严格模式时，该行会报错<br>foo.prop = 123;</p>
+<h1 id="ES6-声明变量的六种方法"><a href="#ES6-声明变量的六种方法" class="headerlink" title="ES6 声明变量的六种方法"></a>ES6 声明变量的六种方法</h1><pre><code>ES5 只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6 一共有6种声明变量的方法。
+</code></pre><h1 id="顶层对象请参考博客吧"><a href="#顶层对象请参考博客吧" class="headerlink" title="顶层对象请参考博客吧"></a>顶层对象请参考博客吧</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/23/AngularJS学习2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/23/AngularJS学习2/" itemprop="url">AngularJS学习2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T00:00:00+08:00">
+                2016-10-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="AngularJS-ng-model-指令"><a href="#AngularJS-ng-model-指令" class="headerlink" title="AngularJS ng-model 指令"></a>AngularJS ng-model 指令</h1><pre><code>ng-model 指令用于绑定应用程序数据到 HTML 控制器(input, select, textarea)的值。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">    名字: &lt;input ng-model=<span class="string">"name"</span>&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.name = <span class="string">"ly"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>可以实现双重绑定
+</code></pre><h1 id="验证用户输入"><a href="#验证用户输入" class="headerlink" title="验证用户输入"></a>验证用户输入</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body ng-app=<span class="string">"form"</span>&gt;</span><br><span class="line">		&lt;h2&gt;表单验证&lt;/h2&gt;</span><br><span class="line">		&lt;form ng-controller=<span class="string">'validateCtrl'</span> name=<span class="string">"myfrom"</span>&gt;</span><br><span class="line">			&lt;p&gt;用户名&lt;br /&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"user"</span> name=<span class="string">"user"</span> required=<span class="string">""</span>/&gt;</span><br><span class="line">			&lt;span style=<span class="string">"color:red"</span> ng-show=<span class="string">"myfrom.user.<span class="variable">$invalid</span> &amp;&amp; myfrom.user.<span class="variable">$dirty</span>"</span>&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.user.<span class="variable">$error</span>.required"</span>&gt;用户名是必填项&lt;/span&gt;</span><br><span class="line">			&lt;/span&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;邮箱:&lt;br /&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"email"</span> ng-model=<span class="string">"email"</span> required=<span class="string">""</span> name=<span class="string">"email"</span> /&gt;</span><br><span class="line">			&lt;span style=<span class="string">"color:red"</span> ng-show=<span class="string">"myfrom.email.<span class="variable">$invalid</span> &amp;&amp; myfrom.email.<span class="variable">$dirty</span>"</span>&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.email.<span class="variable">$error</span>.required"</span>&gt;邮箱是必填项&lt;/span&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.email.<span class="variable">$error</span>.email"</span>&gt;邮箱必须合法&lt;/span&gt;</span><br><span class="line">			&lt;/span&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;</span><br><span class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> ng-disabled=<span class="string">"myfrom.user.<span class="variable">$invalid</span> &amp;&amp; myfrom.user.<span class="variable">$dirty</span> || myfrom.email.<span class="variable">$invalid</span> &amp;&amp; myfrom.email.<span class="variable">$dirty</span>"</span>/&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">			var app=angular.module(<span class="string">'form'</span>,[]);</span><br><span class="line">	</span><br><span class="line">			app.controller(<span class="string">'validateCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">				    <span class="variable">$scope</span>.user = <span class="string">'John Doe'</span>;</span><br><span class="line">				    <span class="variable">$scope</span>.email = <span class="string">'john.doe@gmail.com'</span>;</span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line"><span class="variable">$dirty</span>		表单有填写记录</span><br><span class="line"><span class="variable">$valid</span>		字段内容合法的</span><br><span class="line"><span class="variable">$invalid</span>	字段内容是非法的</span><br><span class="line"><span class="variable">$pristine</span>	表单没有填写记录</span><br><span class="line">提示信息会在 ng-show 属性返回 <span class="literal">true</span> 的情况下显示。</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
+<p>#CSS 类</p>
+<pre><code>ng-model 指令基于它们的状态为 HTML 元素提供了 CSS 类
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	input.ng-invalid &#123;/*元素名+状态值*/</span><br><span class="line">	    background-color: lightblue;  </span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;form ng-app=<span class="string">""</span> name=<span class="string">"myForm"</span>&gt;</span><br><span class="line">	    输入你的名字:</span><br><span class="line">	    &lt;input name=<span class="string">"myAddress"</span> ng-model=<span class="string">"text"</span> required&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<p>ng-model 指令根据表单域的状态添加/移除以下类：<br>ng-empty<br>ng-not-empty<br>ng-touched<br>ng-untouched<br>ng-valid<br>ng-invalid<br>ng-dirty  表单有填写记录<br>ng-pending  未发生时<br>ng-pristine 初始时</p>
+<h1 id="AngularJS-Scope-作用域"><a href="#AngularJS-Scope-作用域" class="headerlink" title="AngularJS Scope(作用域)"></a>AngularJS Scope(作用域)</h1><pre><code>Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
+Scope 是一个对象，有可用的方法和属性。
+Scope 可应用在视图和控制器上。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body ng-app=<span class="string">"event"</span>&gt;</span><br><span class="line">		&lt;div ng-controller=<span class="string">"personCtrl"</span>&gt;</span><br><span class="line"></span><br><span class="line">			&lt;button ng-click=<span class="string">"toggle()"</span>&gt;隐藏/显示&lt;/button&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;p ng-hide=<span class="string">"myVar"</span>&gt;</span><br><span class="line">			名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"firstName"</span>&gt;&lt;br&gt;</span><br><span class="line">			姓名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"lastName"</span>&gt;&lt;br&gt;</span><br><span class="line">			&lt;br&gt;</span><br><span class="line">			Full Name: &#123;&#123;firstName + <span class="string">" "</span> + lastName&#125;&#125;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;!-----------分割线---------------------------------------------&gt;</span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">			var app=angular.module(<span class="string">'event'</span>,[]);</span><br><span class="line">			app.controller(<span class="string">'personCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">			    <span class="variable">$scope</span>.firstName = <span class="string">"John"</span>,   //属性</span><br><span class="line">			    <span class="variable">$scope</span>.lastName = <span class="string">"Doe"</span></span><br><span class="line">			    <span class="variable">$scope</span>.myVar = <span class="literal">false</span>;</span><br><span class="line">			    <span class="variable">$scope</span>.toggle = <span class="function"><span class="title">function</span></span>() &#123;  //方法</span><br><span class="line">			        <span class="variable">$scope</span>.myVar = !<span class="variable">$scope</span>.myVar;</span><br><span class="line">			    &#125;;</span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： {{firstName + " " + lastName}}。
+</code></pre><h1 id="Scope-概述"><a href="#Scope-概述" class="headerlink" title="Scope 概述"></a>Scope 概述</h1><pre><code>AngularJS 应用组成如下：
+    View(视图), 即 HTML。
+    Model(模型), 当前视图中可用的数据。
+    Controller(控制器), 即 JavaScript 函数，可以添加或修改属性。
+</code></pre><h1 id="Scope-作用范围"><a href="#Scope-作用范围" class="headerlink" title="Scope 作用范围"></a>Scope 作用范围</h1><pre><code>$scop只能管，它所在控制器定义的范围
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	    &lt;li ng-repeat=<span class="string">"x in names"</span>&gt;&#123;&#123;x&#125;&#125;&lt;/li&gt;//每个 &lt;li&gt; 元素可以访问当前的重复对象，这里对应的是一个字符串， 并使用变量 x 表示</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">	</span><br><span class="line">	app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">	    <span class="variable">$scope</span>.names = [<span class="string">"Emil"</span>, <span class="string">"Tobias"</span>, <span class="string">"Linus"</span>];</span><br><span class="line">	&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="根作用域"><a href="#根作用域" class="headerlink" title="根作用域"></a>根作用域</h1><pre><code>所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。$rootScope 可作用于整个应用中。是各个 controller 中 scope 的桥梁。用 rootscope 定义的值，可以在各个 controller 中使用。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;h1&gt;&#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	    &lt;li ng-repeat=<span class="string">"x in names"</span>&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">	</span><br><span class="line">	app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$rootScope</span>) &#123;</span><br><span class="line">	    <span class="variable">$scope</span>.names = [<span class="string">"Emil"</span>, <span class="string">"Tobias"</span>, <span class="string">"Linus"</span>];</span><br><span class="line">	    <span class="variable">$rootScope</span>.lastname = <span class="string">"Refsnes"</span>;</span><br><span class="line">	&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="AngularJS-控制器"><a href="#AngularJS-控制器" class="headerlink" title="AngularJS 控制器"></a>AngularJS 控制器</h1><pre><code>ng-controller 指令定义了应用程序控制器。控制器是 JavaScript 对象，由标准的 JavaScript 对象的构造函数 创建
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line"></span><br><span class="line">名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"firstName"</span>&gt;&lt;br&gt;</span><br><span class="line">姓: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"lastName"</span>&gt;&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">姓名: &#123;&#123;firstName + <span class="string">" "</span> + lastName&#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.firstName = <span class="string">"l"</span>;</span><br><span class="line">    <span class="variable">$scope</span>.lastName = <span class="string">"y"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<pre><code>控制器和scope一起使用，控制器的范围就是scope作用的范围
+</code></pre><h1 id="AngularJS-过滤器"><a href="#AngularJS-过滤器" class="headerlink" title="AngularJS 过滤器"></a>AngularJS 过滤器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1、uppercase，lowercase 大小写转换</span><br><span class="line">&#123;&#123; <span class="string">"lower cap string"</span> | uppercase &#125;&#125;   // 结果：LOWER CAP STRING</span><br><span class="line">&#123;&#123; <span class="string">"TANK is GOOD"</span> | lowercase &#125;&#125;      // 结果：tank is good</span><br><span class="line">2、date 格式化</span><br><span class="line">&#123;&#123;1490161945000 | date:<span class="string">"yyyy-MM-dd HH:mm:ss"</span>&#125;&#125; // 2017-03-22 13:52:25</span><br><span class="line">3、number 格式化（保留小数）</span><br><span class="line">&#123;&#123;149016.1945000 | number:2&#125;&#125;</span><br><span class="line">4、currency货币格式化</span><br><span class="line">&#123;&#123; 250 | currency &#125;&#125;            // 结果：<span class="variable">$250</span>.00</span><br><span class="line">&#123;&#123; 250 | currency:<span class="string">"RMB ￥ "</span> &#125;&#125;  // 结果：RMB ￥ 250.00</span><br><span class="line">5、filter查找</span><br><span class="line">输入过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中，该过滤器后跟一个冒号和一个模型名称。</span><br><span class="line">filter 过滤器从数组中选择一个子集</span><br><span class="line"> // 查找name为iphone的行</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | filter:&#123;<span class="string">'name'</span>:<span class="string">'iphone'</span>&#125; &#125;&#125;        </span><br><span class="line">6、limitTo 截取</span><br><span class="line">&#123;&#123;<span class="string">"1234567890"</span> | limitTo :6&#125;&#125; // 从前面开始截取6位</span><br><span class="line">&#123;&#123;<span class="string">"1234567890"</span> | limitTo:-4&#125;&#125; // 从后面开始截取4位</span><br><span class="line">7、orderBy 排序</span><br><span class="line"> // 根id降序排</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | orderBy:<span class="string">'id'</span>:<span class="literal">true</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">// 根据id升序排</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | orderBy:<span class="string">'id'</span> &#125;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//过滤器 number   </span><br><span class="line">	&#123;&#123;10000 | filternumber &#125;&#125;  //100</span><br><span class="line">	app.filter(<span class="string">'filternumber'</span>,<span class="function"><span class="title">function</span></span>()&#123;  </span><br><span class="line">			<span class="built_in">return</span> <span class="keyword">function</span>(target)&#123;</span><br><span class="line">				target=target/100;</span><br><span class="line">				<span class="built_in">return</span> parseFloat(target);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="AngularJS-服务-Service"><a href="#AngularJS-服务-Service" class="headerlink" title="AngularJS 服务(Service)"></a>AngularJS 服务(Service)</h1><pre><code>在 AngularJS 中，服务是一个函数或对象，可在你的 AngularJS 应用中使用。AngularJS 内建了30 多个服务。
+</code></pre><ul>
+<li>$location 服务，它可以返回当前页面的 URL 地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'customersCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$location</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.myUrl = <span class="variable">$location</span>.absUrl();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>$http 是 AngularJS 应用中最常用的服务。 服务向服务器发送请求，应用响应服务器传送过来的数据。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$http</span>) &#123;</span><br><span class="line">    <span class="variable">$http</span>.get(<span class="string">"welcome.htm"</span>).<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">        <span class="variable">$scope</span>.myWelcome = response.data;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>$timeout 服务 AngularJS $timeout 服务对应了 JS window.setTimeout 函数。</li>
+<li>$interval 服务 AngularJS $interval 服务对应了 JS window.setInterval 函数。</li>
+<li>创建自定义服务</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.service(<span class="string">'hexafy'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    this.myFunc = <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x.toString(16);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, hexafy) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.hex = hexafy.myFunc(255);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="server的小demo"><a href="#server的小demo" class="headerlink" title="server的小demo"></a>server的小demo</h3><ul>
+<li>html页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html ng-app=<span class="string">"demo3"</span>&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!--AngularJS 服务(Service)--&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo1"</span>&gt;</span><br><span class="line">			&lt;p&gt;获去url地址&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"我的地址是"</span>+myUrl&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo2"</span>&gt;</span><br><span class="line">			&lt;p&gt;获取服务端传来的数据&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo3"</span>&gt;</span><br><span class="line">			&lt;p&gt;延时定时器&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo4"</span>&gt;</span><br><span class="line">			&lt;p&gt;定时器&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说现在时间:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div ng-controller=<span class="string">"myDemo5"</span>&gt;</span><br><span class="line">			&lt;p&gt;自定义函数，讲数字转换成16进制数&lt;/p&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"data"</span>/&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"我是16进制数"</span>+data1&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!--去抖动--&gt;</span><br><span class="line">		&lt;div ng-controller=<span class="string">"myDemo6"</span>&gt;</span><br><span class="line">			&lt;p&gt;用ajax发送请求&lt;/p&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"key"</span>/&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li ng-repeat=<span class="string">"x in arr"</span>&gt;</span><br><span class="line">					&#123;&#123;x.name&#125;&#125;</span><br><span class="line">				&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script src=<span class="string">"js/server.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>js页面</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">var app=angular.module(<span class="string">'demo3'</span>,[]);</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo1'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$location</span>"</span>,<span class="keyword">function</span>(s,l)&#123;</span><br><span class="line">	s.myUrl=l.absUrl();</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo2'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$http</span>"</span>,<span class="keyword">function</span>(s,h)&#123;</span><br><span class="line">	h.get(<span class="string">"other/welcome.php"</span>).<span class="keyword">then</span>(<span class="keyword">function</span>(r)&#123;</span><br><span class="line">		s.data=r.data;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo3'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$timeout</span>"</span>,<span class="keyword">function</span>(s,t)&#123;</span><br><span class="line">	s.data=<span class="string">"今天天气不错呀"</span>;</span><br><span class="line">	</span><br><span class="line">	t(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		s.data=<span class="string">"我们去爬山吧"</span></span><br><span class="line">	&#125;,2000)</span><br><span class="line"></span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo4'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$interval</span>"</span>,<span class="keyword">function</span>(s,i)&#123;</span><br><span class="line">	s.data=new Date().toLocaleTimeString();</span><br><span class="line">	</span><br><span class="line">	i(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		s.data=new Date().toLocaleTimeString();</span><br><span class="line">	&#125;,1000)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.service(<span class="string">'hexafy'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	  this.myfun=<span class="keyword">function</span>(x)&#123;</span><br><span class="line">	  	<span class="built_in">return</span> parseInt(x,16);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo5'</span>,[<span class="string">'$scope'</span>,<span class="string">'hexafy'</span>,<span class="keyword">function</span>(s,h)&#123;</span><br><span class="line">	  </span><br><span class="line">	  s.<span class="variable">$watch</span>(<span class="string">'data1'</span>,<span class="keyword">function</span>(newkey,oldkey)&#123;</span><br><span class="line">	  	    console.log(h.myfun(s.data));</span><br><span class="line">	  		s.data1=h.myfun(s.data);</span><br><span class="line">	  &#125;)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo6'</span>,[<span class="string">'$scope'</span>,<span class="string">'$http'</span>,<span class="keyword">function</span>(scope,http)&#123;</span><br><span class="line">	//</span><br><span class="line">	<span class="keyword">function</span> debounce(fn,<span class="built_in">wait</span>)&#123;</span><br><span class="line">		var last=null;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			var arg=arguments;</span><br><span class="line">			var later=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">				fn.apply(null,arg);</span><br><span class="line">			&#125;</span><br><span class="line">			clearTimeout(last);</span><br><span class="line">			last=setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">				later();</span><br><span class="line">			&#125;,300);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	  scope.<span class="variable">$watch</span>(<span class="string">'key'</span>,debounce(<span class="keyword">function</span>(newv,old)&#123;</span><br><span class="line">	  			console.log(arguments,<span class="string">"woyou"</span>);</span><br><span class="line">	  	      http(&#123;</span><br><span class="line">	  	      		url:<span class="string">'/bgs/poi/search_poi_nearby'</span>,</span><br><span class="line">                     params: &#123;</span><br><span class="line">                       keyword: newv,</span><br><span class="line">                       offset: 0,</span><br><span class="line">                       <span class="built_in">limit</span>: 20</span><br><span class="line">                     &#125;</span><br><span class="line">                   &#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(data)&#123;</span><br><span class="line">                   		console.log(<span class="string">'hh'</span>,data.data);</span><br><span class="line">                   		scope.arr=data.data;</span><br><span class="line">                   &#125;,<span class="function"><span class="title">function</span></span>()&#123;&#125;)</span><br><span class="line">	  &#125;,300))</span><br><span class="line">&#125;])</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

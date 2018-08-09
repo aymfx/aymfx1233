@@ -1,0 +1,2044 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/2/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/2/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/07/10/node技术分享/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/10/node技术分享/" itemprop="url">node技术分享</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-10T17:48:05+08:00">
+                2018-07-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="node-技术分享"><a href="#node-技术分享" class="headerlink" title="node 技术分享"></a>node 技术分享</h1><h2 id="node-是什么？"><a href="#node-是什么？" class="headerlink" title="node 是什么？"></a>node 是什么？</h2><blockquote>
+<p>Node.js 是 JavaScript 在服务器端的一个运行环境，也是一个工具库，用来与服务器端其他软件互动。它的 JavaScript 解释器，采用了 Google 公司的 V8 引擎。是由 Ryan Dahl 写的。他做 nodejs 的初衷是为了做一个高性能是 web 服务器。</p>
+</blockquote>
+<blockquote>
+<p>简单的说 Node.js 就是运行在服务端的 JavaScript,于是对于前端工程师也就可以接触后台的东西了</p>
+</blockquote>
+<h2 id="node-特点有哪些"><a href="#node-特点有哪些" class="headerlink" title="node 特点有哪些"></a>node 特点有哪些</h2><ul>
+<li>事件驱动<blockquote>
+<p>node 中，客户端的链接，提交数据等都会触发相应的事件,每个事件都会进入一个事件队列，在事件的循环中，执行一些异步操作，比如查询数据库，获取磁盘文件，最后成功后会执行回调函数，这一过程不会阻塞新的事件。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li>非阻塞 I/O（异步 I/O）<blockquote>
+<p>当在访问数据库数据的时候，需要一段时间进行 I/O 操作，在传统的单线程处理机制中，在执行了访问数据库代码之后，这个线程都将先停下来，等待数据库返回数据结果，才能执行后面的代码，也就是说 I/O 阻塞了线程的执行，极大的降低了程序的执行效率。</p>
+</blockquote>
+</li>
+</ul>
+<blockquote>
+<p>由于 Node.js 执行了非阻塞 I/O 机制，因此在执行了访问数据库代码之后，将立即执行后面的代码，把数据库执行返回结果的处理放到了代码的执行回调函数中，从而以提高了函数的执行效率。</p>
+</blockquote>
+<blockquote>
+<p>当某个 I/O 执行完毕时，将以事件的形式通知执行 I/O 操作的线程，线程执行这个事件的回调函数，是为了处理异步 I/O，线程必须有事件循环，不断的检查有没有未处理的事件，依次予以处理。</p>
+</blockquote>
+<blockquote>
+<p>在传统阻塞模式下，一个线程只能处理一项任务，要想处理连接的吞吐量必须通过多线程。而在 Node.js 这种非阻塞模式下，一个线程永远在执行计算操作，这个线程的 CPU 利用率永远是 100%，所以这是一种也别有哲理的设计方案，人多，但是好多人都闲着，还不如人少，往死里干活。</p>
+</blockquote>
+<ul>
+<li>单线程<blockquote>
+<p>Node.js 不为每个客户连接创建一个新的线程。而仅仅使用一个线程，当有用户连接了，就会触发一个内部事件，通过非阻塞 I/O，事件驱动机制，让 Node.js 程序宏观上也是并行的，使用 Node.js，一个 8GB 的内存条，理论上就可以支持 40000 个用户连接了。另外单线程的好处就是，还有操作系统不在由创建，销毁销毁线程的时间。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="node-的优缺点"><a href="#node-的优缺点" class="headerlink" title="node 的优缺点"></a>node 的优缺点</h2><ul>
+<li>优点<ul>
+<li>高并发（最重要的优点）</li>
+<li>适合 I/O 密集型应用</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>不适合 CPU 密集型应用,由于是单线程如果进行长时间的计算（大循环）会导致 cpu 无法释放，后续的 i/o 不能发起</li>
+<li>代码的健壮性不高，一旦代码某个环节崩溃，整个系统都崩溃</li>
+</ul>
+</li>
+</ul>
+<p>解决方案（1）: 在代码设计阶段我们需要将可能的大型运算分解成多个小任务，使得运算能够适时释放，不阻塞 I/O 调用的发起</p>
+<p>解决方案（2）:</p>
+<ul>
+<li>1.Nnigx 反向代理，负载均衡，开多个进程，绑定多个端口</li>
+<li>2.开多个进程监听同一个端口，使用 cluster 模块；也可以使用 forever 或 pm2 模块</li>
+</ul>
+<h3 id="创建一个最简单的服务器"><a href="#创建一个最简单的服务器" class="headerlink" title="创建一个最简单的服务器"></a>创建一个最简单的服务器</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http</span><br><span class="line">  .createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    res.end(<span class="string">"Hello Node.js\n"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line">  .listen(<span class="number">3000</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"服务运行在 http://127.0.0.1:3000/"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="用-express-搭建-node-服务器"><a href="#用-express-搭建-node-服务器" class="headerlink" title="用 express 搭建 node 服务器"></a>用 express 搭建 node 服务器</h3><ul>
+<li>基于 Node.js 平台，快速、开放、极简的 web 开发框架。</li>
+<li>Express 不对 Node.js 已有的特性进行二次抽象，我们只是在它之上扩展了 Web 应用所需的基本功能</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.send(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> server = app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"服务运行在 http://127.0.0.1:3000/"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="利用这个框架操作数据库-mysql，实现增删查改"><a href="#利用这个框架操作数据库-mysql，实现增删查改" class="headerlink" title="利用这个框架操作数据库 mysql，实现增删查改"></a>利用这个框架操作数据库 mysql，实现增删查改</h4><ul>
+<li>先介一个模板 ejs</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">"express"</span>);</span><br><span class="line"><span class="keyword">var</span> app = express();</span><br><span class="line"></span><br><span class="line">app.set(<span class="string">"views"</span>, <span class="string">"./views"</span>);</span><br><span class="line">app.set(<span class="string">"view engine"</span>, <span class="string">"ejs"</span>);</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">"/"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">"index"</span>, &#123;</span><br><span class="line">    name: <span class="string">"ly"</span>,</span><br><span class="line">    age: <span class="string">"18"</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"服务运行在 http://127.0.0.1:3000/"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="通过并发处理检测-node-的性能-事件的轮询"><a href="#通过并发处理检测-node-的性能-事件的轮询" class="headerlink" title="通过并发处理检测 node 的性能,(事件的轮询)"></a>通过并发处理检测 node 的性能,(事件的轮询)</h3><ul>
+<li>测试工具:ab</li>
+</ul>
+<blockquote>
+<p>ab 是 apache bench 命令的缩写</p>
+</blockquote>
+<blockquote>
+<p>ab 的原理：ab 命令会创建多个并发访问线程，模拟多个访问者同时对某一 URL 地址进行访问。它的测试目标是基于 URL 的，因此，它既可以用来测试 apache 的负载压力，也可以测试 nginx、lighthttp、tomcat、IIS 等其它 Web 服务器的压力</p>
+</blockquote>
+<blockquote>
+<p>ab 命令对发出负载的计算机要求很低，它既不会占用很高 CPU，也不会占用很多内存。但却会给目标服务器造成巨大的负载，其原理类似 CC 攻击。自己测试使用也需要注意，否则一次上太多的负载。可能造成目标服务器资源耗完，严重时甚至导致死机。</p>
+</blockquote>
+<blockquote>
+<p>ab -n1000 -c10 <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a> -n 表示测试会话中所执行的请求个数，-c 表示 一次产生的请求个数</p>
+</blockquote>
+<ul>
+<li>单独一个线程运行的情况</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        localhost</span><br><span class="line">Server Port:            <span class="number">3000</span></span><br><span class="line"></span><br><span class="line">Document Path:          <span class="regexp">/</span></span><br><span class="line"><span class="regexp">Document Length:        7570 bytes</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Concurrency Level:      10</span></span><br><span class="line"><span class="regexp">Time taken for tests:   3.167 seconds</span></span><br><span class="line"><span class="regexp">Complete requests:      1000</span></span><br><span class="line"><span class="regexp">Failed requests:        0</span></span><br><span class="line"><span class="regexp">Total transferred:      7774000 bytes</span></span><br><span class="line"><span class="regexp">HTML transferred:       7570000 bytes</span></span><br><span class="line"><span class="regexp">Requests per second:    315.77 [#/sec] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       31.668 [ms] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       3.167 [ms] (mean, across all concurrent requests)</span></span><br><span class="line"><span class="regexp">Transfer rate:          2397.29 [Kbytes/sec] received</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Connection Times (ms)</span></span><br><span class="line"><span class="regexp">              min  mean[+/-sd] median   max</span></span><br><span class="line"><span class="regexp">Connect:        0    0   0.3      0       1</span></span><br><span class="line"><span class="regexp">Processing:    17   31   8.6     29      67</span></span><br><span class="line"><span class="regexp">Waiting:       16   30   8.6     28      67</span></span><br><span class="line"><span class="regexp">Total:         17   31   8.6     29      67</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Percentage of the requests served within a certain time (ms)</span></span><br><span class="line"><span class="regexp">  50%     29</span></span><br><span class="line"><span class="regexp">  66%     32</span></span><br><span class="line"><span class="regexp">  75%     34</span></span><br><span class="line"><span class="regexp">  80%     36</span></span><br><span class="line"><span class="regexp">  90%     43</span></span><br><span class="line"><span class="regexp">  95%     49</span></span><br><span class="line"><span class="regexp">  98%     58</span></span><br><span class="line"><span class="regexp">  99%     62</span></span><br><span class="line"><span class="regexp"> 100%     67 (longest request)</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>开启多进程的性能情况</li>
+</ul>
+<blockquote>
+<p>安装一个 pm2 包，进行开启多线程操作</p>
+</blockquote>
+<blockquote>
+<p>pm2 是一个带有负载均衡功能的 Node 应用的进程管理器.当你要把你的独立代码利用全部的服务器上的所有 CPU,并保证进程永远都活着,0 秒的重载, PM2 是完美的,</p>
+</blockquote>
+<blockquote>
+<p>PM2 （github 上的源码）是开源的基于 Nodejs 的进程管理器，包括守护进程，监控，日志的一整套完整的功能，基本是 Nodejs 应用程序不二的守护进程选择</p>
+</blockquote>
+<blockquote>
+<p>命令行: pm2 start app.js -i max max 表示启用最大核心数，PM2 则会根据你 CPU 核心的数量来生成对应的工作线程</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        localhost</span><br><span class="line">Server Port:            <span class="number">3000</span></span><br><span class="line"></span><br><span class="line">Document Path:          <span class="regexp">/</span></span><br><span class="line"><span class="regexp">Document Length:        7570 bytes</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Concurrency Level:      10</span></span><br><span class="line"><span class="regexp">Time taken for tests:   2.196 seconds</span></span><br><span class="line"><span class="regexp">Complete requests:      1000</span></span><br><span class="line"><span class="regexp">Failed requests:        0</span></span><br><span class="line"><span class="regexp">Total transferred:      7774000 bytes</span></span><br><span class="line"><span class="regexp">HTML transferred:       7570000 bytes</span></span><br><span class="line"><span class="regexp">Requests per second:    455.34 [#/sec] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       21.961 [ms] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       2.196 [ms] (mean, across all concurrent requests)</span></span><br><span class="line"><span class="regexp">Transfer rate:          3456.88 [Kbytes/sec] received</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Connection Times (ms)</span></span><br><span class="line"><span class="regexp">              min  mean[+/-sd] median   max</span></span><br><span class="line"><span class="regexp">Connect:        0    0   0.3      0       1</span></span><br><span class="line"><span class="regexp">Processing:    10   21  10.7     17      82</span></span><br><span class="line"><span class="regexp">Waiting:       10   21  10.6     17      82</span></span><br><span class="line"><span class="regexp">Total:         10   21  10.7     18      82</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Percentage of the requests served within a certain time (ms)</span></span><br><span class="line"><span class="regexp">  50%     18</span></span><br><span class="line"><span class="regexp">  66%     20</span></span><br><span class="line"><span class="regexp">  75%     23</span></span><br><span class="line"><span class="regexp">  80%     25</span></span><br><span class="line"><span class="regexp">  90%     33</span></span><br><span class="line"><span class="regexp">  95%     48</span></span><br><span class="line"><span class="regexp">  98%     58</span></span><br><span class="line"><span class="regexp">  99%     65</span></span><br><span class="line"><span class="regexp"> 100%     82 (longest request)</span></span><br></pre></td></tr></table></figure>
+<h4 id="开启集群"><a href="#开启集群" class="headerlink" title="开启集群"></a>开启集群</h4><blockquote>
+<p>任何时候，如果你需要增加工作线程的数量，可以通过 pm2 scale <app name=""> <n>来对集群进行扩展。参数<n>指定工作线程的数量，被用来增加或减少集群数。你也可以通过 pm2 scale app +3 的方式来指定要增加多少工作线程。</n></n></app></p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">Server Software:</span><br><span class="line">Server Hostname:        localhost</span><br><span class="line">Server Port:            <span class="number">3000</span></span><br><span class="line"></span><br><span class="line">Document Path:          <span class="regexp">/</span></span><br><span class="line"><span class="regexp">Document Length:        7570 bytes</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Concurrency Level:      10</span></span><br><span class="line"><span class="regexp">Time taken for tests:   2.344 seconds</span></span><br><span class="line"><span class="regexp">Complete requests:      1000</span></span><br><span class="line"><span class="regexp">Failed requests:        0</span></span><br><span class="line"><span class="regexp">Total transferred:      7774000 bytes</span></span><br><span class="line"><span class="regexp">HTML transferred:       7570000 bytes</span></span><br><span class="line"><span class="regexp">Requests per second:    426.59 [#/sec] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       23.441 [ms] (mean)</span></span><br><span class="line"><span class="regexp">Time per request:       2.344 [ms] (mean, across all concurrent requests)</span></span><br><span class="line"><span class="regexp">Transfer rate:          3238.62 [Kbytes/sec] received</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Connection Times (ms)</span></span><br><span class="line"><span class="regexp">              min  mean[+/-sd] median   max</span></span><br><span class="line"><span class="regexp">Connect:        0    0   0.3      0       1</span></span><br><span class="line"><span class="regexp">Processing:    13   23  13.5     20     318</span></span><br><span class="line"><span class="regexp">Waiting:       12   22  13.4     19     318</span></span><br><span class="line"><span class="regexp">Total:         13   23  13.5     20     318</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">Percentage of the requests served within a certain time (ms)</span></span><br><span class="line"><span class="regexp">  50%     20</span></span><br><span class="line"><span class="regexp">  66%     22</span></span><br><span class="line"><span class="regexp">  75%     23</span></span><br><span class="line"><span class="regexp">  80%     25</span></span><br><span class="line"><span class="regexp">  90%     31</span></span><br><span class="line"><span class="regexp">  95%     39</span></span><br><span class="line"><span class="regexp">  98%     57</span></span><br><span class="line"><span class="regexp">  99%     79</span></span><br><span class="line"><span class="regexp"> 100%    318 (longest request)</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/07/01/linux安装MongoDB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/01/linux安装MongoDB/" itemprop="url">linux安装MongoDB</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-01T15:01:15+08:00">
+                2018-07-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><blockquote>
+<p>官网地址</p>
+</blockquote>
+<ul>
+<li><a href="https://www.mongodb.com/download-center#atlas" target="_blank" rel="noopener">https://www.mongodb.com/download-center#atlas</a></li>
+</ul>
+<blockquote>
+<p>我下的版本</p>
+</blockquote>
+<ul>
+<li>curl -O <a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel62-4.0.0.tgz" target="_blank" rel="noopener">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-rhel62-4.0.0.tgz</a></li>
+</ul>
+<h2 id="解压存放"><a href="#解压存放" class="headerlink" title="解压存放"></a>解压存放</h2><blockquote>
+<p>我的存放位置 /usr/local/mongose</p>
+</blockquote>
+<ul>
+<li>cp -r mongodb-linux-x86_64-rhel62-4.0.0.tgz /usr/local/mongose</li>
+</ul>
+<blockquote>
+<p>解压</p>
+</blockquote>
+<ul>
+<li>tar -zxvf mongodb-linux-x86_64-rhel62-4.0.0.tgz</li>
+</ul>
+<h2 id="配置全局变量"><a href="#配置全局变量" class="headerlink" title="配置全局变量"></a>配置全局变量</h2><ul>
+<li>vi /etc/profile</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> MONGODB_HOME=<span class="regexp">/usr/</span>local/mongose</span><br><span class="line"><span class="keyword">export</span> PATH=$PATH:$MONGODB_HOME/bin</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>保存后，重启系统配置</p>
+</blockquote>
+<ul>
+<li>source /etc/profile</li>
+</ul>
+<h2 id="mongodb-启动配置"><a href="#mongodb-启动配置" class="headerlink" title="mongodb 启动配置"></a>mongodb 启动配置</h2><ul>
+<li><p>cd /usr/local/mongose/bin</p>
+</li>
+<li><p>vi mongodb.conf</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dbpath = /usr/local/mongodb/data/db #数据文件存放目录</span><br><span class="line">logpath = /usr/local/mongodb/logs/mongodb.log #日志文件存放目录</span><br><span class="line">port = 27017  #端口</span><br><span class="line">fork = true  #以守护程序的方式启用，即在后台运行</span><br></pre></td></tr></table></figure>
+<h2 id="启动数据库"><a href="#启动数据库" class="headerlink" title="启动数据库"></a>启动数据库</h2><ul>
+<li>./mongod -f mongodb.conf</li>
+</ul>
+<h2 id="进入数据库"><a href="#进入数据库" class="headerlink" title="进入数据库"></a>进入数据库</h2><ul>
+<li>./mongo</li>
+</ul>
+<h2 id="mongodb-开机启动"><a href="#mongodb-开机启动" class="headerlink" title="mongodb 开机启动"></a>mongodb 开机启动</h2><ul>
+<li><p>cd /lib/systemd/system</p>
+</li>
+<li><p>vi mongodb.service</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=mongodb</span><br><span class="line">After=network.target remote-fs.target nss-lookup.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/mongose/bin/mongod --config /usr/local/mongodb/bin/mongodb.conf</span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">ExecStop=/usr/local/mongose/bin/mongod --shutdown --config /usr/local/mongodb/bin/mongodb.conf</span><br><span class="line">PrivateTmp=true</span><br><span class="line">bind_ip = 0.0.0.0</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>赋值权限</p>
+</blockquote>
+<ul>
+<li>chmod 754 mongodb.service</li>
+</ul>
+<h2 id="启动命令"><a href="#启动命令" class="headerlink" title="启动命令"></a>启动命令</h2><h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><ul>
+<li>systemctl start mongodb.service</li>
+</ul>
+<h4 id="关闭服务"><a href="#关闭服务" class="headerlink" title="关闭服务"></a>关闭服务</h4><ul>
+<li>systemctl stop mongodb.service</li>
+</ul>
+<h4 id="开机启动"><a href="#开机启动" class="headerlink" title="开机启动"></a>开机启动</h4><ul>
+<li>systemctl enable mongodb.service</li>
+</ul>
+<h2 id="可视化操作工具"><a href="#可视化操作工具" class="headerlink" title="可视化操作工具"></a>可视化操作工具</h2><ul>
+<li><a href="https://robomongo.org/download" target="_blank" rel="noopener">https://robomongo.org/download</a></li>
+</ul>
+<h2 id="关闭"><a href="#关闭" class="headerlink" title="关闭"></a>关闭</h2><blockquote>
+<p><a href="https://www.cnblogs.com/joshua317/articles/5190385.html" target="_blank" rel="noopener">https://www.cnblogs.com/joshua317/articles/5190385.html</a></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/06/15/趣味题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/15/趣味题/" itemprop="url">趣味题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T16:52:16+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js娱乐/" itemprop="url" rel="index">
+                    <span itemprop="name">js娱乐</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="趣味js"><a href="#趣味js" class="headerlink" title="趣味js"></a>趣味js</h2><blockquote>
+<p>周五了。学点趣味的东西放松下</p>
+</blockquote>
+<h4 id="“1”-“2”-“3”-map-parseInt-输出的是啥"><a href="#“1”-“2”-“3”-map-parseInt-输出的是啥" class="headerlink" title="[“1”, “2”, “3”].map(parseInt) 输出的是啥?"></a>[“1”, “2”, “3”].map(parseInt) 输出的是啥?</h4><blockquote>
+<p>答案: [1, NaN, NaN]</p>
+</blockquote>
+<p>map里面的函数有三个参数  </p>
+<ul>
+<li>数组的值、</li>
+<li>数组的下标</li>
+<li>数组</li>
+</ul>
+<p>parseInt 接收两个值</p>
+<ul>
+<li>string 必需。要被解析的字符串。</li>
+<li>radix 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN</li>
+</ul>
+<p>即</p>
+<ul>
+<li>parseInt(‘1’,0) 1</li>
+<li>parseInt(‘2’,1) NaN</li>
+<li>parseInt(‘3’,2) NaN  二进制</li>
+</ul>
+<h4 id="typeof-null-null-instanceof-Object-输出的是啥"><a href="#typeof-null-null-instanceof-Object-输出的是啥" class="headerlink" title="[typeof null, null instanceof Object] 输出的是啥?"></a>[typeof null, null instanceof Object] 输出的是啥?</h4><blockquote>
+<p>答案: [[“object”, false]]  常识不解释</p>
+</blockquote>
+<h4 id="3-2-1-reduce-Math-pow-reduce-Math-pow-输出的是啥"><a href="#3-2-1-reduce-Math-pow-reduce-Math-pow-输出的是啥" class="headerlink" title="[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ] 输出的是啥?"></a>[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ] 输出的是啥?</h4><blockquote>
+<p>答案: 数组为空时会报错</p>
+</blockquote>
+<p>reduce 四个参数</p>
+<ul>
+<li>total    必需。初始值, 或者计算结束后的返回值。</li>
+<li>currentValue    必需。当前元素</li>
+<li>currentIndex    可选。当前元素的索引</li>
+<li>arr    可选。当前元素所属的数组对象。</li>
+</ul>
+<p>即</p>
+<ul>
+<li>Math.pow(3,2)</li>
+<li>Math.pow(9,1)</li>
+</ul>
+<h4 id="下面输出啥？"><a href="#下面输出啥？" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> val = <span class="string">'smtg'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Value is '</span> + (val === <span class="string">'smtg'</span>) ? <span class="string">'Something'</span> : <span class="string">'Nothing'</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案: Something  +运算符大于三目</p>
+</blockquote>
+<h4 id="下面输出啥？-1"><a href="#下面输出啥？-1" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">ary[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">ary.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x === <span class="literal">undefined</span>;&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案: []  Array.prototype.filter不会为空元素调用的</p>
+</blockquote>
+<h4 id="下面输出啥？-2"><a href="#下面输出啥？-2" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> two   = <span class="number">0.2</span></span><br><span class="line"><span class="keyword">var</span> one   = <span class="number">0.1</span></span><br><span class="line"><span class="keyword">var</span> eight = <span class="number">0.8</span></span><br><span class="line"><span class="keyword">var</span> six   = <span class="number">0.6</span></span><br><span class="line">[two - one == one, eight - six == two]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案:[true, false]  js精度问题</p>
+</blockquote>
+<h4 id="下面输出啥？-3"><a href="#下面输出啥？-3" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案:switch uses === internally and new String(x) !== x  内部是全等的？？</p>
+</blockquote>
+<h4 id="下面输出啥？-4"><a href="#下面输出啥？-4" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase2</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase2(<span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案:Case A      String（x）不会创建一个对象，但会返回一个字符串，即typeof String（1）===“string” </p>
+</blockquote>
+<h4 id="下面输出啥？-5"><a href="#下面输出啥？-5" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSane</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isEven(num) || isOdd(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">7</span>, <span class="number">4</span>, <span class="string">'13'</span>, <span class="number">-9</span>, <span class="literal">Infinity</span>];</span><br><span class="line">values.map(isSane);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案:[true, true, true, false, false]    无穷大％2给出NaN，-9％2给出-1（模运算符保持符号，所以它的结果只是可靠的，而不是0）</p>
+</blockquote>
+<h4 id="下面输出啥？-6"><a href="#下面输出啥？-6" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案:3, NaN, NaN   3在基数2中不存在，所以显然这是一个NaN，但是0呢？ parseInt会考虑一个假基数，并假设你的意思是10，所以它返回3。</p>
+</blockquote>
+<h4 id="下面输出啥？-7"><a href="#下面输出啥？-7" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray( <span class="built_in">Array</span>.prototype )</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案true   Array.prototype是一个数组 </p>
+</blockquote>
+<h4 id="下面输出啥？-8"><a href="#下面输出啥？-8" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</span><br><span class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案false   作为一个布尔值被认为是真的[0]。唉，在比较中使用它时，它会以不同的方式转换</p>
+</blockquote>
+<h4 id="下面输出啥？-9"><a href="#下面输出啥？-9" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]==[]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>答案false   比较运算符按照啥来比较？？</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/06/15/typescript-模块/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/15/typescript-模块/" itemprop="url">typescript-模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T12:01:05+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p> <img src="https://upload-images.jianshu.io/upload_images/10843623-d1427ac46b2dd12f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="typescript"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>模块在其自身的作用域里执行，而不是在全局作用域里；这意味着定义在一个模块里的变量，函数，类等等在模块外部是不可见的，除非你明确地使用export形式之一导出它们。 相反，如果想使用其它模块导出的变量，函数，类，接口等的时候，你必须要导入它们，可以使用 import形式之一。</p>
+</blockquote>
+<blockquote>
+<p>模块是自声明的；两个模块之间的关系是通过在文件级别上使用imports和exports建立的。</p>
+</blockquote>
+<blockquote>
+<p>TypeScript与ECMAScript 2015一样，任何包含顶级import或者export的文件都被当成一个模块。相反地，如果一个文件不带有顶级的import或者export声明，那么它的内容被视为全局可见的（因此对模块也是可见的）。</p>
+</blockquote>
+<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><blockquote>
+<p>任何声明（比如变量，函数，类，类型别名或接口）都能够通过添加export关键字来导出</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">interface</span> StringValidator &#123;</span><br><span class="line">    isAcceptable(s: <span class="built_in">string</span>): <span class="built_in">boolean</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>导出重命名 用 as</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> ZipCodeValidator <span class="keyword">implements</span> StringValidator &#123;</span><br><span class="line">    isAcceptable(s: <span class="built_in">string</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.length === <span class="number">5</span> &amp;&amp; numberRegexp.test(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123; ZipCodeValidator &#125;;</span><br><span class="line"><span class="keyword">export</span> &#123; ZipCodeValidator <span class="keyword">as</span> mainValidator &#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>重新导出</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">class</span> ParseIntBasedZipCodeValidator &#123;</span><br><span class="line">    isAcceptable(s: <span class="built_in">string</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.length === <span class="number">5</span> &amp;&amp; <span class="built_in">parseInt</span>(s).toString() === s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 导出原先的验证器但做了重命名,不会增加新的局部变量</span></span><br><span class="line"><span class="keyword">export</span> &#123;ZipCodeValidator <span class="keyword">as</span> RegExpBasedZipCodeValidator&#125; <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>或者一个模块可以包裹多个模块，并把他们导出的内容联合在一起通过语法：export * from “module”。</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">"./StringValidator"</span>; <span class="comment">// exports interface StringValidator</span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">"./LettersOnlyValidator"</span>; <span class="comment">// exports class LettersOnlyValidator</span></span><br><span class="line"><span class="keyword">export</span> * <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;  <span class="comment">// exports class ZipCodeValidator</span></span><br></pre></td></tr></table></figure>
+<h4 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h4><blockquote>
+<p>导入一个模块中的某个导出内容</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">import</span> &#123; ZipCodeValidator &#125; <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myValidator = <span class="keyword">new</span> ZipCodeValidator();</span><br></pre></td></tr></table></figure>
+<p>可以对导入内容重命名</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ZipCodeValidator <span class="keyword">as</span> ZCV &#125; <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;</span><br><span class="line"><span class="keyword">let</span> myValidator = <span class="keyword">new</span> ZCV();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将整个模块导入到一个变量，并通过它来访问模块的导出部分</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> validator <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;</span><br><span class="line"><span class="keyword">let</span> myValidator = <span class="keyword">new</span> validator.ZipCodeValidator();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>具有副作用的导入模块</p>
+</blockquote>
+<p>尽管不推荐这么做，一些模块会设置一些全局状态供其它模块使用。 这些模块可能没有任何的导出或用户根本就不关注它的导出。 使用下面的方法来导入这类模块</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"./my-module.js"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="默认导出"><a href="#默认导出" class="headerlink" title="默认导出"></a>默认导出</h4><blockquote>
+<p>每个模块都可以有一个default导出。 默认导出使用 default关键字标记；并且一个模块只能够有一个default导出。 需要使用一种特殊的导入形式来导入 default导出</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//JQuery.d.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">declare</span> <span class="keyword">let</span> $: JQuery;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> $;</span><br><span class="line"></span><br><span class="line"><span class="comment">// App.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> $ <span class="keyword">from</span> <span class="string">"JQuery"</span>;</span><br><span class="line"></span><br><span class="line">$(<span class="string">"button.continue"</span>).html( <span class="string">"Next Step..."</span> );</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>导出静态类</p>
+</blockquote>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ZipCodeValidator.ts</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> ZipCodeValidator &#123;</span><br><span class="line">    <span class="keyword">static</span> numberRegexp = <span class="regexp">/^[0-9]+$/</span>;</span><br><span class="line">    isAcceptable(s: <span class="built_in">string</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> s.length === <span class="number">5</span> &amp;&amp; ZipCodeValidator.numberRegexp.test(s);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Test.ts</span></span><br><span class="line"><span class="keyword">import</span> validator <span class="keyword">from</span> <span class="string">"./ZipCodeValidator"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> myValidator = <span class="keyword">new</span> validator();</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/15/typescript-模块/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/06/14/typescript-Symbol/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/14/typescript-Symbol/" itemprop="url">typescript-Symbol</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-14T16:29:33+08:00">
+                2018-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://upload-images.jianshu.io/upload_images/10843623-d1427ac46b2dd12f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="typescript"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>Symbol 新的原生类型</p>
+</blockquote>
+<ul>
+<li>symbol类型的值是通过Symbol构造函数创建的</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym1 = Symbol();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sym2 = Symbol(<span class="string">"key"</span>); <span class="comment">// 可选的字符串key</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Symbols是不可改变且唯一的</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> sym2 = Symbol(<span class="string">"key"</span>);</span><br><span class="line"><span class="keyword">let</span> sym3 = Symbol(<span class="string">"key"</span>);</span><br><span class="line"></span><br><span class="line">sym2 === sym3; <span class="comment">// false, symbols是唯一的</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>像字符串一样，symbols也可以被用做对象属性的键。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> sym = Symbol();</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    [sym]: <span class="string">"value"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj[sym]); <span class="comment">// "value"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Symbols也可以与计算出的属性名声明相结合来声明对象的属性和类成员。</li>
+</ul>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> getClassNameSymbol = Symbol();</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> C &#123;</span><br><span class="line">    [getClassNameSymbol]()&#123;</span><br><span class="line">       <span class="keyword">return</span> <span class="string">"C"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> c = <span class="keyword">new</span> C();</span><br><span class="line"><span class="keyword">let</span> className = c[getClassNameSymbol](); <span class="comment">// "C"</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Symbol.hasInstance<blockquote>
+<p>方法，会被instanceof运算符调用。构造器对象用来识别一个对象是否是其实例。</p>
+</blockquote>
+</li>
+<li>Symbol.isConcatSpreadable<blockquote>
+<p>布尔值，表示当在一个对象上调用Array.prototype.concat时，这个对象的数组元素是否可展开</p>
+</blockquote>
+</li>
+<li>Symbol.iterator<blockquote>
+<p>方法，被for-of语句调用。返回对象的默认迭代器</p>
+</blockquote>
+</li>
+<li>Symbol.match<blockquote>
+<p>方法，被String.prototype.match调用。正则表达式用来匹配字符串。</p>
+</blockquote>
+</li>
+<li>Symbol.replace<blockquote>
+<p>方法，被String.prototype.search调用。正则表达式返回被匹配部分在字符串中的索引。</p>
+</blockquote>
+</li>
+<li>Symbol.species<blockquote>
+<p>函数值，为一个构造函数。用来创建派生对象。</p>
+</blockquote>
+</li>
+<li>Symbol.split<blockquote>
+<p>方法，被String.prototype.split调用。正则表达式来用分割字符串。</p>
+</blockquote>
+</li>
+<li>Symbol.toPrimitive<blockquote>
+<p>方法，被ToPrimitive抽象操作调用。把对象转换为相应的原始值。</p>
+</blockquote>
+</li>
+<li>Symbol.toStringTag<blockquote>
+<p>方法，被内置方法Object.prototype.toString调用。返回创建对象时默认的字符串描述。</p>
+</blockquote>
+</li>
+<li>Symbol.unscopables<blockquote>
+<p>对象，它自己拥有的属性会被with作用域排除在外</p>
+</blockquote>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

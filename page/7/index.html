@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/7/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/7/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/03/20/es6-迭代器和生成器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/20/es6-迭代器和生成器/" itemprop="url">es6-迭代器和生成器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-20T00:00:00+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/10843623-4adb688267c9f4d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timg.jpg"></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+<p>从家里回来了，翻了翻书，发现es6的知识点，忘了不少，还好记了点笔记，今年需要更加努力，看着以前的同学都开始娶妻生子，买车买房，我也要努力为自己的未来考虑</p>
+</blockquote>
+<blockquote>
+<p>我的博客地址 ：<a href="https://link.jianshu.com/?t=http%3A%2F%2Fwww.aymfx.cn%2F" target="_blank" rel="noopener">http://www.aymfx.cn/</a></p>
+</blockquote>
+<h3 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h3><blockquote>
+<p>一个迭代器对象 ，知道如何每次访问集合中的一项， 并跟踪该序列中的当前位置。在  JavaScript 中 迭代器是一个对象，它提供了一个next() 方法，用来返回序列中的下一项。这个方法返回包含两个属性：done和 value。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//这是模仿es6迭代器的方式</span><br><span class="line">    function createIterator (items)&#123;</span><br><span class="line">        var i =0;</span><br><span class="line">        return &#123;</span><br><span class="line">            next:function()&#123;</span><br><span class="line">                var done = (i&gt;=items.length);</span><br><span class="line">                var value = !done ? items[i++]:undefined;</span><br><span class="line">                </span><br><span class="line">                return &#123;</span><br><span class="line">                    done:done,</span><br><span class="line">                    value:value</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    var iterator= createIterator([1,2,3]);</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    </span><br><span class="line">//&#123;done: false, value: 1&#125;</span><br><span class="line">//VM42:18 &#123;done: false, value: 2&#125;</span><br><span class="line">//VM42:19 &#123;done: false, value: 3&#125;</span><br><span class="line">//VM42:20 &#123;done: true, value: undefined&#125;</span><br><span class="line">//VM42:21 &#123;done: true, value: undefined&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是个简单的es5的迭代器，在es6的迭代器更加复杂</p>
+</blockquote>
+<h3 id="什么是生成器"><a href="#什么是生成器" class="headerlink" title="什么是生成器"></a>什么是生成器</h3><blockquote>
+<p>虽然自定义的迭代器是一个有用的工具，但由于需要显式地维护其内部状态，因此需要谨慎地创建。Generators提供了一个强大的选择：它允许你定义一个包含自有迭代算法的函数， 同时它可以自动维护自己的状态。它是这样表示的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//生成器</span><br><span class="line"></span><br><span class="line">function *createIterator()&#123;</span><br><span class="line">    yield 1;</span><br><span class="line">    yield 2;</span><br><span class="line">    yield 3;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">//生成器的调用方式与普通函数相同，只不过返回的是一个迭代器</span><br><span class="line"> var iterator= createIterator();</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line"></span><br><span class="line">//&#123;value: 1, done: false&#125;</span><br><span class="line">//VM55:12 &#123;value: 2, done: false&#125;</span><br><span class="line">//VM55:13 &#123;value: 3, done: false&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>每个yield相当于一个调用一次next方法，而且每次执行yield都会暂停一次。函数名前面的*代表它是一个生成器</p>
+</blockquote>
+<blockquote>
+<p>yield只能在生成器中用，不能在普通函数使用,生成器的内部函数也不能使用（语法错误），另外yield关键字可以返回任何值或者表达式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function * createIterator(itmes)&#123;</span><br><span class="line">    for(let i = 0; i&lt; items.length;i++)&#123;</span><br><span class="line">        yield items[i]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var iterator= createIterator([1,2,3]);</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line"></span><br><span class="line">//&#123;value: 1, done: false&#125;</span><br><span class="line">//VM98:8 &#123;value: 2, done: false&#125;</span><br><span class="line">//VM98:9 &#123;value: 3, done: false&#125;</span><br><span class="line">//VM98:10 &#123;value: undefined, done: true&#125;</span><br><span class="line">//VM98:11 &#123;value: undefined, done: true&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="生成函数表达式"><a href="#生成函数表达式" class="headerlink" title="生成函数表达式"></a>生成函数表达式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">let createIterator = function *(items) &#123;</span><br><span class="line">    for (let i = 0; i&lt; items.length ; i++)&#123;</span><br><span class="line">        yield items[i];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var iterator= createIterator([1,2,3]);</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line">    console.log(iterator.next());</span><br><span class="line"></span><br><span class="line">//VM108:10 &#123;value: 1, done: false&#125;</span><br><span class="line">//VM108:11 &#123;value: 2, done: false&#125;</span><br><span class="line">//VM108:12 &#123;value: 3, done: false&#125;</span><br><span class="line">//VM108:13 &#123;value: undefined, done: true&#125;</span><br><span class="line">//VM108:14 &#123;value: undefined, done: true&#125;</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line"></span><br><span class="line">&gt; 不能用箭头函数来创建生成器</span><br><span class="line"></span><br><span class="line">#### 生成器对象的方式</span><br></pre></td></tr></table></figure>
+<p>let o = {<br>    createIterator:function *(items) {<br>        for (let i = 0; i&lt; items.length ; i++){<br>        yield items[i];<br>    }<br>    }<br>}</p>
+<p>let o.createIterator([1,2,3])</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt; 也可以用es6的写法</span><br></pre></td></tr></table></figure>
+<p>let o = {<br>    *createIterator(items) {<br>        for (let i = 0; i&lt; items.length ; i++){<br>        yield items[i];<br>    }<br>    }<br>}</p>
+<p>let o.createIterator([1,2,3])</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 可迭代对象和for-of循环</span><br><span class="line">&gt; es6中所有的集合对象（数组，Set集合以及Map集合）和字符串都是可迭代对象，可迭代对象都是具有Symbol.iterator属性，通过指定的函数可以返回一个作用于附属对象的迭代器</span><br><span class="line"></span><br><span class="line">&gt; 由生成器创建的迭代器都是可迭代对象，因为它会默认为Symbol.iterator属性赋值。</span><br><span class="line"></span><br><span class="line">&gt; for -of 每次执行都会调用next()方法，并将返回的结果对象的value存储在变量中，直到遇到对象的done属性为true</span><br></pre></td></tr></table></figure>
+<p> let values = [1,2,3];</p>
+<p>for(let value of values){<br>      console.log(value);<br>}</p>
+<p>//返回结果<br>// 1<br>// 2<br>// 3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### 访问可迭代对象的默认的迭代器</span><br></pre></td></tr></table></figure></p>
+<p>let values = [1,2,3];<br>let iterator = values<a href="">Symbol.iterator</a>;</p>
+<p>console.log(iterator.next());<br>console.log(iterator.next());<br>console.log(iterator.next());<br>console.log(iterator.next());</p>
+<p>//运行结果</p>
+<p>//{value: 1, done: false}<br>//VM57:5 {value: 2, done: false}<br>//VM57:6 {value: 3, done: false}<br>//VM57:7 {value: undefined, done: true}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 创建可以迭代的对象</span><br><span class="line">&gt; 默认情况下开发者定义的对象是不能迭代的，但是我们可以给Symbol.iterator属性加一个生成器</span><br></pre></td></tr></table></figure></p>
+<p>let arr = {<br>      items:[],<br>      *<a href="">Symbol.iterator</a>{<br>          for(let item of this.items){<br>        yield item;<br>                                                        }<br>                                            }<br>}<br>let a = [1,2,3];<br>a.forEach(value =&gt; arr.items.push(value));</p>
+<p>for(let x of arr){<br>      console.log(x);<br> }<br>// 1<br>//2<br>//3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">### 内建迭代器</span><br><span class="line">&gt; es6自己定义了一些迭代器，我们只有在无法用这些内建迭代器实现功能时才可能自己创建</span><br><span class="line"></span><br><span class="line">#### 集合对象迭代器</span><br><span class="line">&gt; es6的三种对象数组，Set集合，Map集合都内置了下列三种迭代器</span><br><span class="line"> - entries() 返回一个迭代器，其值为多个键值对</span><br><span class="line"> - values() 返回一个迭代器，其值为集合的值</span><br><span class="line">- keys() 返回一个迭代器，其值为集合中的所有键名</span><br><span class="line"></span><br><span class="line">&gt; entries()栗子 三种表现</span><br></pre></td></tr></table></figure></p>
+<p>let colors = [‘red’,’blue’,’green’];<br>let tracking = new Set([123,567,9012]);<br>let data = new Map();<br>data.set(‘title’,’es6教程’);<br>data.set(‘format’,’ebook’);<br>for (let entry of colors.entries()){<br>      console.log(entry);<br>}<br>for (let entry of tracking .entries()){<br>      console.log(entry);<br>}<br>for (let entry of data.entries()){<br>      console.log(entry);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![运行结果](http://upload-images.jianshu.io/upload_images/10843623-ac216eee2bd7b0b6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; values()迭代器</span><br></pre></td></tr></table></figure></p>
+<p>let colors = [‘red’,’blue’,’green’];<br>let tracking = new Set([123,567,9012]);<br>let data = new Map();<br>data.set(‘title’,’es6教程’);<br>data.set(‘format’,’ebook’);<br>for (let entry of colors.values()){<br>      console.log(entry);<br>}<br>for (let entry of tracking .values()){<br>      console.log(entry);<br>}<br>for (let entry of data.values()){<br>      console.log(entry);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-3c3a015d2b46b429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; 数组的values()谷歌暂不支持，所以我们需要小心使用这些方法，有的浏览器还是支持的，谷歌不支持我肯定不会用</span><br><span class="line"></span><br><span class="line">&gt; keys()迭代器</span><br></pre></td></tr></table></figure></p>
+<p>let colors = [‘red’,’blue’,’green’];<br>let tracking = new Set([123,567,9012]);<br>let data = new Map();<br>data.set(‘title’,’es6教程’);<br>data.set(‘format’,’ebook’);<br>for (let entry of colors.keys()){<br>      console.log(entry);<br>}<br>for (let entry of tracking .keys()){<br>      console.log(entry);<br>}<br>for (let entry of data.keys()){<br>      console.log(entry);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-ff3457147502690e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; 不同的集合类型在使用for-of迭代有各自默认的迭代器</span><br></pre></td></tr></table></figure></p>
+<p>let colors = [‘red’,’blue’,’green’];<br>let tracking = new Set([123,567,9012]);<br>let data = new Map();<br>data.set(‘title’,’es6教程’);<br>data.set(‘format’,’ebook’);</p>
+<p>//与colors.values()方法相同<br>for(let value of colors){<br>  console.log(value);<br>}</p>
+<p>//与tracking .values()方法相同<br>for(let value of tracking ){<br>  console.log(value);<br>}</p>
+<p>//与data.entries()方法相同<br>for(let value of data){<br>  console.log(value);<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-5db145e4054950f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; WeakMap和WekSet因为需要管理弱引用，因此无法切确知道集合中存在的值，所以不能被迭代</span><br><span class="line"></span><br><span class="line">#### 解构的方式来用for-of</span><br></pre></td></tr></table></figure>
+<p>let data = new Map();<br>data.set(‘title’,’es6教程’);<br>data.set(‘format’,’ebook’);</p>
+<p>for(let [key,value] of  data){<br>  console.log(key+”:”+value);<br>}</p>
+<p>//title:es6教程<br>//format:ebook<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">### 字符串迭代器</span><br><span class="line">&gt; es5发布以后，字符串的慢慢变的像数组，于是我们有些方式可以用了，例如我们可以通过[]来获取字符串的中的字符。但是我们怎么访问双字节，就如下面这种情况</span><br></pre></td></tr></table></figure></p>
+<p>var message = ‘A 𠮷 B’;<br>for(let i = 0;i&lt;message.length;i++){<br>  console.log(message[i]);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-057bb5d93c53e471.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">&gt; 我们可以用 for-of来做迭代</span><br></pre></td></tr></table></figure></p>
+<p>var message = ‘A𠮷B’;<br>for(let i of message){<br>  console.log(i);<br>}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-227069880ae816f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">### NodeList迭代器</span><br><span class="line">&gt; 虽然在es6之前Nodelist和数组在内部差异表现不一致，容易造成困扰，但是es6之后，nodelist也有了自己的默认的迭代器，并且实现方式一致，因此我们可以这样写了</span><br></pre></td></tr></table></figure></p>
+<p>var divs = document.getElementsByTagName(‘div’);</p>
+<p>for(let nodeEle of divs){<br>  console.log(nodeEle);<br>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">### 展开运算符与非数组可迭代对象</span><br></pre></td></tr></table></figure>
+<p>//Set<br>let set = new Set([1,3,3,5,6]),arr = […set];<br>console.log(arr); // [1, 3, 5, 6]</p>
+<p>//Map<br>let map= new Map([[‘name’,’ly’],[‘sex’,’男’]]),arr = […map];<br>console.log(arr);<br> //0:(2) [“name”, “ly”]<br>//1:(2) [“sex”, “男”]</p>
+<p>//数组字面量<br>let small = [1,2.3,4],mid = [2,3,4,6],all = [0,…small,…mid];<br>console.log(all); //[0, 1, 2.3, 4, 2, 3, 4, 6]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 高级迭代器功能</span><br><span class="line">&gt; 给迭代器传参数</span><br></pre></td></tr></table></figure></p>
+<p>function *createIterator(){<br>    let first = yield 1;<br>    let second = yield first+2;<br>    let third= yield second +3;<br>}<br>let iterator = createIterator();<br>console.log(iterator.next(1));<br>console.log(iterator.next(2));<br>console.log(iterator.next(3));<br>console.log(iterator.next(1));<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-2346da44ba0629fc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line">&gt; 第一个next和最后一个next,传的值都会被丢弃，因为之前和之后都不存在可以用的值，所以传参毫无意义，每次传的参数都是作为上一个定义参数的值.</span><br><span class="line"></span><br><span class="line">###  在迭代器中抛出错误</span><br><span class="line">&gt; 有时候我们需要增强生成器内部的编程弹性，需要将一些错误抛出去，让迭代器继续运行。</span><br></pre></td></tr></table></figure></p>
+<p>function *createIterator(){<br>    let first = yield 1;<br>    let second = yield first+2;<br>    let third= yield second +3;<br>}<br>let iterator = createIterator();<br>console.log(iterator.next(1));<br>console.log(iterator.next(4));<br>console.log(iterator.throw(new Error(“boom”)));<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-37f34e63ac70e131.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; 我们如何处理这些错误呢，可以这么写</span><br></pre></td></tr></table></figure></p>
+<p>function *createIterator(){<br>    let first = yield 1;<br>    let second;<br>    try{<br>      second = yield first+2;<br>}catch(x){<br>    second = 3<br>}<br>   yield second +3;<br>}<br>let iterator = createIterator();<br>console.log(iterator.next(1));<br>console.log(iterator.next(4));<br>console.log(iterator.throw(new Error(“boom”)));<br>console.log(iterator.next());</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-45c1a600797830a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">####  通过return 可以提前结束函数的执行，再一次调用，属性done将会被置为true</span><br></pre></td></tr></table></figure>
+<p> function *createIterator(){<br>        yield 1;<br>        return;<br>        yield 2;<br>        yield 3;<br>}<br>let iterator = createIterator();<br>console.log(iterator .next());<br>console.log(iterator .next());<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-0b7221c96e78f887.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">&gt; return 返回的值也可以作为一次执行的结果</span><br></pre></td></tr></table></figure></p>
+<p> function *createIterator(){<br>        yield 1;<br>        return 20;<br>        yield 2;<br>        yield 3;<br>}<br>let iterator = createIterator();<br>console.log(iterator .next());<br>console.log(iterator .next());<br>console.log(iterator .next());<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">![a.png](http://upload-images.jianshu.io/upload_images/10843623-af97635a515ca02a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)</span><br><span class="line"></span><br><span class="line">### 委托生成器</span><br><span class="line">&gt; 如果我们需要将两个迭代器分别执行，但是又想只调用一个同样的生成器，我们可以用委托生成器</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">function *createIteratorOne()&#123;</span><br><span class="line">        yield 1;</span><br><span class="line">        yield 2;</span><br><span class="line">&#125;</span><br><span class="line">function *createIteratorTwo()&#123;</span><br><span class="line">        yield &apos;blue&apos;;</span><br><span class="line">        yield &apos;;white&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> function *createIterator()&#123;</span><br><span class="line">        yield *createIteratorOne();</span><br><span class="line">          yield *createIteratorTwo();</span><br><span class="line">&#125;</span><br><span class="line">let iterator = createIterator();</span><br><span class="line">console.log(iterator .next());</span><br><span class="line">console.log(iterator .next());</span><br><span class="line">console.log(iterator .next());</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>yield <em> 也可以用于字符串 例如 yield </em> ‘hello’,这时会调用字符串的默认迭代器</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> function *createIterator()&#123;</span><br><span class="line">       yield * &apos;hello&apos;</span><br><span class="line">&#125;</span><br><span class="line">let iterator = createIterator();</span><br><span class="line">console.log(iterator .next());</span><br><span class="line">console.log(iterator .next());</span><br><span class="line">console.log(iterator .next());</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/10843623-e847af8781dfa3e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="a.png"></p>
+<h3 id="异步任务执行"><a href="#异步任务执行" class="headerlink" title="异步任务执行"></a>异步任务执行</h3><blockquote>
+<p>生成器支持在代码中暂停代码的执行，因此我们可以挖掘一些用法</p>
+</blockquote>
+<h4 id="简单任务生成器"><a href="#简单任务生成器" class="headerlink" title="简单任务生成器"></a>简单任务生成器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">function run(taskDef)&#123;</span><br><span class="line">    //创建一个无使用限制的迭代器</span><br><span class="line">    let task = taskDef();</span><br><span class="line">    //开始执行任务</span><br><span class="line">    let result = task.next();</span><br><span class="line">    //循环调用next()的函数</span><br><span class="line">    function step()&#123;</span><br><span class="line">        if(!result.done)&#123;</span><br><span class="line">                result = task.next();</span><br><span class="line">                 step();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">//开始执行迭代</span><br><span class="line">  step();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用run()函数</span><br><span class="line">run(function *()&#123;</span><br><span class="line">      console.log(1);</span><br><span class="line">        yield;</span><br><span class="line">      console.log(2);</span><br><span class="line">        yield;</span><br><span class="line">      console.log(3);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//逐步输出 1 2 3</span><br></pre></td></tr></table></figure>
+<p>####向任务执行器传递数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function run(taskDef)&#123;</span><br><span class="line">    //创建一个无使用限制的迭代器</span><br><span class="line">    let task = taskDef();</span><br><span class="line">    //开始执行任务</span><br><span class="line">    let result = task.next();</span><br><span class="line">    //循环调用next()的函数</span><br><span class="line">    function step()&#123;</span><br><span class="line">        if(!result.done)&#123;</span><br><span class="line">                result = task.next(result.value);</span><br><span class="line">                 step();</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">//开始执行迭代</span><br><span class="line">  step();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用run()函数</span><br><span class="line">run(function *()&#123;</span><br><span class="line">    let value =  yield 1;</span><br><span class="line">    console.log(value );</span><br><span class="line">    value =  yield value + 1;</span><br><span class="line">    console.log(value );</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//逐步输出 1 2</span><br></pre></td></tr></table></figure></p>
+<h4 id="异步任务执行器"><a href="#异步任务执行器" class="headerlink" title="异步任务执行器"></a>异步任务执行器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">function run(taskDef)&#123;</span><br><span class="line">    //创建一个无使用限制的迭代器</span><br><span class="line">    let task = taskDef();</span><br><span class="line">    //开始执行任务</span><br><span class="line">    let result = task.next();</span><br><span class="line">    //循环调用next()的函数</span><br><span class="line">    function step()&#123;</span><br><span class="line">        if(!result.done)&#123;</span><br><span class="line">                if(typeof result.value ===&apos;function&apos;)&#123;</span><br><span class="line">                         result.value(function(err,data)&#123;</span><br><span class="line">                          if(err)&#123;result = task.throw(err)&#125;;</span><br><span class="line">                          return;</span><br><span class="line">&#125;)</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">               result = task.next();</span><br><span class="line">                 step();</span><br><span class="line">&#125;</span><br><span class="line">               </span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line">//开始执行迭代</span><br><span class="line">  step();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//读取文件函数</span><br><span class="line">let fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function readFile(filename)&#123;</span><br><span class="line">        return function(callback)&#123;</span><br><span class="line">                fs.readFile(filename.,callback)</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//调用</span><br><span class="line">run(function *()&#123;</span><br><span class="line">        let contents = yield readFile(&quot;config.json&quot;);</span><br><span class="line">         doSomethingWith(contents);</span><br><span class="line">          console.log(&quot;Done&quot;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/03/17/es6-类/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/17/es6-类/" itemprop="url">es6-类</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T00:00:00+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/10843623-71a29ec16eb69664.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timg.jpg"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>最近这两天有点不在状态，感觉有种无形的压力压在身上，变的异常的暴躁了，唉，前端这条路真的走对了吗？算了，敲代码吧。</p>
+</blockquote>
+<h4 id="类声明"><a href="#类声明" class="headerlink" title="类声明"></a>类声明</h4><blockquote>
+<p>要声明一个类,首先使用 class 关键字，紧接着是类的名字，然后其他内部方法和属性类似于对象的字面量写法</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> class PersonClass&#123;</span><br><span class="line">        //定义一个类似es5写法的构造函数，通过关键字constructor</span><br><span class="line">            constructor(name)&#123;</span><br><span class="line">                      this.name = name</span><br><span class="line">            &#125;</span><br><span class="line">       //定义方法</span><br><span class="line">          sayName()&#123;</span><br><span class="line">                  console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">let person = new PersonClass(&quot;ly&quot;);</span><br><span class="line">person.sayName();</span><br><span class="line">console.log(person instanceof PersonClass);</span><br><span class="line">console.log(person instanceof Object);</span><br><span class="line"></span><br><span class="line">console.log(typeof PersonClass);</span><br><span class="line">console.log(typeof  PersonClass.prototype.sayName);</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/10843623-83d30f20fab6f12f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="a.png"></p>
+<blockquote>
+<p>es5 对应的等价代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">let PersonType2 = (function()&#123;</span><br><span class="line">    &quot;use strict&quot;</span><br><span class="line">    const PersonType2 = function(name)&#123;</span><br><span class="line">        //确保通过关键字new调用该函数</span><br><span class="line">        if(typeof new.target === &quot;undefined&quot;)&#123;</span><br><span class="line">            throw new Error(&quot;必须通过new来创建&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Object.defineProperty(PersonType2.prototype,&apos;sayName&apos;,&#123;</span><br><span class="line">        value:function()&#123;</span><br><span class="line">            //确保不通过关键字new调用该函数</span><br><span class="line">        if(typeof new.target !== &quot;undefined&quot;)&#123;</span><br><span class="line">            throw new Error(&quot;不能通过new来创建&quot;)</span><br><span class="line">        &#125;</span><br><span class="line">        console.log(this.name)</span><br><span class="line">        &#125;,</span><br><span class="line">        enumerable:false,</span><br><span class="line">        writable:true,</span><br><span class="line">        configurable:true</span><br><span class="line">    &#125;)</span><br><span class="line">    return PersonType2;</span><br><span class="line">&#125;())</span><br></pre></td></tr></table></figure>
+<h4 id="类表达式"><a href="#类表达式" class="headerlink" title="类表达式"></a>类表达式</h4><blockquote>
+<p>跟函数一样他也存在表达式写法，好像还很雷同</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> let PersonClass = class &#123;</span><br><span class="line">        //定义一个类似es5写法的构造函数，通过关键字constructor</span><br><span class="line">            constructor(name)&#123;</span><br><span class="line">                      this.name = name</span><br><span class="line">            &#125;</span><br><span class="line">       //定义方法</span><br><span class="line">          sayName()&#123;</span><br><span class="line">                  console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">let person = new PersonClass(&quot;ly&quot;);</span><br><span class="line">person.sayName();</span><br><span class="line">console.log(person instanceof PersonClass);</span><br><span class="line">console.log(person instanceof Object);</span><br><span class="line"></span><br><span class="line">console.log(typeof PersonClass);</span><br><span class="line">console.log(typeof  PersonClass.prototype.sayName);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上述两种类的写法，它不会出现变量提升的现象，所以我们的那种写法，对结果没啥太大区别</p>
+</blockquote>
+<h4 id="类也将作为一等公民"><a href="#类也将作为一等公民" class="headerlink" title="类也将作为一等公民"></a>类也将作为一等公民</h4><blockquote>
+<p>一等公民是指一个可以传入的函数，可以从函数返回，并且可以赋值给变量的值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//像这样的方式</span><br><span class="line">function createObject(classDef)&#123;</span><br><span class="line">      return new ClassDef();</span><br><span class="line">&#125;</span><br><span class="line">let objClass = createObject(class &#123;</span><br><span class="line">      sayHi() &#123;</span><br><span class="line">      console.log(&apos;hi&apos;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//函数表达式还有一种调用方式，就是通过立即调用类构造函数可以创建单例</span><br><span class="line"></span><br><span class="line">let person = new class&#123;</span><br><span class="line">      constructor(name)&#123;</span><br><span class="line">              this.name = name;  </span><br><span class="line">      &#125;</span><br><span class="line">       sayName() &#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">&#125;(&apos;ly&apos;)</span><br><span class="line">person.sayName() //ly</span><br></pre></td></tr></table></figure>
+<h3 id="访问器属性"><a href="#访问器属性" class="headerlink" title="访问器属性"></a>访问器属性</h3><blockquote>
+<p>类支持在构造函数下创建自己的属性，但是类也支持直接在原型上定义访问器的属性,通过 get 和 set 来获得值或者设置值</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">    constructor(name) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    set ages(age) &#123;</span><br><span class="line">        return this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line">    get ages() &#123;</span><br><span class="line">        return this.age+10;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let person = new Person(&apos;ly&apos;);</span><br><span class="line"></span><br><span class="line">person.ages = 18</span><br><span class="line">console.log(person.ages);</span><br><span class="line">person.agess = 18</span><br><span class="line">console.log(person.agess);</span><br><span class="line"></span><br><span class="line">var descriptor = Object.getOwnPropertyDescriptor(Person.prototype,&apos;ages&apos;);</span><br><span class="line">console.log(&quot;get&quot; in descriptor); //true</span><br><span class="line">console.log(&quot;set&quot; in descriptor);//true</span><br><span class="line">console.log(descriptor.enumerable); //false</span><br></pre></td></tr></table></figure>
+<h4 id="生成器方法与类的结合"><a href="#生成器方法与类的结合" class="headerlink" title="生成器方法与类的结合"></a>生成器方法与类的结合</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class MyClass &#123;</span><br><span class="line">    * createIterator() &#123;</span><br><span class="line">        yield 1;</span><br><span class="line">        yield 2;</span><br><span class="line">        yield 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var b = new MyClass()</span><br><span class="line">var a = b.createIterator();</span><br><span class="line">console.log(a.next());</span><br><span class="line">console.log(a.next());</span><br><span class="line">console.log(a.next());</span><br><span class="line">console.log(a.next());</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/10843623-bb30ba005f00fc95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="a.png"></p>
+<h4 id="我们可以通过-Symbol-iterator-属性定义一个默认的类迭代器"><a href="#我们可以通过-Symbol-iterator-属性定义一个默认的类迭代器" class="headerlink" title="我们可以通过 Symbol.iterator 属性定义一个默认的类迭代器"></a>我们可以通过 Symbol.iterator 属性定义一个默认的类迭代器</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Collection &#123;</span><br><span class="line">    constructor() &#123;</span><br><span class="line">        this.items = []</span><br><span class="line">    &#125;</span><br><span class="line">    *[Symbol.iterator]() &#123;</span><br><span class="line">        yield * this.items.entries();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var collection = new Collection();</span><br><span class="line"></span><br><span class="line">collection.items.push(1)</span><br><span class="line">collection.items.push(12)</span><br><span class="line">collection.items.push(16)</span><br><span class="line"></span><br><span class="line">for (const x of collection) &#123;</span><br><span class="line">    console.log(x);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="http://upload-images.jianshu.io/upload_images/10843623-8e8e1426697003fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="a.png"></p>
+<h3 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h3><blockquote>
+<p>es5 来模拟静态成员</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function PersonType(name)&#123;</span><br><span class="line">    this.name = name;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//静态方法</span><br><span class="line">PersonType.create = function(name)&#123;</span><br><span class="line">    return new PersonType(name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//实例方法</span><br><span class="line">PersonType.prototype.sayName = function()&#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var person = PersonType.create(&quot;ly&quot;);</span><br><span class="line">person.name = &quot;li&quot;</span><br><span class="line">console.log(person); //ly  （不是很懂静态成员是干嘛的，就是为了让构造函数也能像普通函数一样挂在函数吗？）</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在 es 可以通过 static 来创建静态成员</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class PersonClass &#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">    sayName()&#123;</span><br><span class="line">        console.log(&quot;hi&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static create(name)&#123;</span><br><span class="line">        return new PersonClass(name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let person = PersonClass.create(&apos;ly&apos;);</span><br><span class="line"></span><br><span class="line">console.log(person.name); //ly</span><br></pre></td></tr></table></figure>
+<h3 id="继承与派生类"><a href="#继承与派生类" class="headerlink" title="继承与派生类"></a>继承与派生类</h3><blockquote>
+<p>在 es6 之前继承需要这么长的代码，而且 haibuyi</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">function Reactangle(length,width)&#123;</span><br><span class="line">    this.length = length;</span><br><span class="line">     this.width = width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Reactangle.prototype.getArea = function()&#123;</span><br><span class="line">    return this.length*this.width;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Square(length)&#123;</span><br><span class="line">    Reactangle.call(this,length,length)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Square.prototype = Object.create(Reactangle.prototype,&#123;</span><br><span class="line">    constructor:&#123;</span><br><span class="line">        value:Square,</span><br><span class="line">        enumerable:true,</span><br><span class="line">        writeable:true,</span><br><span class="line">        configurable:true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var square = new Square(4);</span><br><span class="line"></span><br><span class="line">console.log(square.getArea()); //16</span><br><span class="line">console.log(square instanceof Square);//true</span><br><span class="line">console.log(square instanceof Reactangle);//true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这样的类继承更加 清晰</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">class Reactangle &#123;</span><br><span class="line">    constructor(length, width) &#123;</span><br><span class="line">        this.length = length;</span><br><span class="line">        this.width = width;</span><br><span class="line">        console.log(this.length,this.width);</span><br><span class="line">    &#125;</span><br><span class="line">    getArea() &#123;</span><br><span class="line"></span><br><span class="line">        return this.length * this.width</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">    constructor(length) &#123;</span><br><span class="line"></span><br><span class="line">        super(length, length)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var square = new Square(3);</span><br><span class="line"></span><br><span class="line">console.log(square.getArea()); //9</span><br><span class="line">console.log(square instanceof Square); //true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是 super 的默认是设置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Squery extends Reactangle &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//等价于</span><br><span class="line"></span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">    constructor(...args)&#123;</span><br><span class="line">        super(...args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类方法遮蔽"><a href="#类方法遮蔽" class="headerlink" title="类方法遮蔽"></a>类方法遮蔽</h4><blockquote>
+<p>派生类中的方法总会覆盖基类中的同名方法。这种覆盖只是屏蔽</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Reactangle &#123;</span><br><span class="line">    constructor(length, width) &#123;</span><br><span class="line">        this.length = length;</span><br><span class="line">        this.width = width;</span><br><span class="line">        console.log(this.length,this.width);</span><br><span class="line">    &#125;</span><br><span class="line">    getArea() &#123;</span><br><span class="line"></span><br><span class="line">        return this.length * this.width</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">     getArea() &#123;</span><br><span class="line">         return this.length*this.length;</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们也可以屏蔽之后在调用</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">class Reactangle &#123;</span><br><span class="line">    constructor(length, width) &#123;</span><br><span class="line">        this.length = length;</span><br><span class="line">        this.width = width;</span><br><span class="line">        console.log(this.length,this.width);</span><br><span class="line">    &#125;</span><br><span class="line">    getArea() &#123;</span><br><span class="line">        return this.length * this.width</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">     getArea() &#123;</span><br><span class="line">         return super.getArea();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var square = new Square(3,3);</span><br><span class="line"></span><br><span class="line">console.log(square.getArea()); //9</span><br><span class="line">console.log(square instanceof Square); //true</span><br></pre></td></tr></table></figure>
+<h3 id="静态成员继承"><a href="#静态成员继承" class="headerlink" title="静态成员继承"></a>静态成员继承</h3><blockquote>
+<p>通过 static 创建的静态成员,静态变量不能被子类继承</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">class Reactangle &#123;</span><br><span class="line">    constructor(length, width) &#123;</span><br><span class="line">        this.length = length;</span><br><span class="line">        this.width = width;</span><br><span class="line">        console.log(this.length,this.width);</span><br><span class="line">    &#125;</span><br><span class="line">    getArea() &#123;</span><br><span class="line"></span><br><span class="line">        return this.length * this.width</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    static create(length,width)&#123;</span><br><span class="line">        return new Reactangle(length,width)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">     getArea() &#123;</span><br><span class="line">         return super.getArea();</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var square = Square.create(3,4);</span><br><span class="line"></span><br><span class="line">console.log(square.getArea()); //9</span><br><span class="line">console.log(square instanceof Square); //true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类相当于实例的原型， 所有在类中定义的方法， 都会被实例继承。 如果在一个方法前， 加上 static 关键字， 就表示该方法不会被实例继承， 而是直接通过类来调用， 这就称为“ 静态方法” (好像理解了点)</p>
+</blockquote>
+<h3 id="派生自表达式的类"><a href="#派生自表达式的类" class="headerlink" title="派生自表达式的类"></a>派生自表达式的类</h3><blockquote>
+<p>只要一个函数具有[Constuctor]属性和原型</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Reactangle(length,length)&#123;</span><br><span class="line">    this.length = length;</span><br><span class="line">    this.width  = width;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Reactangle.prototype.getArea = function()&#123;</span><br><span class="line">    return this.length*this.width</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Square extends Reactangle &#123;</span><br><span class="line">     constructor (length) &#123;</span><br><span class="line">         super(length,length)</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var square = new Square(3);</span><br><span class="line"></span><br><span class="line">console.log(square.getArea()); //9</span><br><span class="line">console.log(square instanceof Square); //true</span><br></pre></td></tr></table></figure>
+<h3 id="继承的高级用法"><a href="#继承的高级用法" class="headerlink" title="继承的高级用法"></a>继承的高级用法</h3><blockquote>
+<p>下面的栗子可以动态确定使用那个基类，更好的辅助开发</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">let SerializableMixin = &#123;</span><br><span class="line">    serialize()&#123;</span><br><span class="line">        return JSON.stringify(this)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let AreaMixin = &#123;</span><br><span class="line">    getArea() &#123;</span><br><span class="line">        return this.length*this.width;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function mixin(...mixins)&#123;</span><br><span class="line">    var base = function()&#123;&#125;;</span><br><span class="line">    Object.assign(base.prototype,...mixins);</span><br><span class="line">    return base;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Square extends mixin (AreaMixin,SerializableMixin) &#123;</span><br><span class="line">      constructor (length)&#123;</span><br><span class="line">          super();</span><br><span class="line">          this.length = length;</span><br><span class="line">          this.width = length;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var x = new Square(3)</span><br><span class="line">console.log(x.getArea())  //9</span><br><span class="line">console.log(x.serialize()) //&#123;&quot;length&quot;:3,&quot;width&quot;:3&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="类的-Symbol-species-属性"><a href="#类的-Symbol-species-属性" class="headerlink" title="类的 Symbol.species 属性"></a>类的 Symbol.species 属性</h3><blockquote>
+<p>Symbol.species 是指定一个构造函数创建派生对象的函数值属性,比如当我们继承一个 Array 时，我们调用其方法产生的对象将不再是原始的类而是派生出来的类，比如</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class MyArray extends Array &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let items = new MyArray(1,3,4,5),</span><br><span class="line">    subitems = items.map(item =&gt; item*2);</span><br><span class="line"></span><br><span class="line">console.log(items instanceof MyArray); //true</span><br><span class="line">console.log(subitems instanceof MyArray); //true</span><br><span class="line">console.log(items instanceof Array);  //true</span><br><span class="line">console.log(subitems instanceof Array); //true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是实际上也不是这么一回事，于是我加了这段代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class MyArray extends Array &#123;</span><br><span class="line">    static get [Symbol.species]()&#123;</span><br><span class="line">        return RegExp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let items = new MyArray(1,3,4,5),</span><br><span class="line">    subitems = items.map(item =&gt; item*2);</span><br><span class="line"></span><br><span class="line">console.log(items instanceof MyArray); //true</span><br><span class="line">console.log(subitems instanceof MyArray); //false</span><br><span class="line">console.log(items instanceof Array);  //true</span><br><span class="line">console.log(subitems instanceof Array); //false</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>mdn 的解释一下代码参考下</p>
+</blockquote>
+<blockquote>
+<p>你可能想在扩展数组类 MyArray 上返回 Array 对象。 例如，当使用例如 map() 这样的方法返回默认的构造函数时，你希望这些方法能够返回父级的 Array 对象，以取代 MyArray 对象。Symbol.species 允许你这么做</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class MyArray extends Array &#123;</span><br><span class="line">    // 覆盖 species 到父级的 Array 构造函数上</span><br><span class="line">    static get [Symbol.species]() &#123; return Array; &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  var a = new MyArray(1,2,3);</span><br><span class="line">  var mapped = a.map(x =&gt; x * x);</span><br><span class="line"></span><br><span class="line">  console.log(mapped instanceof MyArray); // false</span><br><span class="line">  console.log(mapped instanceof Array);   // true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是即使不这么做我也是可以返回他的父级方法，有点鸡肋？ 再说</p>
+</blockquote>
+<h3 id="在累的构造函数使用-new-target"><a href="#在累的构造函数使用-new-target" class="headerlink" title="在累的构造函数使用 new.target"></a>在累的构造函数使用 new.target</h3><blockquote>
+<p>之前在构造函数如果要求必须通过 new 来创建是这样写的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Add(name)&#123;</span><br><span class="line">    console.log(new.target=== Add) //true</span><br><span class="line">    if(typeof new.target==&quot;undefined&quot;)&#123;</span><br><span class="line">        throw new Error(&apos;必须通过new创建&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = new Add(&apos;ly&apos;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>现在可以怎么写</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Add &#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        console.log(new.target=== Add) //true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = new Add(&apos;ly&apos;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>构造函数不通过 new 创建的实例，new.target 为 undefined</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function Add(name)&#123;</span><br><span class="line">    console.log(new.target) //true</span><br><span class="line">    if(typeof new.target==&quot;undefined&quot;)&#123;</span><br><span class="line">        throw new Error(&apos;必须通过new创建&apos;)</span><br><span class="line">    &#125;</span><br><span class="line">    this.name = name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a =Add(&apos;ly&apos;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>类则是无论如何都有值，因为必须 new 啊 不然报错</p>
+</blockquote>
+<blockquote>
+<p>我们可以用这样的方式定义基类，基类不可被创建，只能被继承</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">class Add &#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        if(new.target===Add)&#123;</span><br><span class="line">            throw new Error(&apos;基类不可被继承&apos;)</span><br><span class="line">        &#125;</span><br><span class="line">        this.name = name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">class SubAdd extends Add &#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        super(name)</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">// var a = new Add(&apos;ly&apos;); //报错   基类不可被继承</span><br><span class="line"></span><br><span class="line">var b= new SubAdd(&apos;hh&apos;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/03/15/es6-数组新增功能与改进/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/es6-数组新增功能与改进/" itemprop="url">es6-数组新增功能与改进</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T20:59:40+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><blockquote>
+<p>es6加入了一些数组的新功能，以及改进了旧功能</p>
+</blockquote>
+<h4 id="保证永远传的是数组的元素"><a href="#保证永远传的是数组的元素" class="headerlink" title="保证永远传的是数组的元素"></a>保证永远传的是数组的元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let items = Array.of(20);</span><br><span class="line">console.log(items.length) //1</span><br><span class="line">console.log(items[0]) //20</span><br><span class="line"></span><br><span class="line">itmes = Array.of(2);</span><br><span class="line"></span><br><span class="line">console.log(itmes.length);//1</span><br><span class="line">console.log(itmes[0]); //2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">itmes = Array.of(&apos;2&apos;);</span><br><span class="line"></span><br><span class="line">console.log(itmes.length); //1</span><br><span class="line">console.log(itmes[0]); //&apos;2&apos;</span><br></pre></td></tr></table></figure>
+<h4 id="将类对象转换成数组的方式"><a href="#将类对象转换成数组的方式" class="headerlink" title="将类对象转换成数组的方式"></a>将类对象转换成数组的方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function translate()&#123;</span><br><span class="line">    return Array.from(arguments)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let number = translate(1,3,4,5);</span><br><span class="line">console.log(number); //[ 1, 3, 4, 5 ]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>映射转换(第二个参数的转换)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function translate()&#123;</span><br><span class="line">    return Array.from(arguments,(value) =&gt; value+1)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let number = translate(1,3,4,5);</span><br><span class="line">console.log(number); //[ 2, 4, 5, 6 ]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>第三个值是this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">let helper = &#123;</span><br><span class="line">    diff:1,</span><br><span class="line">    add(value)&#123;</span><br><span class="line">        return value+this.diff;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function translate()&#123;</span><br><span class="line">    return Array.from(arguments,helper.add,helper)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let number = translate(1,3,4,5);</span><br><span class="line">console.log(number); // [ 2, 4, 5, 6 ]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>Array.from可以用来转换可迭代对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let number = &#123;</span><br><span class="line">    *[Symbol.iterator]()&#123;</span><br><span class="line">        yield 1;</span><br><span class="line">        yield 2;</span><br><span class="line">        yield 3;</span><br><span class="line">        yield 4;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let number2 = Array.from(number,(value) =&gt; value+1);</span><br><span class="line"></span><br><span class="line">console.log(number2); //[ 2, 3, 4, 5 ]</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="新增方法find-方法和findIndex-方法"><a href="#新增方法find-方法和findIndex-方法" class="headerlink" title="新增方法find()方法和findIndex()方法"></a>新增方法find()方法和findIndex()方法</h4><blockquote>
+<p>两个方法的一个函数接受一个回调函数，以及一个this作为参数</p>
+</blockquote>
+<blockquote>
+<p>find返回的是return为true的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let numbers = [1,34,4,44,33,56];</span><br><span class="line">console.log(numbers.find((item,index,arr) =&gt; &#123;</span><br><span class="line">    if(item&gt;33)&#123;</span><br><span class="line">        console.log(item,index,arr);  //34 1 [ 1, 34, 4, 44, 33, 56 ]</span><br><span class="line">        return item</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)) //34</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>findIndex()返回的是满足true的值的位置(第一个)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let numbers = [1,34,4,44,33,56];</span><br><span class="line">console.log(numbers.findIndex((item,index,arr) =&gt; &#123;</span><br><span class="line">    if(item&gt;33)&#123;</span><br><span class="line">        console.log(item,index,arr);  //34 1 [ 1, 34, 4, 44, 33, 56 ]</span><br><span class="line">        return item</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)) //1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="fill-方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素"><a href="#fill-方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素" class="headerlink" title="fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素"></a>fill() 方法用一个固定值填充一个数组中从起始索引到终止索引内的全部元素</h3><blockquote>
+<p>接受三个参数一个是要填充的值，一个是填充的起始位置，一个是结结束位置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let numbers = [1,34,4,44,33,56];</span><br><span class="line">console.log(numbers.fill(1)) //[ 1, 1, 1, 1, 1, 1 ]</span><br><span class="line">console.log(numbers) //[ 1, 1, 1, 1, 1, 1 ]  //改变原数组</span><br><span class="line"></span><br><span class="line">let nums  = [2,3,4,5,2,4,3]</span><br><span class="line"></span><br><span class="line">console.log(nums.fill(1,2)) //[ 2, 3, 1, 1, 1, 1, 1 ]</span><br><span class="line"></span><br><span class="line">console.log(nums.fill(6,2,5)); //[ 2, 3, 6, 6, 6, 1, 1 ]  //作闭右开</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="copyWith方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小"><a href="#copyWith方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小" class="headerlink" title="copyWith方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小"></a>copyWith方法浅复制数组的一部分到同一数组中的另一个位置，并返回它，而不修改其大小</h3><blockquote>
+<p>该方法接受3个值，一个是开始填充的位置，一个是开始复制的位置位置,改变原数组,一个是复制结束的位置</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let numbers = [1,34,4,44,33,56];</span><br><span class="line">console.log(numbers.copyWithin(2,3)); //[ 1, 34, 44, 33, 56, 56 ]</span><br><span class="line">console.log(numbers.copyWithin(2,0,1)); //[ 1, 34, 1, 33, 56, 56 ]</span><br></pre></td></tr></table></figure>
+<h3 id="定型数组"><a href="#定型数组" class="headerlink" title="定型数组"></a>定型数组</h3><blockquote>
+<p>定型数组是一种用于处理数值类型(正如其名，不是所有类型)数据的专用数组，最早是在WebGL中使用的，WebGL是OpenGL ES 2.0的移植版，在Web 页面中通过 <canvas> 元素来呈现它。定型数组也被一同移植而来，其可为JS提供快速的按位运算</canvas></p>
+</blockquote>
+<blockquote>
+<p>在JS中，数字是以64位浮点格式存储的，并按需转换为32位整数，所以算术运算非常慢，无法满足WebGL的需求。因此在ES6中引入定型数组来解决这个问题，并提供更高性能的算术运算。所谓定型数组，就是将任何数字转换为一个包含数字比特的数组，随后就可以通过我们熟悉的JS数组方法来进一步处理</p>
+</blockquote>
+<h4 id="数组缓冲区"><a href="#数组缓冲区" class="headerlink" title="数组缓冲区"></a>数组缓冲区</h4><blockquote>
+<p>ArrayBuffer 对象用来表示通用的、固定长度的原始二进制数据缓冲区。ArrayBuffer 不能直接操作，而是要通过类型数组对象或 DataView 对象来操作，它们会将缓冲区中的数据表示为特定的格式，并通过这些格式来读写缓冲区的内容。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">let buffer = new ArrayBuffer(10);</span><br><span class="line">console.log(buffer.byteLength); //10</span><br><span class="line"></span><br><span class="line">//也可以使用数组的方法（类似）</span><br><span class="line">let buffer2 = buffer.slice(1,3);</span><br><span class="line"></span><br><span class="line">console.log(buffer2.byteLength) //2</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>不能修改缓存区的大小，只能修改数据缓冲区内的数据</p>
+</blockquote>
+<h3 id="通过视图操作数组缓冲区"><a href="#通过视图操作数组缓冲区" class="headerlink" title="通过视图操作数组缓冲区"></a>通过视图操作数组缓冲区</h3><blockquote>
+<p>数组缓冲区是内存中的一段地址，视图是用来操作内存的接口。视图可以操作数组缓冲区或缓冲区字节的子集，并按照其中一种数值型数据类型来读取和写入数据。DataView类型是一种通用的数组缓冲区视图，其支持所有8种数值型数据类型</p>
+<ul>
+<li>有符号的8位整数(int8)</li>
+<li>无符号的8位整数(uint8)</li>
+<li>有符号的16位整数(int16)</li>
+<li>无符号的16位整数(uint16)</li>
+<li>有符号的32位整数(int32)</li>
+<li>无符号的32位整数(uint32)</li>
+<li>32位浮点数(float32)</li>
+<li>64位浮点数(float64)<br>可以通过以下几种只读属性来获取视图的信息</li>
+<li>buffer 视图绑定的数组缓冲区</li>
+<li>byteOffset DataView构造函数的第二个参数，默认是0，只有传入参数时才有值</li>
+<li>byteLength DataView构造函数的第三个参数，默认是缓冲区的长度byteLength<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let buffer = new ArrayBuffer(10),</span><br><span class="line">//使用DataView创建视图的实例</span><br><span class="line">    view1 = new DataView(buffer),</span><br><span class="line">    view2 = new DataView(buffer,5,2);  // 第一个参数是创建的缓冲区，第二个是操作缓冲区的起始位置，第三个参数是缓冲区的长度</span><br><span class="line"></span><br><span class="line">    console.log(view1.buffer === buffer); //true</span><br><span class="line">    console.log(view2.buffer === buffer); //true</span><br><span class="line"></span><br><span class="line">    console.log(view1.byteOffset); //0</span><br><span class="line">    console.log(view2.byteOffset); //5</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    console.log(view1.byteLength); //10</span><br><span class="line">    console.log(view2.byteLength); //2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="读取和写入数据"><a href="#读取和写入数据" class="headerlink" title="读取和写入数据"></a>读取和写入数据</h3><blockquote>
+<p>js的8中数值型数据类型，在DataView的原型上都能找到</p>
+<ul>
+<li>读方法<br>DataView.prototype.getInt8()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个8-bit数(一个字节).<br>DataView.prototype.getUint8()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个8-bit数(无符号字节).<br>DataView.prototype.getInt16()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个16-bit数(短整型).<br>DataView.prototype.getUint16()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个16-bit数(无符号短整型).<br>DataView.prototype.getInt32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个32-bit数(长整型).<br>DataView.prototype.getUint32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个32-bit数(无符号长整型).<br>DataView.prototype.getFloat32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个32-bit数(浮点型).<br>DataView.prototype.getFloat64()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处获取一个64-bit数(双精度浮点型).</li>
+<li>写方法<br>DataView.prototype.setInt8()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个8-bit数(一个字节).<br>DataView.prototype.setUint8()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个8-bit数(无符号字节).<br>DataView.prototype.setInt16()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个16-bit数(短整型).<br>DataView.prototype.setUint16()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个16-bit数(无符号短整型).<br>DataView.prototype.setInt32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(长整型).<br>DataView.prototype.setUint32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(无符号长整型).<br>DataView.prototype.setFloat32()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个32-bit数(浮点型).<br>DataView.prototype.setFloat64()<br>从DataView起始位置以byte为计数的指定偏移量(byteOffset)处储存一个64-bit数(双精度浮点型).</li>
+<li>用法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let buffer = new ArrayBuffer(10),</span><br><span class="line">    //使用DataView创建视图的实例</span><br><span class="line">    view = new DataView(buffer);</span><br><span class="line"></span><br><span class="line">    view.setInt8(0,5);</span><br><span class="line">    view.setInt8(1,-1);</span><br><span class="line"></span><br><span class="line">    console.log(view.getInt8(0)); //5</span><br><span class="line">    console.log(view.getInt8(1)); //-1</span><br><span class="line"></span><br><span class="line">    //也可以用getInt16的字节调用，这样使用的话，两个8比特的字符就会合并成一个16bit字符,于是得到的值就是这个了</span><br><span class="line">    console.log(view.getInt16()) //1535</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h3 id="定型数组—特殊的视图类型"><a href="#定型数组—特殊的视图类型" class="headerlink" title="定型数组—特殊的视图类型"></a>定型数组—特殊的视图类型</h3><blockquote>
+<p>上面的缓冲区类型视图是可以随意更变的，但是我们只希望处理一种数据类型，这让我们很容易选择和判断<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let buffer = new ArrayBuffer(10),</span><br><span class="line">//使用DataView创建视图的实例</span><br><span class="line">    view1 = new Int8Array(buffer),</span><br><span class="line">    view2 = new Int8Array(buffer,5,2);  // 第一个参数是创建的缓冲区，第二个是操作缓冲区的起始位置，第三个参数是缓冲区的长度</span><br><span class="line"></span><br><span class="line">    console.log(view1.buffer === buffer); //true</span><br><span class="line">    console.log(view2.buffer === buffer); //true</span><br><span class="line"></span><br><span class="line">    console.log(view1.byteOffset); //0</span><br><span class="line">    console.log(view2.byteOffset); //5</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    console.log(view1.byteLength); //10</span><br><span class="line">    console.log(view2.byteLength); //2</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>不用数组缓冲区创建数组，利用定型数组的创建<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let ints = new Int16Array(2),</span><br><span class="line">    floats = new Float32Array(5);</span><br><span class="line"></span><br><span class="line">    console.log(ints.byteLength); //4</span><br><span class="line">    console.log(ints.length); //2</span><br><span class="line"></span><br><span class="line">    console.log(floats.byteLength); //20</span><br><span class="line">    console.log(floats.length); //5</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>不给定型参数传值，则不能使用缓存区，因为它的容量默认为0</p>
+</blockquote>
+<h3 id="第三种创建定型数组的方法是调用构造函数时，将以下任一对象作为唯一的参数传入"><a href="#第三种创建定型数组的方法是调用构造函数时，将以下任一对象作为唯一的参数传入" class="headerlink" title="第三种创建定型数组的方法是调用构造函数时，将以下任一对象作为唯一的参数传入"></a>第三种创建定型数组的方法是调用构造函数时，将以下任一对象作为唯一的参数传入</h3><p>　　1、一个定型数组</p>
+<p>　　&gt;该数组中的每个元素会作为新的元素被复制到新的定型数组中。例如，如果将一个int8数组传入到Int16Array构造函数中，int8的值会被复制到一个新的int16数组中，新的定型数组使用新的数组缓冲区</p>
+<p>　　2、一个可迭代对象</p>
+<p>　　&gt; 对象的迭代器会被调用，通过检索所有条目来选取插入到定型数组的元素，如果所有元素都是不适用于该视图类型的无效类型，构造函数将会抛出一个错误</p>
+<p>　 3、一个数组</p>
+<p>　　　&gt; 数组中的元素会被复制到一个新的定型数组中，如果所有元素都是不适用于该视图类型的无效类型，构造函数将会抛出一个错误</p>
+<p>　　4、一个类数组对象</p>
+<p>　　　&gt; 与传入数组的行为一致</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">            let int1 = new Int16Array([15,25]),</span><br><span class="line">    int2 = new Int32Array(int1);</span><br><span class="line"></span><br><span class="line">console.log(int1.buffer === int2.buffer); //4</span><br><span class="line">console.log(int1.byteLength);   //15</span><br><span class="line">console.log(int1[0])    //25</span><br><span class="line">console.log(int1[1])    //8</span><br><span class="line">console.log(int2.byteLength)    //2</span><br><span class="line">console.log(int2.length)    //15</span><br><span class="line"></span><br><span class="line">console.log(int2[0]);   //15</span><br><span class="line">console.log(int2[1]);   //25</span><br></pre></td></tr></table></figure>
+</code></pre><h4 id="元素大小"><a href="#元素大小" class="headerlink" title="元素大小"></a>元素大小</h4><blockquote>
+<p>每种定型数组由多个元素组成，元素大小,元素大小指的每个元素表示的字节数，该值存储在每个构造函数和每个实例的BYTES_PRE_ELEMENT属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(UInt8Array.BYTES_PRE_ELEMENT);</span><br><span class="line">console.log(UInt16Array.BYTES_PRE_ELEMENT);</span><br><span class="line"></span><br><span class="line">let ints = new Int8Array(5);</span><br><span class="line">console.log(ints.BYTES_PER_ELEMENT);</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>定型数组也适用于数组的通用方法，但也有区别<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//原型不同</span><br><span class="line">let ints = new Int16Array([20,50]);</span><br><span class="line">console.log(ints instanceof Array); //false</span><br><span class="line">console.log(Array.isArray(ints));  //false</span><br><span class="line">//行为差异，数组的元素尺寸大小一致,且不能被扩展</span><br><span class="line">let ints = new Int16Array([25,50]);</span><br><span class="line">console.log(ints.length); //2</span><br><span class="line">console.log(ints[0]); //25</span><br><span class="line">console.log(ints[1]); //50</span><br><span class="line"></span><br><span class="line">ints[2] = 5; </span><br><span class="line"></span><br><span class="line">console.log(ints.length); //2</span><br><span class="line">console.log(ints[0]); //25</span><br><span class="line">//0被用于代替所有非法值</span><br><span class="line">let ints = new Int16Array([&apos;hi&apos;]);</span><br><span class="line">console.log(ints.length); //1</span><br><span class="line">console.log(ints[0]);   //0</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="缺失的方法"><a href="#缺失的方法" class="headerlink" title="缺失的方法"></a>缺失的方法</h3><ul>
+<li>concat()</li>
+<li>shift()</li>
+<li>pop()</li>
+<li>splice()</li>
+<li>push()</li>
+<li>unshift()<h3 id="附加方法"><a href="#附加方法" class="headerlink" title="附加方法"></a>附加方法</h3></li>
+<li>set():将其他数组复制到已有的定型数组</li>
+<li>subarray():提取已有定型数组的一部分作为新的定型数组</li>
+</ul>
+<h4 id="set-一个是数组-定型数组或普通数组-一个是可选的偏移量，表示开始插入数据的位置，"><a href="#set-一个是数组-定型数组或普通数组-一个是可选的偏移量，表示开始插入数据的位置，" class="headerlink" title="set() 一个是数组(定型数组或普通数组),一个是可选的偏移量，表示开始插入数据的位置，"></a>set() 一个是数组(定型数组或普通数组),一个是可选的偏移量，表示开始插入数据的位置，</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let ints = new Int16Array(4);</span><br><span class="line">ints.set([25,50]);</span><br><span class="line">ints.set([125,50],1);</span><br><span class="line">console.log(ints.toString()); //25,50,75,0</span><br></pre></td></tr></table></figure>
+<h4 id="subArray-一个是可选的开始位置-一个是可选的结束"><a href="#subArray-一个是可选的开始位置-一个是可选的结束" class="headerlink" title="subArray()一个是可选的开始位置,一个是可选的结束"></a>subArray()一个是可选的开始位置,一个是可选的结束</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let ints = new Int16Array([25,50,75,100]),</span><br><span class="line">    subint1 = ints.subarray(), </span><br><span class="line">    subint2 = ints.subarray(2), </span><br><span class="line">    subint3 = ints.subarray(1,3);</span><br><span class="line"></span><br><span class="line">    console.log(subint1.toString());//25,50,75,100</span><br><span class="line">    console.log(subint2.toString());//75,100</span><br><span class="line">    console.log(subint3.toString());//75,100</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/01/25/ES6-字符串和正则表达式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/25/ES6-字符串和正则表达式/" itemprop="url">ES6-字符串和正则表达式</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-25T00:00:00+08:00">
+                2018-01-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/10843623-c41e6ce3da1d0523.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timg.jpg"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>入行这么久了，前端学习的成本感觉越来越高了，不会的东西一茬接一茬，在学校太忽视它，学的半吊子，现在要努力赶上才行，杭州的天气变冷了，我也想回家了，坚持，哎嘿，再上半个月班就要放假了开心。（这是从我自己博客移植过来的）</p>
+</blockquote>
+<blockquote>
+<p>我的博客地址 ：<a href="http://www.aymfx.cn/，欢迎访问" target="_blank" rel="noopener">http://www.aymfx.cn/，欢迎访问</a></p>
+</blockquote>
+<h3 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h3><blockquote>
+<p>这张理解起来比较费劲，慢慢看，慢慢练,天气比较冷啊，手敲这些好费劲</p>
+</blockquote>
+<h3 id="utf-16码位-基本多文种平面-到辅助平面字符的扩展"><a href="#utf-16码位-基本多文种平面-到辅助平面字符的扩展" class="headerlink" title="utf-16码位(基本多文种平面)到辅助平面字符的扩展"></a>utf-16码位(基本多文种平面)到辅助平面字符的扩展</h3><blockquote>
+<p>在ES6之前， JS 的字符串以 16 位字符编码(UTF-16)为基础。每个 16 位序列(相当于2个字节)是一个编码单元(code unit)，可简称为码元，用于表示一个字符。字符串所有的属性与方法(如length属性与charAt() 方法等)都是基于16位序列</p>
+</blockquote>
+<blockquote>
+<p>最常用的Unicode字符使用16位序列编码字符，属于“基本多语种平面”(Basic Multilingual Plane BMP)，也称为“零断面”(plan 0)， 是Unicode中的一个编码区段，编码介于\u0000~\uFFFF之间。超过这个范围的码位则要归属于某个辅助平面或称为扩展平面(supplementary plane)，其中的码位仅用16位就无法表示了        为此，UTF-16引入了代理对(surrogate pairs)，规定用两个16位编码来表示一个码位。这意味着，字符串里的字符有两种：一种由一个码元（共 16 位）来表示BMP字符，另一种用两个码元（共 32 位）来表示辅助平面字符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let text = &apos;?&apos;</span><br><span class="line"></span><br><span class="line">console.log(text.length); //2</span><br><span class="line">console.log(/^.$/.test(text)); //false</span><br><span class="line">console.log(text.charAt(0)); //�</span><br><span class="line">console.log(text.charAt(1)); //�</span><br><span class="line">console.log(text.charCodeAt(0)); //55362</span><br><span class="line">console.log(text.charCodeAt(1)); //57271</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这个字?（jí）其实就是一个两个16位字符组成的字,基于16位字符串的属性与方法便失效了</p>
+</blockquote>
+<h4 id="codePointAt-只接受编码单元的位置而非字符位置作为参数-返回给定位置对应的码位"><a href="#codePointAt-只接受编码单元的位置而非字符位置作为参数-返回给定位置对应的码位" class="headerlink" title="codePointAt()  只接受编码单元的位置而非字符位置作为参数,返回给定位置对应的码位"></a>codePointAt()  只接受编码单元的位置而非字符位置作为参数,返回给定位置对应的码位</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let text = &apos;a?&apos;</span><br><span class="line"></span><br><span class="line">console.log(text.charCodeAt(0)); //55362</span><br><span class="line">console.log(text.charCodeAt(1)); //57271</span><br><span class="line">console.log(text.charCodeAt(2)); //57271</span><br><span class="line"></span><br><span class="line">console.log(text.codePointAt(0)); //134071</span><br><span class="line">console.log(text.codePointAt(1)); //57271</span><br><span class="line">console.log(text.codePointAt(2)); //57271</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过这个方法我们可以检测字符是不是32位的</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function is32Bit(char)&#123;</span><br><span class="line">    return char.codePointAt(0) &gt; 0xffff;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(is32Bit(&apos;?&apos;)); //ture</span><br><span class="line">console.log(is32Bit(&apos;a&apos;));  //false</span><br></pre></td></tr></table></figure>
+<h4 id="String-fromCodePoint-通过码位获得对应字符"><a href="#String-fromCodePoint-通过码位获得对应字符" class="headerlink" title="String.fromCodePoint()通过码位获得对应字符"></a>String.fromCodePoint()通过码位获得对应字符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCodePoint(134071)); //?</span><br></pre></td></tr></table></figure>
+<h4 id="normalize"><a href="#normalize" class="headerlink" title="normalize()"></a>normalize()</h4><blockquote>
+<p>许多欧洲语言有语调符号和重音符号。为了表示它们，Unicode提供了两种方法。一种是直接提供带重音符号的字符，比如Ǒ（\u01D1）。另一种是提供合成符号（combining character），即原字符与重音符号的合成，两个字符合成一个字符，比如O（\u004F）和ˇ（\u030C）合成Ǒ（\u004F\u030C）。<br>这两种表示方法，在视觉和语义上都等价，但是JavaScript不能识别。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;\u01D1&apos;===&apos;\u004F\u030C&apos; //false</span><br><span class="line"></span><br><span class="line">&apos;\u01D1&apos;.length // 1</span><br><span class="line">&apos;\u004F\u030C&apos;.length // 2</span><br><span class="line">&apos;\u01D1&apos;.normalize() === &apos;\u004F\u030C&apos;.normalize() // true</span><br></pre></td></tr></table></figure>
+<ul>
+<li>NFC，默认参数，表示“标准等价合成”（Normalization Form Canonical Composition），返回多个简单字符的合成字符。所谓“标准等价”指的是视觉和语义上的等价。</li>
+<li>NFD，表示“标准等价分解”（Normalization Form Canonical Decomposition），即在标准等价的前提下，返回合成字符分解的多个简单字符。</li>
+<li>NFKC，表示“兼容等价合成”（Normalization Form Compatibility Composition），返回合成字符。所谓“兼容等价”指的是语义上存在等价，但视觉上不等价，比如“囍”和“喜喜”。（这只是用来举例，normalize方法不能识别中文。）</li>
+<li>NFKD，表示“兼容等价分解”（Normalization Form Compatibility Decomposition），即在兼容等价的前提下，返回合成字符分解的多个简单字符</li>
+</ul>
+<h4 id="正则表达式u修饰符"><a href="#正则表达式u修饰符" class="headerlink" title="正则表达式u修饰符"></a>正则表达式u修饰符</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let text = &apos;?&apos;</span><br><span class="line">console.log(/^.$/.test(text)); //false</span><br><span class="line">console.log(/^.$/u.test(text)); //true</span><br></pre></td></tr></table></figure>
+<h4 id="计算码位的数量"><a href="#计算码位的数量" class="headerlink" title="计算码位的数量"></a>计算码位的数量</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function codePointLength(text)&#123;</span><br><span class="line">    let result = text.match(/[\s\S]/gu);</span><br><span class="line">    return result ? result.length : 0;</span><br><span class="line">&#125;</span><br><span class="line">console.log(codePointLength(&quot;123a&quot;)); //4</span><br><span class="line">console.log(codePointLength(&quot;?a&quot;)); //2</span><br><span class="line">console.log(codePointLength(&quot;?哦&quot;)); //2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//emmmmm。运行效率蛮低，听说有更简单的，后面演示</span><br></pre></td></tr></table></figure>
+<h3 id="字符串中子串的识别"><a href="#字符串中子串的识别" class="headerlink" title="字符串中子串的识别"></a>字符串中子串的识别</h3><h4 id="includes-x-y-检测指定字符串返回boolean值，第二参数是开始位置-0开始数"><a href="#includes-x-y-检测指定字符串返回boolean值，第二参数是开始位置-0开始数" class="headerlink" title="includes(x,y)检测指定字符串返回boolean值，第二参数是开始位置(0开始数)"></a>includes(x,y)检测指定字符串返回boolean值，第二参数是开始位置(0开始数)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let text = &quot;adsdasdasgsgwefsfs&quot;;</span><br><span class="line">let subtext = &apos;asd&apos;;</span><br><span class="line">console.log(text.includes(subtext,4)) //true</span><br><span class="line">console.log(text.includes(subtext)) //true</span><br><span class="line">console.log(text.includes(&apos;sdadasda&apos;)) //false</span><br></pre></td></tr></table></figure>
+<h4 id="startsWith-x-y-和-endsWith-x-y-检测字符串开头和结尾的是否与子串相匹配-第二参数是开始位置-0开始数"><a href="#startsWith-x-y-和-endsWith-x-y-检测字符串开头和结尾的是否与子串相匹配-第二参数是开始位置-0开始数" class="headerlink" title="startsWith(x,y) 和 endsWith(x,y) 检测字符串开头和结尾的是否与子串相匹配,第二参数是开始位置(0开始数)"></a>startsWith(x,y) 和 endsWith(x,y) 检测字符串开头和结尾的是否与子串相匹配,第二参数是开始位置(0开始数)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">let text = &quot;adsdasdasgsgwefsfs&quot;;</span><br><span class="line">let subtext1 = &apos;ads&apos;;</span><br><span class="line">let subtext2 = &apos;sfs&apos;;</span><br><span class="line"></span><br><span class="line">console.log(text.startsWith(&apos;asd&apos;,4)) //true</span><br><span class="line">console.log(text.startsWith(subtext1)) //true</span><br><span class="line">console.log(text.startsWith(&apos;sdadasda&apos;)) //false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(text.endsWith(&apos;gsgwefsfs&apos;,18)) //true 以最后一个字母的位置为准</span><br><span class="line">console.log(text.endsWith(subtext2)) //true</span><br><span class="line">console.log(text.endsWith(&apos;sdadasda&apos;)) //false</span><br></pre></td></tr></table></figure>
+<h4 id="repeat-接受一个number-即将字符重复的次数"><a href="#repeat-接受一个number-即将字符重复的次数" class="headerlink" title="repeat() 接受一个number,即将字符重复的次数"></a>repeat() 接受一个number,即将字符重复的次数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(&apos;x&apos;.repeat(6)); // xxxxxx</span><br><span class="line">console.log(&apos;ly&apos;.repeat(3));  //lylyly</span><br><span class="line">console.log(&apos;爱&apos;.repeat(2));  //爱爱</span><br></pre></td></tr></table></figure>
+<h3 id="正则的语法变更-（蛮头疼的-正则还是晕乎乎的）"><a href="#正则的语法变更-（蛮头疼的-正则还是晕乎乎的）" class="headerlink" title="正则的语法变更 （蛮头疼的,正则还是晕乎乎的）"></a>正则的语法变更 （蛮头疼的,正则还是晕乎乎的）</h3><h4 id="正则表达式y修饰符"><a href="#正则表达式y修饰符" class="headerlink" title="正则表达式y修饰符"></a>正则表达式y修饰符</h4><blockquote>
+<p>除了u 修饰符，ES6还为正则表达式添加了 y 修饰符，叫做“粘连”修饰符。y 修饰符的作用与 g 修饰符类似，也是全局匹配，后一次匹配都从上一次匹配成功的下一个位置开始。不同之处在于，g 修饰符只要剩余位置中存在匹配就可，而 y 修饰符确保匹配必须从剩余的第一个位置开始，这也就是“粘连”的含义，当为匹配到时，将会返回空，lastIndex将会置为0</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var s = &apos;aaa_aa_a&apos;;  </span><br><span class="line">var r1 = /a+/g;  </span><br><span class="line">var r2 = /a+/y;  </span><br><span class="line">  </span><br><span class="line">console.log(r1.exec(s)) //[&quot;aaa&quot;, index: 0, input: &quot;aaa_aa_a&quot;] console.log(r2.exec(s)) //[&quot;aaa&quot;, index: 0, input: &quot;aaa_aa_a&quot;]</span><br><span class="line">console.log(r1.lastIndex) //3</span><br><span class="line">console.log(r2.lastIndex) //3</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(r1.exec(s)) //[&quot;aa&quot;, index: 4, input: &quot;aaa_aa_a&quot;]</span><br><span class="line">console.log(r2.exec(s)) //null  </span><br><span class="line">console.log(r1.lastIndex) //6</span><br><span class="line">console.log(r2.lastIndex) //0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(r1.exec(s)) //[&quot;a&quot;, index: 7, input: &quot;aaa_aa_a&quot;]</span><br><span class="line">console.log(r2.exec(s)) //[&quot;aaa&quot;, index: 0, input: &quot;aaa_aa_a&quot;] console.log(r1.lastIndex) //8</span><br><span class="line">console.log(r2.lastIndex) //3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>检测y修饰符是否存在</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">let pattern = /hello\d/y;</span><br><span class="line"></span><br><span class="line">console.log(pattern.sticky) //true  谷歌浏览器下</span><br></pre></td></tr></table></figure>
+<h4 id="正则表达式的复制"><a href="#正则表达式的复制" class="headerlink" title="正则表达式的复制"></a>正则表达式的复制</h4><blockquote>
+<p>es5 如下复制</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var re1 = /ab/i</span><br><span class="line">    re2 = new RegExp(re1);</span><br><span class="line">    console.log(re1.construct === re2.construct) //true</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>es6新增了可以添加传修饰符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var re1 = /ab/i</span><br><span class="line">    re2 = new RegExp(re1,&apos;g&apos;);</span><br><span class="line">    console.log(re1.toString()) ///ab/i</span><br><span class="line">    console.log(re2.toString()) ///ab/g</span><br></pre></td></tr></table></figure>
+<h4 id="flags属性"><a href="#flags属性" class="headerlink" title="flags属性"></a>flags属性</h4><blockquote>
+<p>source获取正则表达式文本 flags获取其修饰符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let re = /ab/gi;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">console.log(re.source); //ab</span><br><span class="line">console.log(re.flags);  //gi</span><br></pre></td></tr></table></figure>
+<h3 id="模板字面量"><a href="#模板字面量" class="headerlink" title="模板字面量"></a>模板字面量</h3><blockquote>
+<p>JS 的字符串相对其他语言来说功能总是有限的，事实上，ES5中一直缺乏许多特性，如多行字符串、字符串格式化、HTML转义等。ES6通过模板字面量的方式进行了填补，模板字面量试着跳出JS已有的字符串体系，通过一些全新的方法来解决类似的问题</p>
+</blockquote>
+<h4 id="反引号（）"><a href="#反引号（）" class="headerlink" title="反引号（）"></a>反引号（<code></code>）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const name = &apos;ly&apos;;</span><br><span class="line">let message = `$&#123;name&#125;,is a man`  //ly,is a man</span><br><span class="line">console.log(message);</span><br><span class="line"></span><br><span class="line">//$&#123;&#125; 可以写变量  名叫字符串占位符</span><br><span class="line"></span><br><span class="line">console.log(`\`hh\``); //`hh`</span><br><span class="line"></span><br><span class="line">//es5 实现多行文本</span><br><span class="line">var message = &quot; ly  \n \</span><br><span class="line">   love you&quot;</span><br><span class="line">console.log(message);</span><br><span class="line"></span><br><span class="line">//es6</span><br><span class="line"></span><br><span class="line">var message = ` ly</span><br><span class="line">   love you`</span><br><span class="line">console.log(message); // ly</span><br><span class="line">                      // love you</span><br></pre></td></tr></table></figure>
+<h4 id="字符串占位符-javascript表达式"><a href="#字符串占位符-javascript表达式" class="headerlink" title="字符串占位符   ${javascript表达式}"></a>字符串占位符   ${javascript表达式}</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">let count = 15,</span><br><span class="line">    price = .5,</span><br><span class="line">    message = `$&#123;count&#125; items cost $$&#123;(count*price).toFixed(1)&#125;`;</span><br><span class="line">    console.log(message); //15 items cost $7.5</span><br></pre></td></tr></table></figure>
+<h4 id="标签模板"><a href="#标签模板" class="headerlink" title="标签模板"></a>标签模板</h4><blockquote>
+<p>标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的是函数，紧跟在后面的模板字符串就是它的参数</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var a = 5;</span><br><span class="line">var b = 10;</span><br><span class="line">tag `Hello $&#123;a+b&#125; world $&#123;a*b&#125;`;</span><br><span class="line">//这个标识名tag,它是一个函数。整个表达式的返回值，就是tag函数处理模板字符串之后的返回值。函数tag会依次接收到多个参数。</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>tag函数的第一个参数是一个数组，该数组的成员时模板字符串中那些没有变量替换的部分，也就是说，变量替换只发生在数组的第一个成员和第二个成员之间，以此类推。tag函数的其他参数都是模板字符串各个变量被替换后的值，由于本例中，模板字符串含有两个变量，因此tag会接收到value1和value2两个参数。<br>tag函数所有参数的实际值如下：<br>——第一个参数：[‘Hello ‘,’ world ‘,’’]<br>——第二个参数：15<br>——第三个参数：50<br>也就是说tag函数实际上是以下面的形式调用的<br>tag([‘Hello ‘,’ world ‘,’’],15,50);<br>我们可以按照需要编写tag 函数的代码。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var count = 5;</span><br><span class="line">var price = 10;</span><br><span class="line"></span><br><span class="line">function tag(s,v1,v2,v3)&#123;</span><br><span class="line">    console.log(s[0]);</span><br><span class="line">    console.log(s[1]);</span><br><span class="line">    console.log(s[2]);</span><br><span class="line">    console.log(s);</span><br><span class="line">    console.log(v1);</span><br><span class="line">    console.log(v2);</span><br><span class="line">    return &apos;ok&apos;</span><br><span class="line">&#125;</span><br><span class="line">tag`q$&#123;count&#125; items cost $$&#123;(count*price).toFixed(1)&#125;.`;</span><br><span class="line"></span><br><span class="line">//VM173:5 </span><br><span class="line">//VM173:6  items cost $</span><br><span class="line">//VM173:7  .</span><br><span class="line">//VM173:8 5</span><br><span class="line">//VM173:9 50.0</span><br><span class="line">//ok</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>标签函数的常用形式</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function tag(literals,...substitutions)&#123;</span><br><span class="line">    //literals 值得是被$&#123;&#125;隔开的字符</span><br><span class="line">    //substitutions，有几个$&#123;&#125;就有几个这个</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用 literals.length-1 === substitutions.length,拼接字符串</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function passthru(literals,...values)&#123;</span><br><span class="line">    var output =&quot;&quot;;</span><br><span class="line">    for(var index = 0;index&lt;values.length;index++)&#123;</span><br><span class="line">        output = literals[index]+values[index];</span><br><span class="line">    &#125;</span><br><span class="line">    output+=literals[index];</span><br><span class="line">    return output;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let count = 15,</span><br><span class="line">    price = .5,</span><br><span class="line">    message = passthru`$&#123;count&#125; items cost $$&#123;(count*price).toFixed(1)&#125;`;</span><br><span class="line">    console.log(message); //15 items cost $7.5</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>what?这样做的意义是啥？</p>
+</blockquote>
+<blockquote>
+<p>emmm,过滤html字符串,还有一些转义字符的过滤</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function SaferHTML(templateData)&#123;</span><br><span class="line">    var s = templateData[0];</span><br><span class="line">    var i;</span><br><span class="line">    for(i = 1;i&lt;arguments.length;i++)&#123;</span><br><span class="line">        var arg = String(arguments[i]);</span><br><span class="line"></span><br><span class="line">        //sender里面可能有特殊字符，进行转义</span><br><span class="line">        s += arg.replace(/&amp;/g,&quot;&amp;amp;&quot;)</span><br><span class="line">                .replace(/&lt;/g,&quot;&amp;lt;&quot;)</span><br><span class="line">                .replace(/&gt;/g,&quot;&amp;gt;&quot;);</span><br><span class="line">        s += templateData[i];</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(i);//2，表示这个循环只执行了一次，因为templateData[0]=&quot;&lt;p&gt;&quot;,arguments这个数组只有$&#123;sender&#125;这个元素，后面一长串字符都是templateData[2];</span><br><span class="line">    return s;</span><br><span class="line">&#125;</span><br><span class="line">var sender = &apos;&lt;script&gt;alert(&quot;abc&quot;)&lt;/script&gt;&apos;;</span><br><span class="line">var message = SaferHTML`&lt;p&gt;$&#123;sender&#125; has sent you a message.&lt;/p&gt;`;</span><br><span class="line">console.log(message);</span><br></pre></td></tr></table></figure>
+<h4 id="在模板字面量中使用原始值"><a href="#在模板字面量中使用原始值" class="headerlink" title="在模板字面量中使用原始值"></a>在模板字面量中使用原始值</h4><blockquote>
+<p>使用内建对象String.raw访问</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let ms1 = `ly\n love you`</span><br><span class="line">let ms2 = String.raw`ly\n love you`</span><br><span class="line"></span><br><span class="line">console.log(ms1); //ly</span><br><span class="line">                  //love you</span><br><span class="line"></span><br><span class="line">console.log(ms2); // ly\n love you</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/01/24/es6-块级作用域绑定/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/24/es6-块级作用域绑定/" itemprop="url">es6-块级作用域绑定</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-24T21:32:33+08:00">
+                2018-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="http://upload-images.jianshu.io/upload_images/10843623-82935528251fe29d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="timg.jpg"></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>花点时间重新复习一遍es6的语法</p>
+</blockquote>
+<blockquote>
+<p>我的博客地址 ：<a href="http://www.aymfx.cn/" target="_blank" rel="noopener">http://www.aymfx.cn/</a></p>
+</blockquote>
+<h3 id="var，let-const-三者的区别"><a href="#var，let-const-三者的区别" class="headerlink" title="var，let, const 三者的区别"></a>var，let, const 三者的区别</h3><blockquote>
+<p>var 声明的变量会有变量提升的过程，将被提升到作用域的顶部，或者函数的顶部</p>
+</blockquote>
+<blockquote>
+<p>let 声明的变量，只能在声明的块作用域中访问和使用，存在于函数内部以及花括号之间的区域</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    let a = 3;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(a); //a is not defined</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function()&#123;</span><br><span class="line">    let a = 3;</span><br><span class="line">&#125;</span><br><span class="line">console.log(a); //a is not defined</span><br></pre></td></tr></table></figure>
+<h3 id="const-是用来声明静态变量的，一但设置了值之后就不可改变"><a href="#const-是用来声明静态变量的，一但设置了值之后就不可改变" class="headerlink" title="const 是用来声明静态变量的，一但设置了值之后就不可改变"></a>const 是用来声明静态变量的，一但设置了值之后就不可改变</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = 20;</span><br><span class="line">a= 60;</span><br><span class="line">//Assignment to constant variable.</span><br></pre></td></tr></table></figure>
+<h3 id="const在对象中是绑定了这个对象，但是对象的内容是可以改变的"><a href="#const在对象中是绑定了这个对象，但是对象的内容是可以改变的" class="headerlink" title="const在对象中是绑定了这个对象，但是对象的内容是可以改变的"></a>const在对象中是绑定了这个对象，但是对象的内容是可以改变的</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a = &#123;length:2&#125;</span><br><span class="line"></span><br><span class="line">a.length = 6;</span><br></pre></td></tr></table></figure>
+<h3 id="var-可以重复声明变量-let和const声明的变量不能重新声明"><a href="#var-可以重复声明变量-let和const声明的变量不能重新声明" class="headerlink" title="var 可以重复声明变量 let和const声明的变量不能重新声明"></a>var 可以重复声明变量 let和const声明的变量不能重新声明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var count = 30;</span><br><span class="line">let count = 40;</span><br><span class="line">VM49:2 Uncaught SyntaxError: Identifier &apos;count&apos; has already been declared</span><br></pre></td></tr></table></figure>
+<h3 id="临时死区"><a href="#临时死区" class="headerlink" title="临时死区"></a>临时死区</h3><p>let和const不会出现变量提升的情况，未定义的值将直接报错,也就产生所谓的临时死区</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(true)&#123;</span><br><span class="line">    console.log(typeof value);  //alue is not defined</span><br><span class="line">    let value = &quot;blue&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意这种情况</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(typeof value);  //alue is not defined</span><br><span class="line">if(true)&#123;</span><br><span class="line">    </span><br><span class="line">    let value = &quot;blue&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="循环中的块级作用域绑定"><a href="#循环中的块级作用域绑定" class="headerlink" title="循环中的块级作用域绑定"></a>循环中的块级作用域绑定</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var fun = [];</span><br><span class="line">for(var i = 0;i&lt;10;i++)&#123;</span><br><span class="line">    fun.push(function()&#123;console.log(i)&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun.forEach(function(f)&#123;f()&#125;)  //0VM118:3 10</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上面代码输出了10个10,不对的，我们期待是0-9，改成这样的话</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let fun = [];</span><br><span class="line">for(let i = 0;i&lt;10;i++)&#123;</span><br><span class="line">    fun.push(function()&#123;console.log(i)&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fun.forEach(function(f)&#123;f()&#125;)  //0VM118:3 10</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上写法对于 for-in 以及for-of 同样适用</p>
+</blockquote>
+<blockquote>
+<p>循环中使用const声明</p>
+</blockquote>
+<blockquote>
+<p>这样会报错</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var f = [];</span><br><span class="line">for(const i =0;i&lt;10;i++)&#123;</span><br><span class="line">    f.push(function()&#123;</span><br><span class="line">        console.log(i);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; //Assignment to constant variable</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是 for-in 和for-of，由于是绑定元素不会报错，上面在第二次循环修改了变量的值导致报错</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var f = [];</span><br><span class="line">obj = &#123;</span><br><span class="line">    a:1,</span><br><span class="line">    b:2,</span><br><span class="line">    c:3</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">for(const key in obj)&#123;</span><br><span class="line">    f.push(function()&#123;</span><br><span class="line">        console.log(key);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">f.forEach(function(f)&#123;f()&#125;) </span><br><span class="line">//a</span><br><span class="line">//VM184:10 b</span><br><span class="line">//VM184:10 c</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f= [&apos;1&apos;,2,4,5]</span><br><span class="line"></span><br><span class="line">for(const key of f)&#123;</span><br><span class="line">    console.log(key);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//VM204:4 1</span><br><span class="line">//VM204:4 2</span><br><span class="line">//VM204:4 4</span><br><span class="line">//VM204:4 5</span><br></pre></td></tr></table></figure>
+<h3 id="全局作用域的绑定"><a href="#全局作用域的绑定" class="headerlink" title="全局作用域的绑定"></a>全局作用域的绑定</h3><blockquote>
+<p>var 在全局中相当于添加了window对象的属性，但是有可能误操作覆盖了已有的全局属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(window.RegExp); //ƒ RegExp() &#123; [native code] &#125;</span><br><span class="line">var RegExp = &quot;正则表达式&quot;</span><br><span class="line">console.log(window.RegExp); //正则表达式</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>相对于var来说let和const不会创建一个新的绑定,他会屏蔽window的属性，而不是添加或者覆盖window的属性</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log(window.RegExp); //ƒ RegExp() &#123; [native code] &#125;</span><br><span class="line">let RegExp = &quot;正则表达式&quot;</span><br><span class="line">console.log(window.RegExp); //ƒ RegExp() &#123; [native code] &#125;</span><br><span class="line">console.log(RegExp) //正则表达式</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

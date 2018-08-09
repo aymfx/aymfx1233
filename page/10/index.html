@@ -1,0 +1,1890 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/10/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/10/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/26/node-js深入浅出笔记16/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/26/node-js深入浅出笔记16/" itemprop="url">node.js深入浅出笔记16</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-26T10:25:38+08:00">
+                2017-09-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="路由解析"><a href="#路由解析" class="headerlink" title="路由解析"></a>路由解析</h1><h2 id="文件路径型"><a href="#文件路径型" class="headerlink" title="文件路径型"></a>文件路径型</h2><ul>
+<li>静态文件</li>
+</ul>
+<blockquote>
+<p>最简单的方式，直接就是url路径与网站目录的路径一致</p>
+</blockquote>
+<ul>
+<li>动态文件</li>
+</ul>
+<blockquote>
+<p>动态解析后缀不同的文件</p>
+</blockquote>
+<h2 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h2><ul>
+<li>路由解析，根据url寻找对应的控制器和行为</li>
+<li>行为调用相关的模型，进行数据操作</li>
+<li>数据操作结束后，调用视图和相关数据进行页面渲染，输出到客户端</li>
+</ul>
+<p><img src="https://aymfx.github.io/img/a20170925/a2.png" alt="流程图"></p>
+<h2 id="RESTful-全称-Representational-State-Transfer-表现层状态转化"><a href="#RESTful-全称-Representational-State-Transfer-表现层状态转化" class="headerlink" title="RESTful  全称:Representational State Transfer 表现层状态转化"></a>RESTful  全称:Representational State Transfer 表现层状态转化</h2><blockquote>
+<p>它的规范就是通过请求方式来判断用户需要做什么事</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> routes = &#123;<span class="string">'all'</span>:[]&#125;;</span><br><span class="line"><span class="keyword">var</span> app = &#123;&#125;;</span><br><span class="line">app.use=<span class="function"><span class="keyword">function</span> (<span class="params">path,action</span>) </span>&#123;</span><br><span class="line">    routes.all.push([pathRegexp(path),action]);</span><br><span class="line">&#125;</span><br><span class="line">[<span class="string">'get'</span>,<span class="string">'put'</span>,<span class="string">'delete'</span>,<span class="string">'post'</span>].forEach(<span class="function"><span class="keyword">function</span>(<span class="params">method</span>)</span>&#123;</span><br><span class="line">        routes[method] = &#123;&#125;;</span><br><span class="line">        app[method] = <span class="function"><span class="keyword">function</span> (<span class="params">path,action</span>) </span>&#123;</span><br><span class="line">            routes[method].push([pathRegexp(path),action])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="中间件"><a href="#中间件" class="headerlink" title="中间件"></a>中间件</h1><blockquote>
+<p>中间件的功能类似于细节的封装，我们只关注具体的业务逻辑</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170925/a2.png" alt="流程图"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//基础的写法</span></span><br><span class="line">app.use(<span class="string">'/user/:username'</span>,querystring,cookie,session,<span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//TODO</span></span><br><span class="line">    &#125;)</span><br><span class="line"><span class="comment">//这里的中间件指的是--&gt;querystring,cookie,session</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//例子 querystring</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> querystring = <span class="function"><span class="keyword">function</span> (<span class="params">req,res,next</span>) </span>&#123;</span><br><span class="line">    req.query = url.parse(req.url,<span class="literal">true</span>).query;</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//cookie</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cookie = <span class="function"><span class="keyword">function</span> (<span class="params">req,res,next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cookie = req.headers.cookie;</span><br><span class="line">    <span class="keyword">var</span> cookie = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span>(cookie) &#123;</span><br><span class="line">        <span class="keyword">var</span> list = cookie.split(<span class="string">";"</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;list.length;i++) &#123;</span><br><span class="line">            <span class="keyword">var</span> pair = list[i].split(<span class="string">'='</span>);</span><br><span class="line">            cookies[pair[<span class="number">0</span>].trim()] = pair[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    req.cookies = cookies;</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//改进use()方法</span></span><br><span class="line"></span><br><span class="line">app.use = <span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> handle = &#123;</span><br><span class="line">        <span class="comment">//第一个参数作为路径</span></span><br><span class="line">        path:pathRegexp(path),</span><br><span class="line">        stack:<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>)</span><br><span class="line">    &#125;;</span><br><span class="line">    routes.all.push(handle);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//把所有中间件放进stack数组中保存，更改匹配方法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> match = <span class="function"><span class="keyword">function</span> (<span class="params">pathname,routes</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;routes.length;i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> route = routes[i]</span><br><span class="line">        <span class="comment">//进行正则匹配</span></span><br><span class="line">        <span class="keyword">var</span> reg = route.path.regexp;</span><br><span class="line">        <span class="keyword">var</span> matched = reg.exec(pathname);</span><br><span class="line">        <span class="keyword">if</span>(matched) &#123;</span><br><span class="line">            <span class="comment">//抽取具体，省略代码，将中间件数组交给handle()方法处理</span></span><br><span class="line">            handle(req,res,route.stack);</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当匹配成功时会交给handle方法处理，该方法封装后，递归的执行数组中的中间件，每个中间件执行完成后，按照约定传入next()方法触发下一个中间件执行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res,stack</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> next = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> middleware = stack.shift();</span><br><span class="line">        <span class="keyword">if</span>(middleware) &#123;</span><br><span class="line">            middleware(req,res,next)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//不过这样写太复杂，有比较简单的写法</span></span><br><span class="line"></span><br><span class="line">app.use(xxx)  xxx 为某中间件</span><br><span class="line"></span><br><span class="line"><span class="comment">//我们为了适应参数的变化，设计如下</span></span><br><span class="line"></span><br><span class="line">app.use = <span class="function"><span class="keyword">function</span> (<span class="params">path</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> handle;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> path === <span class="string">"string"</span>) &#123;</span><br><span class="line">        handle = &#123;</span><br><span class="line">            <span class="comment">//第一个参数作为路径</span></span><br><span class="line">            path:pathRegexp(path),</span><br><span class="line">            <span class="comment">//其他的都是处理单元</span></span><br><span class="line">            stack:<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        handle = &#123;</span><br><span class="line">            <span class="comment">//第一个参数作为路径</span></span><br><span class="line">            path:pathRegexp(<span class="string">'/'</span>),</span><br><span class="line">            <span class="comment">//其他的都是处理单元</span></span><br><span class="line">            stack:<span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">0</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    routes.all.push(handle);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//为保证后续匹配继续处理逻辑，我们需要改变匹配过程</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> math = <span class="function"><span class="keyword">function</span> (<span class="params">pathname,routes</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> stacks = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;routes.length;i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> route = routes[i];</span><br><span class="line">        <span class="keyword">var</span> reg = route.path.regexp;</span><br><span class="line">        <span class="keyword">var</span> matched = reg.exec(pathname);</span><br><span class="line">        <span class="keyword">if</span>(matched) &#123;</span><br><span class="line">            <span class="comment">//抽取具体值</span></span><br><span class="line">            <span class="comment">//代码省略</span></span><br><span class="line">            <span class="comment">//将中间件保存起来</span></span><br><span class="line">            stacks = stacks.concat(route.stack);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> stacks;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//改进分发过程</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pathname = url.aprse(req.url).pathname;</span><br><span class="line">    <span class="comment">//将请求方法变为小写</span></span><br><span class="line">    <span class="keyword">var</span> method = req.method.toLowerCase();</span><br><span class="line">    <span class="comment">//获取all()方法里的中间件</span></span><br><span class="line">    <span class="keyword">var</span> stacks = match(pathname,routes.all)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(routes.hasOwnPerperty(method)) &#123;</span><br><span class="line">        <span class="comment">//根据请求方法分发，获取相关的中间件</span></span><br><span class="line">        stacks.concat(match(pathname,routes[method]))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(stacks.length) &#123;</span><br><span class="line">         handle(req,res,stacks);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        handle404(req,res)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="中间件异常处理"><a href="#中间件异常处理" class="headerlink" title="中间件异常处理"></a>中间件异常处理</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res,stack</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> next = <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err) &#123;</span><br><span class="line">            <span class="keyword">return</span> handle500(err,req,res,stack);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//stack数组中取出中间件并执行</span></span><br><span class="line">        <span class="keyword">var</span> middleware = stack.shift();</span><br><span class="line">        <span class="keyword">if</span>(middleware) &#123;</span><br><span class="line">            <span class="comment">//传入next()函数自身，使中间件能家属后进行递归</span></span><br><span class="line">            <span class="keyword">try</span>&#123;</span><br><span class="line">                middleware(req,res,next);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ex) &#123;</span><br><span class="line">                next(err)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">        next();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//由于异步不能直接捕获，需要中间件自己传递出来</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> session = <span class="function"><span class="keyword">function</span> (<span class="params">req,res,next</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id =req.cookies.sessionid;</span><br><span class="line">    store.get(id,<span class="function"><span class="keyword">function</span>(<span class="params">err,session</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                <span class="keyword">return</span> next(err)</span><br><span class="line">            &#125;</span><br><span class="line">            req.session = session;</span><br><span class="line">            next();</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//处理异常的中间件设计</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle500 = <span class="function"><span class="keyword">function</span>(<span class="params">err,req,res,stack</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//选取异常处理中间件</span></span><br><span class="line">    stack = stack.filter(<span class="function"><span class="keyword">function</span>(<span class="params">middleware</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> middleware.length === <span class="number">4</span>;</span><br><span class="line">        &#125;)</span><br><span class="line">    <span class="keyword">var</span> next = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//从stack数组中取出中间件并执行</span></span><br><span class="line">        <span class="keyword">var</span> middleware = stack.shift();</span><br><span class="line">        <span class="keyword">if</span>(middleware) &#123;</span><br><span class="line">            <span class="comment">//传递异常对象</span></span><br><span class="line">            middleware(err,req,res,next);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/22/node-js深入浅出笔记15/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/22/node-js深入浅出笔记15/" itemprop="url">node.js深入浅出笔记15</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T09:54:31+08:00">
+                2017-09-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h1><blockquote>
+<p>通过缓存可以节省不必要的传输，对用户和服务提供者都有好处，雅虎军规有几条缓存规则</p>
+<ul>
+<li>添加Expires或者Cache-Control到报文头中</li>
+<li>配置ETags</li>
+<li>让Ajax可缓存</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>通常意义来说，大多数请求只存在于Get请求中</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170925/a1.png" alt="流程图"></p>
+<blockquote>
+<p>我们可以通过 if-Modified-Since来判断是否需要更新版本,last-Modified表示最后一次更新时间，代码如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    fs.stat(filename,<span class="function"><span class="keyword">function</span>(<span class="params">err,stat</span>)</span>&#123;</span><br><span class="line">            fs.lastModified = stat.mtime.toUTCString();</span><br><span class="line">            <span class="keyword">if</span>(lastModified === req.headers[<span class="string">'if-Modified-Since'</span>]) &#123;</span><br><span class="line">                res.writeHead(<span class="number">304</span>,<span class="string">'Not Modified'</span>);</span><br><span class="line">                res.end();</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                fs.readFile(filename,<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>)</span>&#123;</span><br><span class="line">                        <span class="keyword">var</span> lastModified = stat.mtime.toUTCString();</span><br><span class="line">                        res.setHeader(<span class="string">'Last-Modified'</span>,lastModified);</span><br><span class="line">                        res.writeHead(<span class="number">200</span>,<span class="string">"OK"</span>);</span><br><span class="line">                        res.end(file);</span><br><span class="line">                    &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>采用时间戳有一点缺陷</p>
+</blockquote>
+<ul>
+<li>时间戳改动内容不一定改动</li>
+<li>时间戳只能精确到秒，对于频繁的改动无法生效</li>
+</ul>
+<blockquote>
+<p>用 ETag解决 ，服务决定他的生成规则，根据文件生成散列值 方法如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> getHash = <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> shasum = crypto.createHash(<span class="string">'sha1'</span>);</span><br><span class="line">    <span class="keyword">return</span> shasum.update(str).digest(<span class="string">'base64'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ETag的请求和响应是 If-None-Match/ETag</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    fs.readFile(filename,<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> hash = getHash(file);</span><br><span class="line">            <span class="keyword">var</span> noneMatch = req[<span class="string">'if-none-match'</span>];</span><br><span class="line">            <span class="keyword">if</span>(hash === noneMatch) &#123;</span><br><span class="line">                res.writeHead(<span class="number">304</span>,<span class="string">'Not Modified'</span>);</span><br><span class="line">                res.end();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res.setHeader(<span class="string">"Etag"</span>,hash);</span><br><span class="line">                res.writeHead(<span class="number">200</span>,<span class="string">"Ok"</span>);</span><br><span class="line">                res.end(file);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>expires缺陷，服务器与本地会存在时间不一致的情况,可以用Cache-Conctrl解决</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    fs.readFile(filename,<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>)</span>&#123;</span><br><span class="line">            res.setHeader(<span class="string">"Cache-Control"</span>,<span class="string">"max-age="</span>+<span class="number">10</span>*<span class="number">365</span>*<span class="number">24</span>*<span class="number">60</span>*<span class="number">60</span>*<span class="number">1000</span>);</span><br><span class="line">            res.writeHead(<span class="number">200</span>,<span class="string">"OK"</span>);</span><br><span class="line">            res.end(file);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>清除缓存</p>
+</blockquote>
+<ul>
+<li>家版本号 <a href="http://url.com/?v=20170926" target="_blank" rel="noopener">http://url.com/?v=20170926</a></li>
+<li>内容分的哈希值  <a href="http://url.com/?hash" target="_blank" rel="noopener">http://url.com/?hash</a> = adasdasda</li>
+</ul>
+<h2 id="Basic认证"><a href="#Basic认证" class="headerlink" title="Basic认证"></a>Basic认证</h2><blockquote>
+<p>如果一个页面需要basic认证，他会检查报文头的Authorization字段的内容，该字段由认证方式和加密值构成</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span>  encode = <span class="function"><span class="keyword">function</span> (<span class="params">username,password</span>) </span>&#123;</span><br><span class="line"> <span class="keyword">return</span> <span class="keyword">new</span> Buffer(username+<span class="string">":"</span>+password).toString(<span class="string">'base64'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//如果用户首次访问该网址，url地址中也没携带认证内容，那么浏览器会响应一个401未授权的状态码</span></span><br><span class="line"> </span><br><span class="line"> <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> auth = req.headers[<span class="string">'authorization'</span>] || <span class="string">''</span>;</span><br><span class="line">     <span class="keyword">var</span> parts = auth.split(<span class="string">''</span>);</span><br><span class="line">     <span class="keyword">var</span> method = parts[<span class="number">0</span>] || <span class="string">''</span>;<span class="comment">//Basic</span></span><br><span class="line">     <span class="keyword">var</span> encoded = parts[<span class="number">1</span>] || <span class="string">''</span>;sxdsdvdsfertgsa</span><br><span class="line">     <span class="keyword">var</span> decoded = <span class="keyword">new</span> Buffer(encoded,<span class="string">'base64'</span>).toString(<span class="string">'utf-8'</span>).split(<span class="string">":"</span>);</span><br><span class="line">     <span class="keyword">var</span> user = decoded[<span class="number">0</span>];<span class="comment">//user</span></span><br><span class="line">     <span class="keyword">var</span> pass = decoded[<span class="number">1</span>];<span class="comment">//password</span></span><br><span class="line">     <span class="keyword">if</span>(!checkUser(user,pass))&#123;</span><br><span class="line">         res.setHeader(<span class="string">'WWW-Authenticate'</span>,<span class="string">'Basic realm="Secure Area"'</span>);</span><br><span class="line">         res.writeHead(<span class="number">401</span>);</span><br><span class="line">         res.end();</span><br><span class="line"></span><br><span class="line">     &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">         handle(req,res);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="数据上传"><a href="#数据上传" class="headerlink" title="数据上传"></a>数据上传</h2><blockquote>
+<p>通过解析报头的Transfer-Encoding或Content-Length可以判断是否带有内容，如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> hasBody = <span class="function"><span class="keyword">function</span>(<span class="params">req</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'transfer-encoding'</span> <span class="keyword">in</span> req.headers || <span class="string">'content-length'</span> <span class="keyword">in</span> req.headers;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//如果存在</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(hasBody(req))&#123;</span><br><span class="line">        <span class="keyword">var</span> buffers = [];</span><br><span class="line">        req.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</span><br><span class="line">                buffers.push(chunk);</span><br><span class="line">            &#125;);</span><br><span class="line">        req.on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                req.rawBody = Buffer.concat(buffers).toString();</span><br><span class="line">                handle(req,res);</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        handle(req,res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="表单数据"><a href="#表单数据" class="headerlink" title="表单数据"></a>表单数据</h2><blockquote>
+<p>默认的表单提交，请求头中的Content-Type字段值为application/x-www-form-urlencoded，可以通过如下进行解析判断</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (req.headers[<span class="string">'content-type'</span>] === <span class="string">'application/x-www-form-urlencoded'</span>) &#123;</span><br><span class="line">        req.body = querystring.aprse(req.rawBody);</span><br><span class="line">    &#125;</span><br><span class="line">    todo(req,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="其他格式"><a href="#其他格式" class="headerlink" title="其他格式"></a>其他格式</h2><blockquote>
+<p>默认的表单提交，请求头中的Content-Type字段值为application/xx， xx可以是json 或者xml,我们还得携带编码信息:</p>
+<ul>
+<li>Content-Type:application/json;charset=utf-8</li>
+<li>于是做如下判断</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mime = <span class="function"><span class="keyword">function</span> (<span class="params">req</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> str = req.headers[<span class="string">'content-type'</span>] || <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">return</span> str.split(<span class="string">";"</span>)[<span class="number">0</span>]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解析json文件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> handle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(mime(req) === <span class="string">'application/json'</span>)&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            req.body = <span class="built_in">JSON</span>.parse(req.rawBody);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            res.writeHead(<span class="number">400</span>);</span><br><span class="line">            res.end(<span class="string">"Invalid JSON"</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    todo(req,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>解析xml  需要引入第三方的库</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> xml2js = <span class="built_in">require</span>(<span class="string">'xml2js'</span>);</span><br><span class="line"><span class="keyword">if</span>(mime(req) === <span class="string">'application/xml'</span>)&#123;</span><br><span class="line">    xml2js.parseString(req.rawBody,<span class="function"><span class="keyword">function</span>(<span class="params">err,xml</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                res.writeHead(<span class="number">400</span>);</span><br><span class="line">                res.end(<span class="string">'Invalid XML'</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            req.body = xml;</span><br><span class="line">            todo(req,res);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="附件上传"><a href="#附件上传" class="headerlink" title="附件上传"></a>附件上传</h2><blockquote>
+<p>对于含file控件的特殊表单，我们需要这样构造请求</p>
+<ul>
+<li>Content-Type:multipart/form-data; boundary=AaBO3x</li>
+<li>Content-Length:19958</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>boundary=AaBO3x是每一部分的边界符，它是随机生成的一段字符串，报体内容将在它前面添加–进行分割，报文结束都加上–表示结束，Content-Length的值必须保障是报文体的长度</p>
+</blockquote>
+<blockquote>
+<p>由于我们需要接受的文件大小不确定，所以我们需要谨慎处理</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(hasBody(req))&#123;</span><br><span class="line">        <span class="keyword">var</span> done = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            handle(req,res);</span><br><span class="line">        &#125;</span><br><span class="line">         <span class="keyword">if</span>(mime(req) === <span class="string">'application/json'</span>)&#123;</span><br><span class="line">            parseJSON(req,done);</span><br><span class="line">         &#125; <span class="keyword">else</span> <span class="keyword">if</span>(mime(req) ===<span class="string">'application/xml'</span>)&#123;</span><br><span class="line">            parseXML(req,done)</span><br><span class="line">         &#125; <span class="keyword">else</span> <span class="keyword">if</span>(mime(req) === <span class="string">'multipart/form-data'</span>) &#123;</span><br><span class="line">            parseMultipart(req,done);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        handle(req,res)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>最好的啊办法是用formidable模块</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> formidable = <span class="built_in">require</span>(<span class="string">'formidable'</span>);</span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(hasBody(req)) &#123;</span><br><span class="line">        <span class="keyword">if</span>(mime(req) === <span class="string">'multipart/form-data'</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> form = <span class="keyword">new</span> formidable.IncomingForm();</span><br><span class="line">            form.parse(req,<span class="function"><span class="keyword">function</span>(<span class="params">err,fields,files</span>)</span>&#123;</span><br><span class="line">                    req.body = fields;</span><br><span class="line">                    req.files = files;</span><br><span class="line">                    handle(req,res);</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        handle(req,res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/13/node-js深入浅出笔记14/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/13/node-js深入浅出笔记14/" itemprop="url">node.js深入浅出笔记14</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-13T11:46:58+08:00">
+                2017-09-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="基础功能"><a href="#基础功能" class="headerlink" title="基础功能"></a>基础功能</h1><blockquote>
+<p>由于node只提供了基础的功能，还远远达不到业务的需求</p>
+</blockquote>
+<h2 id="请求方式的判断"><a href="#请求方式的判断" class="headerlink" title="请求方式的判断"></a>请求方式的判断</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    <span class="comment">//改造请求方式</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span> (req.method)&#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"POST"</span> : update(req,res);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"DELETE"</span> : remove(req,res);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"PUT"</span> : create(req,res);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">"GET"</span> :</span><br><span class="line">        <span class="keyword">default</span> : get(req,res);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="路劲解析"><a href="#路劲解析" class="headerlink" title="路劲解析"></a>路劲解析</h2><blockquote>
+<p>常用处理路劲进行业务处理的是静态文件服务器，处理方式如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pathname = url.parse(req.url).pathname;</span><br><span class="line">    fs.readFile(path.join(ROOT,pathname),<span class="function"><span class="keyword">function</span>(<span class="params">err,file</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            res.writeHead(<span class="number">404</span>);</span><br><span class="line">            res.end(<span class="string">'找不到文件'</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        res.writeHead(<span class="number">200</span>);</span><br><span class="line">        res.end(file);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>还有一种常见分发场景是根据路径来选择控制器，他预设路径为控制器和行为的组合，无需额外配置路由信息</p>
+<ul>
+<li>/controller/action/a/b/c</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>这里的controller会对应一个控制器,action对应控制的行为，剩余的值会作为参数，处理方式如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pathname = url.parse(req.url).pathname;</span><br><span class="line">    <span class="keyword">var</span> paths = pathname.split(<span class="string">'/'</span>);</span><br><span class="line">    <span class="keyword">var</span> controller = paths[<span class="number">1</span>] || <span class="string">'index'</span>;</span><br><span class="line">    <span class="keyword">var</span> action = paths[<span class="number">2</span>] || <span class="string">'index'</span>;</span><br><span class="line">    <span class="keyword">var</span> args = paths.slice(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">if</span>(handles[controller] &amp;&amp; handles[controller][action]) &#123;</span><br><span class="line">        handles[controller][action].apply(<span class="literal">null</span>,[req,res].concat(args));</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        res.writeHead(<span class="number">500</span>);</span><br><span class="line">        res.end(<span class="string">'找不到响应控制器'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//这样我们只要只关心具体的业务的实现</span></span><br><span class="line"></span><br><span class="line">handles.index = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">handles.index.index = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,foo,bar</span>)</span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>)</span><br><span class="line">    res.end(foo);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="查询字符串"><a href="#查询字符串" class="headerlink" title="查询字符串"></a>查询字符串</h2><blockquote>
+<p>通过querystring模块处理部分数据</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">"url"</span>);</span><br><span class="line"><span class="keyword">var</span> querystring = <span class="built_in">require</span>(<span class="string">'querystring'</span>);</span><br><span class="line"><span class="keyword">var</span> query = queststring.parse(url.parse(req.url).query);</span><br><span class="line"></span><br><span class="line"><span class="comment">//更简单的方式</span></span><br><span class="line"><span class="keyword">var</span> query = url.parse(req.url,<span class="literal">true</span>).query;</span><br></pre></td></tr></table></figure>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><blockquote>
+<p>cookie的处理方式</p>
+<ul>
+<li>服务器向客户端发送cookie</li>
+<li>浏览器将cookie保存</li>
+<li>之后每次浏览器都会将cookie发向服务器端</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>cookie的解析方式</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> parseCookie = <span class="function"><span class="keyword">function</span> (<span class="params">cookie</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cookies = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span>(!cookie)&#123;</span><br><span class="line">        <span class="keyword">return</span> cookies;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> list = cookie.split(<span class="string">';'</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span> ;i&lt;list.length;i++)&#123;</span><br><span class="line">        <span class="keyword">var</span> pair = list[i].split(<span class="string">"="</span>);</span><br><span class="line">        cookies[pair[<span class="number">0</span>].trim()] = pair[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cookies;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接访问如下</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    req.cookies = parseCookie(req.headers.cookie);</span><br><span class="line">    hande(req,res);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>服务器告诉客户端的方式是通过设置Set-Cookie字段</p>
+<ul>
+<li>Set-Cookie:name=value;Path=/;Expires=Sun,23-Apr-23 09:01:35 GMT;Domian=.domain.com;</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>上述的字符串的意思</p>
+<ul>
+<li>path:表示cookie影响的路径</li>
+<li>Expires和Max-Age用来告诉cookie过期时间</li>
+<li>HttpOnly:表示脚本是否可以通过document.cookie访问</li>
+<li>Secure:当值为true时，表示必须通过https访问</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>将cookie转换成规范格式</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> serialize = <span class="function"><span class="keyword">function</span> (<span class="params">name,val,opt</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pairs = [name+<span class="string">'='</span>+encode(val)];</span><br><span class="line">    opt = opt || &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.maxAge)&#123;pairs.push(<span class="string">'Max-Age='</span>+opt.maxAge)&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.domain)&#123;pairs.push(<span class="string">'Domain='</span>+opt.domain)&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.path)&#123;pairs.push(<span class="string">'Path='</span>+opt.path)&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.expires)&#123;pairs.push(<span class="string">'Expires='</span>+opt.expires.toUTCString())&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.httpOnly)&#123;pairs.push(<span class="string">'httpOnly'</span>)&#125;;</span><br><span class="line">    <span class="keyword">if</span>(opt.secure)&#123;pairs.push(<span class="string">'secure'</span>)&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pairs.join(<span class="string">';'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>cookies的性能影响</p>
+<ul>
+<li>减小Cookie的大小</li>
+<li>为静态组件使用不同的域名</li>
+<li>减少dns查询</li>
+</ul>
+</blockquote>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><blockquote>
+<p>由于cookie安全性问题，就诞生了session,它能保证数据有一定的安全性，常见有两种方式实现</p>
+</blockquote>
+<ul>
+<li>基于Cookie来实现用户和数据的映射,将口令保存在cookie上，上代码</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> sessions  = &#123;&#125;；</span><br><span class="line"><span class="keyword">var</span> key = <span class="string">'session_id'</span>;</span><br><span class="line"><span class="keyword">var</span> EXPIRES = <span class="number">20</span>*<span class="number">60</span>*<span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> generate = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> session = &#123;&#125;;</span><br><span class="line">    session.id = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()+<span class="built_in">Math</span>.random();</span><br><span class="line">    session.cookie = &#123;</span><br><span class="line">        expire:(<span class="keyword">new</span> <span class="built_in">Date</span>).getTiem()+EXPIRES</span><br><span class="line">    &#125;</span><br><span class="line">    session[session.id] = session;</span><br><span class="line">    <span class="keyword">return</span> session;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//每个请求到来时，检查cookie中的口令与服务端的数据，如果过期重新生成</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = req.cookie[key];</span><br><span class="line">    <span class="keyword">if</span>(!id)&#123;</span><br><span class="line">        req.session = generate();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> session = sessions[id];</span><br><span class="line">        <span class="keyword">if</span>(session) &#123;</span><br><span class="line">            <span class="keyword">if</span>(session.cookie.expire &gt; (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()) &#123;</span><br><span class="line">                <span class="comment">//更新超时时间</span></span><br><span class="line">                session.cookie.expire = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime() + EXPIRES;</span><br><span class="line">                req.session = session;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//超时了，删除旧数据，并重新生成</span></span><br><span class="line">                <span class="keyword">delete</span> session[id];</span><br><span class="line">                req.session = generate();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//如果session过期或者口令不对，重新生成session</span></span><br><span class="line">            req.session = generate();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        handle(req,res)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当然仅仅重新生成Session还不足以完成整个流程，还要在响应给客户端时设置新的值，以便下次请求时能够对应服务器数据，这里我们hack响应的对象writeHead()方式，在它的内部注入设置Cookie的逻辑、</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> writeHead = res.writeHead;</span><br><span class="line">res.writeHead = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cookies = res.getHeader(<span class="string">'Set-Cookie'</span>);</span><br><span class="line">    <span class="keyword">var</span> session = serialize(<span class="string">'Set-Cookie'</span>,req.session.id);</span><br><span class="line">    cookie = <span class="built_in">Array</span>.isArray(cookies) ? cookie.concat(session) : [cookies,session];</span><br><span class="line">    res.setHeader(<span class="string">'Set-Cookie'</span>,cookies);</span><br><span class="line">    <span class="keyword">return</span> writeHead.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//我们现在只需写如下所示</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hadle = <span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!req.session.isVisit) &#123;</span><br><span class="line">        res.session.isVisit = <span class="literal">true</span>;</span><br><span class="line">        res.writeHead(<span class="number">200</span>);</span><br><span class="line">        res.end(<span class="string">'欢迎第一次光临小屋'</span>)</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res.writeHead(<span class="number">200</span>);</span><br><span class="line">        res.end(<span class="string">"欢迎再次光临"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过查询字符串来实现浏览器端与服务端数据的对应</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//原理是通过检查请求的查询字符串，如果没有值，会先生成新的带值得url，如下</span></span><br><span class="line"><span class="keyword">var</span> getURL = <span class="function"><span class="keyword">function</span> (<span class="params">_url,key,value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = url.parse(_url,<span class="literal">true</span>);</span><br><span class="line">    obj.query[key] = value;</span><br><span class="line">    <span class="keyword">return</span> url.format(obj);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//然后跳转，让客户端重新发起请求</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> redirect = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">        res.setHeader(<span class="string">'Location'</span>,url);</span><br><span class="line">        res.writeHead(<span class="number">302</span>);</span><br><span class="line">        res.end();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> id = req.query[key];</span><br><span class="line">    <span class="keyword">if</span>(!id) &#123;</span><br><span class="line">        <span class="keyword">var</span> session = generate();</span><br><span class="line">        redirect(getURL(req.url,key,session.id));</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> session = session[id];</span><br><span class="line">        <span class="keyword">if</span>(session) &#123;</span><br><span class="line">            <span class="keyword">if</span>(session.cookie.expire &gt; (<span class="keyword">new</span> date()).getTime()) &#123;</span><br><span class="line">                <span class="comment">//更新超时时间</span></span><br><span class="line">                session.cookie.expire = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime()+EXPIRES;</span><br><span class="line">                req.session = session;</span><br><span class="line">                handle(req,res)</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//超时了，删除旧数据，并且重新生成</span></span><br><span class="line">                <span class="keyword">delete</span> session[id];</span><br><span class="line">                <span class="keyword">var</span> session = generate();</span><br><span class="line"></span><br><span class="line">                redirect(getURL(req.url,key,session.is));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">//如果session过期或者口令不对，重新生成session</span></span><br><span class="line">            <span class="keyword">var</span> session = generate();</span><br><span class="line">            redirect(getURL(req.url,key,session.id))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>session与内存，由于node的内存限制，我们一般采用第三方进行缓存，于是需要重新改写代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> id = req.cookie[key];</span><br><span class="line">    <span class="keyword">if</span>(!id)&#123;</span><br><span class="line">        req.session = generate();</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        store.get(id,<span class="function"><span class="keyword">function</span>(<span class="params">err,session</span>)</span>&#123;</span><br><span class="line">                 <span class="keyword">if</span>(session) &#123;</span><br><span class="line">                <span class="keyword">if</span>(session.cookie.expire &gt; (<span class="keyword">new</span> <span class="built_in">Date</span>().getTime()) &#123;</span><br><span class="line">                    <span class="comment">//更新超时时间</span></span><br><span class="line">                    session.cookie.expire = (<span class="keyword">new</span> <span class="built_in">Date</span>()).getTime() + EXPIRES;</span><br><span class="line">                    req.session = session;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//超时了，删除旧数据，并重新生成</span></span><br><span class="line">                    <span class="keyword">delete</span> session[id];</span><br><span class="line">                    req.session = generate();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//如果session过期或者口令不对，重新生成session</span></span><br><span class="line">                req.session = generate();</span><br><span class="line">            &#125;</span><br><span class="line">             handle(req,res)</span><br><span class="line">        &#125;)  </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//在响应时，将新的session保存会缓存中，如下所示</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> writeHead = res,writeHead;</span><br><span class="line">res.writeHead = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> cookies = res.getHeader(<span class="string">'Set-Cookie'</span>);</span><br><span class="line">    <span class="keyword">var</span> session = serialize(<span class="string">'Set-Cookie'</span>,req.session.id);</span><br><span class="line">    cookies = <span class="built_in">Array</span>.isArray(cookies) ? cookies.concat(session) : [cookies,session];</span><br><span class="line">    res.setHeader(<span class="string">'Set-Cookie'</span>,cookies);</span><br><span class="line">    <span class="comment">//保存回缓存</span></span><br><span class="line">    store.save(req.session)</span><br><span class="line">    <span class="keyword">return</span> writeHead.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Session 与 安全</p>
+<ul>
+<li>xss 攻击</li>
+</ul>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/12/node-js深入浅出笔记13/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/12/node-js深入浅出笔记13/" itemprop="url">node.js深入浅出笔记13</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T14:49:09+08:00">
+                2017-09-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="构建WebSocket服务"><a href="#构建WebSocket服务" class="headerlink" title="构建WebSocket服务"></a>构建WebSocket服务</h1><blockquote>
+<p>websocket基于事件编程的编程模型与node自定义事件相差无几,node的事件驱动十分商场与大量客户端保持高并发得连接</p>
+</blockquote>
+<h2 id="websocket与传统的http优势"><a href="#websocket与传统的http优势" class="headerlink" title="websocket与传统的http优势"></a>websocket与传统的http优势</h2><ul>
+<li>客户端与服务端只建立一个tcp连接，可以使用更少的连接</li>
+<li>websocket服务器可以推送数据到客户端，这远比http请求响应模式更加灵活，更加高效</li>
+<li>有更轻量级的协议头，减少数据传输量</li>
+</ul>
+<blockquote>
+<p>websocket客户端实例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://127.0.0.1:1366/updates'</span>);</span><br><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(socket.bufferedAmount == <span class="number">0</span>)</span><br><span class="line">                socket.send(getUpdateData());</span><br><span class="line">        &#125;,<span class="number">50</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//做些啥</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>WebSocket协议主要两个部分：握手和传输数据</p>
+</blockquote>
+<h2 id="WebSocket握手"><a href="#WebSocket握手" class="headerlink" title="WebSocket握手"></a>WebSocket握手</h2><blockquote>
+<p>客户端在建立连接的时候，通过http发送请求报文，它比普通的http请求协议多了以下两个东西,表示服务端协议升级为WebSocket</p>
+<ul>
+<li>Upgrade:websocket</li>
+<li>Connection:Upgrade</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>还有三个特别参数</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a2.png" alt="流程图"></p>
+<ul>
+<li>Sec-WebSocket-Key:用于安全校验</li>
+</ul>
+<blockquote>
+<p>它的属性值用base64编码，服务器收到后与他自己的字符串进行相连，然后通过sha1安全散列算法计算出结果后，在进行base64编码，最后返回客户端，算法如下<br>var crypto = require(“crypto”);<br>var val = crypto.createHash(‘sha1’).update(key).digest(‘base64’);</p>
+</blockquote>
+<ul>
+<li>Sec-WebSocket-Protocol:指定自协议</li>
+<li>Sec-WebSocket-Version：版本号</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//示例代码，跑不起来</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//client.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> WebSocket = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//伪代码，解析ws://127.0.0.1:12010/updates,用于请求</span></span><br><span class="line">    <span class="keyword">this</span>.options = parseUrl(url);</span><br><span class="line">    <span class="keyword">this</span>.connect();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WebSocket.prototype.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"干嘛的"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WebSocket.prototype.setSocket = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">this</span> = that;</span><br><span class="line">    <span class="keyword">var</span> key = <span class="keyword">new</span> BUffer(<span class="keyword">this</span>.options.protocolVersion+<span class="string">'-'</span>+<span class="built_in">Date</span>.now()).toString(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> shasum = crypto.createHash(<span class="string">'sha1'</span>);</span><br><span class="line">    <span class="keyword">var</span> expected = shasum.update(key+<span class="string">'258EAFA5-E914-47DA-95CA-C5ABoDC85B11'</span>).digest(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> options = &#123;</span><br><span class="line">        port:<span class="keyword">this</span>.options.port,</span><br><span class="line">        host:<span class="keyword">this</span>.options.hostname,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Connection'</span>:<span class="string">'Upgrade'</span>,</span><br><span class="line">            <span class="string">'Upgrade'</span>:<span class="string">'websocket'</span>,</span><br><span class="line">            <span class="string">'Sec-WebSocket-Version'</span>:<span class="keyword">this</span>.options.protocolVersion,</span><br><span class="line">            <span class="string">'Sec-WebSocket-Key'</span>:key</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> req = http.request(options);</span><br><span class="line">    req.end();</span><br><span class="line">    req.on(<span class="string">'upgrade'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">res,socket,upgradeHead</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//连接成功</span></span><br><span class="line">        that.setSocket(socket);</span><br><span class="line">        <span class="comment">//触发open事件</span></span><br><span class="line">        that.onopen();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//server.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html;charset=utf-8'</span> &#125;);</span><br><span class="line">    res.write(<span class="string">'在学习'</span>);</span><br><span class="line">    res.write(<span class="string">'mess'</span>);</span><br><span class="line">    res.end(<span class="string">"node"</span>);</span><br><span class="line"></span><br><span class="line">&#125;).listen(<span class="number">12010</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//在收到upgrade请求后，告之客户端允许切换协议</span></span><br><span class="line">server.on(<span class="string">'upgrade'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,socket,upgradeHead</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> head = <span class="keyword">new</span> Buffer(upgradeHead.length);</span><br><span class="line">    upgradeHead.copy(head);</span><br><span class="line">    <span class="keyword">var</span> key = req.headers[<span class="string">'sec-websocket-key'</span>];</span><br><span class="line">    <span class="keyword">var</span> shasum = crypto.createHash(<span class="string">'sha1'</span>);</span><br><span class="line">    key = shasum.update(key+<span class="string">'258EAFA5-E914-47DA-95CA-C5ABoDC85B11'</span>).digest(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> headers = [</span><br><span class="line">        <span class="string">'HTTP/1.1 101 SWitching Protocols'</span>,</span><br><span class="line">        <span class="string">'Upgrade:websocket'</span>,</span><br><span class="line">        <span class="string">'Connection:Upgrade'</span>,</span><br><span class="line">        <span class="string">'Sec-WebSocket-Accept:'</span>+key,</span><br><span class="line">        <span class="string">'Sec-WebSocket-Protocol:'</span>+protocol</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">//让数据立即发送</span></span><br><span class="line">    socket.setNoDelay(<span class="literal">true</span>);</span><br><span class="line">    socket.write(headers.concat(<span class="string">''</span>,<span class="string">''</span>).join(<span class="string">'\r\n'</span>));</span><br><span class="line">    <span class="comment">// 建立服务器端的WebSocket连接</span></span><br><span class="line">    <span class="keyword">var</span> websocket = <span class="keyword">new</span> WebSocket();</span><br><span class="line">    websocket.setSocket(socket);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="WebSocket数据传输"><a href="#WebSocket数据传输" class="headerlink" title="WebSocket数据传输"></a>WebSocket数据传输</h2><blockquote>
+<p>完成握手后，就不在进行http交互，而是开始WebSocket的数据帧协议，实现客户端与服务端的数据交互  示意图如下</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a8.png" alt="流程图"></p>
+<blockquote>
+<p>握手完成后将会触发onopen()</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//<span class="doctag">TODO:</span>opened()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于服务端没有onopen()方法可言,为了完成TCP套接字到websocket事件的封装，需要在接收数据时处理，websocket的数据帧协议即是在底层data事件上封装完成的</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接收</span></span><br><span class="line">WebSocket.prototype.setSocket = <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.socket = socket;</span><br><span class="line">    <span class="keyword">this</span>.socket.on(<span class="string">'data'</span>,<span class="keyword">this</span>.receiver);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送</span></span><br><span class="line"></span><br><span class="line">WebSocket.prototype.send = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>._send(data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="网络服务与安全"><a href="#网络服务与安全" class="headerlink" title="网络服务与安全"></a>网络服务与安全</h1><blockquote>
+<p>node 提供了3个模块，分别是crypto,tls,https,其中crypto主要用于加密解密，SHA！,md5等加密算法在其中都有体现，真正用于网络层的是另外两个,tls提供了与net类似的功能，区别在于建立tls/ssl加密的tcp连接上，对于https而言，他与http接口一致，只是多了安全连接。</p>
+</blockquote>
+<h2 id="TLS-SSL"><a href="#TLS-SSL" class="headerlink" title="TLS/SSL"></a>TLS/SSL</h2><blockquote>
+<p>秘钥之间的加密解密。是非对称结构，如图所示</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a8.png" alt="流程图"></p>
+<blockquote>
+<p>利用node底层opensll生成私钥和公钥</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务器 私钥</span></span><br><span class="line">openssl genrsa -out server.key <span class="number">1024</span></span><br><span class="line"><span class="comment">//服务器 公钥</span></span><br><span class="line">openssl rsa -<span class="keyword">in</span> server.key -pubout -out server.pem</span><br><span class="line"><span class="comment">//客户端 私钥</span></span><br><span class="line">openssl genrsa -out client.key <span class="number">1024</span></span><br><span class="line"><span class="comment">//客户端 公钥</span></span><br><span class="line">openssl rsa -<span class="keyword">in</span> client.key -pubout -out client.pem</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>依然存在中间人伪造站点的情况</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a10.png" alt="流程图"></p>
+<blockquote>
+<p>数字证书解决这一波问题，详情自己百度，我就简单的写写</p>
+</blockquote>
+<ul>
+<li>为了得到签名证书，服务器端需要通过自己的的私钥生成csr文件。ca机构将通过这个文件颁发属于该服务器端的签名证书，只要通过ca机构的就能验证证书是否合法</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/11/node-js深入浅出笔记12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/11/node-js深入浅出笔记12/" itemprop="url">node.js深入浅出笔记12</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-11T00:00:00+08:00">
+                2017-09-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><blockquote>
+<p>HTTP（HyperText Transport Protocol）是超文本传输协议的缩写，它用于传送WWW方式的数据，关于HTTP协议的详细内容请参考RFC2616。HTTP协议采用了请求/响应模型。客户端向服务器发送一个请求，请求头包含请求的方法、URL、协议版本、以及包含请求修饰符、客户信息和内容的类似于MIME的消息结构。服务器以一个状态行作为响应，响应的内容包括消息协议的版本，成功或者错误编码加上包含服务器信息、实体元信息以及可能的实体内容。</p>
+</blockquote>
+<h2 id="http模块"><a href="#http模块" class="headerlink" title="http模块"></a>http模块</h2><blockquote>
+<p>这是继承于TCP的net模块，但是tcp以connection为单位进行服务，http以request为单位进行服务 如图：</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a4.png" alt="流程图"></p>
+<blockquote>
+<p>http模块将连接所用的套接字的读写抽象为ServerRequest和ServerResponse对象，他们分别对应请求和相应操作</p>
+</blockquote>
+<blockquote>
+<p>在请求产生的过程中，http模块拿到连接中传来的数据，调用二进制模块http_parser进行解析，在解析完请求报文的报头后，触发request事件，调用用户的业务逻辑，如图：</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170906/a5.png" alt="流程图"></p>
+<h2 id="http请求"><a href="#http请求" class="headerlink" title="http请求"></a>http请求</h2><blockquote>
+<p>对于tcp连接的读操作，http将其封装成ServerRequest对象,报文头会用http_parser进行解析，报文头如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&gt;GET / HTTP /<span class="number">1.1</span></span><br><span class="line">&gt;User-Agent:curl/<span class="number">7.24</span><span class="number">.0</span> (x86_64-apple-darwin12<span class="number">.0</span>) libcurl/<span class="number">7.24</span><span class="number">.0</span> OPenSSL/<span class="number">0.9</span><span class="number">.8</span>r zlib/<span class="number">1.2</span><span class="number">.5</span></span><br><span class="line">&gt;Host:<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span><span class="number">.8995</span></span><br><span class="line">&gt;Accept: *<span class="comment">//*</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>被解析成如下属性</p>
+</blockquote>
+<ul>
+<li>req.method属性: GET</li>
+<li>req.url:值为/</li>
+<li>req.httpVersion属性值:1.1</li>
+<li>其余的都被放置在req.headers上传递给业务逻辑以供调用</li>
+</ul>
+<blockquote>
+<p>报文体部分是一个只读流对象，如果业务逻辑需要读取报文体的数据，则需要等数据流结束后操作</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">req,res</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> buffers = [];</span><br><span class="line">    req.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">trunk</span>)</span>&#123;</span><br><span class="line">        buffers.push(trunk);</span><br><span class="line">    &#125;).on(<span class="string">'end'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> buffer = Buffer.concat(buffers);</span><br><span class="line">        res.end(<span class="string">'Hello world'</span>)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="HTTP响应"><a href="#HTTP响应" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><blockquote>
+<p>用于设置响应头的有res.setHeader()和writeHead()，setHeader()可以多次设置,但是只有调用writeHead,报头才会写入连接中</p>
+</blockquote>
+<blockquote>
+<p>响应体则是由res.write()和res.end()实现,后者会先调用write()发送数据，然后发送信号告诉服务器这次响应结束，它一定要写，否则客户端一直处在等待状态</p>
+</blockquote>
+<h2 id="HTTP事件"><a href="#HTTP事件" class="headerlink" title="HTTP事件"></a>HTTP事件</h2><ul>
+<li>connection事件:在开始http请求和响应之前，客户端要与服务器端建立底层的TCP连接，这个连接可能因为开启了keep-alive,可以在多次请求响应之间使用，当这个连接建立时，服务器触发一次connection事件</li>
+<li>request事件:建立TCP连接后，http模块的底层将在数据流中抽离出http请求和http响应，当请求数据发送到服务器端，在解析出http请求头后，将会触发该事件，res.end()后，tcp连接可能用于下一次响应</li>
+<li>close事件:与TCP服务器行为一直，调用server.close()停止接收新的连接，当已有的连接都断开时，触发该事件，可以给server.close()传递一个回调函数来快速注册该事件</li>
+<li>checkContinue事件:比较有用的事件，对某些大型的数据传输有用</li>
+<li>connect：当客户端发起connect请求时触发，而发起connect请求通常在http代理时出现，如果不监听该事件，发送请求的连接将会关闭</li>
+<li>upgrade事件:当客户端要求升级连接的协议时，需要喝服务器端协商，客户端会在请求头中带上upgrade字段，服务器端会在接收到请求时触发该事件</li>
+<li>clientError：连接的客户端触发error事件时，该错误会传递到服务器，触发该事件</li>
+</ul>
+<h2 id="Http客户端"><a href="#Http客户端" class="headerlink" title="Http客户端"></a>Http客户端</h2><blockquote>
+<p>通过http.request(options,connect)可以构造一个http客户端</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务器端</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html;charset=utf-8'</span> &#125;);</span><br><span class="line">    res.write(<span class="string">'在学习'</span>);</span><br><span class="line">    res.write(<span class="string">'mess'</span>);</span><br><span class="line">    res.end(<span class="string">"node"</span>);</span><br><span class="line"></span><br><span class="line">&#125;).listen(<span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户端</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">    host:<span class="string">'127.0.0.1'</span> <span class="comment">//服务器IP地址</span></span><br><span class="line">    hostname:<span class="string">'127.0.0.1'</span>,<span class="comment">//服务器名字</span></span><br><span class="line">    port:<span class="number">3000</span>,<span class="comment">//端口号</span></span><br><span class="line">    path:<span class="string">'/'</span>,<span class="comment">//请求路劲</span></span><br><span class="line">    method:<span class="string">'GET'</span><span class="comment">//</span></span><br><span class="line">    <span class="comment">//socketPath:Domain套接字路劲</span></span><br><span class="line">    <span class="comment">//localAddress：建立网络连接的本地网卡</span></span><br><span class="line">    <span class="comment">//headers:请求头对象</span></span><br><span class="line">    <span class="comment">//auth:BAsic认证</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> req = http.request(options,<span class="function"><span class="keyword">function</span>(<span class="params">res</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'STATUS'</span>+res.statusCode);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'HEADERS'</span>+<span class="built_in">JSON</span>.stringify(res.headers))</span><br><span class="line">    res.setEncoding(<span class="string">'utf-8'</span>);</span><br><span class="line">    res.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(chunk);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure>
+<h2 id="HTTP代理"><a href="#HTTP代理" class="headerlink" title="HTTP代理"></a>HTTP代理</h2><blockquote>
+<p>http模块包含一个默认的客户端代理对象http.globalAgent，它对每一个服务器端创建的连接进行了管理，默认情况下,通过clientRequest对象对用一个服务器发起的http请求最多可以创建5个连接，他的实质是一个连接池<br><img src="https://aymfx.github.io/img/a20170906/a6.png" alt="流程图"></p>
+</blockquote>
+<blockquote>
+<p>通过这个我们可以自行构造代理对象，从而扩充连接数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">var</span> agent = <span class="keyword">new</span> http.Agent(&#123;</span><br><span class="line">    maxSockets:<span class="number">10</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> options = &#123;</span><br><span class="line">        host:<span class="string">'127.0.0.1'</span> <span class="comment">//服务器IP地址</span></span><br><span class="line">        hostname:<span class="string">'127.0.0.1'</span>,<span class="comment">//服务器名字</span></span><br><span class="line">        port:<span class="number">3000</span>,<span class="comment">//端口号</span></span><br><span class="line">        path:<span class="string">'/'</span>,<span class="comment">//请求路劲</span></span><br><span class="line">        method:<span class="string">'GET'</span></span><br><span class="line">        agent:agent</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="HTTP客户端事件"><a href="#HTTP客户端事件" class="headerlink" title="HTTP客户端事件"></a>HTTP客户端事件</h2><ul>
+<li>response:当得到服务器响应时触发该事件</li>
+<li>socket:当底层连接池中建立的连接分配给当前请求对象时，触发该事件</li>
+<li>connect:当客户端向服务器端发起connect请求时，如果客户端响应200状态码，客户端会触发该事件</li>
+<li>upgrade:客户端向服务器发起upgrade请求时，如果服务端响应101 Switching Protocols状态，客户端会触发该事件</li>
+<li>continue:客户端向服务器发起Expect：100-continue头信息，以试图发送较大的数据量，如果服务器端响应100 continue状态，客户端将触发该事件</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

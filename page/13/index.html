@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/13/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/13/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/29/node-js深入浅出笔记4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/29/node-js深入浅出笔记4/" itemprop="url">node.js深入浅出笔记4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-29T09:38:50+08:00">
+                2017-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异步编程-async"><a href="#异步编程-async" class="headerlink" title="异步编程 async"></a>异步编程 async</h1><h2 id="异步的串行执行，通过series-实现"><a href="#异步的串行执行，通过series-实现" class="headerlink" title="异步的串行执行，通过series ()实现"></a>异步的串行执行，通过series ()实现</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">'async'</span>);</span><br><span class="line"><span class="keyword">async</span>.series([</span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,callback)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,callback)</span><br><span class="line">&#125;,</span><br><span class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(results,<span class="string">'哈哈'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>等价于</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> callback(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> callback(err);</span><br><span class="line">        &#125;</span><br><span class="line">        callback(<span class="literal">null</span>,[content,data])</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>每个callback()执行的结果都将保存起来，然后执行下一个调用，直到结束所有调用，最终执行的回调函数将把前几次异步调用的结果以数组的形式传入，异常处理规则是，一旦出现异常，结束所有调用，并将异常传递给最终回调的第一个参数(啥意思？？)，好像是那个啥，回到调用成功的阶段。</p>
+</blockquote>
+<h2 id="异步的并行执行parallel"><a href="#异步的并行执行parallel" class="headerlink" title="异步的并行执行parallel"></a>异步的并行执行parallel</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">'async'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span>.parallel([</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">            fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,callback);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">            fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,callback);</span><br><span class="line">        &#125;</span><br><span class="line">    ],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(results);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>等价于</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> counter = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">var</span> results =[];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> done = <span class="function"><span class="keyword">function</span>(<span class="params">index,value</span>) </span>&#123;</span><br><span class="line">    results[index] = value;</span><br><span class="line">    counter--;</span><br><span class="line">    <span class="keyword">if</span>(counter ===<span class="number">0</span>) &#123;</span><br><span class="line">        callback(<span class="literal">null</span>,results);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//只传递一个异常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> hasErr = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fail = <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!hasErr)&#123;</span><br><span class="line">        hasErr = <span class="literal">true</span>;</span><br><span class="line">        callback(err);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        retunr fail(err)</span><br><span class="line">    &#125;</span><br><span class="line">    done(<span class="number">0</span>,content)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        retunr fail(err)</span><br><span class="line">    &#125;</span><br><span class="line">    done(<span class="number">1</span>,content)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>也类似于</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> EventProxy = <span class="built_in">require</span>(<span class="string">'eventproxy'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> EventProxy();</span><br><span class="line"></span><br><span class="line">proxy.all(<span class="string">'content'</span>,<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">content,data</span>)</span>&#123;</span><br><span class="line">    callback(<span class="literal">null</span>,[content,data]);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">proxy.fail(callback);</span><br><span class="line">fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,proxy.done(<span class="string">'content'</span>));</span><br><span class="line">fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,proxy.done(<span class="string">'data'</span>));</span><br></pre></td></tr></table></figure>
+<h2 id="异步调用的依赖处理waterfall"><a href="#异步调用的依赖处理waterfall" class="headerlink" title="异步调用的依赖处理waterfall"></a>异步调用的依赖处理waterfall</h2><blockquote>
+<p>当前一个结果是后一个结果的输入时，可以用waterfall</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">async</span> = <span class="built_in">require</span>(<span class="string">'async'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span>.waterfall([</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        callback(err,content)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">arg1,callback</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//arg1 =&gt; file2.txt</span></span><br><span class="line">    fs.readFile(arg1,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        callback(err,content)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">arg1,callback</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//arg1 =&gt; file3.txt</span></span><br><span class="line">    fs.readFile(arg1,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        callback(err,content);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">],<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(results);</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>也等价于</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data1</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> callback(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data2</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">        <span class="keyword">return</span> callback(err)</span><br><span class="line">    &#125;</span><br><span class="line">    fs.readFile(<span class="string">'file3.txt'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data3</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> callback(err);</span><br><span class="line">        &#125;</span><br><span class="line">        callback(<span class="literal">null</span>,data3)</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/28/你是人间的四月天/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/28/你是人间的四月天/" itemprop="url">你是人间的四月天</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-28T18:04:18+08:00">
+                2017-08-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>我说你是人间的四月天；<br>笑响点亮了四面风；轻灵<br>在春的光艳中交舞着变。<br>你是四月早天里的云烟，<br>黄昏吹着风的软，星子在<br>无意中闪，细雨点洒在花前。<br>那轻，那娉婷，你是，鲜妍。<br>百花的冠冕你戴着，你是<br>天真，庄严，你是夜夜的月圆。<br>雪化后那片鹅黄，你像；新鲜<br>初放芽的绿，你是；柔嫩喜悦<br>水光浮动着你梦期待中白莲。<br>你是一树一树的花开，是燕<br>在梁间呢喃，——你是爱，是暖，<br>是希望，你是人间的四月天！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/27/node-js深入浅出笔记3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/27/node-js深入浅出笔记3/" itemprop="url">node.js深入浅出笔记3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T00:00:00+08:00">
+                2017-08-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h1><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><blockquote>
+<p>高阶函数可以把函数当成参数，或是将函数作为返回值的函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> points = [<span class="number">90</span>,<span class="number">25</span>,<span class="number">89</span>,<span class="number">45</span>,<span class="number">36</span>,<span class="number">95</span>,<span class="number">56</span>,<span class="number">87</span>];</span><br><span class="line"></span><br><span class="line">    points.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过改变不同的参数，可以决定排序方式</span></span><br></pre></td></tr></table></figure>
+<h2 id="偏函数的用法"><a href="#偏函数的用法" class="headerlink" title="偏函数的用法"></a>偏函数的用法</h2><blockquote>
+<p>意思指的是:创建一个调用另外一个部分–参数或者变量已经预置的函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//解释一下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> toString  = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isString = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object String]'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isFunction = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object Function]'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//以上这样写会产生很多累赘的代码,按照一下方式就是偏函数的用法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isType = <span class="function"><span class="keyword">function</span>(<span class="params">type</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object'</span>+type+<span class="string">']'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);</span><br><span class="line"><span class="keyword">var</span> isFunction = isType(<span class="string">'Function'</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="node-的事件驱动的非阻塞i-o模型"><a href="#node-的事件驱动的非阻塞i-o模型" class="headerlink" title="node 的事件驱动的非阻塞i/ o模型"></a>node 的事件驱动的非阻塞i/ o模型</h2><blockquote>
+<p>如图所示</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/fileImage/day2017082604.png" alt="流程图"></p>
+<h2 id="异步编程的难点"><a href="#异步编程的难点" class="headerlink" title="异步编程的难点"></a>异步编程的难点</h2><blockquote>
+<p>异常处理的难点</p>
+</blockquote>
+<ul>
+<li>异步方法通常有两个阶段，一个是提交请求，异常并不一定发生在此处，try/catch的功效不会发挥功效，第二个是处理结果</li>
+<li>node在处理异常有一种约定俗成的规定，即异常将作为回调函数第一个参数返回，如果为空值则没有异常</li>
+<li>我们在编写异步时遵循的原则<ul>
+<li>必须执行调用者传入的回调函数</li>
+<li>正确传递回异常供调用者判断</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">//示例代码</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">async</span> = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> results = something;</span><br><span class="line">        <span class="keyword">if</span>(error)&#123;</span><br><span class="line">            <span class="keyword">return</span> callback(error);</span><br><span class="line">        &#125;</span><br><span class="line">        callback(<span class="literal">null</span>,results)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>函数嵌套过深</p>
+</blockquote>
+<ul>
+<li>node多个异步调用</li>
+</ul>
+<blockquote>
+<p>阻塞代码</p>
+</blockquote>
+<ul>
+<li>不能用sleep()使线程睡眠</li>
+</ul>
+<blockquote>
+<p>多线程编程</p>
+</blockquote>
+<ul>
+<li>前端使用 web Workers </li>
+</ul>
+<p><img src="https://aymfx.github.io/img/fileImage/day2017082606.png" alt="流程图"></p>
+<blockquote>
+<p>异步转同步</p>
+</blockquote>
+<h2 id="异步编程的解决方案"><a href="#异步编程的解决方案" class="headerlink" title="异步编程的解决方案"></a>异步编程的解决方案</h2><h3 id="事件发布-订阅模式"><a href="#事件发布-订阅模式" class="headerlink" title="事件发布/订阅模式"></a>事件发布/订阅模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="comment">//订阅</span></span><br><span class="line">emmiter.on(<span class="string">'event1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(message);</span><br><span class="line"> &#125;)</span><br><span class="line"> <span class="comment">//发布</span></span><br><span class="line"> emmiter.emit(<span class="string">'event1'</span>,<span class="string">'i am ok'</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="多异步之间的协作方案"><a href="#多异步之间的协作方案" class="headerlink" title="多异步之间的协作方案"></a>多异步之间的协作方案</h3><blockquote>
+<p>通过哨兵变量以及偏函数来解决</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> after = <span class="function"><span class="keyword">function</span>(<span class="params">times,callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span> , results = &#123;&#125;;</span><br><span class="line">    retrun <span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>) </span>&#123;</span><br><span class="line">        results[key] = value;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span>(count===times) &#123;</span><br><span class="line">            callback(results);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用EventProxy模块实现自由订阅组合事件</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> EventProxy();</span><br><span class="line"></span><br><span class="line">proxy.all(<span class="string">'template'</span>,<span class="string">'data'</span>,<span class="string">'resource'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">template,data,resource</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//TODO</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'template_path'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,template</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'template'</span>,template);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">db.query(sql,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'data'</span>,data);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">http.get(<span class="function"><span class="keyword">function</span>(<span class="params">err,resource</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'resource'</span>,resource)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>all() 事件，只有当参数列表的数据都获取到才执行回调函数</p>
+</blockquote>
+<blockquote>
+<p>tail() 事件，只要满足一个参数条件，就可以执行</p>
+</blockquote>
+<blockquote>
+<p>after(‘data’,10,callback) 事件 ,只有调用10次后才执行监听事件</p>
+</blockquote>
+<h3 id="EventProxy代码"><a href="#EventProxy代码" class="headerlink" title="EventProxy代码"></a>EventProxy代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">trigger : <span class="function"><span class="keyword">function</span>(<span class="params">eventName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list,calls.ev.callback,args;</span><br><span class="line">    <span class="keyword">var</span> both = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(!(calls = <span class="keyword">this</span>._callbacks)) <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">while</span>(both--)&#123;</span><br><span class="line">        ev = both ? eventName : <span class="string">'all'</span>;</span><br><span class="line">        <span class="keyword">if</span>(list = calls[ev]) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = list.length;i&lt;l;i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!(callback = list[i]))&#123;</span><br><span class="line">                    list.splice(i,<span class="number">1</span>);i--;l--;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    args = both ? <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>) : <span class="built_in">arguments</span>;</span><br><span class="line">                    callback[<span class="number">0</span>].apply(callback[<span class="number">1</span>] || <span class="keyword">this</span>,args);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>EventProxy异常处理代码</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    exports.getContent = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ep = <span class="keyword">new</span> EventProxy();</span><br><span class="line">    ep.all(<span class="string">'tpl'</span>,<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">tpl,data</span>)</span>&#123;</span><br><span class="line">        callback(<span class="literal">null</span>,&#123;</span><br><span class="line">            template:tpl,</span><br><span class="line">            data:data</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//侦听异常</span></span><br><span class="line">    ep.bind(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">        ep.unbind();</span><br><span class="line">        callback(err)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    fs.readFile(<span class="string">'template_tpl'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> ep.emit(<span class="string">'error'</span>,err)</span><br><span class="line">        &#125;</span><br><span class="line">        ep.emit(<span class="string">'tpl'</span>,content)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    db.get(<span class="string">'some sql'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> ep.emit(<span class="string">'error'</span>,err);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ep.emit(<span class="string">'data'</span>,result);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//优化后</span></span><br><span class="line"></span><br><span class="line">    ep.fail(callback);</span><br><span class="line"></span><br><span class="line">    fs.readFile(<span class="string">'template_path'</span>,<span class="string">'utf-8'</span>,ep.done(<span class="string">'tpl'</span>));</span><br><span class="line">    db.get(<span class="string">'sql'</span>,ep.done(<span class="string">'data'</span>))</span><br></pre></td></tr></table></figure>
+<h3 id="Promise-Deferred模式"><a href="#Promise-Deferred模式" class="headerlink" title="Promise/Deferred模式"></a>Promise/Deferred模式</h3><blockquote>
+<p>Promise/A</p>
+<ul>
+<li>三种状态：未完成状态 完成状态 失败状态</li>
+<li>状态一旦变化不能被更改</li>
+<li>状态不能逆反，切完成态和失败状态不能相互转换</li>
+</ul>
+</blockquote>
+<p> <img src="https://aymfx.github.io/img/fileImage/day2017082607.png" alt="流程图"></p>
+<ul>
+<li>可选择的将progress事件回调作为第三个方式</li>
+<li>then()只接受function对象，其余对象被忽略</li>
+<li>then()继续返回promise对象,以实现链式调用</li>
+<li>then(fulfillhandle,errorHandler,progressHandler)参数:</li>
+</ul>
+<blockquote>
+<p>简单的实现</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//将回调函数存放起来</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> <span class="built_in">Promise</span> = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     EventEmitter.call(<span class="keyword">this</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> util.inherits(<span class="built_in">Promise</span>,EventEmitter);</span><br><span class="line"></span><br><span class="line"> <span class="built_in">Promise</span>.prototype.then= <span class="function"><span class="keyword">function</span>(<span class="params">fulfilledHandle,errorHandler,progressHandler</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> fulfilledHandle ===<span class="string">'function'</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.once(<span class="string">'success'</span>,fulfilledHandle);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> errorHandler === <span class="string">'function'</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.once(<span class="string">'error'</span>,errorHandler)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> progressHandler === <span class="string">'function'</span>)&#123;</span><br><span class="line">         <span class="keyword">this</span>.on(<span class="string">'proress'</span>,progressHandler);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//deferred</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Deferred = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.state = <span class="string">'unfulfilled'</span>;</span><br><span class="line">  <span class="keyword">this</span>.promise = <span class="keyword">new</span> <span class="built_in">Promise</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.resolve = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.state = <span class="string">'fulfilled'</span>;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'success'</span>,obj);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.reject = <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.state = <span class="string">'failed'</span>;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'error'</span>,err);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.progress = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'progress'</span>,err);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="没看懂，暂时跳过-研究下Q-和-when-库"><a href="#没看懂，暂时跳过-研究下Q-和-when-库" class="headerlink" title="没看懂，暂时跳过    研究下Q 和 when 库"></a>没看懂，暂时跳过    研究下Q 和 when 库</h3><h2 id="流程控制库"><a href="#流程控制库" class="headerlink" title="流程控制库"></a>流程控制库</h2><blockquote>
+<p>非规范的流程控制库  <a href="https://github.com/senchalabs/connect" target="_blank" rel="noopener">https://github.com/senchalabs/connect</a></p>
+</blockquote>
+<h3 id="尾触发与next"><a href="#尾触发与next" class="headerlink" title="尾触发与next"></a>尾触发与next</h3><blockquote>
+<p>需要手动调用才能持续执行后续调用的，我们将此称为尾触发 关键词 next</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//connect 暴露api</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'connect'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line"><span class="comment">//中间件</span></span><br><span class="line"></span><br><span class="line">app.use(connect.staticCache())</span><br><span class="line">app.use(connect.static(_dirname+<span class="string">'/public'</span>));</span><br><span class="line">app.use(connect.cookieParser())</span><br><span class="line">app.use(connect.session());</span><br><span class="line">app.use(connect.query());</span><br><span class="line">app.use(connect.bodyParser());</span><br><span class="line">app.listen(<span class="number">30001</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>中间件利用了尾触发的机制,以下是最简单的中间件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function(req,res,next) &#123;</span><br><span class="line">    //中间件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>每个中间件传递请求对象，响应对象和尾触发函数，通过队列形成处理流 ，如图</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/a20170828/a1.png" alt="流程图"></p>
+<h3 id="connect核心实现"><a href="#connect核心实现" class="headerlink" title="connect核心实现"></a>connect核心实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createServer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建了http服务器的request事件处理函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">app</span>(<span class="params">req,res</span>) </span>&#123;app.handle(req,res);&#125;</span><br><span class="line">    utils.merge(app,proto);</span><br><span class="line">    utils.merge(app,EventEmitter.prototype);</span><br><span class="line">    app.route = <span class="string">'/'</span>;</span><br><span class="line">    <span class="comment">//stack属性是这个服务器内部维护的中间件队列，代码在use()方法中提现</span></span><br><span class="line">    app.stack = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;++i)&#123;</span><br><span class="line">        app.use(<span class="built_in">arguments</span>[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> app;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="use-重要部分"><a href="#use-重要部分" class="headerlink" title="use()重要部分"></a>use()重要部分</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">app.use = <span class="function"><span class="keyword">function</span>(<span class="params">route,fn</span>)</span>&#123;</span><br><span class="line"><span class="comment">//some coede </span></span><br><span class="line"><span class="keyword">this</span>.stack.push(&#123;<span class="attr">route</span>:route,<span class="attr">handle</span>:fn&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实现监听"><a href="#实现监听" class="headerlink" title="实现监听"></a>实现监听</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">app.listen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> server = http.createServer(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">return</span> server.listen.apply(server,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="app-handle-每一个监听到的网络请求都将从这里开始处理"><a href="#app-handle-每一个监听到的网络请求都将从这里开始处理" class="headerlink" title="app.handle(),每一个监听到的网络请求都将从这里开始处理"></a>app.handle(),每一个监听到的网络请求都将从这里开始处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.handle = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,out</span>) </span>&#123;</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/26/node-js深入浅出笔记2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/26/node-js深入浅出笔记2/" itemprop="url">node.js深入浅出笔记2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-26T00:00:00+08:00">
+                2017-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="node异步-I-O"><a href="#node异步-I-O" class="headerlink" title="node异步 I/O"></a>node异步 I/O</h1><h2 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h2><blockquote>
+<p>进程启动时，node会创建一个类似于while(true)的循环，每次执行一次循环我们称为tick，每个tick过程就是查看是否有事件待处理，有就取出相关的回调函数，存在回调就执行，否则让进入下个循环</p>
+</blockquote>
+<blockquote>
+<p>如图所示</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/fileImage/day20170826.png" alt="流程图"></p>
+<h2 id="观察者"><a href="#观察者" class="headerlink" title="观察者"></a>观察者</h2><blockquote>
+<p>监听每个事件处理，需要一个或者多个观察者，有观察者确定事件是否要被处理。事件循环是一个典型的生产者/消费者模型,异步i/o，网络请求等则是事件的生产者，源源不断的提供node不同类型的事件，这些事件被传递到观察者哪里，事件循环则是从观察者哪里取出事件并且处理</p>
+</blockquote>
+<blockquote>
+<p>win 基于IOCP linux基于多线程</p>
+</blockquote>
+<h2 id="请求对象"><a href="#请求对象" class="headerlink" title="请求对象"></a>请求对象</h2><blockquote>
+<p>node中的异步i/o调用而言，回调函数不是由开发者调用，实际上是javascript发起调用到内核执行完i/o操作的过度产物中，存在一种中间产物，他叫做请求对象，所有状态都保存在这个对象中，包括送入线程池等待执行以及i/o操作完毕后的回调函数</p>
+</blockquote>
+<h2 id="执行回调-如图所示"><a href="#执行回调-如图所示" class="headerlink" title="执行回调 如图所示"></a>执行回调 如图所示</h2><p><img src="https://aymfx.github.io/img/fileImage/day2017082602.png" alt="流程图"></p>
+<blockquote>
+<p>事件循环 观察者 请求对象 I/O线程池共同构成了node异步i/o模型的基本要素</p>
+</blockquote>
+<blockquote>
+<p>小结:JavaScript是单线程，但是node本身是多线程。除了用户自身的代码无法并行执行外，其他的i/o都是可以并行的</p>
+</blockquote>
+<h2 id="非I-O的异步API"><a href="#非I-O的异步API" class="headerlink" title="非I/O的异步API"></a>非I/O的异步API</h2><blockquote>
+<p>他们是 setTimeout()  setInterval() setImmediate()  process.nextTick()</p>
+</blockquote>
+<blockquote>
+<p>setTimeout 与setInterval() 与浏览器api一致，他们不需要i/o线程池的参加,下面是图示</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/fileImage/day2017082603.png" alt="流程图"></p>
+<blockquote>
+<p>process.nextTick(callback) 类似setTimeout 但是执行效率比较高</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">process.nextTick = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(process._exiting) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(tickDepth &gt;=process.maxTickDepth)</span><br><span class="line">        maxTickWarn();</span><br><span class="line">    <span class="keyword">var</span> tock = &#123;<span class="attr">callback</span> : callback&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(process.domain) tock.domain = process.domain;</span><br><span class="line">    nextTickQueue.push(tock);</span><br><span class="line">    <span class="keyword">if</span>(nextTickQueue.length)&#123;</span><br><span class="line">        process._needTickCallback();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>setImmediate() 类似于process.nextTick() 都是将函数延迟执行</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//正常执行</span></span><br><span class="line"><span class="comment">//延迟执行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//两者的优先级</span></span><br><span class="line"></span><br><span class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行setImmediate"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行nextTick"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正常执行</span></span><br><span class="line"><span class="comment">// 延迟执行nextTick</span></span><br><span class="line"><span class="comment">// 延迟执行setImmediate</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>事件循环是有先后顺序的 process.nextTick()属于idle观察者,setImmediate()属于check观察者  idle优于观察者i/o优于观察者check</p>
+</blockquote>
+<blockquote>
+<p>process.nextTick()回调函数保存在数组中，每轮循环回到函数全部执行完，而setImmediate()保存在链表中，每轮循环中执行链表中的一个回调函数  一下就是例子,好像不对，运行结果有问题啊</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行nextTick1"</span>);</span><br><span class="line">    </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行nextTick2"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行setImmediate1"</span>);</span><br><span class="line"></span><br><span class="line">    process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"我也执行l "</span>);</span><br><span class="line">&#125;)</span><br><span class="line">&#125;)  </span><br><span class="line"></span><br><span class="line">setImmediate(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"延迟执行setImmediate2"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"正常执行"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 正常执行</span></span><br><span class="line"><span class="comment">// 延迟执行nextTick1</span></span><br><span class="line"><span class="comment">// 延迟执行nextTick2</span></span><br><span class="line"><span class="comment">// 延迟执行setImmediate1</span></span><br><span class="line"><span class="comment">// 延迟执行setImmediate2</span></span><br><span class="line"><span class="comment">// 我也执行l</span></span><br></pre></td></tr></table></figure>
+<h2 id="事件驱动与高性能服务器"><a href="#事件驱动与高性能服务器" class="headerlink" title="事件驱动与高性能服务器"></a>事件驱动与高性能服务器</h2><blockquote>
+<p>利用node构建的服务器，基于以下实现</p>
+</blockquote>
+<p><img src="https://aymfx.github.io/img/fileImage/day2017082604.png" alt="流程图"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/25/node-js深入浅出笔记7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/25/node-js深入浅出笔记7/" itemprop="url">node.js深入浅出笔记1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T10:16:34+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="commonjs的模块定义"><a href="#commonjs的模块定义" class="headerlink" title="commonjs的模块定义"></a>commonjs的模块定义</h1><blockquote>
+<p>模块引用 ，模块定义 模块标识</p>
+</blockquote>
+<h2 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var math = require(<span class="string">'math'</span>); //require用于引用一个api模块，括号里面的称为模块标识</span><br></pre></td></tr></table></figure>
+<h2 id="模块的定义"><a href="#模块的定义" class="headerlink" title="模块的定义"></a>模块的定义</h2><blockquote>
+<p>在node中，一个文件就是一个模块，将方法挂在到exports对象上作为属性可以导出</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//export 是唯一导出方法的方式</span></span><br></pre></td></tr></table></figure>
+<h2 id="模块标识"><a href="#模块标识" class="headerlink" title="模块标识"></a>模块标识</h2><blockquote>
+<p>指的就是require()中的参数</p>
+</blockquote>
+<ul>
+<li>核心模块 http fs path等</li>
+<li>.或者..开始的相对路劲的文件模块</li>
+<li>以/开始的绝对路劲的模块</li>
+<li>非路径形式的模块文件，自定模块</li>
+</ul>
+<h1 id="node-的模块实现"><a href="#node-的模块实现" class="headerlink" title="node 的模块实现"></a>node 的模块实现</h1><blockquote>
+<p>引入模块需要经历三个步奏 路劲定位 文件定位 编译执行</p>
+</blockquote>
+<h2 id="核心模块与用户模块的区别以及加载速度"><a href="#核心模块与用户模块的区别以及加载速度" class="headerlink" title="核心模块与用户模块的区别以及加载速度"></a>核心模块与用户模块的区别以及加载速度</h2><ul>
+<li>核心模块，在node启动时已经被编译好了，核心部分都写在内存，只需做路劲分析就好，加载速度最快</li>
+<li>文件模块，则是运行时动态加载，以上路径分析，文件定位，编译都要走，所以最慢呀</li>
+</ul>
+<h2 id="优先加载缓存"><a href="#优先加载缓存" class="headerlink" title="优先加载缓存"></a>优先加载缓存</h2><blockquote>
+<p>核心模块，和用户模块都会被缓存，优先去取缓存的东西，顺序–&gt;   缓存核心模块&lt;-&lt;-缓存用户模块&lt;-核心模块&lt;-用户模块</p>
+</blockquote>
+<h2 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h2><ul>
+<li>扩展名分析 : 查找顺序 .js &gt; .node &gt; .json</li>
+<li>目录分析和包 : 首先会检查包下面的package.json ,通过json.parse() 取出main属性指定文件名进行定位，如果main错误或不存在，则默认index文件名查找，还没找到就抛出异常</li>
+</ul>
+<h1 id="模块的编译"><a href="#模块的编译" class="headerlink" title="模块的编译"></a>模块的编译</h1><blockquote>
+<p>module对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Module</span>(<span class="params">id,parent</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.id = id ;</span><br><span class="line">    <span class="keyword">this</span>.exports =&#123;&#125;;</span><br><span class="line">    <span class="keyword">this</span>.parent = parent;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(parent &amp;&amp; parent.children) &#123;</span><br><span class="line">        parent.children.push(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.filename = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.loaded  = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">this</span>.children = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>载入以及编译</p>
+</blockquote>
+<ul>
+<li>.js 用fs模块同步读取文件后进行编译</li>
+<li>.node 这是c/c++编写的扩展文件，通过dlopen()方式进行加载最后编译生成的文件</li>
+<li>.json 用fs模块同步读取文件后，用JSON.parse()解析返回结果</li>
+<li>其余扩展名，都被当做.js文件载入</li>
+</ul>
+<blockquote>
+<p>每个编译成功的模块，路劲作为索引都会缓存在Module.<em>cache对象上</em></p>
+</blockquote>
+<h2 id="举个-json的加载的例子"><a href="#举个-json的加载的例子" class="headerlink" title="举个.json的加载的例子"></a>举个.json的加载的例子</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Module._extensoins[.json] = <span class="function"><span class="keyword">function</span>(<span class="params">module,filename</span>)</span>&#123;</span><br><span class="line">    va content = NativeModule.require(<span class="string">'fs'</span>).readFileSync(filename,<span class="string">'utf-8'</span>);\</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">module</span>.exports = <span class="built_in">JSON</span>,parse(stripBOM(content));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        err.message = filename + <span class="string">":"</span> +err.message;</span><br><span class="line">        <span class="keyword">throw</span> err;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Module._extensions 会被赋值给require()的extensions属性</span></span><br></pre></td></tr></table></figure>
+<h1 id="Javascript模块的编译"><a href="#Javascript模块的编译" class="headerlink" title="Javascript模块的编译"></a>Javascript模块的编译</h1><blockquote>
+<p>由于模块文件实际在编译过程会被node包装，所以我们才可以调用几个常用的方法，包装后通过vm原生模块runInThisContext()方法执行（类似eval,有明确上下文，不污染全局），返回function对象</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//包装后</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">exports,require,module,_filename,_dirname</span>)</span>&#123;</span><br><span class="line">     <span class="comment">//模块内容</span></span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="编译核心模块"><a href="#编译核心模块" class="headerlink" title="编译核心模块"></a>编译核心模块</h1><blockquote>
+<p>源文件通过process.binding(‘natives’)取出，编译成功的模块缓存到NativeModule._cache对象上，文件模块则缓存Module.cache对象上</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NativeModule</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.filename = id + <span class="string">'.js'</span>;</span><br><span class="line">    <span class="keyword">this</span>.id = id;</span><br><span class="line">    <span class="keyword">this</span>.exports = &#123;&#125;</span><br><span class="line">    <span class="keyword">this</span>.loaded = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">NativeModule._source = process.binding(<span class="string">'natives'</span>);</span><br><span class="line">NativeModule._cache = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="c-c-核心模块的编译"><a href="#c-c-核心模块的编译" class="headerlink" title="c/c++核心模块的编译"></a>c/c++核心模块的编译</h1><blockquote>
+<p>由纯c/c++编写的部分统一称为内建模块，通常不被用户直接调用</p>
+</blockquote>
+<blockquote>
+<p>内建模块的导出 (依赖关系)</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件模块 &lt;--- 核心模块(javascript) &lt;---内建模块(c/c++)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>加载内建模块时，先创建exports空对象，然后调用get_builtin_module()方法取出内建模块对象，通过执行register_func()填充exports对象，最后将exports对象按模块名缓存，并返回给调用方完成导出</p>
+</blockquote>
+<h1 id="包与npm"><a href="#包与npm" class="headerlink" title="包与npm"></a>包与npm</h1><blockquote>
+<p>commonjs规范:前者用于组织包中的各种的文件，后者则用于描述包的相关信息，以供外部读取分析</p>
+</blockquote>
+<h2 id="包结构（符合commonjs规范）"><a href="#包结构（符合commonjs规范）" class="headerlink" title="包结构（符合commonjs规范）"></a>包结构（符合commonjs规范）</h2><ul>
+<li>package.json:包描述文件</li>
+<li>bin:存放二进制文件的目录</li>
+<li>lib:用于存放JavaScript代码的目录</li>
+<li>doc:用于存放文档的目录</li>
+<li>test:用于存放单元测试的代码</li>
+</ul>
+<h2 id="包描述文件（package-josn）与npm"><a href="#包描述文件（package-josn）与npm" class="headerlink" title="包描述文件（package.josn）与npm"></a>包描述文件（package.josn）与npm</h2><ul>
+<li>参考之前的文章</li>
+</ul>
+<h2 id="npm常用功能"><a href="#npm常用功能" class="headerlink" title="npm常用功能"></a>npm常用功能</h2><ul>
+<li>查看帮助 npm -v</li>
+<li>安装依赖包 npm i package</li>
+<li></li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/12/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/14/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

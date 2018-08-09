@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AYMFX&#39;S BLOG">
+<meta property="og:url" content="http://aymfx.cn/page/23/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AYMFX&#39;S BLOG">
+<meta name="twitter:description" content="前端码农一枚，喜欢看书以及跑步，还在努力前行着">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/page/23/"/>
+
+
+
+
+
+  <title>AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/20/AngularJS学习1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/20/AngularJS学习1/" itemprop="url">AngularJS学习1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-20T00:00:00+08:00">
+                2016-10-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="AngularJS-简介"><a href="#AngularJS-简介" class="headerlink" title="AngularJS 简介"></a>AngularJS 简介</h1><pre><code>AngularJS 是一个 JavaScript 框架。它可通过 script 标签添加到 HTML 页面。AngularJS 通过 指令 扩展了 HTML，且通过 表达式 绑定数据到 HTML。
+</code></pre><h2 id="AngularJS-是一个-JavaScript-框架"><a href="#AngularJS-是一个-JavaScript-框架" class="headerlink" title="AngularJS 是一个 JavaScript 框架"></a>AngularJS 是一个 JavaScript 框架</h2><pre><code>AngularJS 是一个 JavaScript 框架。它是一个以 JavaScript 编写的库。AngularJS 是以一个 JavaScript 文件形式发布的，可通过 script 标签添加到网页中
+</code></pre><h2 id="什么是-AngularJS？"><a href="#什么是-AngularJS？" class="headerlink" title="什么是 AngularJS？"></a>什么是 AngularJS？</h2><pre><code>AngularJS 使得开发现代的单一页面应用程序（ **SPAs：Single Page Applications** ）变得更加容易。
+</code></pre><ul>
+<li>AngularJS 把应用程序数据绑定到 HTML 元素。</li>
+<li>AngularJS 可以克隆和重复 HTML 元素。</li>
+<li>AngularJS 可以隐藏和显示 HTML 元素。</li>
+<li>AngularJS 可以在 HTML 元素”背后”添加代码。</li>
+<li>AngularJS 支持输入验证。<h2 id="AngularJS-指令"><a href="#AngularJS-指令" class="headerlink" title="AngularJS 指令"></a>AngularJS 指令</h2> AngularJS 指令是以 ng 作为前缀的 HTML 属性。<h2 id="AngularJS-表达式"><a href="#AngularJS-表达式" class="headerlink" title="AngularJS 表达式"></a>AngularJS 表达式</h2> AngularJS 表达式写在双大括号内：。<br> AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。<br> AngularJS 将在表达式书写的位置”输出”数据。<br> AngularJS 表达式 很像 JavaScript 表达式：它们可以包含文字、运算符和变量。<h2 id="AngularJS-应用"><a href="#AngularJS-应用" class="headerlink" title="AngularJS 应用"></a>AngularJS 应用</h2> AngularJS 模块（Module） 定义了 AngularJS 应用。<br> AngularJS 控制器（Controller） 用于控制 AngularJS 应用。<br> ng-app指令定义了应用, ng-controller 定义了控制器。<h1 id="开始学习语法"><a href="#开始学习语法" class="headerlink" title="开始学习语法"></a>开始学习语法</h1><h2 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h2> AngularJS 表达式写在双大括号内：<br> AngularJS 表达式也可以写在ng-bind=”expression”里面<br> expression 可以是 字符串 数字 对象 数组<h3 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h3></li>
+<li>数字</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &lt;div ng-app=<span class="string">""</span> ng-init=<span class="string">"num1=1;num2=5"</span>&gt; //ng-appy:指定angularjs的应用范围，ng-init:初始化变量</span><br><span class="line">		&lt;p&gt;总价： &#123;&#123; num1*num2 &#125;&#125;&lt;/p&gt; </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>字符串</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">""</span> ng-init=<span class="string">"firstName='l';lastName='y'"</span>&gt;</span><br><span class="line">	 &lt;p&gt;姓名： &#123;&#123; firstName + <span class="string">" "</span> + lastName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>对象</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">""</span> ng-init=<span class="string">"person=&#123;firstName:'l',lastName:'y'&#125;"</span>&gt;</span><br><span class="line">	&lt;p&gt;姓为 &#123;&#123; person.lastName &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>数组</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">""</span> ng-init=<span class="string">"points=[1,15,19,2,40]"</span>&gt;</span><br><span class="line">	&lt;p&gt;第三个值为 &#123;&#123; points[2] &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>ng-bind</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">""</span> ng-init=<span class="string">"points=[1,15,19,2,40]"</span>&gt;</span><br><span class="line">&lt;p&gt;第三个值为 &lt;span ng-bind=<span class="string">"points[2]"</span>&gt;&lt;/span&gt;&lt;/p&gt;</span><br><span class="line">   &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ul>
+<li>ng-app 指令初始化一个 AngularJS 应用程序。</li>
+<li>ng-init 指令初始化应用程序数据。</li>
+<li>ng-model 指令把元素值（比如输入域的值）绑定到应用程序。<strong><em>主要用在表单</em></strong></li>
+<li>ng-repeat 指令会重复一个 HTML 元素</li>
+</ul>
+<h3 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h3><pre><code>使用 .directive 函数来添加自定义的指令，使用驼峰法来命名一个指令，它时需要以 - 分割
+</code></pre><h4 id="举个栗子-1"><a href="#举个栗子-1" class="headerlink" title="举个栗子"></a>举个栗子</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html ng-app=<span class="string">"directive"</span>&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"checkbox"</span> ng-model=<span class="string">"toggle"</span>/&gt;</span><br><span class="line">	&lt;div ly-show=<span class="string">"toggle"</span>&gt;//这是自定义属性，使用时加：restrict:<span class="string">"A"</span></span><br><span class="line">		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt iste ex labore iure ut blanditiis eos eum voluptates odit nulla nisi delectus aut assumenda qui facere iusto nobis quis possimus.</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"color"</span>/&gt;</span><br><span class="line">	&lt;ly-color r=<span class="string">"color"</span> name=<span class="string">"我是不一样的烟火"</span> ng-click=<span class="string">"test()"</span>&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;/ly-color&gt;//这是自定义元素，使用时加：restrict:<span class="string">"E"</span></span><br><span class="line">	</span><br><span class="line">    &lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">		var app=angular.module(<span class="string">"directive"</span>,[]); //定义一个全局的应用（必须写）</span><br><span class="line">		</span><br><span class="line">		app.run(<span class="keyword">function</span>(<span class="variable">$rootScope</span>)&#123;</span><br><span class="line">			 <span class="variable">$rootScope</span>.toggle=<span class="literal">true</span>;</span><br><span class="line">		&#125;)   //可以自定义全局属性</span><br><span class="line">		</span><br><span class="line">		app.directive(<span class="string">"lyShow"</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> &#123;</span><br><span class="line">				restrict:<span class="string">'A'</span>,  /*限制使用:restrict 值可以是以下几种:</span><br><span class="line">								E 作为元素名使用</span><br><span class="line">								A 作为属性使用</span><br><span class="line">								C 作为类名使用</span><br><span class="line">								M 作为注释使用*/</span><br><span class="line">								restrict 默认值为 EA, 即可以通过元素名和属性名来调用指令。</span><br><span class="line">				link:<span class="keyword">function</span>(scope,element,attr)&#123;//方法，三个参数：作用域,dom，以及，属性</span><br><span class="line">					</span><br><span class="line">					scope.<span class="variable">$watch</span>(<span class="string">'value'</span>,<span class="keyword">function</span>(newv,oldv)&#123;//对某个元素进行监听它的值得变化，参数1新值，参数2旧值</span><br><span class="line">						console.log(newv);</span><br><span class="line">						  <span class="keyword">if</span>(newv)&#123;</span><br><span class="line">						  		element[0].style.display=<span class="string">"block"</span>;</span><br><span class="line">						  &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">						  		element[0].style.display=<span class="string">"none"</span>;</span><br><span class="line">						  &#125;</span><br><span class="line">						</span><br><span class="line">					&#125;)</span><br><span class="line">				&#125;,</span><br><span class="line">				scope:&#123;</span><br><span class="line">					value:<span class="string">"=lyShow"</span>  //进行元素绑定  = 表示是一个相关的变量，@表示是某个字符，&amp;表示方法</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">		</span><br><span class="line">		app.directive(<span class="string">'lyColor'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			<span class="built_in">return</span> &#123;</span><br><span class="line">				restroct:<span class="string">"E"</span>,</span><br><span class="line">				templateUrl:<span class="string">"directive-mess.html"</span>,</span><br><span class="line">				link:<span class="keyword">function</span>(scope,ele,attr)&#123;</span><br><span class="line">					  scope.test=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">					  	console.log(<span class="string">"ahahahhah"</span>);</span><br><span class="line">					  &#125;</span><br><span class="line">				&#125;,</span><br><span class="line">				scope:&#123;</span><br><span class="line">					name:<span class="string">"@name"</span>,</span><br><span class="line">					color:<span class="string">"=r"</span></span><br><span class="line">					</span><br><span class="line">				&#125;,</span><br><span class="line">				replace:<span class="literal">true</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/08/git温习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/08/git温习/" itemprop="url">git温习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-08T00:00:00+08:00">
+                2016-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。</p>
+<p>#安装<br>    需要下载:Git-2.10.0-64-bit.exe</p>
+<p>#配置<br>    ssh 配置：Git GUI — 帮助 —show ssh key–拷贝<br>    进入 github – 右上角 – setting – SSH and GPG keys<br>    利用命令:ssh-keygen -t rsa -C “你的邮箱”</p>
+<p>##配置个人用户信息和电子邮件地址</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name “ ”</span><br><span class="line">git config --global user.email “ ”</span><br><span class="line">git config --list (查看所有配置项)</span><br><span class="line">git commit --amend --author=<span class="string">'Your Name '</span> 修改用户名</span><br></pre></td></tr></table></figure>
+<h1 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h1><h3 id="命令查看"><a href="#命令查看" class="headerlink" title="命令查看"></a>命令查看</h3><pre><code>git config --list
+</code></pre><h3 id="1-GIT-（工作区-暂存区-版本git-clone-url-：-取远git-status（查看当前状态）-取代码之后本地代码哪些发生改变"><a href="#1-GIT-（工作区-暂存区-版本git-clone-url-：-取远git-status（查看当前状态）-取代码之后本地代码哪些发生改变" class="headerlink" title="1. GIT （工作区/暂存区/版本git clone [url] ： 取远git status（查看当前状态） 取代码之后本地代码哪些发生改变"></a>1. GIT （工作区/暂存区/版本git clone [url] ： 取远git status（查看当前状态） 取代码之后本地代码哪些发生改变</h3><p>git  add filename（将文件从工作区添加到暂存区）<br>git add .（上面的简写，所有的文件）<br>git commit -m “注释” （将缓存区的文件放到版本区）<br>git reset HEAD filename 撤销操作：将 filename 从暂存区撤回到工作区。<br>git remote 获取远程仓库的名称 origin（远程仓库的名称可以修改的）<br>git remote -v 获取远程仓库的地址这里写代码片<br>git push origin master(分支) 将本地资源同步到远程仓库2、例如：工作区的文件删除了，可以通过此命令还原 checkout commit_id （commit_id log 信息 id 名称。）<br>git log 日志 操作情况<br>git ls-files：查看暂存区的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">### 3、对比：查看三个分区的差异</span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">git diff 对比的是工作区和暂存区代码的不同</span><br><span class="line">git diff --cached（--staged） 对比的是暂存区与版本库代码的不同</span><br><span class="line">git diff master 对比的是工作区与版本库代码的不同</span><br></pre></td></tr></table></figure></p>
+<h3 id="4、删除："><a href="#4、删除：" class="headerlink" title="4、删除："></a>4、删除：</h3><pre><code>git rm filename 删除暂存区的文件，前提是工作区已经删除此文件了。
+git rm -f filename 删除暂存区和工作区的文件。
+git rm --cached filename 删除暂存区的文件，不会删除工作区。
+</code></pre><h3 id="5、多人协作解决冲突：同步更新远程仓库里面的代码"><a href="#5、多人协作解决冲突：同步更新远程仓库里面的代码" class="headerlink" title="5、多人协作解决冲突：同步更新远程仓库里面的代码"></a>5、多人协作解决冲突：同步更新远程仓库里面的代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git fetch 将远程中的代码与本地代码手动合并</span><br><span class="line">git fetch 显示冲突</span><br><span class="line">git diff master origin/master 对比代码 显示区别</span><br><span class="line">git merge origin/master 手动合并</span><br><span class="line">git pull 将远程中的代码与本地代码自动合并(commit)</span><br></pre></td></tr></table></figure>
+<h3 id="6、分支"><a href="#6、分支" class="headerlink" title="6、分支"></a>6、分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git branch 查看分支</span><br><span class="line">git branch new1 创建分支</span><br><span class="line">git checkout new1 切换分支</span><br><span class="line">git merge new1 合并分支</span><br><span class="line">git checkout -b new2 创建并切换分支（组合的写法）</span><br><span class="line">git branch --merged 查看当前分支下合并的分支</span><br><span class="line">git branch --no-merged 查看当前分支下没有合并的分支</span><br><span class="line">git branch -d new1 删除一个与当前分支合并下的分支。</span><br><span class="line">git branch -D new2 强制删除一个本地分支</span><br><span class="line">git push origin :branchname 删除远程创库的分支。</span><br></pre></td></tr></table></figure>
+<h1 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git tag v1.0</span><br><span class="line">git push origin v1.0</span><br></pre></td></tr></table></figure>
+<h1 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch new1</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/05/mysql（php操作）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/05/mysql（php操作）/" itemprop="url">mysql（php操作）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T00:00:00+08:00">
+                2016-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="警告："><a href="#警告：" class="headerlink" title="警告："></a>警告：</h1><pre><code>装mysql和卸载mysql要小心谨慎，心塞啊
+</code></pre><h1 id="mysql基本概念"><a href="#mysql基本概念" class="headerlink" title="mysql基本概念"></a>mysql基本概念</h1><h2 id="什么是数据库？"><a href="#什么是数据库？" class="headerlink" title="什么是数据库？"></a>什么是数据库？</h2><pre><code>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。我们也可以将数据存储在文件中，但是在文件中读写数据速度相对较慢。所以，现在我们使用关系型数据库管理系统（RDBMS）来存储和管理的大数据量。所谓的关系型数据库，是建立在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据。
+</code></pre><h2 id="RDBMS即关系数据库管理系统-Relational-Database-Management-System-的特点"><a href="#RDBMS即关系数据库管理系统-Relational-Database-Management-System-的特点" class="headerlink" title="RDBMS即关系数据库管理系统(Relational Database Management System)的特点"></a>RDBMS即关系数据库管理系统(Relational Database Management System)的特点</h2><ul>
+<li>数据以表格的形式出现</li>
+<li>每行为各种记录名称</li>
+<li>每列为记录名称所对应的数据域</li>
+<li>许多的行和列组成一张表单</li>
+<li><p>若干的表单组成database</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>  数据库: 数据库是一些关联表的集合。.<br> 数据表: 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。<br> 列: 一列(数据元素) 包含了相同的数据, 例如邮政编码的数据。<br> 行：一行（=元组，或记录）是一组相关的数据，例如一条用户订阅的数据。<br> 冗余：存储两倍数据，冗余可以使系统速度更快。<br> 主键：主键是唯一的。一个数据表中只能包含一个主键。你可以使用主键来查询数据。<br> 外键：外键用于关联两个表。<br> 复合键：复合键（组合键）将多个列作为一个索引键，一般用于复合索引。<br> 索引：使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。<br> 参照完整性: 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">https://www.mysql.com/downloads/</a></p>
+<h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><p> 小心就好，注意选择utf-8，用户名和密码记住，path要添加到系统上去</p>
+<h1 id="MySQL数据库过程中常用的命令"><a href="#MySQL数据库过程中常用的命令" class="headerlink" title="MySQL数据库过程中常用的命令"></a>MySQL数据库过程中常用的命令</h1><p>USE 数据库名</p>
+<p> 选择要操作的MySQL数据库，使用该命令后所有MySQL命令都只针对该数据库。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use ly;</span><br><span class="line">Database changed</span><br></pre></td></tr></table></figure>
+<p>show databases  数据库名</p>
+<pre><code>列出 MySQL 数据库管理系统的数据库列表
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| RUNOOB             |</span><br><span class="line">| cdcol              |</span><br><span class="line">| mysql              |</span><br><span class="line">| ly                 |</span><br><span class="line">|           		 |</span><br><span class="line">+--------------------+</span><br></pre></td></tr></table></figure>
+<p>SHOW TABLES</p>
+<pre><code>显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use RUNOOB;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; SHOW TABLES;</span><br><span class="line">+------------------+</span><br><span class="line">| Tables_in_runoob |</span><br><span class="line">+------------------+</span><br><span class="line">| employee_tbl     |</span><br><span class="line">| runoob_tbl       |</span><br><span class="line">| tcount_tbl       |</span><br><span class="line">+------------------+</span><br></pre></td></tr></table></figure>
+<p>SHOW COLUMNS FROM 数据表</p>
+<pre><code>显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW COLUMNS FROM ly_table;</span><br></pre></td></tr></table></figure>
+<p>SHOW INDEX FROM 数据表</p>
+<pre><code>显示数据表的详细索引信息，包括PRIMARY KEY（主键）
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW INDEX FROM ly_table;</span><br></pre></td></tr></table></figure>
+<p>SHOW TABLE STATUS LIKE 数据表\G</p>
+<pre><code>该命令将输出MySQL数据库管理系统的性能及统计信息
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW TABLE STATUS  FROM RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息</span><br><span class="line">mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE &apos;runoob%&apos;;     # 表名以runoob开头的表的信息</span><br><span class="line">mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE &apos;runoob%&apos;\G;   # 加上 \G，查询结果按列打印</span><br></pre></td></tr></table></figure>
+<h1 id="php操作mysql"><a href="#php操作mysql" class="headerlink" title="php操作mysql"></a>php操作mysql</h1><h2 id="链接数据库"><a href="#链接数据库" class="headerlink" title="链接数据库"></a>链接数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//连接数据库</span><br><span class="line">	 <span class="variable">$conn</span>=mysql_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123456'</span>);</span><br><span class="line">	/*</span><br><span class="line">	 * 第一参数：地址 	localhost代表本地</span><br><span class="line">	 * 第二参数:用户名 	默认root</span><br><span class="line">	 *第三个参数：密码	123456</span><br><span class="line">	 *  */</span><br><span class="line">	 //判断是否链接</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$conn</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'不能链接呀：'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 //关闭数据库链接</span><br><span class="line">	 mysql_close(<span class="variable">$conn</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>1.mysql下创建数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database ly ;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>2.php创建数据库名，删除，选择</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//设置字符集</span><br><span class="line">header(<span class="string">'Content-Type:text/html;charset="utf-8"'</span>);</span><br><span class="line"> //创建数据库  mysql下：<span class="string">'create database 数据库名</span></span><br><span class="line"><span class="string">	 $sql='</span>create database ly<span class="string">';</span></span><br><span class="line"><span class="string">	 $retval=mysql_query($sql,$conn);//1.sql语句2.链接对象</span></span><br><span class="line"><span class="string">	 if(!$retval)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>创建失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br><span class="line"><span class="string">	 </span></span><br><span class="line"><span class="string">	 //选择数据库  mysql下：use 数据库名</span></span><br><span class="line"><span class="string">	 $flag=mysql_select_db("ly",$conn);//1.选择的数据库2.连接对象</span></span><br><span class="line"><span class="string">	 if(!$flag)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>选择失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br><span class="line"><span class="string">	 </span></span><br><span class="line"><span class="string">	//删除数据库 mysql下：drop database 数据库名</span></span><br><span class="line"><span class="string">	$sql='</span>drop database ly<span class="string">';</span></span><br><span class="line"><span class="string">	$retval=mysql_query($sql,$conn);</span></span><br><span class="line"><span class="string">	if(!$retval)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>删除数据库失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h2><h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p><img src="http://img.blog.csdn.net/20170307163644473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p><img src="http://img.blog.csdn.net/20170307163801852?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p><img src="http://img.blog.csdn.net/20170307163853868?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="操作数据表"><a href="#操作数据表" class="headerlink" title="操作数据表"></a>操作数据表</h2><h3 id="mysql语法"><a href="#mysql语法" class="headerlink" title="mysql语法"></a>mysql语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use ly;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; CREATE TABLE w3cschool_tbl(</span><br><span class="line">   -&gt; ly_id INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">   -&gt; ly_title VARCHAR(100) NOT NULL,</span><br><span class="line">   -&gt; ly_author VARCHAR(40) NOT NULL,</span><br><span class="line">   -&gt; submission_date DATE,</span><br><span class="line">   -&gt; PRIMARY KEY ( ly_id )</span><br><span class="line">   -&gt; );</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//创建表结构</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"create table yueguang("</span>.</span><br><span class="line">	 <span class="string">"yg_id tinyint not null auto_increment, "</span>.</span><br><span class="line">	 <span class="string">"yg_title varchar(100) not null, "</span>.</span><br><span class="line">	 <span class="string">"yg_atuhor varchar(40) not null, "</span>.</span><br><span class="line">	 <span class="string">"sub_date DATE, "</span>.</span><br><span class="line">	 <span class="string">"primary key (yg_id));"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'创建表失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//删除表</span><br><span class="line">/*<span class="variable">$sql</span>=<span class="string">'drop table yueguang'</span>;</span><br><span class="line"><span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line"> 	die(<span class="string">'删除数据表失败'</span>.mysql_error());</span><br><span class="line"> &#125;*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysql_query(<span class="string">'SET NAMES UTF8'</span>);//设置字符集</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">"create table yueguang("</span>.</span><br><span class="line">	 <span class="string">"yg_id tinyint not null auto_increment, "</span>.</span><br><span class="line">	 <span class="string">"yg_title varchar(100) not null, "</span>.</span><br><span class="line">	 <span class="string">"yg_atuhor varchar(40) not null, "</span>.</span><br><span class="line">	 <span class="string">"sub_date DATE, "</span>.</span><br><span class="line">	 <span class="string">"primary key (yg_id));"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据库失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">'drop table yueguang'</span>;</span><br><span class="line">	<span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	<span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据表失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">"insert into ly.yueguang(yg_title,yg_atuhor,sub_date) "</span>.</span><br><span class="line">	 <span class="string">"values('从你的全世界路过','张嘉佳',NOW());"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'插入失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> //查询数据</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang"</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 //mysql_fetch_array: 从结果集中取得一行作为关联数组，或数字数组，或二者兼有</span><br><span class="line">	 //1.结果集 2.可选参数</span><br><span class="line">	 </span><br><span class="line">	 //MYSQL_NUM </span><br><span class="line">	 //print_r(mysql_fetch_array(<span class="variable">$result</span>,MYSQL_NUM));</span><br><span class="line">	 //显示数字Array ( [0] =&gt; 1 [1] =&gt; 挪威森林 [2] =&gt; 村上春树 [3] =&gt; 2017-03-07 )</span><br><span class="line">	 //MYSQL_ASSOC</span><br><span class="line">	 //print_r(mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC));</span><br><span class="line">	 //显示属性：Array ( [yg_id] =&gt; 1 [yg_title] =&gt; 挪威森林 [yg_atuhor] =&gt; 村上春树 [sub_date] =&gt; 2017-03-07 )</span><br><span class="line">	 </span><br><span class="line">	 //MYSQL_BOTH  默认</span><br><span class="line">	//print_r(mysql_fetch_array(<span class="variable">$result</span>));</span><br><span class="line">	 //Array ( [0] =&gt; 1 [yg_id] =&gt; 1 [1] =&gt; 挪威森林 [yg_title] =&gt; 挪威森林 [2] =&gt; 村上春树 [yg_atuhor] =&gt; 村上春树 [3] =&gt; 2017-03-07 [sub_date] =&gt; 2017-03-07 )</span><br><span class="line">	 </span><br><span class="line">	 <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">/*	我的id1:挪威森林:村上春树:2017-03-07 </span><br><span class="line">	我的id2:我的太阳:我的:2017-03-07 </span><br><span class="line">	我的id3:从你的全世界路过:张嘉佳:2017-03-07 */</span><br></pre></td></tr></table></figure>
+<h2 id="各种查询方法"><a href="#各种查询方法" class="headerlink" title="各种查询方法"></a>各种查询方法</h2><h3 id="MySQL-where-子句"><a href="#MySQL-where-子句" class="headerlink" title="MySQL where 子句"></a>MySQL where 子句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//<span class="built_in">where</span></span><br><span class="line">	<span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	//我的id2:我的太阳:我的:2017-03-07</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//updata更新数据</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"update ly.yueguang set yg_title='我要太阳'"</span>.</span><br><span class="line">	 <span class="string">"where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'更新失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//删除数据项</span><br><span class="line">	<span class="variable">$sql</span>=<span class="string">"delete from ly.yueguang where yg_id=2"</span>;</span><br><span class="line">	<span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据项'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//like匹配</span><br><span class="line"> <span class="variable">$sql</span>=<span class="string">"select * from ly.yueguang where yg_atuhor like '%村%'"</span>;</span><br><span class="line"><span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line"> <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line"> 	die(<span class="string">'查找数据项'</span>.mysql_error());</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line"> 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> //我的id1:挪威森林:村上春树:2017-03-07</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//排序</span><br><span class="line">	  <span class="variable">$sql</span>=<span class="string">"select * from ly.yueguang order by yg_id desc"</span>;</span><br><span class="line">	<span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查找数据项'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line">	 /*我的id5:你的孤独虽败犹荣:刘同:2017-03-07 </span><br><span class="line">我的id4:摆渡人:佚名:2017-03-07 </span><br><span class="line">我的id3:从你的全世界路过:张嘉佳:2017-03-07 </span><br><span class="line">我的id1:挪威森林:村上春树:2017-03-07 */</span><br><span class="line"></span><br><span class="line">desc降序</span><br><span class="line">asc升序</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>暂时就写到这里，对于登录验证应该是够了，以下是学习的网站<br><a href="http://www.w3cschool.cn/mysql/mysql-group-by-statement.html" target="_blank" rel="noopener">http://www.w3cschool.cn/mysql/mysql-group-by-statement.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/09/15/require-js使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/09/15/require-js使用/" itemprop="url">require.js使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-15T00:00:00+08:00">
+                2016-09-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="问题：如何解决前端js出现的文件依赖和命名空间问题"><a href="#问题：如何解决前端js出现的文件依赖和命名空间问题" class="headerlink" title="问题：如何解决前端js出现的文件依赖和命名空间问题"></a>问题：如何解决前端js出现的文件依赖和命名空间问题</h1><pre><code>可以通过命名空间和采用模块化的方式解决，今天学的require.js可以同时解决这两个问题.
+</code></pre><h1 id="requirejs能带来什么好处"><a href="#requirejs能带来什么好处" class="headerlink" title="requirejs能带来什么好处"></a>requirejs能带来什么好处</h1><pre><code>1.异步加载，防止js加载阻塞页面渲染
+2.不必引用很多js文件
+3.以上两个问题可以解决
+</code></pre><h1 id="掌握模块化的思想"><a href="#掌握模块化的思想" class="headerlink" title="掌握模块化的思想"></a>掌握模块化的思想</h1><pre><code>模块化思想就是指将页面根据内容的关联性分解成不同的且相互独立的模块进行开发，每个模块之间没有必然的联系，互不影响。
+模块化思想的主要优势就体现在：提高重用性，提高开发效率，降低维护成本，提升代码质量等方面。
+</code></pre><h1 id="AMD-require-js-和CMD-sea-js-规范"><a href="#AMD-require-js-和CMD-sea-js-规范" class="headerlink" title="AMD(require.js)和CMD(sea.js)规范"></a>AMD(require.js)和CMD(sea.js)规范</h1><pre><code>AMD是&quot;Asynchronous Module Definition&quot;的缩写，意思就是&quot;异步模块定义&quot;。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。
+CMD规范，全称”Common Module Definition”，称为 通用模块加载规范 。一般也是用在浏览器端。浏览器端异步加载库Sea.js实现的就是CMD规范。在CMD规范中，一个模块就是一个文件。
+</code></pre><h1 id="引用require-js"><a href="#引用require-js" class="headerlink" title="引用require.js"></a>引用require.js</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script data-main=<span class="string">"main.js"</span> src=<span class="string">"js/require.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"> data-main:指定网页程序的主模块,意思是整个网页的入口代码,所有代码都从这儿开始运行.以后不用再引入js代码了，由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。当我们在里面写了路径之后，以后引入js目录下面的直接写文件名不加后缀，否则不仅要加后缀还要加文件路径</span><br><span class="line"> require.js：引入模块</span><br><span class="line"> 下载地址：http://requirejs.org/docs/release/2.3.3/minified/require.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序入口（主模块main.js）</span></span><br><span class="line"><span class="comment">## 测试是否引入成功</span></span><br><span class="line">![一如](http://img.blog.csdn.net/20170306193718505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</span><br><span class="line">	</span><br><span class="line"><span class="comment">## 调用模块写法（放在mian.js中）</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">require([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require 调用模块，接收二个参数。</span><br><span class="line">第1个参数是一个数组，表示所依赖的模块 (也就是js了) ；</span><br><span class="line">第2个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。</span><br><span class="line"></span><br><span class="line"><span class="comment">## 依赖模块写法（独立单独的js--module.js）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		alert(1);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 在入口函数添加依赖(main.js)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">	require([<span class="string">"js/module1.js"</span>,<span class="string">"js/module2.js"</span>],<span class="keyword">function</span>(m1)&#123;</span><br><span class="line">		   alert(<span class="string">"我是入口函数"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module1.js</span><br><span class="line">	define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(<span class="string">"我是模块一"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module.js</span><br><span class="line">	define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		 alert(<span class="string">"我是模块2"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code>结果：我是模块一  我是模块2   我是入口函数
+小结：由于依赖模块是异步的，所以必须先执行完，才能调用回调函数,两个依赖的顺序出现不一定按顺序来
+</code></pre><h2 id="加载文件（加载服务器文件）"><a href="#加载文件（加载服务器文件）" class="headerlink" title="加载文件（加载服务器文件）"></a>加载文件（加载服务器文件）</h2><p>//引入jquery</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">	  paths:&#123;</span><br><span class="line">	  	<span class="string">"jquery"</span>:[<span class="string">"http://libs.baidu.com/jquery/2.0.3/jquery"</span>]//可引入多个</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require([<span class="string">"js/module1.js"</span>,<span class="string">"js/module2.js"</span>],<span class="keyword">function</span>(m1)&#123;</span><br><span class="line">	   alert(<span class="string">"我是入口函数"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">require([<span class="string">"jquery"</span>],<span class="keyword">function</span>($)&#123;</span><br><span class="line">		console.log(typeof $);//<span class="keyword">function</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="其实当我们在data-main-“js-main”这样设定其实相当于："><a href="#其实当我们在data-main-“js-main”这样设定其实相当于：" class="headerlink" title="其实当我们在data-main=“js/main”这样设定其实相当于："></a>其实当我们在data-main=“js/main”这样设定其实相当于：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	require.config(&#123;</span><br><span class="line">    baseUrl : <span class="string">"js"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="引入第三方模块"><a href="#引入第三方模块" class="headerlink" title="引入第三方模块"></a>引入第三方模块</h3><pre><code>暂时没学，回头补充
+
+补充：主模块的依赖模块是[&apos;jquery&apos;, &apos;module1&apos;, &apos;module2&apos;]。默认情况下，require.js假定这三个模块与main.js在同一个目录，文件名分别为 jquery.js，module1.js和module2.js，然后自动加载。
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/08/20/pubsub-js的简单使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/08/20/pubsub-js的简单使用/" itemprop="url">pubsub-js的简单使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-20T00:00:00+08:00">
+                2016-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="发布与订阅"><a href="#发布与订阅" class="headerlink" title="发布与订阅"></a>发布与订阅</h1><blockquote>
+<p>它是一个库，通过这个库，我们能很好的将事件事件发布出去，而不需要关心接受者是谁</p>
+</blockquote>
+<blockquote>
+<p><a href="https://www.npmjs.com/package/pubsub-js" target="_blank" rel="noopener">https://www.npmjs.com/package/pubsub-js</a> 这是npm库</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/mroderick/PubSubJS" target="_blank" rel="noopener">https://github.com/mroderick/PubSubJS</a> 这是地址</p>
+</blockquote>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><blockquote>
+<p>cnpm i pubsub-js -S</p>
+</blockquote>
+<h1 id="我把它运用在了一个小demo配合react"><a href="#我把它运用在了一个小demo配合react" class="headerlink" title="我把它运用在了一个小demo配合react"></a>我把它运用在了一个小demo配合react</h1><blockquote>
+<p>这是 App.js</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</span><br><span class="line">import logo from <span class="string">'./logo.svg'</span>;</span><br><span class="line">import <span class="string">'./App.css'</span>;</span><br><span class="line">import Alert from <span class="string">'./Alert'</span></span><br><span class="line">import PubSub from <span class="string">"pubsub-js"</span></span><br><span class="line"></span><br><span class="line">class Button extends Component&#123;</span><br><span class="line">      constructor(props)&#123;</span><br><span class="line">          super(props)</span><br><span class="line">          this.state=&#123;</span><br><span class="line">              time:<span class="literal">false</span></span><br><span class="line">          &#125;</span><br><span class="line">          this.bundEvent=this.bundEvent.bind(this);</span><br><span class="line"></span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="title">bundEvent</span></span>() &#123;</span><br><span class="line">          this.setState(prevState =&gt; (&#123;time: !prevState.time&#125;))</span><br><span class="line">          <span class="keyword">if</span>(this.state.time)&#123;</span><br><span class="line">                PubSub.publishSync(<span class="string">"SHOW_TIME"</span>,<span class="string">"测试啦"</span>)</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              PubSub.publish(<span class="string">"HIDE_TIME"</span>,<span class="string">"继续"</span>)</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="function"><span class="title">render</span></span>()&#123;</span><br><span class="line">          <span class="built_in">return</span> (&lt;div&gt;</span><br><span class="line">              &lt;button onClick=&#123;this.bundEvent&#125;&gt;&#123;this.props.children&#125;&lt;/button&gt;</span><br><span class="line">          &lt;/div&gt;)</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class App extends Component &#123;</span><br><span class="line">  <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> (</span><br><span class="line">      &lt;div className=<span class="string">"App"</span>&gt;</span><br><span class="line">          &lt;Alert/&gt;</span><br><span class="line">          &lt;Button&gt;大时代&lt;/Button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> default App;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这是自定义的提示，名字请忽略，没写弹窗</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">import React, &#123; Component &#125; from <span class="string">'react'</span>;</span><br><span class="line">import <span class="string">'./App.css'</span>;</span><br><span class="line">import PubSub from <span class="string">"pubsub-js"</span></span><br><span class="line">class Alert extends Component &#123;</span><br><span class="line">    constructor(props) &#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.state=&#123;</span><br><span class="line">            flag:<span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Show(e) &#123;</span><br><span class="line">        console.log(e,11);</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            flag:<span class="literal">true</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    Hide(e) &#123;</span><br><span class="line">        console.log(e,22);</span><br><span class="line">        this.setState(&#123;</span><br><span class="line">            flag:<span class="literal">false</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">componentDidMount</span></span>() &#123;</span><br><span class="line">        PubSub.subscribe(<span class="string">"SHOW_TIME"</span>,this.Show.bind(this))</span><br><span class="line">        PubSub.subscribe(<span class="string">"HIDE_TIME"</span>,this.Hide.bind(this))</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="title">render</span></span>() &#123;</span><br><span class="line">        console.log(this.state.flag);</span><br><span class="line">        <span class="built_in">return</span> (</span><br><span class="line">            &lt;div className=<span class="string">"App"</span> style=&#123;&#123;display:this.state.flag ? <span class="string">'block'</span> : <span class="string">'none'</span>&#125;&#125;&gt;</span><br><span class="line">                       &lt;p&gt;测试&lt;/p&gt;</span><br><span class="line">              &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">export</span> default Alert;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> PubSub.subscribe(“SHOW_TIME”,this.Show.bind(this))  这是用来订阅一个方法</p>
+</blockquote>
+<blockquote>
+<p> PubSub.publish(“HIDE_TIME”,”继续”) 这就是用来发布方法的了</p>
+</blockquote>
+<blockquote>
+<p>PubSub.unsubscribe() 用来取消订阅</p>
+</blockquote>
+<blockquote>
+<p>对于全局都需要的弹窗和tips以及loding，我们可以用这个来改，不用每次都在局部写了</p>
+</blockquote>
+<h1 id="官网上提供的小栗子"><a href="#官网上提供的小栗子" class="headerlink" title="官网上提供的小栗子"></a>官网上提供的小栗子</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Basic example</span><br><span class="line"></span><br><span class="line">// create a <span class="keyword">function</span> to subscribe to topics</span><br><span class="line">var mySubscriber = <span class="keyword">function</span>( msg, data )&#123;</span><br><span class="line">    console.log( msg, data );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// add the <span class="keyword">function</span> to the list of subscribers <span class="keyword">for</span> a particular topic</span><br><span class="line">// we<span class="string">'re keeping the returned token, in order to be able to unsubscribe</span></span><br><span class="line"><span class="string">// from the topic later on</span></span><br><span class="line"><span class="string">var token = PubSub.subscribe( '</span>MY TOPIC<span class="string">', mySubscriber );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// publish a topic asyncronously</span></span><br><span class="line"><span class="string">PubSub.publish( '</span>MY TOPIC<span class="string">', '</span>hello world!<span class="string">' );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// publish a topic syncronously, which is faster in some environments,</span></span><br><span class="line"><span class="string">// but will get confusing when one topic triggers new topics in the</span></span><br><span class="line"><span class="string">// same execution chain</span></span><br><span class="line"><span class="string">// USE WITH CAUTION, HERE BE DRAGONS!!!</span></span><br><span class="line"><span class="string">PubSub.publishSync( '</span>MY TOPIC<span class="string">', '</span>hello world!<span class="string">' );</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">Cancel specific subscription</span><br><span class="line"></span><br><span class="line">// create a <span class="keyword">function</span> to receive the topic</span><br><span class="line">var mySubscriber = <span class="keyword">function</span>( msg, data )&#123;</span><br><span class="line">    console.log( msg, data );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// add the <span class="keyword">function</span> to the list of subscribers to a particular topic</span><br><span class="line">// we<span class="string">'re keeping the returned token, in order to be able to unsubscribe</span></span><br><span class="line"><span class="string">// from the topic later on</span></span><br><span class="line"><span class="string">var token = PubSub.subscribe( '</span>MY TOPIC<span class="string">', mySubscriber );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// unsubscribe this subscriber from this topic</span></span><br><span class="line"><span class="string">PubSub.unsubscribe( token );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Cancel all subscriptions for a function</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// create a function to receive the topic</span></span><br><span class="line"><span class="string">var mySubscriber = function( msg, data )&#123;</span></span><br><span class="line"><span class="string">    console.log( msg, data );</span></span><br><span class="line"><span class="string">&#125;;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// unsubscribe mySubscriber from ALL topics</span></span><br><span class="line"><span class="string">PubSub.unsubscribe( mySubscriber );</span></span><br><span class="line"><span class="string">Clear all subscriptions for a topic</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PubSub.subscribe('</span>a<span class="string">', myFunc1);</span></span><br><span class="line"><span class="string">PubSub.subscribe('</span>a.b<span class="string">', myFunc2);</span></span><br><span class="line"><span class="string">PubSub.subscribe('</span>a.b.c<span class="string">', myFunc3);</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PubSub.unsubscribe('</span>a.b<span class="string">');</span></span><br><span class="line"><span class="string">// no further notications for '</span>a.b<span class="string">' and '</span>a.b.c<span class="string">' topics</span></span><br><span class="line"><span class="string">// notifications for '</span>a<span class="string">' will still get published</span></span><br><span class="line"><span class="string">Clear all subscriptions</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">PubSub.clearAllSubscriptions();</span></span><br><span class="line"><span class="string">// all subscriptions are removed</span></span><br><span class="line"><span class="string">Hierarchical addressing</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// create a subscriber to receive all topics from a hierarchy of topics</span></span><br><span class="line"><span class="string">var myToplevelSubscriber = function( msg, data )&#123;</span></span><br><span class="line"><span class="string">    console.log( '</span>top level: <span class="string">', msg, data );</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// subscribe to all topics in the '</span>car<span class="string">' hierarchy</span></span><br><span class="line"><span class="string">PubSub.subscribe( '</span>car<span class="string">', myToplevelSubscriber );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// create a subscriber to receive only leaf topic from hierarchy op topics</span></span><br><span class="line"><span class="string">var mySpecificSubscriber = function( msg, data )&#123;</span></span><br><span class="line"><span class="string">    console.log('</span>specific: <span class="string">', msg, data );</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// subscribe only to '</span>car.drive<span class="string">' topics</span></span><br><span class="line"><span class="string">PubSub.subscribe( '</span>car.drive<span class="string">', mySpecificSubscriber );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// Publish some topics</span></span><br><span class="line"><span class="string">PubSub.publish( '</span>car.purchase<span class="string">', &#123; name : '</span>my new car<span class="string">' &#125; );</span></span><br><span class="line"><span class="string">PubSub.publish( '</span>car.drive<span class="string">', &#123; speed : '</span>14<span class="string">' &#125; );</span></span><br><span class="line"><span class="string">PubSub.publish( '</span>car.sell<span class="string">', &#123; newOwner : '</span>someone <span class="keyword">else</span><span class="string">' &#125; );</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// In this scenario, myToplevelSubscriber will be called for all</span></span><br><span class="line"><span class="string">// topics, three times in total</span></span><br><span class="line"><span class="string">// But, mySpecificSubscriber will only be called once, as it only</span></span><br><span class="line"><span class="string">// subscribes to the '</span>car.drive<span class="string">' topic</span></span><br></pre></td></tr></table></figure>
+<h1 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">Example of use of <span class="string">"constants"</span></span><br><span class="line"></span><br><span class="line">// BAD</span><br><span class="line">PubSub.subscribe(<span class="string">"hello"</span>, <span class="keyword">function</span>( msg, data )&#123;</span><br><span class="line">	console.log( data )</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">PubSub.publish(<span class="string">"helo"</span>, <span class="string">"world"</span>);</span><br><span class="line"></span><br><span class="line">// BETTER</span><br><span class="line">var MY_TOPIC = <span class="string">"hello"</span>;</span><br><span class="line">PubSub.subscribe(MY_TOPIC, <span class="keyword">function</span>( msg, data )&#123;</span><br><span class="line">	console.log( data )</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">PubSub.publish(MY_TOPIC, <span class="string">"world"</span>);</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/22/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="extend next" rel="next" href="/page/24/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+      
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

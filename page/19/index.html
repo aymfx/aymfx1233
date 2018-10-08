@@ -321,6 +321,147 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/14/react-Refs-and-the-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/14/react-Refs-and-the-DOM/" itemprop="url">react-Refs and the DOM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T00:00:00+08:00">
+                2017-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="有时候我们需要修改子元素，我们必须通过父元素的传递props来重新渲染，reac提供了方便修改子元素的方法，那就是采用refs属性进行操作dom，但是我们不要随便操作dom"><a href="#有时候我们需要修改子元素，我们必须通过父元素的传递props来重新渲染，reac提供了方便修改子元素的方法，那就是采用refs属性进行操作dom，但是我们不要随便操作dom" class="headerlink" title="有时候我们需要修改子元素，我们必须通过父元素的传递props来重新渲染，reac提供了方便修改子元素的方法，那就是采用refs属性进行操作dom，但是我们不要随便操作dom"></a>有时候我们需要修改子元素，我们必须通过父元素的传递props来重新渲染，reac提供了方便修改子元素的方法，那就是采用refs属性进行操作dom，但是我们不要随便操作dom</h1><h2 id="什么时候使用refs"><a href="#什么时候使用refs" class="headerlink" title="什么时候使用refs"></a>什么时候使用refs</h2><blockquote>
+<p>管理焦点，文本，媒体播放</p>
+</blockquote>
+<blockquote>
+<p>需要触发的命令动画</p>
+</blockquote>
+<blockquote>
+<p>继承的第三方dom库</p>
+</blockquote>
+<h1 id="举一个例子"><a href="#举一个例子" class="headerlink" title="举一个例子"></a>举一个例子</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// ref</span><br><span class="line"></span><br><span class="line">class CustomTextInput extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">        this.focus = this.focus.bind(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    focus()&#123;</span><br><span class="line">        this.textInput.focus();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render()&#123;</span><br><span class="line">        return (&lt;div&gt;</span><br><span class="line">            &lt;input type=&quot;text&quot;</span><br><span class="line">                    ref=&#123;(input) =&gt; &#123;this.textInput = input&#125;&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        &lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我们必须在class定义的组件使用ref，是function将不起作用的，那是因为他们不存在实例，但是我们可以在function中具体的html元素或者类组件使用ref</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function CustomTextInput(props) &#123;</span><br><span class="line">  // textInput must be declared here so the ref callback can refer to it</span><br><span class="line">  let textInput = null;</span><br><span class="line"></span><br><span class="line">  function handleClick() &#123;</span><br><span class="line">    textInput.focus();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=&quot;text&quot;</span><br><span class="line">        ref=&#123;(input) =&gt; &#123; textInput = input; &#125;&#125; /&gt;</span><br><span class="line">      &lt;input</span><br><span class="line">        type=&quot;button&quot;</span><br><span class="line">        value=&quot;Focus the text input&quot;</span><br><span class="line">        onClick=&#123;handleClick&#125;</span><br><span class="line">      /&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  );  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="暴露refs给父组件"><a href="#暴露refs给父组件" class="headerlink" title="暴露refs给父组件"></a>暴露refs给父组件</h1><blockquote>
+<p>在一些情况下，我们想访问父组件下的子组件，但是通常是不允许的，这会破坏组件的封装性，但是我们可以传一个特殊的属性给子元素，从而操作子元素的dom</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function CustomTextInput(props) &#123;</span><br><span class="line">    console.log(props.inputRef);</span><br><span class="line">    return (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;input ref=&#123;props.inputRef&#125; /&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Parent extends React.Component &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        // console.log(this.inpsstElement);</span><br><span class="line">        return (</span><br><span class="line">            &lt;CustomTextInput</span><br><span class="line">                inputRef=&#123;el =&gt; this.inputElement  =el&#125;</span><br><span class="line">            /&gt;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上的方式既适合class组件也是function组件</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/14/react-Typechecking-With-PropTypes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -839,162 +980,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/10/react-Lists-and-Keys/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/10/react-Lists-and-Keys/" itemprop="url">react-Lists and Keys</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-10T00:00:00+08:00">
-                2017-07-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Rendering-Multiple-Components-如何重复渲染多个组件"><a href="#Rendering-Multiple-Components-如何重复渲染多个组件" class="headerlink" title="Rendering Multiple Components 如何重复渲染多个组件"></a>Rendering Multiple Components 如何重复渲染多个组件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//生成无序列表</span><br><span class="line"></span><br><span class="line">function NumberList(props) &#123;</span><br><span class="line">        const numbers = props.numbers;</span><br><span class="line">        const listItems = numbers.map((number) =&gt; &lt;li&gt;&#123;number&#125;&lt;/li&gt;)</span><br><span class="line">         return (</span><br><span class="line">             &lt;ul&gt;</span><br><span class="line">                 &#123;listItems&#125;</span><br><span class="line">             &lt;/ul&gt;</span><br><span class="line">         )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在做循环渲染的时候，控制台会报出an array or iterator should have a unique “key” prop，我们必须添加一个key</p>
-</blockquote>
-<blockquote>
-<p> const listItems = numbers.map((number) =&gt; <li **key="{number.toString()**}">{number}</li>)</p>
-</blockquote>
-<blockquote>
-<p>Keys help React identify which items have changed, are added, or are removed</p>
-</blockquote>
-<blockquote>
-<p>不推荐使用一下方式，因为列表一旦重新，它的效率非常慢<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">const todoItems = todos.map((todo, index) =&gt;</span><br><span class="line">  // Only do this if items have no stable IDs</span><br><span class="line">  &lt;li key=&#123;index&#125;&gt;</span><br><span class="line">    &#123;todo.text&#125;</span><br><span class="line">  &lt;/li&gt;</span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<blockquote>
-<p>当li为根元素时，我们只能把key加到组件上</p>
-</blockquote>
-<blockquote>
-<p>Example: Incorrect Key Usage</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function ListItem(props) &#123;</span><br><span class="line">  const value = props.value;</span><br><span class="line">  return (</span><br><span class="line">    // Wrong! There is no need to specify the key here:</span><br><span class="line">    &lt;li key=&#123;value.toString()&#125;&gt;</span><br><span class="line">      &#123;value&#125;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  const listItems = numbers.map((number) =&gt;</span><br><span class="line">    // Wrong! The key should have been specified here:</span><br><span class="line">    &lt;ListItem value=&#123;number&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">  return (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;listItems&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const numbers = [1, 2, 3, 4, 5];</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Example: Correct Key Usage</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function ListItem(props) &#123;</span><br><span class="line">  // Correct! There is no need to specify the key here:</span><br><span class="line">  return &lt;li&gt;&#123;props.value&#125;&lt;/li&gt;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  const listItems = numbers.map((number) =&gt;</span><br><span class="line">    // Correct! Key should be specified inside the array.</span><br><span class="line">    &lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">              value=&#123;number&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">  return (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;listItems&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const numbers = [1, 2, 3, 4, 5];</span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;NumberList numbers=&#123;numbers&#125; /&gt;,</span><br><span class="line">  document.getElementById(&apos;root&apos;)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>对于key值，只有在不同的数组上才能重复使用</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//重复使用Key</span><br><span class="line">class Blog extends Component &#123;</span><br><span class="line">    constructor(props)&#123;</span><br><span class="line">        super(props)</span><br><span class="line">    this.sidebar =(&lt;ul&gt;&#123;props.posts.map((post) =&gt; &lt;li key=&#123;post.id&#125;&gt;&#123;post.title&#125;&lt;/li&gt;)&#125;&lt;/ul&gt;);</span><br><span class="line">    this.content = props.posts.map((post) =&gt; &lt;div key=&#123;post.id&#125;&gt;&lt;h3&gt;&#123;post.title&#125;&lt;/h3&gt;;&lt;p&gt;&#123;post.content&#125;&lt;/p&gt; &lt;/div&gt;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render ()&#123;</span><br><span class="line">         return (&lt;div&gt;</span><br><span class="line">             &#123;this.sidebar&#125;</span><br><span class="line">             &lt;hr/&gt;</span><br><span class="line">             &#123;this.content&#125;</span><br><span class="line">         &lt;/div&gt;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">const posts = [</span><br><span class="line">    &#123;id: 1, title: &apos;Hello World&apos;, content: &apos;Welcome to learning React!&apos;&#125;,</span><br><span class="line">    &#123;id: 2, title: &apos;Installation&apos;, content: &apos;You can install React from npm.&apos;&#125;</span><br><span class="line">];</span><br></pre></td></tr></table></figure>
-<h1 id="Embedding-map-in-JSX-map的两种用法"><a href="#Embedding-map-in-JSX-map的两种用法" class="headerlink" title="Embedding map() in JSX map的两种用法"></a>Embedding map() in JSX map的两种用法</h1><blockquote>
-<p>第一种</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  const listItems = numbers.map((number) =&gt;</span><br><span class="line">    &lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">              value=&#123;number&#125; /&gt;</span><br><span class="line">  );</span><br><span class="line">  return (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;listItems&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>第二种</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function NumberList(props) &#123;</span><br><span class="line">  const numbers = props.numbers;</span><br><span class="line">  return (</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &#123;numbers.map((number) =&gt;</span><br><span class="line">        &lt;ListItem key=&#123;number.toString()&#125;</span><br><span class="line">                  value=&#123;number&#125; /&gt;</span><br><span class="line">      )&#125;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">  );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1049,7 +1034,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1071,7 +1056,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

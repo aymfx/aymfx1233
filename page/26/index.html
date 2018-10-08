@@ -321,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/07/21/css3-布局样式相关-慕课网学习/">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/07/22/javascipt变量/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ly">
@@ -340,7 +340,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/07/21/css3-布局样式相关-慕课网学习/" itemprop="url">css3-布局样式相关-慕课网学习</a></h1>
+                <a class="post-title-link" href="/2016/07/22/javascipt变量/" itemprop="url">javascipt变量</a></h1>
         
 
         <div class="post-meta">
@@ -352,8 +352,8 @@
               
                 <span class="post-meta-item-text">aymfx发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-21T00:00:00+08:00">
-                2016-07-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-22T00:00:00+08:00">
+                2016-07-22
               </time>
             
 
@@ -392,37 +392,114 @@
       
         
           
-            <h1 id="Columns"><a href="#Columns" class="headerlink" title="Columns"></a>Columns</h1><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><pre><code>columns：&lt;column-width&gt; || &lt;column-count&gt;
-</code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p><column-width>  主要用来定义多列中每列的宽度</column-width></p>
-<p><column-count>  主要用来定义多列中的列数</column-count></p>
-<h1 id="column-width"><a href="#column-width" class="headerlink" title="column-width"></a>column-width</h1><p>属性值：<br>auto<br>如果column-width设置值为auto或者没有显式的设置值时，元素多列的列宽将由其他属性来决定，比如前面的示例就是由列数column-count来决定。<br>length<br>使用固定值来设置元素列的宽度，其主要是由数值和长度单位组成，不过其值只能是正值，不能为负值。</p>
-<h1 id="column-count"><a href="#column-count" class="headerlink" title="column-count"></a>column-count</h1><p>属性值<br>auto<br>此值为column-count的默认值，表示元素只有一列，其主要依靠浏览器计算自动设置<br>integer<br>此值为正整数值，主要用来定义元素的列数，取值为大于0的整数，负值无效。</p>
-<h1 id="column-gap"><a href="#column-gap" class="headerlink" title="column-gap"></a>column-gap</h1><p>normal</p>
-<p>默认值，默值为1em（如果你的字号是px，其默认值为你的font-size值）。</p>
-<p>length&gt;</p>
-<p>此值用来设置列与列之间的距离，其可以使用px,em单位的任何整数值，但不能是负值。</p>
-<h1 id="column-rule"><a href="#column-rule" class="headerlink" title="column-rule"></a>column-rule</h1><p>属性值<br>column-rule-width</p>
-<p>类似于border-width属性，主要用来定义列边框的宽度，其默认值为“medium”，column-rule-width属性接受任意浮点数，但不接收负值。但也像border-width属性一样，可以使用关键词：medium、thick和thin。</p>
-<p>column-rule-style</p>
-<p>类似于border-style属性，主要用来定义列边框样式，其默认值为“none”。column-rule-style属性值与border-style属值相同，包括none、hidden、dotted、dashed、solid、double、groove、ridge、inset、outset。</p>
-<p>column-rule-color</p>
-<p>类似于border-color属性，主要用来定义列边框颜色，其默认值为前景色color的值，使用时相当于border-color。column-rule-color接受所有的颜色。如果不希望显示颜色，也可以将其设置为transparent(透明色)</p>
-<h1 id="column-span"><a href="#column-span" class="headerlink" title="column-span"></a>column-span</h1><p>属性值<br>none</p>
-<p>此值为column-span的默认值，表示不跨越任何列。</p>
-<p>all</p>
-<p>这个值跟none值刚好相反，表示的是元素跨越所有列，并定位在列的Ｚ轴之上。</p>
-<h1 id="W3C标准盒模型"><a href="#W3C标准盒模型" class="headerlink" title="W3C标准盒模型"></a>W3C标准盒模型</h1><h3 id="外盒尺寸计算（元素空间尺寸）"><a href="#外盒尺寸计算（元素空间尺寸）" class="headerlink" title="外盒尺寸计算（元素空间尺寸）"></a>外盒尺寸计算（元素空间尺寸）</h3><p>element空间高度＝内容高度＋内距＋边框＋外距</p>
-<p>element空间宽度＝内容宽度＋内距＋边框＋外距</p>
-<h3 id="内盒尺寸计算（元素大小）"><a href="#内盒尺寸计算（元素大小）" class="headerlink" title="内盒尺寸计算（元素大小）"></a>内盒尺寸计算（元素大小）</h3><p>element高度＝内容高度＋内距＋边框（height为内容高度）</p>
-<p>element宽度＝内容宽度＋内距＋边框（width为内容宽度）</p>
-<p>#IE传统下盒模型（IE6以下，不包含IE6版本或”QuirksMode下IE5.5+”）</p>
-<h3 id="外盒尺寸计算（元素空间尺寸）-1"><a href="#外盒尺寸计算（元素空间尺寸）-1" class="headerlink" title="外盒尺寸计算（元素空间尺寸）"></a>外盒尺寸计算（元素空间尺寸）</h3><p>element空间高度＝内容高度＋外距（height包含了元素内容宽度、边框、内距）</p>
-<p>element宽间宽度＝内容宽度＋外距（width包含了元素内容宽度、边框、内距）</p>
-<h3 id="内盒尺寸计算（元素大小）-1"><a href="#内盒尺寸计算（元素大小）-1" class="headerlink" title="内盒尺寸计算（元素大小）"></a>内盒尺寸计算（元素大小）</h3><p>element高度＝内容高度（height包含了元素内容宽度、边框、内距）</p>
-<p>element宽度＝内容宽度（width包含了元素内容宽度、边框、内距）</p>
-<h1 id="box-sizing-css3新自定义盒子属性"><a href="#box-sizing-css3新自定义盒子属性" class="headerlink" title="box-sizing(css3新自定义盒子属性)"></a>box-sizing(css3新自定义盒子属性)</h1><h3 id="box-sizing-content-box-border-box-inherit"><a href="#box-sizing-content-box-border-box-inherit" class="headerlink" title="box-sizing: content-box | border-box | inherit"></a>box-sizing: content-box | border-box | inherit</h3><p>属性值<br>content-box<br>默认值，其让元素维持W3C的标准盒模型，也就是说元素的宽度和高度（width/height）等于元素边框宽度（border）加上元素内距（padding）加上元素内容宽度或高度（content width/ height），也就是element width/height = border + padding + content width / height</p>
-<p>border-box<br>重新定义CSS2.1中盒模型组成的模式，让元素维持IE传统的盒模型（IE6以下版本和IE6-7怪异模式），也就是说元素的宽度或高度等于元素内容的宽度或高度。从上面盒模型介绍可知，这里的内容宽度或高度包含了元素的border、padding、内容的宽度或高度（此处的内容宽度或高度＝盒子的宽度或高度—边框—内距）。</p>
-<p>inherit<br>使元素继承父元素的盒模型模式</p>
+            <h1 id="JavaScript变量"><a href="#JavaScript变量" class="headerlink" title="JavaScript变量"></a>JavaScript变量</h1><h2 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h2><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><ul>
+<li>匈牙利命名法：变量名=类型+对象描述<ul>
+<li>Int整形 i</li>
+<li>Float浮点 fl</li>
+<li>Boolean布尔 b</li>
+<li>String字符串 s</li>
+<li>Array数组    a</li>
+<li>Object对象 o</li>
+<li>Function函数 fn</li>
+<li>Regular Expressino 正则  re</li>
+</ul>
+</li>
+<li>驼峰命名法<ul>
+<li>全部小写：单词与单词用下划线分割</li>
+<li>大小写混合<ul>
+<li>大驼峰:每个首字母大写</li>
+<li>小驼峰:第一个单词首字母小写，其他首字母大写</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
+<li><p>首字符:英文或者下滑线或者$符号</p>
+<pre><code>var $a=&quot;asd&quot;;
+
+alert($a);
+</code></pre></li>
+<li><p>组成：英文字母，数字，下划线 $符号</p>
+</li>
+<li>禁忌：不能使用关键字和保留字</li>
+</ul>
+<h2 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h2><ul>
+<li>显示声明：var 变量名</li>
+<li>陋习<ul>
+<li>没有类型</li>
+<li>重复声明</li>
+<li>隐式声明</li>
+<li>不声明直接赋值</li>
+</ul>
+</li>
+<li>正解<ul>
+<li>先声明，后读写</li>
+<li>先赋值，后运算</li>
+</ul>
+</li>
+</ul>
+<h2 id="变量类型"><a href="#变量类型" class="headerlink" title="变量类型"></a>变量类型</h2><ul>
+<li>值类型<ul>
+<li>占用空间固定，保存在栈中</li>
+<li>保存与复制的是值本身</li>
+<li>使用typeof检测数据的类型</li>
+<li>基本数据类型是值类型</li>
+</ul>
+</li>
+<li>引用类型<ul>
+<li>占用空间不固定，保存在堆中</li>
+<li>保存和赋值的是指向对象的指针</li>
+<li>使用instanceof检测数据类型</li>
+<li>使用new()方法构造出的对象是引用类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><ul>
+<li>全局变量<ul>
+<li>包含<ul>
+<li>在函数体外定义的变量</li>
+<li>在函数内部定义的无var的变量</li>
+</ul>
+</li>
+<li>调用:任何位置</li>
+</ul>
+</li>
+<li>局部变量<ul>
+<li>包含<ul>
+<li>在函数内使用var声明的变量</li>
+<li>函数的参数变量</li>
+</ul>
+</li>
+<li>调用：在当前函数体内使用</li>
+</ul>
+</li>
+<li>优先级<ul>
+<li>局部同名变量&gt;局部同名参数&gt;全局同名变量</li>
+</ul>
+</li>
+<li>特性<ul>
+<li>忽略块级作用域</li>
+<li>全局变量是全局对象的属性</li>
+<li>局部变量是调用对象的属性</li>
+<li>作用域链<ul>
+<li>内层函数可以访问外层函数的局部变量</li>
+<li>外层函数不能访问内层函数的局部变量</li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>全局变量：除非被显示删除，否则一直存在</li>
+<li>局部变量：自声明起至函数运行完毕或显示删除</li>
+<li>回收机制<ul>
+<li>标记清除</li>
+<li>引用计数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
           
         
@@ -925,6 +1002,157 @@ alert(d.constructor);//function Date() { [native code] }
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/07/21/css3-布局样式相关-慕课网学习/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/07/21/css3-布局样式相关-慕课网学习/" itemprop="url">css3-布局样式相关-慕课网学习</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-21T00:00:00+08:00">
+                2016-07-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Columns"><a href="#Columns" class="headerlink" title="Columns"></a>Columns</h1><h3 id="语法："><a href="#语法：" class="headerlink" title="语法："></a>语法：</h3><pre><code>columns：&lt;column-width&gt; || &lt;column-count&gt;
+</code></pre><h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><p><column-width>  主要用来定义多列中每列的宽度</column-width></p>
+<p><column-count>  主要用来定义多列中的列数</column-count></p>
+<h1 id="column-width"><a href="#column-width" class="headerlink" title="column-width"></a>column-width</h1><p>属性值：<br>auto<br>如果column-width设置值为auto或者没有显式的设置值时，元素多列的列宽将由其他属性来决定，比如前面的示例就是由列数column-count来决定。<br>length<br>使用固定值来设置元素列的宽度，其主要是由数值和长度单位组成，不过其值只能是正值，不能为负值。</p>
+<h1 id="column-count"><a href="#column-count" class="headerlink" title="column-count"></a>column-count</h1><p>属性值<br>auto<br>此值为column-count的默认值，表示元素只有一列，其主要依靠浏览器计算自动设置<br>integer<br>此值为正整数值，主要用来定义元素的列数，取值为大于0的整数，负值无效。</p>
+<h1 id="column-gap"><a href="#column-gap" class="headerlink" title="column-gap"></a>column-gap</h1><p>normal</p>
+<p>默认值，默值为1em（如果你的字号是px，其默认值为你的font-size值）。</p>
+<p>length&gt;</p>
+<p>此值用来设置列与列之间的距离，其可以使用px,em单位的任何整数值，但不能是负值。</p>
+<h1 id="column-rule"><a href="#column-rule" class="headerlink" title="column-rule"></a>column-rule</h1><p>属性值<br>column-rule-width</p>
+<p>类似于border-width属性，主要用来定义列边框的宽度，其默认值为“medium”，column-rule-width属性接受任意浮点数，但不接收负值。但也像border-width属性一样，可以使用关键词：medium、thick和thin。</p>
+<p>column-rule-style</p>
+<p>类似于border-style属性，主要用来定义列边框样式，其默认值为“none”。column-rule-style属性值与border-style属值相同，包括none、hidden、dotted、dashed、solid、double、groove、ridge、inset、outset。</p>
+<p>column-rule-color</p>
+<p>类似于border-color属性，主要用来定义列边框颜色，其默认值为前景色color的值，使用时相当于border-color。column-rule-color接受所有的颜色。如果不希望显示颜色，也可以将其设置为transparent(透明色)</p>
+<h1 id="column-span"><a href="#column-span" class="headerlink" title="column-span"></a>column-span</h1><p>属性值<br>none</p>
+<p>此值为column-span的默认值，表示不跨越任何列。</p>
+<p>all</p>
+<p>这个值跟none值刚好相反，表示的是元素跨越所有列，并定位在列的Ｚ轴之上。</p>
+<h1 id="W3C标准盒模型"><a href="#W3C标准盒模型" class="headerlink" title="W3C标准盒模型"></a>W3C标准盒模型</h1><h3 id="外盒尺寸计算（元素空间尺寸）"><a href="#外盒尺寸计算（元素空间尺寸）" class="headerlink" title="外盒尺寸计算（元素空间尺寸）"></a>外盒尺寸计算（元素空间尺寸）</h3><p>element空间高度＝内容高度＋内距＋边框＋外距</p>
+<p>element空间宽度＝内容宽度＋内距＋边框＋外距</p>
+<h3 id="内盒尺寸计算（元素大小）"><a href="#内盒尺寸计算（元素大小）" class="headerlink" title="内盒尺寸计算（元素大小）"></a>内盒尺寸计算（元素大小）</h3><p>element高度＝内容高度＋内距＋边框（height为内容高度）</p>
+<p>element宽度＝内容宽度＋内距＋边框（width为内容宽度）</p>
+<p>#IE传统下盒模型（IE6以下，不包含IE6版本或”QuirksMode下IE5.5+”）</p>
+<h3 id="外盒尺寸计算（元素空间尺寸）-1"><a href="#外盒尺寸计算（元素空间尺寸）-1" class="headerlink" title="外盒尺寸计算（元素空间尺寸）"></a>外盒尺寸计算（元素空间尺寸）</h3><p>element空间高度＝内容高度＋外距（height包含了元素内容宽度、边框、内距）</p>
+<p>element宽间宽度＝内容宽度＋外距（width包含了元素内容宽度、边框、内距）</p>
+<h3 id="内盒尺寸计算（元素大小）-1"><a href="#内盒尺寸计算（元素大小）-1" class="headerlink" title="内盒尺寸计算（元素大小）"></a>内盒尺寸计算（元素大小）</h3><p>element高度＝内容高度（height包含了元素内容宽度、边框、内距）</p>
+<p>element宽度＝内容宽度（width包含了元素内容宽度、边框、内距）</p>
+<h1 id="box-sizing-css3新自定义盒子属性"><a href="#box-sizing-css3新自定义盒子属性" class="headerlink" title="box-sizing(css3新自定义盒子属性)"></a>box-sizing(css3新自定义盒子属性)</h1><h3 id="box-sizing-content-box-border-box-inherit"><a href="#box-sizing-content-box-border-box-inherit" class="headerlink" title="box-sizing: content-box | border-box | inherit"></a>box-sizing: content-box | border-box | inherit</h3><p>属性值<br>content-box<br>默认值，其让元素维持W3C的标准盒模型，也就是说元素的宽度和高度（width/height）等于元素边框宽度（border）加上元素内距（padding）加上元素内容宽度或高度（content width/ height），也就是element width/height = border + padding + content width / height</p>
+<p>border-box<br>重新定义CSS2.1中盒模型组成的模式，让元素维持IE传统的盒模型（IE6以下版本和IE6-7怪异模式），也就是说元素的宽度或高度等于元素内容的宽度或高度。从上面盒模型介绍可知，这里的内容宽度或高度包含了元素的border、padding、内容的宽度或高度（此处的内容宽度或高度＝盒子的宽度或高度—边框—内距）。</p>
+<p>inherit<br>使元素继承父元素的盒模型模式</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/07/18/css3-3d转换和3D动画/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1301,127 +1529,6 @@ repeating-linear-gradient值1,值2 [值3],值4
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/07/11/用CSS做一个三角形/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/11/用CSS做一个三角形/" itemprop="url">用CSS做一个三角形</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-11T00:00:00+08:00">
-                2016-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="利用border的特性来做一个三角形"><a href="#利用border的特性来做一个三角形" class="headerlink" title="利用border的特性来做一个三角形"></a>利用border的特性来做一个三角形</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">	&lt;title&gt;三角形&lt;/title&gt;</span><br><span class="line">	&lt;style <span class="built_in">type</span>=<span class="string">"text/css"</span>&gt;</span><br><span class="line">		   .zsanjiao&#123;</span><br><span class="line">		   	/*去掉内容*/</span><br><span class="line">		   	width:0;</span><br><span class="line">		   	height:0;</span><br><span class="line">		   	/*解决兼容性*/</span><br><span class="line">		   	overflow: hidden;</span><br><span class="line">		   	/*设置三角形的大小和方向,transparent是显示透明*/</span><br><span class="line">		   	border-left: 50px solid transparent;</span><br><span class="line">		   	border-right: 50px solid transparent;</span><br><span class="line">		   	border-bottom:50px solid red;</span><br><span class="line">		   	/*border-style:dashed dashed solid dashed;*/</span><br><span class="line">		   &#125;</span><br><span class="line">		   /*它的原理*/</span><br><span class="line">		   .moxing&#123;width:0;height:0; </span><br><span class="line">		   	border-left: 50px solid green;</span><br><span class="line">		   	border-right: 50px solid pink;</span><br><span class="line">		   	border-bottom:50px solid red;</span><br><span class="line">			border-top:50px solid red;</span><br><span class="line">		   &#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div class=<span class="string">"zsanjiao"</span>&gt;&lt;/div&gt;</span><br><span class="line">	&lt;hr/&gt;</span><br><span class="line">	&lt;div class=<span class="string">"moxing"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1476,7 +1583,7 @@ repeating-linear-gradient值1,值2 [值3],值4
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1498,7 +1605,7 @@ repeating-linear-gradient值1,值2 [值3],值4
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

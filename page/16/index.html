@@ -321,6 +321,228 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/11/node-js开发指南笔记2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/11/node-js开发指南笔记2/" itemprop="url">node.js开发指南笔记2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:22:08+08:00">
+                2017-08-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Node-js核心模块"><a href="#Node-js核心模块" class="headerlink" title="Node.js核心模块"></a>Node.js核心模块</h1><blockquote>
+<p>核心模块是 Node.js 的心脏，它由一些精简而高效的库组成，为 Node.js 提供了基本的</p>
+</blockquote>
+<h1 id="全局对象global"><a href="#全局对象global" class="headerlink" title="全局对象global"></a>全局对象global</h1><blockquote>
+<p>node的全局对象是Global Object 它满足以下的条件</p>
+</blockquote>
+<ul>
+<li>在最外层定义的变量</li>
+<li>全局对象的属性</li>
+<li>隐式定义的变量(未定义直接赋值的变量)</li>
+</ul>
+<blockquote>
+<p>tips:在定义变量一定要使用var定义</p>
+</blockquote>
+<h1 id="process"><a href="#process" class="headerlink" title="process"></a>process</h1><blockquote>
+<p>它用于描述当前 Node.js 进程状态<br>的对象，提供了一个与操作系统的简单接口</p>
+</blockquote>
+<ul>
+<li>peocess.argv 第一个元素是 node， 第二个元素是脚本文件名，<br>从第三个元素开始每个元素是一个运行参数</li>
+<li>process.stdout 标准输出流，通常我们使用的  console.log() 向标准输出打印<br>字符，而  process.stdout.write() 函数提供了更底层的接口</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process.stdout.write(<span class="string">"你的表演"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>process.stdin 是标准输入流，初始时它是被暂停的，要想从标准输入读取数据，<br>你必须恢复流，并手动编写流的事件响应函数</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">process.stdin.resume();</span><br><span class="line"></span><br><span class="line">process.stdin.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    process.stdout.write(<span class="string">'开始'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">process.stdin.emit(<span class="string">'data'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>process.nextTick(callback) 的功能是为事件循环设置一项任务，Node.js 会在<br>下次事件循环调响应时调用  callback</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params">args,callback</span>)</span>&#123;</span><br><span class="line">    firsthing();</span><br><span class="line">    process.nextTick(callback);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomething(process.argv,<span class="function"><span class="keyword">function</span> <span class="title">onEnd</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      compute();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">firsthing</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"我出来了"</span>);</span><br><span class="line">        &#125;,<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compute</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"来呀"</span>);</span><br><span class="line">      &#125;,<span class="number">10000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>process.platform</li>
+<li>process.pid</li>
+<li>process.execPath</li>
+<li>process.memoryUsage()</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(process.platform); <span class="comment">//win32</span></span><br><span class="line"><span class="built_in">console</span>.log(process.pid); <span class="comment">//9356</span></span><br><span class="line"><span class="built_in">console</span>.log(process.execPath); <span class="comment">//C:\Program Files\nodejs\node.exe</span></span><br><span class="line"><span class="built_in">console</span>.log(process.memoryUsage());<span class="comment">//&#123; rss: 18862080,heapTotal: 7376896,heapUsed: 3260136,external: 8380 &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>POSIX表示可移植操作系统接口（Portable Operating System Interface of UNIX，缩写为 POSIX ），POSIX标准定义了操作系统应该为应用程序提供的接口标准，是IEEE为要在各种UNIX操作系统上运行的软件而定义的一系列API标准的总称，其正式称呼为IEEE 1003，而国际标准名称为ISO/IEC 9945。</li>
+</ul>
+<h1 id="常用的工具集合util"><a href="#常用的工具集合util" class="headerlink" title="常用的工具集合util"></a>常用的工具集合util</h1><blockquote>
+<p>util  是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足</p>
+</blockquote>
+<blockquote>
+<p>util.inherits 实现一个对象间原型继承的函数</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Base</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"base"</span>;</span><br><span class="line">    <span class="keyword">this</span>.base = <span class="string">"1995"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello'</span>+<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Base.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"sub"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">util.inherits(Sub, Base);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objBase = <span class="keyword">new</span> Base();</span><br><span class="line"></span><br><span class="line">objBase.showName();</span><br><span class="line"></span><br><span class="line">objBase.sayHello();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(objBase);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"---------------------------"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objSub = <span class="keyword">new</span> Sub();</span><br><span class="line"></span><br><span class="line">objSub.showName();</span><br><span class="line"><span class="comment">// objSub.sayHello(); 只能继承原型的东西，构造函数内部东西不能被继承</span></span><br><span class="line"><span class="built_in">console</span>.log(objSub);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>util.inspect(object,[showHidden],[depth],[colors])</p>
+</blockquote>
+<ul>
+<li>object ：要转换的对象</li>
+<li>showHidden  是一个可选参数，如果值为  true ，将会输出更多隐藏信息</li>
+<li>depth  表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多<br>少。如果不指定 depth ，默认会递归2层，指定为  null  表示将不限递归层数完整遍历对象。</li>
+<li>如果 color 值为  true ，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮<br>的效果</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"><span class="keyword">var</span> obj =&#123;</span><br><span class="line">     name:<span class="string">'ly'</span>,</span><br><span class="line">     hello:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"再见"</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj)); <span class="comment">//&#123; name: 'ly', hello: [Function: hello] &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj,<span class="literal">true</span>)); <span class="comment">//&#123; name: 'ly',hello:&#123; [Function: hello] [length]: 0,[name]: 'hello',[arguments]: null,[caller]: null,[prototype]: hello &#123; [constructor]: [Circular] &#125; &#125; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj,<span class="literal">true</span>,<span class="number">4</span>,<span class="literal">true</span>));</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>四个类型测试工具</p>
+<ul>
+<li>util.isArray()</li>
+<li>util.isRegExp()</li>
+<li>util.isDate()</li>
+<li>util.isError()</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 算了不测了都被废弃了 --&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>格式化以及调试工具</p>
+<ul>
+<li>util.format()</li>
+<li>util.debuglog()</li>
+</ul>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"><span class="keyword">const</span> debuglog = util.debuglog(<span class="string">'foo'</span>);</span><br><span class="line">debuglog(<span class="string">'hello from foo [%d]'</span>, <span class="number">123</span>);</span><br><span class="line">&lt;!-- 很少用的感觉 --&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="事件驱动-events"><a href="#事件驱动-events" class="headerlink" title="事件驱动 events"></a>事件驱动 events</h1><blockquote>
+<p>Node.js 本身架构就是事件式<br>的，而它提供了唯一的接口，所以堪称 Node.js 事件编程的基石。 events 模块不仅用于用户代码与 Node.js 下层事件循环的交互，还几乎被所有的模块依赖。</p>
+</blockquote>
+<blockquote>
+<p>事件发射器</p>
+</blockquote>
+<ul>
+<li>EventEmitter.on(event, listener)  为指定事件注册一个监听器，接受一个字<br>符串  event  和一个回调函数  listener </li>
+<li>EventEmitter.emit(event, [arg1], [arg2], […]) 发射  event  事件，传<br>递若干可选参数到事件监听器的参数表</li>
+<li>EventEmitter.once(event, listener)  为指定事件注册一个单次监听器，即<br>监听器最多只会触发一次，触发后立刻解除该监听器。</li>
+<li>EventEmitter.removeListener(event, listener) 移除指定事件的某个监听<br>器， listener  必须是该事件已经注册过的监听器<ul>
+<li>EventEmitter.removeAllListeners([event]) 移除所有事件的所有监听器，<br>如果指定  event ，则移除指定事件的所有监听器</li>
+<li>setMaxListeners(n) 设定最大监听数，不能超过10个</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.EventEmitter();</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'someEvent'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener1'</span>,arg1,arg2);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'someEvent'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener2'</span>,arg1,arg2);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br><span class="line"><span class="comment">// listener1 ly 1995</span></span><br><span class="line"><span class="comment">// listener2 ly 1995</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------移除绑定事件-----------------"</span>)</span><br><span class="line"><span class="comment">// 移除绑定事件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s=<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener1'</span>,arg1,arg2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'add'</span>,s)</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'add'</span>,<span class="string">"ly"</span>,<span class="number">1996</span>);</span><br><span class="line"></span><br><span class="line">emitter.removeListener(<span class="string">"add"</span>,s);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'add'</span>,<span class="string">"ly"</span>,<span class="number">1996</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------结束-----------------"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------只触发一次的函数-----------------"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.once(<span class="string">'once'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我只执行一次哈'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'once'</span>);</span><br><span class="line">emitter.emit(<span class="string">'once'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除所有事件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------会执行-----------------"</span>);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br><span class="line">emitter.removeAllListeners();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------不会执行-----------------"</span>);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>EventEmitter 定义了一个特殊的事件  error ，它包含了“错误”的语义，我们在遇到<br>异常的时候通常会发射  error  事件。当  error 被发射时， EventEmitter 规定如果没有响<br>应的监听器，Node.js 会把它当作异常，退出程序并打印调用栈。我们一般要为会发射  error<br>事件的对象设置监听器，避免遇到错误后整个程序崩溃</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> emmitter = <span class="keyword">new</span> events.EventEmitter();</span><br><span class="line"></span><br><span class="line">emmitter.once(<span class="string">'once'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我只执行一次哈'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">emmitter.on(<span class="string">'error'</span>, (err) =&gt; &#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(err); <span class="comment">//whoops! there was an error  </span></span><br><span class="line">&#125;);  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emmitter.emit(<span class="string">'once'</span>);</span><br><span class="line">emmitter.emit(<span class="string">'error'</span>,<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"什么错误"</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="继承-EventEmitter"><a href="#继承-EventEmitter" class="headerlink" title="继承  EventEmitter"></a>继承  EventEmitter</h1><blockquote>
+<p>大多数时候我们不会直接使用 EventEmitter ，而是在对象中继承它。包括  fs 、 net 、<br>http 在内的，只要是支持事件响应的核心模块都是  EventEmitter 的子类</p>
+</blockquote>
+<blockquote>
+<p>为什么要这样做呢？原因有两点。首先，具有某个实体功能的对象实现事件符合语义，<br>事件的监听和发射应该是一个对象的方法。其次 JavaScript 的对象机制是基于原型的，支持<br>部分多重继承，继承  EventEmitter 不会打乱对象原有的继承关系</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/09/node-js开发指南笔记1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1078,296 +1300,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/01/node-review/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/01/node-review/" itemprop="url">node-review</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T00:00:00+08:00">
-                2017-08-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="建一个简单的express"><a href="#建一个简单的express" class="headerlink" title="建一个简单的express"></a>建一个简单的express</h1><blockquote>
-<p>对于学习node的人来说首先node安装是必备的，这里就跳过了</p>
-</blockquote>
-<blockquote>
-<p><a href="http://expressjs.com/" target="_blank" rel="noopener">http://expressjs.com/</a>  它的官网</p>
-</blockquote>
-<blockquote>
-<p>安装 express npm i express</p>
-</blockquote>
-<blockquote>
-<p>新建一个app.js文件，写以下的代码</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//引入 `express` 模块</span><br><span class="line">var express = require(&apos;express&apos;); </span><br><span class="line"></span><br><span class="line">// 调用 express 实例，它是一个函数，不带参数调用时，会返回一个 express 实例，将这个变量赋予 app 变量</span><br><span class="line"></span><br><span class="line">var app = express(); </span><br><span class="line"></span><br><span class="line">//调用get方法，当我们访问/这个根目录时，我们会执行回调，send用于向网页输出字符串</span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    res.send(&apos;Hello,world&apos;);</span><br><span class="line">&#125;)</span><br><span class="line">// 定义好我们 app 的行为之后，让它监听本地的 3000 端口。这里的第二个函数是个回调函数，会在 listen 动作成功后执行，我们这里执行了一个命令行输出操作，告诉我们监听动作已完成。</span><br><span class="line">app.listen(3000, function() &#123;</span><br><span class="line">    console.log(&quot;app is listen at port 3000&quot;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>参考</p>
-</blockquote>
-<blockquote>
-<p>// app 本身有很多方法，其中包括最常用的 get、post、put/patch、delete，在这里我们调用其中的 get 方法，为我们的 <code>/</code> 路径指定一个 handler 函数。</p>
-</blockquote>
-<blockquote>
-<p>// 这个 handler 函数会接收 req 和 res 两个对象，他们分别是请求的 request 和 response。</p>
-</blockquote>
-<blockquote>
-<p>// request 中包含了浏览器传来的各种信息，比如 query 啊，body 啊，headers 啊之类的，都可以通过 req 对象访问到。</p>
-</blockquote>
-<blockquote>
-<p>// res 对象，我们一般不从里面取信息，而是通过它来定制我们向浏览器输出的信息，比如 header 信息，比如想要向浏览器输出的内容。这里我们调用了它的 #send 方法，向浏览器输出一个字符串。</p>
-</blockquote>
-<blockquote>
-<p>执行 node app.js</p>
-</blockquote>
-<blockquote>
-<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a></p>
-</blockquote>
-<h1 id="学习使用外部模块"><a href="#学习使用外部模块" class="headerlink" title="学习使用外部模块"></a>学习使用外部模块</h1><blockquote>
-<p>npm init 初始化</p>
-</blockquote>
-<blockquote>
-<p>cnpm i express utility -S 安装两个依赖块</p>
-</blockquote>
-<blockquote>
-<p><a href="https://github.com/node-modules/utility" target="_blank" rel="noopener">https://github.com/node-modules/utility</a>  utility是一个工具类，在这个地方用于加密哦</p>
-</blockquote>
-<blockquote>
-<p>新建一个app.js文件，写以下的代码</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var utility = require(&apos;utility&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    //query用来获取地址栏后面的参数</span><br><span class="line">    var message = req.query.message;</span><br><span class="line">    //使用工具函数进行加密处理</span><br><span class="line">    var md5Value = utility.md5(message);</span><br><span class="line">    res.send(md5Value);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>执行 node app.js</p>
-</blockquote>
-<blockquote>
-<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/?message=&#39;liuyang&#39;" target="_blank" rel="noopener">http://localhost:3000/?message=&#39;liuyang&#39;</a></p>
-</blockquote>
-<h1 id="使用-superagent-与-cheerio-完成简单爬虫"><a href="#使用-superagent-与-cheerio-完成简单爬虫" class="headerlink" title="使用 superagent 与 cheerio 完成简单爬虫"></a>使用 superagent 与 cheerio 完成简单爬虫</h1><blockquote>
-<p>superagent  superagent(<a href="http://visionmedia.github.io/superagent/" target="_blank" rel="noopener">http://visionmedia.github.io/superagent/</a> ) 是个 http 方面的库，可以发起 get 或 post 请求。</p>
-</blockquote>
-<blockquote>
-<p>cheerio   (<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">https://github.com/cheeriojs/cheerio</a> ) 大家可以理解成一个 Node.js 版的 jquery，用来从网页中以 css selector 取数据，使用方式跟 jquery 一样一样的。</p>
-</blockquote>
-<blockquote>
-<p>新建一个app.js文件，写以下的代码</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line">    //用superagent去抓取页面内容</span><br><span class="line">    superagent.get(&apos;http://www.qdfuns.com/&apos;).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        //加载取到的页面，然后创建一个类似jquery的实例</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        var items = [];</span><br><span class="line">        $(&quot;.media-body&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            items.push(&#123;</span><br><span class="line">                title: $ele.text()</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        res.send(items);</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>利用这两个模块，我们能抓取我们所需要的数据</p>
-</blockquote>
-<h1 id="使用-eventproxy-控制并发"><a href="#使用-eventproxy-控制并发" class="headerlink" title="使用 eventproxy 控制并发"></a>使用 eventproxy 控制并发</h1><blockquote>
-<p>这一小节内容，利用eventproxy，实现并发抓取1+40,1就是抓取40个主题，40是抓取每个主题链接下面的评论，也就是说我们要发起1+40个请求，后四十个请求一起发起</p>
-</blockquote>
-<blockquote>
-<p>eventproxy  <a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">https://github.com/JacksonTian/eventproxy</a>    并发执行异步回调，移除被广为诟病的深度callback嵌套问题，将串行等待变成并行等待，提升多异步协作场景下的执行效率</p>
-</blockquote>
-<blockquote>
-<p>eventproxy 提供了不少其他场景所需的 API，但最最常用的用法就是以上的这种，即：</p>
-</blockquote>
-<blockquote>
-<p>先 var ep = new eventproxy(); 得到一个 eventproxy 实例。</p>
-</blockquote>
-<blockquote>
-<p>告诉它你要监听哪些事件，并给它一个回调函数。ep.all(‘event1’, ‘event2’, function (result1, result2) {})。</p>
-</blockquote>
-<blockquote>
-<p>在适当的时候 ep.emit(‘event_name’, eventData)。</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line">var eventproxy = require(&apos;eventproxy&apos;);</span><br><span class="line">var url = require(&apos;url&apos;);</span><br><span class="line">var cnodeUrl = &apos;https://cnodejs.org/&apos;</span><br><span class="line">var app = express();</span><br><span class="line">var topicUrls = [];</span><br><span class="line">var topicsS = [];</span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    superagent.get(cnodeUrl).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        $(&quot;#topic_list .topic_title&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            //url.resolve，可以补全前面的域名，进行拼接操作</span><br><span class="line">            var href = url.resolve(cnodeUrl, $ele.attr(&apos;href&apos;));</span><br><span class="line">            topicUrls.push(href);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        topicUrls.forEach(function(topiculr) &#123;</span><br><span class="line">            superagent.get(topiculr).end(function(err, res) &#123;</span><br><span class="line">                console.log(&quot;fetch&quot; + topiculr + &apos;successful&apos;);</span><br><span class="line">                ep.emit(&apos;topic_html&apos;, [topiculr, res.text])</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        //创建一个eventproxy实例</span><br><span class="line">        var ep = new eventproxy();</span><br><span class="line">        //这个表示重复监听topic_html事件40次后执行回调函数</span><br><span class="line">        ep.after(&apos;topic_html&apos;, topicUrls.length, function(topics) &#123;</span><br><span class="line">            console.log(1212);</span><br><span class="line">            //它将emit过来东西全部保存在数组里，然后用map将它遍历</span><br><span class="line">            topicsS = topics.map(function(topicPair) &#123;</span><br><span class="line">                var topicUrl = topicPair[0];</span><br><span class="line">                var topicHtml = topicPair[1];</span><br><span class="line">                var $ = cheerio.load(topicHtml);</span><br><span class="line">                return (&#123;</span><br><span class="line">                    title: $(&apos;.topic_full_title&apos;).text().trim(),</span><br><span class="line">                    href: topicUrl,</span><br><span class="line">                    commit1: $(&apos;.reply_content&apos;).eq(0).text().trim()</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            res.send(topicsS);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="使用-async-控制并发"><a href="#使用-async-控制并发" class="headerlink" title="使用 async 控制并发"></a>使用 async 控制并发</h1><blockquote>
-<p>async <a href="https://github.com/caolan/async" target="_blank" rel="noopener">https://github.com/caolan/async</a> 用于延迟并发，减少一起并发导致网站出问题</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var async = require(&apos;async&apos;);</span><br><span class="line"></span><br><span class="line">var concurrencyCount = 0;</span><br><span class="line"></span><br><span class="line">//模拟假的数据请求，返回一个callback值</span><br><span class="line"></span><br><span class="line">var fetchUrl = function(url, callback) &#123;</span><br><span class="line">    var delay = parseInt((Math.random() * 10000000) % 2000, 10);</span><br><span class="line">    concurrencyCount++;</span><br><span class="line">    console.log(&apos;现在的并发数是&apos;, concurrencyCount, &apos;，正在抓取的是&apos;, url, &apos;，耗时&apos; + delay + &apos;毫秒&apos;);</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        concurrencyCount--;</span><br><span class="line">        //用这个做拼接</span><br><span class="line">        callback(null, url + &apos;html content&apos;)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var urls = [];</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; 30; i++) &#123;</span><br><span class="line">    urls.push(&apos;http://datasource_&apos; + i);</span><br><span class="line">&#125;</span><br><span class="line">//限制并发的次数</span><br><span class="line">async.mapLimit(urls, 5, function(url, callback) &#123;</span><br><span class="line">    fetchUrl(url, callback);</span><br><span class="line">&#125;, function(err, result) &#123;</span><br><span class="line">    console.log(&apos;final:&apos;);</span><br><span class="line">    //最终结果汇总</span><br><span class="line">    console.log(result);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="测试用例：mocha，should，istanbul"><a href="#测试用例：mocha，should，istanbul" class="headerlink" title="测试用例：mocha，should，istanbul"></a>测试用例：mocha，should，istanbul</h1><blockquote>
-<p>学习使用测试框架 mocha : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
-</blockquote>
-<blockquote>
-<p>学习使用断言库 should : <a href="https://github.com/tj/should.js" target="_blank" rel="noopener">https://github.com/tj/should.js</a></p>
-</blockquote>
-<blockquote>
-<p>学习使用测试率覆盖工具 istanbul : <a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="noopener">https://github.com/gotwarlost/istanbul</a></p>
-</blockquote>
-<blockquote>
-<p>简单 Makefile 的编写 : <a href="http://blog.csdn.net/haoel/article/details/2886" target="_blank" rel="noopener">http://blog.csdn.net/haoel/article/details/2886</a></p>
-</blockquote>
-<blockquote>
-<p>学习使用断言库 expect :<a href="https://github.com/LearnBoost/expect.js/" target="_blank" rel="noopener">https://github.com/LearnBoost/expect.js/</a> </p>
-</blockquote>
-<blockquote>
-<p>先建一个文件 main.js</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function(n) &#123;</span><br><span class="line">    if (n === 0) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (n === 1) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    // 如果是直接执行 main.js，则进入此处</span><br><span class="line">    // 如果 main.js 被其他文件 require，则此处不会执行。</span><br><span class="line">    var n = Number(process.argv[2]);</span><br><span class="line">    console.log(&apos;fibonacci(&apos; + n + &apos;) is&apos;, fibonacci(n));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.fibonacci = fibonacci;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在同级目录下建一个文件夹命名必须为test 在它的子目录建一个文件main-test.js</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var main = require(&apos;../main&apos;);</span><br><span class="line">var should = require(&apos;should&apos;);</span><br><span class="line"></span><br><span class="line">describe(&apos;test/main.test.js&apos;, function() &#123;</span><br><span class="line">    it(&apos;should equal 0 when n === 0&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 1 when n === 1&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(1).should.equal(1);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 55 when n === 10&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(10).should.equal(55);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &gt; 10&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(11);</span><br><span class="line">        &#125;).should.throw(&apos;n should &lt;= 10&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &lt; 0&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(-1);</span><br><span class="line">        &#125;).should.throw(&apos;n should &gt;= 0&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n isnt Number&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(&apos;呵呵&apos;);</span><br><span class="line">        &#125;).should.throw(&apos;n should be a Number&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>由于node的计算能力以及边界值得原因后三个可能过不了，需要修补下代码</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function (n) &#123;</span><br><span class="line">  if (typeof n !== &apos;number&apos;) &#123;</span><br><span class="line">    throw new Error(&apos;n should be a Number&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &lt; 0) &#123;</span><br><span class="line">    throw new Error(&apos;n should &gt;= 0&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &gt; 10) &#123;</span><br><span class="line">    throw new Error(&apos;n should &lt;= 10&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 0) &#123;</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 1) &#123;</span><br><span class="line">    return 1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return fibonacci(n-1) + fibonacci(n-2);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>测试用例的覆盖率</p>
-</blockquote>
-<blockquote>
-<p>安装  npm i istanbul -g</p>
-</blockquote>
-<blockquote>
-<p>执行 $ istanbul cover _mocha （有大问题，window有坑）</p>
-</blockquote>
-<h1 id="浏览器端测试：mocha，chai，phantomjs"><a href="#浏览器端测试：mocha，chai，phantomjs" class="headerlink" title="浏览器端测试：mocha，chai，phantomjs"></a>浏览器端测试：mocha，chai，phantomjs</h1><blockquote>
-<p>学习使用测试框架 mocha 进行前端测试 : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
-</blockquote>
-<blockquote>
-<p>了解全栈的断言库 chai: <a href="http://chaijs.com/" target="_blank" rel="noopener">http://chaijs.com/</a></p>
-</blockquote>
-<blockquote>
-<p>了解 headless 浏览器 phantomjs: <a href="http://phantomjs.org/" target="_blank" rel="noopener">http://phantomjs.org/</a></p>
-</blockquote>
-<blockquote>
-<p>第一步需要安装mocha cnpm i mocha -g</p>
-</blockquote>
-<blockquote>
-<p>初始化mocha mocha init .</p>
-</blockquote>
-<blockquote>
-<p>会生成几个初始化的文件</p>
-</blockquote>
-<blockquote>
-<p>引入chai,在index.html</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引入 断言库 chaijs --&gt;</span><br><span class="line">    &lt;script src=&apos;https://cdn.rawgit.com/chaijs/chai/master/chai.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!--需要测试的代码--&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var fibonacci = function(n) &#123;</span><br><span class="line">            if (n === 0) &#123;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (n === 1) &#123;</span><br><span class="line">                return 1;</span><br><span class="line">            &#125;</span><br><span class="line">            return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在test.js中写测试用例</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var should = chai.should();</span><br><span class="line"></span><br><span class="line">describe(&apos;我只是一个测试&apos;, function() &#123;</span><br><span class="line">    it(&quot;测试是否等于0&quot;, function() &#123;</span><br><span class="line">        window.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>运行index看结果</p>
-</blockquote>
-<blockquote>
-<p>测试反馈</p>
-</blockquote>
-<blockquote>
-<p>初始化 npm init </p>
-</blockquote>
-<blockquote>
-<p>安装依赖 cnpm i mocha-phantomjs –save-dev</p>
-</blockquote>
-<blockquote>
-<p>在package.json 加入这么一句话</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;test&quot;: &quot;mocha-phantomjs index.html --ssl-protocol=any --ignore-ssl-errors=true&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>npm test</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1422,7 +1354,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1444,7 +1376,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

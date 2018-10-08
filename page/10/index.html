@@ -321,6 +321,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/10/13/echart的柱状图和饼图的demo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/13/echart的柱状图和饼图的demo/" itemprop="url">echart的柱状图和饼图的demo</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-13T10:56:34+08:00">
+                2017-10-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="./</span>js/adaptive.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;!-- 引入 ECharts 文件 --&gt;</span></span><br><span class="line"><span class="string">    &lt;script src="</span>./js/echarts.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;link rel="</span>stylesheet<span class="string">" href="</span>./css/index.css<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;!-- 为 ECharts 准备一个具备大小（宽高）的 DOM --&gt;</span></span><br><span class="line"><span class="string">    &lt;div id="</span>main<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    // 基于准备好的dom，初始化echarts实例</span></span><br><span class="line"><span class="string">    var myChart = echarts.init(document.getElementById('main'));</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 指定图表的配置项和数据</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    option = &#123;</span></span><br><span class="line"><span class="string">        xAxis: [&#123;</span></span><br><span class="line"><span class="string">            type: 'category', </span></span><br><span class="line"><span class="string">            show: true,</span></span><br><span class="line"><span class="string">            data: (function()&#123;</span></span><br><span class="line"><span class="string">                var a = ['2017年7月', '2017年8月', '2017年9月'],</span></span><br><span class="line"><span class="string">                     s = [];</span></span><br><span class="line"><span class="string">                for (var i = 0; i &lt; a.length; i++) &#123;</span></span><br><span class="line"><span class="string">                    s.push(&#123;</span></span><br><span class="line"><span class="string">                        value: a[i],</span></span><br><span class="line"><span class="string">                        // 突出周一</span></span><br><span class="line"><span class="string">                        textStyle: &#123;</span></span><br><span class="line"><span class="string">                            fontSize: 24,</span></span><br><span class="line"><span class="string">                            color: '#ddd'</span></span><br><span class="line"><span class="string">                        &#125;</span></span><br><span class="line"><span class="string">                    &#125;)</span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">                return s;</span></span><br><span class="line"><span class="string">            &#125;)(),</span></span><br><span class="line"><span class="string">            boundaryGap: true,</span></span><br><span class="line"><span class="string">            axisTick: &#123;</span></span><br><span class="line"><span class="string">                alignWithLabel: false</span></span><br><span class="line"><span class="string">            &#125;,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &#125;],</span></span><br><span class="line"><span class="string">        yAxis: [&#123;</span></span><br><span class="line"><span class="string">            show: false</span></span><br><span class="line"><span class="string">        &#125;],</span></span><br><span class="line"><span class="string">        series: [&#123;</span></span><br><span class="line"><span class="string">            name: 'ECharts例子个数统计',</span></span><br><span class="line"><span class="string">            type: 'bar',</span></span><br><span class="line"><span class="string">            itemStyle: &#123;</span></span><br><span class="line"><span class="string">                normal: &#123;</span></span><br><span class="line"><span class="string">                    color: function(params) &#123;</span></span><br><span class="line"><span class="string">                        // build a color map as your need.</span></span><br><span class="line"><span class="string">                        var colorList = [</span></span><br><span class="line"><span class="string">                            '#fc9434', '#ff4950', '#00b0ec',</span></span><br><span class="line"><span class="string">                        ];</span></span><br><span class="line"><span class="string">                        return colorList[params.dataIndex]</span></span><br><span class="line"><span class="string">                    &#125;,</span></span><br><span class="line"><span class="string">                    label: &#123;</span></span><br><span class="line"><span class="string">                        show: true,</span></span><br><span class="line"><span class="string">                        position: 'top',</span></span><br><span class="line"><span class="string">                        distance:'20',</span></span><br><span class="line"><span class="string">                        formatter: '&#123;c&#125;',</span></span><br><span class="line"><span class="string">                        textStyle: &#123;</span></span><br><span class="line"><span class="string">                            fontSize: 24,</span></span><br><span class="line"><span class="string">                            fontWeight: 'bold',</span></span><br><span class="line"><span class="string">                        &#125;,</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">                    &#125;,</span></span><br><span class="line"><span class="string">                    </span></span><br><span class="line"><span class="string">                &#125;</span></span><br><span class="line"><span class="string">            &#125;,</span></span><br><span class="line"><span class="string">            data: [80208929.00, 106432366, 89371857.00],</span></span><br><span class="line"><span class="string">            barWidth: '40%',</span></span><br><span class="line"><span class="string">            barGap: '1%',</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        &#125;]</span></span><br><span class="line"><span class="string">    &#125;;</span></span><br><span class="line"><span class="string">    // 使用刚指定的配置项和数据显示图表。</span></span><br><span class="line"><span class="string">    myChart.setOption(option);</span></span><br><span class="line"><span class="string">    &lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="柱状图-1"><a href="#柱状图-1" class="headerlink" title="柱状图"></a>柱状图</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="./</span>js/adaptive.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;!-- 引入 ECharts 文件 --&gt;</span></span><br><span class="line"><span class="string">    &lt;script src="</span>./js/echarts.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">    &lt;link rel="</span>stylesheet<span class="string">" href="</span>./css/index.css<span class="string">"&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">    &lt;!-- 为 ECharts 准备一个具备大小（宽高）的 DOM --&gt;</span></span><br><span class="line"><span class="string">    &lt;div id="</span>main<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    &lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;script type="</span>text/javascript<span class="string">"&gt;</span></span><br><span class="line"><span class="string">    // 基于准备好的dom，初始化echarts实例</span></span><br><span class="line"><span class="string">    var myChart = echarts.init(document.getElementById('main'));</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    // 指定图表的配置项和数据</span></span><br><span class="line"><span class="string">    option = &#123;</span></span><br><span class="line"><span class="string">    tooltip : &#123;</span></span><br><span class="line"><span class="string">        trigger: 'item',</span></span><br><span class="line"><span class="string">        formatter: "</span>&#123;a&#125; &lt;br/&gt;&#123;b&#125; : (&#123;c&#125;%)<span class="string">",</span></span><br><span class="line"><span class="string">        textStyle:&#123;</span></span><br><span class="line"><span class="string">            fontSize:24,</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;,</span></span><br><span class="line"><span class="string">    color:['#7057d3', '#8f79eb','#b09ffa'],</span></span><br><span class="line"><span class="string">    series : [</span></span><br><span class="line"><span class="string">        &#123;</span></span><br><span class="line"><span class="string">            name:'投资比例',</span></span><br><span class="line"><span class="string">            type:'pie',</span></span><br><span class="line"><span class="string">            radius : [150, 280],</span></span><br><span class="line"><span class="string">            center : ['50%', 400],</span></span><br><span class="line"><span class="string">            roseType : 'area',</span></span><br><span class="line"><span class="string">            x: '50%',               // for funnel</span></span><br><span class="line"><span class="string">            max: 80,                // for funnel</span></span><br><span class="line"><span class="string">            sort : 'ascending',     // for funnel</span></span><br><span class="line"><span class="string">            data:[</span></span><br><span class="line"><span class="string">                &#123;value:16.20, name:'90天'&#125;,</span></span><br><span class="line"><span class="string">                &#123;value:23.06, name:'60天'&#125;,</span></span><br><span class="line"><span class="string">                &#123;value:41.95, name:'30天'&#125;,</span></span><br><span class="line"><span class="string">              </span></span><br><span class="line"><span class="string">            ]</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ],</span></span><br><span class="line"><span class="string">    textStyle:&#123;</span></span><br><span class="line"><span class="string">            fontSize:30,</span></span><br><span class="line"><span class="string">            fontWeight:700,</span></span><br><span class="line"><span class="string">            color:'#000'</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">&#125;;                </span></span><br><span class="line"><span class="string">    // 使用刚指定的配置项和数据显示图表。</span></span><br><span class="line"><span class="string">    myChart.setOption(option);</span></span><br><span class="line"><span class="string">    &lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/29/node-js深入浅出笔记17/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1017,196 +1138,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/12/node-js深入浅出笔记13/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/12/node-js深入浅出笔记13/" itemprop="url">node.js深入浅出笔记13</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-12T14:49:09+08:00">
-                2017-09-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="构建WebSocket服务"><a href="#构建WebSocket服务" class="headerlink" title="构建WebSocket服务"></a>构建WebSocket服务</h1><blockquote>
-<p>websocket基于事件编程的编程模型与node自定义事件相差无几,node的事件驱动十分商场与大量客户端保持高并发得连接</p>
-</blockquote>
-<h2 id="websocket与传统的http优势"><a href="#websocket与传统的http优势" class="headerlink" title="websocket与传统的http优势"></a>websocket与传统的http优势</h2><ul>
-<li>客户端与服务端只建立一个tcp连接，可以使用更少的连接</li>
-<li>websocket服务器可以推送数据到客户端，这远比http请求响应模式更加灵活，更加高效</li>
-<li>有更轻量级的协议头，减少数据传输量</li>
-</ul>
-<blockquote>
-<p>websocket客户端实例</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://127.0.0.1:1366/updates'</span>);</span><br><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(socket.bufferedAmount == <span class="number">0</span>)</span><br><span class="line">                socket.send(getUpdateData());</span><br><span class="line">        &#125;,<span class="number">50</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//做些啥</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>WebSocket协议主要两个部分：握手和传输数据</p>
-</blockquote>
-<h2 id="WebSocket握手"><a href="#WebSocket握手" class="headerlink" title="WebSocket握手"></a>WebSocket握手</h2><blockquote>
-<p>客户端在建立连接的时候，通过http发送请求报文，它比普通的http请求协议多了以下两个东西,表示服务端协议升级为WebSocket</p>
-<ul>
-<li>Upgrade:websocket</li>
-<li>Connection:Upgrade</li>
-</ul>
-</blockquote>
-<blockquote>
-<p>还有三个特别参数</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170906/a2.png" alt="流程图"></p>
-<ul>
-<li>Sec-WebSocket-Key:用于安全校验</li>
-</ul>
-<blockquote>
-<p>它的属性值用base64编码，服务器收到后与他自己的字符串进行相连，然后通过sha1安全散列算法计算出结果后，在进行base64编码，最后返回客户端，算法如下<br>var crypto = require(“crypto”);<br>var val = crypto.createHash(‘sha1’).update(key).digest(‘base64’);</p>
-</blockquote>
-<ul>
-<li>Sec-WebSocket-Protocol:指定自协议</li>
-<li>Sec-WebSocket-Version：版本号</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//示例代码，跑不起来</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//client.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> WebSocket = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//伪代码，解析ws://127.0.0.1:12010/updates,用于请求</span></span><br><span class="line">    <span class="keyword">this</span>.options = parseUrl(url);</span><br><span class="line">    <span class="keyword">this</span>.connect();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WebSocket.prototype.onopen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"干嘛的"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">WebSocket.prototype.setSocket = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">this</span> = that;</span><br><span class="line">    <span class="keyword">var</span> key = <span class="keyword">new</span> BUffer(<span class="keyword">this</span>.options.protocolVersion+<span class="string">'-'</span>+<span class="built_in">Date</span>.now()).toString(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> shasum = crypto.createHash(<span class="string">'sha1'</span>);</span><br><span class="line">    <span class="keyword">var</span> expected = shasum.update(key+<span class="string">'258EAFA5-E914-47DA-95CA-C5ABoDC85B11'</span>).digest(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> options = &#123;</span><br><span class="line">        port:<span class="keyword">this</span>.options.port,</span><br><span class="line">        host:<span class="keyword">this</span>.options.hostname,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'Connection'</span>:<span class="string">'Upgrade'</span>,</span><br><span class="line">            <span class="string">'Upgrade'</span>:<span class="string">'websocket'</span>,</span><br><span class="line">            <span class="string">'Sec-WebSocket-Version'</span>:<span class="keyword">this</span>.options.protocolVersion,</span><br><span class="line">            <span class="string">'Sec-WebSocket-Key'</span>:key</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> req = http.request(options);</span><br><span class="line">    req.end();</span><br><span class="line">    req.on(<span class="string">'upgrade'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">res,socket,upgradeHead</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//连接成功</span></span><br><span class="line">        that.setSocket(socket);</span><br><span class="line">        <span class="comment">//触发open事件</span></span><br><span class="line">        that.onopen();</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//server.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</span><br><span class="line"><span class="keyword">var</span> server=http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">req, res</span>) </span>&#123;</span><br><span class="line">    res.writeHead(<span class="number">200</span>, &#123; <span class="string">'Content-Type'</span>: <span class="string">'text/html;charset=utf-8'</span> &#125;);</span><br><span class="line">    res.write(<span class="string">'在学习'</span>);</span><br><span class="line">    res.write(<span class="string">'mess'</span>);</span><br><span class="line">    res.end(<span class="string">"node"</span>);</span><br><span class="line"></span><br><span class="line">&#125;).listen(<span class="number">12010</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//在收到upgrade请求后，告之客户端允许切换协议</span></span><br><span class="line">server.on(<span class="string">'upgrade'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">req,socket,upgradeHead</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> head = <span class="keyword">new</span> Buffer(upgradeHead.length);</span><br><span class="line">    upgradeHead.copy(head);</span><br><span class="line">    <span class="keyword">var</span> key = req.headers[<span class="string">'sec-websocket-key'</span>];</span><br><span class="line">    <span class="keyword">var</span> shasum = crypto.createHash(<span class="string">'sha1'</span>);</span><br><span class="line">    key = shasum.update(key+<span class="string">'258EAFA5-E914-47DA-95CA-C5ABoDC85B11'</span>).digest(<span class="string">'base64'</span>);</span><br><span class="line">    <span class="keyword">var</span> headers = [</span><br><span class="line">        <span class="string">'HTTP/1.1 101 SWitching Protocols'</span>,</span><br><span class="line">        <span class="string">'Upgrade:websocket'</span>,</span><br><span class="line">        <span class="string">'Connection:Upgrade'</span>,</span><br><span class="line">        <span class="string">'Sec-WebSocket-Accept:'</span>+key,</span><br><span class="line">        <span class="string">'Sec-WebSocket-Protocol:'</span>+protocol</span><br><span class="line">    ];</span><br><span class="line">    <span class="comment">//让数据立即发送</span></span><br><span class="line">    socket.setNoDelay(<span class="literal">true</span>);</span><br><span class="line">    socket.write(headers.concat(<span class="string">''</span>,<span class="string">''</span>).join(<span class="string">'\r\n'</span>));</span><br><span class="line">    <span class="comment">// 建立服务器端的WebSocket连接</span></span><br><span class="line">    <span class="keyword">var</span> websocket = <span class="keyword">new</span> WebSocket();</span><br><span class="line">    websocket.setSocket(socket);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h2 id="WebSocket数据传输"><a href="#WebSocket数据传输" class="headerlink" title="WebSocket数据传输"></a>WebSocket数据传输</h2><blockquote>
-<p>完成握手后，就不在进行http交互，而是开始WebSocket的数据帧协议，实现客户端与服务端的数据交互  示意图如下</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170906/a8.png" alt="流程图"></p>
-<blockquote>
-<p>握手完成后将会触发onopen()</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">socket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//<span class="doctag">TODO:</span>opened()</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>由于服务端没有onopen()方法可言,为了完成TCP套接字到websocket事件的封装，需要在接收数据时处理，websocket的数据帧协议即是在底层data事件上封装完成的</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接收</span></span><br><span class="line">WebSocket.prototype.setSocket = <span class="function"><span class="keyword">function</span> (<span class="params">socket</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.socket = socket;</span><br><span class="line">    <span class="keyword">this</span>.socket.on(<span class="string">'data'</span>,<span class="keyword">this</span>.receiver);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//发送</span></span><br><span class="line"></span><br><span class="line">WebSocket.prototype.send = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>._send(data)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="网络服务与安全"><a href="#网络服务与安全" class="headerlink" title="网络服务与安全"></a>网络服务与安全</h1><blockquote>
-<p>node 提供了3个模块，分别是crypto,tls,https,其中crypto主要用于加密解密，SHA！,md5等加密算法在其中都有体现，真正用于网络层的是另外两个,tls提供了与net类似的功能，区别在于建立tls/ssl加密的tcp连接上，对于https而言，他与http接口一致，只是多了安全连接。</p>
-</blockquote>
-<h2 id="TLS-SSL"><a href="#TLS-SSL" class="headerlink" title="TLS/SSL"></a>TLS/SSL</h2><blockquote>
-<p>秘钥之间的加密解密。是非对称结构，如图所示</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170906/a8.png" alt="流程图"></p>
-<blockquote>
-<p>利用node底层opensll生成私钥和公钥</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//服务器 私钥</span></span><br><span class="line">openssl genrsa -out server.key <span class="number">1024</span></span><br><span class="line"><span class="comment">//服务器 公钥</span></span><br><span class="line">openssl rsa -<span class="keyword">in</span> server.key -pubout -out server.pem</span><br><span class="line"><span class="comment">//客户端 私钥</span></span><br><span class="line">openssl genrsa -out client.key <span class="number">1024</span></span><br><span class="line"><span class="comment">//客户端 公钥</span></span><br><span class="line">openssl rsa -<span class="keyword">in</span> client.key -pubout -out client.pem</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>依然存在中间人伪造站点的情况</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170906/a10.png" alt="流程图"></p>
-<blockquote>
-<p>数字证书解决这一波问题，详情自己百度，我就简单的写写</p>
-</blockquote>
-<ul>
-<li>为了得到签名证书，服务器端需要通过自己的的私钥生成csr文件。ca机构将通过这个文件颁发属于该服务器端的签名证书，只要通过ca机构的就能验证证书是否合法</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1261,7 +1192,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1283,7 +1214,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

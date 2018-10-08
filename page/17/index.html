@@ -321,6 +321,296 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/01/node-review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/01/node-review/" itemprop="url">node-review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T00:00:00+08:00">
+                2017-08-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="建一个简单的express"><a href="#建一个简单的express" class="headerlink" title="建一个简单的express"></a>建一个简单的express</h1><blockquote>
+<p>对于学习node的人来说首先node安装是必备的，这里就跳过了</p>
+</blockquote>
+<blockquote>
+<p><a href="http://expressjs.com/" target="_blank" rel="noopener">http://expressjs.com/</a>  它的官网</p>
+</blockquote>
+<blockquote>
+<p>安装 express npm i express</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//引入 `express` 模块</span><br><span class="line">var express = require(&apos;express&apos;); </span><br><span class="line"></span><br><span class="line">// 调用 express 实例，它是一个函数，不带参数调用时，会返回一个 express 实例，将这个变量赋予 app 变量</span><br><span class="line"></span><br><span class="line">var app = express(); </span><br><span class="line"></span><br><span class="line">//调用get方法，当我们访问/这个根目录时，我们会执行回调，send用于向网页输出字符串</span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    res.send(&apos;Hello,world&apos;);</span><br><span class="line">&#125;)</span><br><span class="line">// 定义好我们 app 的行为之后，让它监听本地的 3000 端口。这里的第二个函数是个回调函数，会在 listen 动作成功后执行，我们这里执行了一个命令行输出操作，告诉我们监听动作已完成。</span><br><span class="line">app.listen(3000, function() &#123;</span><br><span class="line">    console.log(&quot;app is listen at port 3000&quot;);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>参考</p>
+</blockquote>
+<blockquote>
+<p>// app 本身有很多方法，其中包括最常用的 get、post、put/patch、delete，在这里我们调用其中的 get 方法，为我们的 <code>/</code> 路径指定一个 handler 函数。</p>
+</blockquote>
+<blockquote>
+<p>// 这个 handler 函数会接收 req 和 res 两个对象，他们分别是请求的 request 和 response。</p>
+</blockquote>
+<blockquote>
+<p>// request 中包含了浏览器传来的各种信息，比如 query 啊，body 啊，headers 啊之类的，都可以通过 req 对象访问到。</p>
+</blockquote>
+<blockquote>
+<p>// res 对象，我们一般不从里面取信息，而是通过它来定制我们向浏览器输出的信息，比如 header 信息，比如想要向浏览器输出的内容。这里我们调用了它的 #send 方法，向浏览器输出一个字符串。</p>
+</blockquote>
+<blockquote>
+<p>执行 node app.js</p>
+</blockquote>
+<blockquote>
+<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/" target="_blank" rel="noopener">http://localhost:3000/</a></p>
+</blockquote>
+<h1 id="学习使用外部模块"><a href="#学习使用外部模块" class="headerlink" title="学习使用外部模块"></a>学习使用外部模块</h1><blockquote>
+<p>npm init 初始化</p>
+</blockquote>
+<blockquote>
+<p>cnpm i express utility -S 安装两个依赖块</p>
+</blockquote>
+<blockquote>
+<p><a href="https://github.com/node-modules/utility" target="_blank" rel="noopener">https://github.com/node-modules/utility</a>  utility是一个工具类，在这个地方用于加密哦</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var utility = require(&apos;utility&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res) &#123;</span><br><span class="line">    //query用来获取地址栏后面的参数</span><br><span class="line">    var message = req.query.message;</span><br><span class="line">    //使用工具函数进行加密处理</span><br><span class="line">    var md5Value = utility.md5(message);</span><br><span class="line">    res.send(md5Value);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>执行 node app.js</p>
+</blockquote>
+<blockquote>
+<p>然后在浏览器地址栏输出&gt; <a href="http://localhost:3000/?message=&#39;liuyang&#39;" target="_blank" rel="noopener">http://localhost:3000/?message=&#39;liuyang&#39;</a></p>
+</blockquote>
+<h1 id="使用-superagent-与-cheerio-完成简单爬虫"><a href="#使用-superagent-与-cheerio-完成简单爬虫" class="headerlink" title="使用 superagent 与 cheerio 完成简单爬虫"></a>使用 superagent 与 cheerio 完成简单爬虫</h1><blockquote>
+<p>superagent  superagent(<a href="http://visionmedia.github.io/superagent/" target="_blank" rel="noopener">http://visionmedia.github.io/superagent/</a> ) 是个 http 方面的库，可以发起 get 或 post 请求。</p>
+</blockquote>
+<blockquote>
+<p>cheerio   (<a href="https://github.com/cheeriojs/cheerio" target="_blank" rel="noopener">https://github.com/cheeriojs/cheerio</a> ) 大家可以理解成一个 Node.js 版的 jquery，用来从网页中以 css selector 取数据，使用方式跟 jquery 一样一样的。</p>
+</blockquote>
+<blockquote>
+<p>新建一个app.js文件，写以下的代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line">    //用superagent去抓取页面内容</span><br><span class="line">    superagent.get(&apos;http://www.qdfuns.com/&apos;).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        //加载取到的页面，然后创建一个类似jquery的实例</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        var items = [];</span><br><span class="line">        $(&quot;.media-body&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            items.push(&#123;</span><br><span class="line">                title: $ele.text()</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        res.send(items);</span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用这两个模块，我们能抓取我们所需要的数据</p>
+</blockquote>
+<h1 id="使用-eventproxy-控制并发"><a href="#使用-eventproxy-控制并发" class="headerlink" title="使用 eventproxy 控制并发"></a>使用 eventproxy 控制并发</h1><blockquote>
+<p>这一小节内容，利用eventproxy，实现并发抓取1+40,1就是抓取40个主题，40是抓取每个主题链接下面的评论，也就是说我们要发起1+40个请求，后四十个请求一起发起</p>
+</blockquote>
+<blockquote>
+<p>eventproxy  <a href="https://github.com/JacksonTian/eventproxy" target="_blank" rel="noopener">https://github.com/JacksonTian/eventproxy</a>    并发执行异步回调，移除被广为诟病的深度callback嵌套问题，将串行等待变成并行等待，提升多异步协作场景下的执行效率</p>
+</blockquote>
+<blockquote>
+<p>eventproxy 提供了不少其他场景所需的 API，但最最常用的用法就是以上的这种，即：</p>
+</blockquote>
+<blockquote>
+<p>先 var ep = new eventproxy(); 得到一个 eventproxy 实例。</p>
+</blockquote>
+<blockquote>
+<p>告诉它你要监听哪些事件，并给它一个回调函数。ep.all(‘event1’, ‘event2’, function (result1, result2) {})。</p>
+</blockquote>
+<blockquote>
+<p>在适当的时候 ep.emit(‘event_name’, eventData)。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;)</span><br><span class="line">var superagent = require(&apos;superagent&apos;);</span><br><span class="line">var cheerio = require(&apos;cheerio&apos;);</span><br><span class="line">var eventproxy = require(&apos;eventproxy&apos;);</span><br><span class="line">var url = require(&apos;url&apos;);</span><br><span class="line">var cnodeUrl = &apos;https://cnodejs.org/&apos;</span><br><span class="line">var app = express();</span><br><span class="line">var topicUrls = [];</span><br><span class="line">var topicsS = [];</span><br><span class="line">app.get(&apos;/&apos;, function(req, res, next) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    superagent.get(cnodeUrl).end(function(err, sres) &#123;</span><br><span class="line">        if (err) &#123;</span><br><span class="line">            return next(err)</span><br><span class="line">        &#125;</span><br><span class="line">        var $ = cheerio.load(sres.text);</span><br><span class="line"></span><br><span class="line">        $(&quot;#topic_list .topic_title&quot;).each(function(idx, ele) &#123;</span><br><span class="line">            var $ele = $(ele);</span><br><span class="line">            //url.resolve，可以补全前面的域名，进行拼接操作</span><br><span class="line">            var href = url.resolve(cnodeUrl, $ele.attr(&apos;href&apos;));</span><br><span class="line">            topicUrls.push(href);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        topicUrls.forEach(function(topiculr) &#123;</span><br><span class="line">            superagent.get(topiculr).end(function(err, res) &#123;</span><br><span class="line">                console.log(&quot;fetch&quot; + topiculr + &apos;successful&apos;);</span><br><span class="line">                ep.emit(&apos;topic_html&apos;, [topiculr, res.text])</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">        //创建一个eventproxy实例</span><br><span class="line">        var ep = new eventproxy();</span><br><span class="line">        //这个表示重复监听topic_html事件40次后执行回调函数</span><br><span class="line">        ep.after(&apos;topic_html&apos;, topicUrls.length, function(topics) &#123;</span><br><span class="line">            console.log(1212);</span><br><span class="line">            //它将emit过来东西全部保存在数组里，然后用map将它遍历</span><br><span class="line">            topicsS = topics.map(function(topicPair) &#123;</span><br><span class="line">                var topicUrl = topicPair[0];</span><br><span class="line">                var topicHtml = topicPair[1];</span><br><span class="line">                var $ = cheerio.load(topicHtml);</span><br><span class="line">                return (&#123;</span><br><span class="line">                    title: $(&apos;.topic_full_title&apos;).text().trim(),</span><br><span class="line">                    href: topicUrl,</span><br><span class="line">                    commit1: $(&apos;.reply_content&apos;).eq(0).text().trim()</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;)</span><br><span class="line"></span><br><span class="line">            res.send(topicsS);</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(3000, function(req, res) &#123;</span><br><span class="line">    console.log(&apos;app is running at port 3000&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="使用-async-控制并发"><a href="#使用-async-控制并发" class="headerlink" title="使用 async 控制并发"></a>使用 async 控制并发</h1><blockquote>
+<p>async <a href="https://github.com/caolan/async" target="_blank" rel="noopener">https://github.com/caolan/async</a> 用于延迟并发，减少一起并发导致网站出问题</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">var async = require(&apos;async&apos;);</span><br><span class="line"></span><br><span class="line">var concurrencyCount = 0;</span><br><span class="line"></span><br><span class="line">//模拟假的数据请求，返回一个callback值</span><br><span class="line"></span><br><span class="line">var fetchUrl = function(url, callback) &#123;</span><br><span class="line">    var delay = parseInt((Math.random() * 10000000) % 2000, 10);</span><br><span class="line">    concurrencyCount++;</span><br><span class="line">    console.log(&apos;现在的并发数是&apos;, concurrencyCount, &apos;，正在抓取的是&apos;, url, &apos;，耗时&apos; + delay + &apos;毫秒&apos;);</span><br><span class="line">    setTimeout(function() &#123;</span><br><span class="line">        concurrencyCount--;</span><br><span class="line">        //用这个做拼接</span><br><span class="line">        callback(null, url + &apos;html content&apos;)</span><br><span class="line">    &#125;, delay)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">var urls = [];</span><br><span class="line"></span><br><span class="line">for (var i = 0; i &lt; 30; i++) &#123;</span><br><span class="line">    urls.push(&apos;http://datasource_&apos; + i);</span><br><span class="line">&#125;</span><br><span class="line">//限制并发的次数</span><br><span class="line">async.mapLimit(urls, 5, function(url, callback) &#123;</span><br><span class="line">    fetchUrl(url, callback);</span><br><span class="line">&#125;, function(err, result) &#123;</span><br><span class="line">    console.log(&apos;final:&apos;);</span><br><span class="line">    //最终结果汇总</span><br><span class="line">    console.log(result);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="测试用例：mocha，should，istanbul"><a href="#测试用例：mocha，should，istanbul" class="headerlink" title="测试用例：mocha，should，istanbul"></a>测试用例：mocha，should，istanbul</h1><blockquote>
+<p>学习使用测试框架 mocha : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用断言库 should : <a href="https://github.com/tj/should.js" target="_blank" rel="noopener">https://github.com/tj/should.js</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用测试率覆盖工具 istanbul : <a href="https://github.com/gotwarlost/istanbul" target="_blank" rel="noopener">https://github.com/gotwarlost/istanbul</a></p>
+</blockquote>
+<blockquote>
+<p>简单 Makefile 的编写 : <a href="http://blog.csdn.net/haoel/article/details/2886" target="_blank" rel="noopener">http://blog.csdn.net/haoel/article/details/2886</a></p>
+</blockquote>
+<blockquote>
+<p>学习使用断言库 expect :<a href="https://github.com/LearnBoost/expect.js/" target="_blank" rel="noopener">https://github.com/LearnBoost/expect.js/</a> </p>
+</blockquote>
+<blockquote>
+<p>先建一个文件 main.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function(n) &#123;</span><br><span class="line">    if (n === 0) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    if (n === 1) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">if (require.main === module) &#123;</span><br><span class="line">    // 如果是直接执行 main.js，则进入此处</span><br><span class="line">    // 如果 main.js 被其他文件 require，则此处不会执行。</span><br><span class="line">    var n = Number(process.argv[2]);</span><br><span class="line">    console.log(&apos;fibonacci(&apos; + n + &apos;) is&apos;, fibonacci(n));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.fibonacci = fibonacci;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在同级目录下建一个文件夹命名必须为test 在它的子目录建一个文件main-test.js</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">var main = require(&apos;../main&apos;);</span><br><span class="line">var should = require(&apos;should&apos;);</span><br><span class="line"></span><br><span class="line">describe(&apos;test/main.test.js&apos;, function() &#123;</span><br><span class="line">    it(&apos;should equal 0 when n === 0&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 1 when n === 1&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(1).should.equal(1);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should equal 55 when n === 10&apos;, function() &#123;</span><br><span class="line">        main.fibonacci(10).should.equal(55);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &gt; 10&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(11);</span><br><span class="line">        &#125;).should.throw(&apos;n should &lt;= 10&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n &lt; 0&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(-1);</span><br><span class="line">        &#125;).should.throw(&apos;n should &gt;= 0&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    it(&apos;should throw when n isnt Number&apos;, function() &#123;</span><br><span class="line">        (function() &#123;</span><br><span class="line">            main.fibonacci(&apos;呵呵&apos;);</span><br><span class="line">        &#125;).should.throw(&apos;n should be a Number&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>由于node的计算能力以及边界值得原因后三个可能过不了，需要修补下代码</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var fibonacci = function (n) &#123;</span><br><span class="line">  if (typeof n !== &apos;number&apos;) &#123;</span><br><span class="line">    throw new Error(&apos;n should be a Number&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &lt; 0) &#123;</span><br><span class="line">    throw new Error(&apos;n should &gt;= 0&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n &gt; 10) &#123;</span><br><span class="line">    throw new Error(&apos;n should &lt;= 10&apos;);</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 0) &#123;</span><br><span class="line">    return 0;</span><br><span class="line">  &#125;</span><br><span class="line">  if (n === 1) &#123;</span><br><span class="line">    return 1;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return fibonacci(n-1) + fibonacci(n-2);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>测试用例的覆盖率</p>
+</blockquote>
+<blockquote>
+<p>安装  npm i istanbul -g</p>
+</blockquote>
+<blockquote>
+<p>执行 $ istanbul cover _mocha （有大问题，window有坑）</p>
+</blockquote>
+<h1 id="浏览器端测试：mocha，chai，phantomjs"><a href="#浏览器端测试：mocha，chai，phantomjs" class="headerlink" title="浏览器端测试：mocha，chai，phantomjs"></a>浏览器端测试：mocha，chai，phantomjs</h1><blockquote>
+<p>学习使用测试框架 mocha 进行前端测试 : <a href="http://mochajs.org/" target="_blank" rel="noopener">http://mochajs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>了解全栈的断言库 chai: <a href="http://chaijs.com/" target="_blank" rel="noopener">http://chaijs.com/</a></p>
+</blockquote>
+<blockquote>
+<p>了解 headless 浏览器 phantomjs: <a href="http://phantomjs.org/" target="_blank" rel="noopener">http://phantomjs.org/</a></p>
+</blockquote>
+<blockquote>
+<p>第一步需要安装mocha cnpm i mocha -g</p>
+</blockquote>
+<blockquote>
+<p>初始化mocha mocha init .</p>
+</blockquote>
+<blockquote>
+<p>会生成几个初始化的文件</p>
+</blockquote>
+<blockquote>
+<p>引入chai,在index.html</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--引入 断言库 chaijs --&gt;</span><br><span class="line">    &lt;script src=&apos;https://cdn.rawgit.com/chaijs/chai/master/chai.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">    </span><br><span class="line">&lt;!--需要测试的代码--&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        var fibonacci = function(n) &#123;</span><br><span class="line">            if (n === 0) &#123;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">            if (n === 1) &#123;</span><br><span class="line">                return 1;</span><br><span class="line">            &#125;</span><br><span class="line">            return fibonacci(n - 1) + fibonacci(n - 2);</span><br><span class="line">        &#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在test.js中写测试用例</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var should = chai.should();</span><br><span class="line"></span><br><span class="line">describe(&apos;我只是一个测试&apos;, function() &#123;</span><br><span class="line">    it(&quot;测试是否等于0&quot;, function() &#123;</span><br><span class="line">        window.fibonacci(0).should.equal(0);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>运行index看结果</p>
+</blockquote>
+<blockquote>
+<p>测试反馈</p>
+</blockquote>
+<blockquote>
+<p>初始化 npm init </p>
+</blockquote>
+<blockquote>
+<p>安装依赖 cnpm i mocha-phantomjs –save-dev</p>
+</blockquote>
+<blockquote>
+<p>在package.json 加入这么一句话</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">  &quot;test&quot;: &quot;mocha-phantomjs index.html --ssl-protocol=any --ignore-ssl-errors=true&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>npm test</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/29/jQuery源码学习（2）-构造jquery对象（1）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -987,140 +1277,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/19/react-用sass编写css/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/react-用sass编写css/" itemprop="url">react - 用sass编写css</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T00:00:00+08:00">
-                2017-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>这适用于create-react-app配置的react开发环境，</p>
-</blockquote>
-<h1 id="第一步安装编译所需的依赖"><a href="#第一步安装编译所需的依赖" class="headerlink" title="第一步安装编译所需的依赖"></a>第一步安装编译所需的依赖</h1><blockquote>
-<p>npm install sass-loader node-sass –save-dev </p>
-</blockquote>
-<h1 id="在node-modules-react-scripts-config下找到-webpack-config-dev-js-文件"><a href="#在node-modules-react-scripts-config下找到-webpack-config-dev-js-文件" class="headerlink" title="在node_modules/react-scripts/config下找到 webpack.config.dev.js 文件"></a>在node_modules/react-scripts/config下找到 webpack.config.dev.js 文件</h1><h1 id="在exculde中添加scss，用来匹配scss文件"><a href="#在exculde中添加scss，用来匹配scss文件" class="headerlink" title="在exculde中添加scss，用来匹配scss文件"></a>在exculde中添加scss，用来匹配scss文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">exclude: [</span><br><span class="line">          /\.html$/,</span><br><span class="line">          /\.(js|jsx)$/,</span><br><span class="line">          /\.css$/,</span><br><span class="line">          /\.json$/,</span><br><span class="line">          /\.bmp$/,</span><br><span class="line">          /\.gif$/,</span><br><span class="line">          /\.jpe?g$/,</span><br><span class="line">          /\.png$/,</span><br><span class="line">          /\.scss$/,//这里添加</span><br><span class="line">        ],</span><br></pre></td></tr></table></figure>
-<h1 id="这里添加sass配置文件"><a href="#这里添加sass配置文件" class="headerlink" title="这里添加sass配置文件"></a>这里添加sass配置文件</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],</span><br><span class="line">        loader: require.resolve(&apos;url-loader&apos;),</span><br><span class="line">        options: &#123;</span><br><span class="line">          limit: 10000,</span><br><span class="line">          name: &apos;static/media/[name].[hash:8].[ext]&apos;,</span><br><span class="line">        &#125;,</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//  编译sass</span><br><span class="line">      &#123;</span><br><span class="line">         test:/\.scss$/,</span><br><span class="line">         loaders: [&apos;style-loader&apos;, &apos;css-loader&apos;, &apos;sass-loader&apos;],</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这是开发环境的配置，如需在生产环境开发只需在webpack.config.prod.js做同样的配置</p>
-</blockquote>
-<blockquote>
-<p>配置完成后记得重新运行命令 npm start or yarn start</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1175,7 +1331,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1197,7 +1353,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -321,6 +321,183 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/16/node-js开发指南笔记6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/16/node-js开发指南笔记6/" itemprop="url">node.js开发指南笔记6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T11:30:39+08:00">
+                2017-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="模块加载机制"><a href="#模块加载机制" class="headerlink" title="模块加载机制"></a>模块加载机制</h1><blockquote>
+<p>学习模块间是如何先后加载</p>
+</blockquote>
+<h1 id="模块的类型"><a href="#模块的类型" class="headerlink" title="模块的类型"></a>模块的类型</h1><blockquote>
+<p>Node.js 的模块可以分为两大类，一类是核心模块，另一类是文件模块。核心模块就是<br>Node.js 标准 API 中提供的模块，如  fs 、 http 、 net 、 vm  等，这些都是由 Node.js 官方提供的模块，编译成了二进制代码。我们可以直接通过  require  获取核心模块，例如require(‘fs’) 。核心模块拥有最高的加载优先级，换言之如果有模块与其命名冲突，Node.js 总是会加载核心模块</p>
+</blockquote>
+<blockquote>
+<p>文件模块则是存储为单独的文件（或文件夹）的模块，可能是 JavaScript 代码、JSON 或编译好的 C/C++ 代码。文件模块的加载方法相对复杂，但十分灵活，尤其是和 npm 结合使用时。在不显式指定文件模块扩展名的时候，Node.js 会分别试图加上 .js、.json 和 .node扩展名。.js 是 JavaScript 代码，.json 是 JSON 格式的文本，.node 是编译好的 C/C++ 代码。</p>
+</blockquote>
+<h1 id="按路径加载模块"><a href="#按路径加载模块" class="headerlink" title="按路径加载模块"></a>按路径加载模块</h1><blockquote>
+<p>文件模块的加载有两种方式，一种是按路径加载，一种是查找 node_modules 文件夹。</p>
+</blockquote>
+<blockquote>
+<p>如果  require 参数以“ / ”开头，那么就以绝对路径的方式查找模块名称，例如  require(‘/home/byvoid/module’) 将会按照优先级依次尝试加载 /home/byvoid/module.js、/home/byvoid/module.json 和 /home/byvoid/module.node。</p>
+</blockquote>
+<blockquote>
+<p>如果 require  参数以“ ./ ”或“ ../ ”开头，那么则以相对路径的方式来查找模块，<br>这种方式在应用中是最常见的。例如前面的例子中我们用了 require(‘./hello’) 来加载<br>同一文件夹下的hello.js。</p>
+</blockquote>
+<h1 id="通过查找-node-modules-目录加载模块"><a href="#通过查找-node-modules-目录加载模块" class="headerlink" title="通过查找 node_modules 目录加载模块"></a>通过查找 node_modules 目录加载模块</h1><blockquote>
+<p>如果 require 参数不以“ / ”、“ ./ ”或“ ../ ”开头，而该模块又不是核心模块,直接使用  require(‘express’)  来代替<br>require(‘./node_modules/express’) 。这是Node.js模块加载的一个重要特性：通过查<br>找 node_modules 目录来加载模块</p>
+</blockquote>
+<h1 id="加载缓存"><a href="#加载缓存" class="headerlink" title="加载缓存"></a>加载缓存</h1><blockquote>
+<p>Node.js 模块不会被重复加载，这是因为 Node.js 通过文件名缓存所<br>有加载过的文件模块，所以以后再访问到时就不会重新加载了,注意，Node.js 是根据实际文件名缓存的，而不是 require() 提供的参数缓存的，也就是说即使你分别通过require(‘express’) 和  require(‘./node_modules/express’)  加载两次，也不会重复加载，因为尽管两次参数不同，解析到的文件却是同一个</p>
+</blockquote>
+<h1 id="加载顺序"><a href="#加载顺序" class="headerlink" title="加载顺序"></a>加载顺序</h1><blockquote>
+<p>下面总结一下使用  require(some_module) 时的加载顺序。</p>
+</blockquote>
+<ul>
+<li>(1) 如果 some_module 是一个核心模块，直接加载，结束。</li>
+<li>(2) 如果 some_module 以“ / ”、“ ./ ”或“ ../ ”开头，按路径加载  some_module ，结束。</li>
+<li>(3) 假设当前目录为 current_dir，按路径加载 current_dir/node_modules/some_module。<ul>
+<li>如果加载成功，结束</li>
+<li>如果加载失败，令current_dir为其父目录。<br>   - 重复这一过程，直到遇到根目录，抛出异常，结束。</li>
+</ul>
+</li>
+</ul>
+<h1 id="异步存在的陷阱"><a href="#异步存在的陷阱" class="headerlink" title="异步存在的陷阱"></a>异步存在的陷阱</h1><blockquote>
+<p>for循环的陷阱</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> files = [<span class="string">'a.txt'</span>,<span class="string">'b.txt'</span>,<span class="string">'c.txt'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;files.length;i++)&#123;</span><br><span class="line">     fs.readFile(files[i],<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,contents</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i,<span class="number">12</span>);</span><br><span class="line">        <span class="built_in">console</span>.log(files[i]+<span class="string">':'</span>+contents);</span><br><span class="line">     &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//undefined: AAA</span></span><br><span class="line"><span class="comment">//undefined: BBB</span></span><br><span class="line"><span class="comment">//undefined: CCC</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>因为循环 i值直接变成3,在调回调函数时files[3]<br>为空</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//闭包解决</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> files = [<span class="string">'a.txt'</span>, <span class="string">'b.txt'</span>, <span class="string">'c.txt'</span>];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">fs.readFile(files[i], <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, contents</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(files[i] + <span class="string">': '</span> + contents);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;)(i);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//forEach解决</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line"><span class="keyword">var</span> files = [<span class="string">'a.txt'</span>, <span class="string">'b.txt'</span>, <span class="string">'c.txt'</span>];</span><br><span class="line">files.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">filename</span>) </span>&#123;</span><br><span class="line">fs.readFile(filename, <span class="string">'utf-8'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">err, contents</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(filename + <span class="string">': '</span> + contents);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h1 id="解决控制流难题"><a href="#解决控制流难题" class="headerlink" title="解决控制流难题"></a>解决控制流难题</h1><blockquote>
+<p>async：async 是一个控制流解耦模块，它提供了<br>async.series 、 async.parallel 、 async.waterfall  等函数，在实现复杂的逻辑时使<br>用这些函数代替回调函数嵌套可以让程序变得更清晰可读且易于维护，但你必须遵循它的编程风格</p>
+</blockquote>
+<blockquote>
+<p>streamlinejs和jscex则采用了更高级的手段，它的思想是“变同步为异步”，实现了一个<br>JavaScript 到JavaScript 的编译器，使用户可以用同步编程的模式写代码，编译后执行时却是异步的</p>
+</blockquote>
+<blockquote>
+<p>eventproxy 的思路与前面两者区别更大，它实现了对事件发射器的深度封装，采用一种<br>完全基于事件松散耦合的方式来实现控制流的梳理。</p>
+</blockquote>
+<h1 id="日志输出-用express-的函数"><a href="#日志输出-用express-的函数" class="headerlink" title="日志输出  用express 的函数"></a>日志输出  用express 的函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//生产环境</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> accessLog = fs.createWriteStream(<span class="string">'access.log'</span>,&#123;<span class="attr">flags</span>:<span class="string">'a'</span>&#125;);</span><br><span class="line">app.use(logger(<span class="string">'combined'</span>, &#123;<span class="attr">stream</span> : accessLog&#125;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//开发环境</span></span><br><span class="line"><span class="keyword">var</span> accessLog = fs.createWriteStream(<span class="string">'access.log'</span>,&#123;<span class="attr">flags</span>:<span class="string">'a'</span>&#125;);</span><br><span class="line">app.use(logger(<span class="string">'dev'</span>,&#123;<span class="attr">stream</span> : accessLog&#125;));</span><br></pre></td></tr></table></figure>
+<h1 id="使用-cluster-模块"><a href="#使用-cluster-模块" class="headerlink" title="使用 cluster 模块"></a>使用 cluster 模块</h1><blockquote>
+<p>Node.js 提供了一个核心模块： cluster 。 cluster 的功能是生成与当<br>前进程相同的子进程，并且允许父进程和子进程之间共享端口。Node.js 的另一个核心模块child_process 也提供了相似的进程生成功能，但最大的区别在于 cluster 允许跨进程端口复用，给我们的网络服务器开发带来了很大的方便</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/15/node-js开发指南笔记5-express/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -964,228 +1141,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/11/node-js开发指南笔记2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/11/node-js开发指南笔记2/" itemprop="url">node.js开发指南笔记2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-11T17:22:08+08:00">
-                2017-08-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Node-js核心模块"><a href="#Node-js核心模块" class="headerlink" title="Node.js核心模块"></a>Node.js核心模块</h1><blockquote>
-<p>核心模块是 Node.js 的心脏，它由一些精简而高效的库组成，为 Node.js 提供了基本的</p>
-</blockquote>
-<h1 id="全局对象global"><a href="#全局对象global" class="headerlink" title="全局对象global"></a>全局对象global</h1><blockquote>
-<p>node的全局对象是Global Object 它满足以下的条件</p>
-</blockquote>
-<ul>
-<li>在最外层定义的变量</li>
-<li>全局对象的属性</li>
-<li>隐式定义的变量(未定义直接赋值的变量)</li>
-</ul>
-<blockquote>
-<p>tips:在定义变量一定要使用var定义</p>
-</blockquote>
-<h1 id="process"><a href="#process" class="headerlink" title="process"></a>process</h1><blockquote>
-<p>它用于描述当前 Node.js 进程状态<br>的对象，提供了一个与操作系统的简单接口</p>
-</blockquote>
-<ul>
-<li>peocess.argv 第一个元素是 node， 第二个元素是脚本文件名，<br>从第三个元素开始每个元素是一个运行参数</li>
-<li>process.stdout 标准输出流，通常我们使用的  console.log() 向标准输出打印<br>字符，而  process.stdout.write() 函数提供了更底层的接口</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">process.stdout.write(<span class="string">"你的表演"</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>process.stdin 是标准输入流，初始时它是被暂停的，要想从标准输入读取数据，<br>你必须恢复流，并手动编写流的事件响应函数</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">process.stdin.resume();</span><br><span class="line"></span><br><span class="line">process.stdin.on(<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    process.stdout.write(<span class="string">'开始'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">process.stdin.emit(<span class="string">'data'</span>);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>process.nextTick(callback) 的功能是为事件循环设置一项任务，Node.js 会在<br>下次事件循环调响应时调用  callback</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params">args,callback</span>)</span>&#123;</span><br><span class="line">    firsthing();</span><br><span class="line">    process.nextTick(callback);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">doSomething(process.argv,<span class="function"><span class="keyword">function</span> <span class="title">onEnd</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      compute();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">firsthing</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"我出来了"</span>);</span><br><span class="line">        &#125;,<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compute</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"来呀"</span>);</span><br><span class="line">      &#125;,<span class="number">10000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>process.platform</li>
-<li>process.pid</li>
-<li>process.execPath</li>
-<li>process.memoryUsage()</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">    <span class="built_in">console</span>.log(process.platform); <span class="comment">//win32</span></span><br><span class="line"><span class="built_in">console</span>.log(process.pid); <span class="comment">//9356</span></span><br><span class="line"><span class="built_in">console</span>.log(process.execPath); <span class="comment">//C:\Program Files\nodejs\node.exe</span></span><br><span class="line"><span class="built_in">console</span>.log(process.memoryUsage());<span class="comment">//&#123; rss: 18862080,heapTotal: 7376896,heapUsed: 3260136,external: 8380 &#125;</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>POSIX表示可移植操作系统接口（Portable Operating System Interface of UNIX，缩写为 POSIX ），POSIX标准定义了操作系统应该为应用程序提供的接口标准，是IEEE为要在各种UNIX操作系统上运行的软件而定义的一系列API标准的总称，其正式称呼为IEEE 1003，而国际标准名称为ISO/IEC 9945。</li>
-</ul>
-<h1 id="常用的工具集合util"><a href="#常用的工具集合util" class="headerlink" title="常用的工具集合util"></a>常用的工具集合util</h1><blockquote>
-<p>util  是一个 Node.js 核心模块，提供常用函数的集合，用于弥补核心 JavaScript 的功能过于精简的不足</p>
-</blockquote>
-<blockquote>
-<p>util.inherits 实现一个对象间原型继承的函数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Base</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"base"</span>;</span><br><span class="line">    <span class="keyword">this</span>.base = <span class="string">"1995"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello'</span>+<span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Base.prototype.showName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Sub</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">"sub"</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">util.inherits(Sub, Base);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objBase = <span class="keyword">new</span> Base();</span><br><span class="line"></span><br><span class="line">objBase.showName();</span><br><span class="line"></span><br><span class="line">objBase.sayHello();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(objBase);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"---------------------------"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> objSub = <span class="keyword">new</span> Sub();</span><br><span class="line"></span><br><span class="line">objSub.showName();</span><br><span class="line"><span class="comment">// objSub.sayHello(); 只能继承原型的东西，构造函数内部东西不能被继承</span></span><br><span class="line"><span class="built_in">console</span>.log(objSub);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>util.inspect(object,[showHidden],[depth],[colors])</p>
-</blockquote>
-<ul>
-<li>object ：要转换的对象</li>
-<li>showHidden  是一个可选参数，如果值为  true ，将会输出更多隐藏信息</li>
-<li>depth  表示最大递归的层数，如果对象很复杂，你可以指定层数以控制输出信息的多<br>少。如果不指定 depth ，默认会递归2层，指定为  null  表示将不限递归层数完整遍历对象。</li>
-<li>如果 color 值为  true ，输出格式将会以 ANSI 颜色编码，通常用于在终端显示更漂亮<br>的效果</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"><span class="keyword">var</span> obj =&#123;</span><br><span class="line">     name:<span class="string">'ly'</span>,</span><br><span class="line">     hello:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"再见"</span>);</span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj)); <span class="comment">//&#123; name: 'ly', hello: [Function: hello] &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj,<span class="literal">true</span>)); <span class="comment">//&#123; name: 'ly',hello:&#123; [Function: hello] [length]: 0,[name]: 'hello',[arguments]: null,[caller]: null,[prototype]: hello &#123; [constructor]: [Circular] &#125; &#125; &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(util.inspect(obj,<span class="literal">true</span>,<span class="number">4</span>,<span class="literal">true</span>));</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>四个类型测试工具</p>
-<ul>
-<li>util.isArray()</li>
-<li>util.isRegExp()</li>
-<li>util.isDate()</li>
-<li>util.isError()</li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 算了不测了都被废弃了 --&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>格式化以及调试工具</p>
-<ul>
-<li>util.format()</li>
-<li>util.debuglog()</li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">const</span> util = <span class="built_in">require</span>(<span class="string">'util'</span>);</span><br><span class="line"><span class="keyword">const</span> debuglog = util.debuglog(<span class="string">'foo'</span>);</span><br><span class="line">debuglog(<span class="string">'hello from foo [%d]'</span>, <span class="number">123</span>);</span><br><span class="line">&lt;!-- 很少用的感觉 --&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="事件驱动-events"><a href="#事件驱动-events" class="headerlink" title="事件驱动 events"></a>事件驱动 events</h1><blockquote>
-<p>Node.js 本身架构就是事件式<br>的，而它提供了唯一的接口，所以堪称 Node.js 事件编程的基石。 events 模块不仅用于用户代码与 Node.js 下层事件循环的交互，还几乎被所有的模块依赖。</p>
-</blockquote>
-<blockquote>
-<p>事件发射器</p>
-</blockquote>
-<ul>
-<li>EventEmitter.on(event, listener)  为指定事件注册一个监听器，接受一个字<br>符串  event  和一个回调函数  listener </li>
-<li>EventEmitter.emit(event, [arg1], [arg2], […]) 发射  event  事件，传<br>递若干可选参数到事件监听器的参数表</li>
-<li>EventEmitter.once(event, listener)  为指定事件注册一个单次监听器，即<br>监听器最多只会触发一次，触发后立刻解除该监听器。</li>
-<li>EventEmitter.removeListener(event, listener) 移除指定事件的某个监听<br>器， listener  必须是该事件已经注册过的监听器<ul>
-<li>EventEmitter.removeAllListeners([event]) 移除所有事件的所有监听器，<br>如果指定  event ，则移除指定事件的所有监听器</li>
-<li>setMaxListeners(n) 设定最大监听数，不能超过10个</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> emitter = <span class="keyword">new</span> events.EventEmitter();</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'someEvent'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener1'</span>,arg1,arg2);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'someEvent'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener2'</span>,arg1,arg2);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br><span class="line"><span class="comment">// listener1 ly 1995</span></span><br><span class="line"><span class="comment">// listener2 ly 1995</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------移除绑定事件-----------------"</span>)</span><br><span class="line"><span class="comment">// 移除绑定事件</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s=<span class="function"><span class="keyword">function</span>(<span class="params">arg1,arg2</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'listener1'</span>,arg1,arg2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">emitter.on(<span class="string">'add'</span>,s)</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'add'</span>,<span class="string">"ly"</span>,<span class="number">1996</span>);</span><br><span class="line"></span><br><span class="line">emitter.removeListener(<span class="string">"add"</span>,s);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'add'</span>,<span class="string">"ly"</span>,<span class="number">1996</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------结束-----------------"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------只触发一次的函数-----------------"</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.once(<span class="string">'once'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我只执行一次哈'</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'once'</span>);</span><br><span class="line">emitter.emit(<span class="string">'once'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 移除所有事件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------会执行-----------------"</span>);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br><span class="line">emitter.removeAllListeners();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"----------不会执行-----------------"</span>);</span><br><span class="line"></span><br><span class="line">emitter.emit(<span class="string">'someEvent'</span>,<span class="string">"ly"</span>,<span class="number">1995</span>);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>EventEmitter 定义了一个特殊的事件  error ，它包含了“错误”的语义，我们在遇到<br>异常的时候通常会发射  error  事件。当  error 被发射时， EventEmitter 规定如果没有响<br>应的监听器，Node.js 会把它当作异常，退出程序并打印调用栈。我们一般要为会发射  error<br>事件的对象设置监听器，避免遇到错误后整个程序崩溃</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> events = <span class="built_in">require</span>(<span class="string">'events'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> emmitter = <span class="keyword">new</span> events.EventEmitter();</span><br><span class="line"></span><br><span class="line">emmitter.once(<span class="string">'once'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我只执行一次哈'</span>);</span><br><span class="line">&#125;);</span><br><span class="line">emmitter.on(<span class="string">'error'</span>, (err) =&gt; &#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(err); <span class="comment">//whoops! there was an error  </span></span><br><span class="line">&#125;);  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">emmitter.emit(<span class="string">'once'</span>);</span><br><span class="line">emmitter.emit(<span class="string">'error'</span>,<span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">"什么错误"</span>));</span><br></pre></td></tr></table></figure>
-<h1 id="继承-EventEmitter"><a href="#继承-EventEmitter" class="headerlink" title="继承  EventEmitter"></a>继承  EventEmitter</h1><blockquote>
-<p>大多数时候我们不会直接使用 EventEmitter ，而是在对象中继承它。包括  fs 、 net 、<br>http 在内的，只要是支持事件响应的核心模块都是  EventEmitter 的子类</p>
-</blockquote>
-<blockquote>
-<p>为什么要这样做呢？原因有两点。首先，具有某个实体功能的对象实现事件符合语义，<br>事件的监听和发射应该是一个对象的方法。其次 JavaScript 的对象机制是基于原型的，支持<br>部分多重继承，继承  EventEmitter 不会打乱对象原有的继承关系</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1240,7 +1195,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1262,7 +1217,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

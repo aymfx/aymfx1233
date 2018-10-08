@@ -321,6 +321,150 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/28/es6学习-let和const命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/28/es6学习-let和const命令/" itemprop="url">es6学习-let和const命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-28T00:00:00+08:00">
+                2016-10-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h1><pre><code>做的学习笔记，参考的是http://es6.ruanyifeng.com/#docs/intro，里面的博客
+</code></pre><h1 id="let和const命令"><a href="#let和const命令" class="headerlink" title="let和const命令"></a>let和const命令</h1><pre><code>let:它所声明的变量，只在本代码块内有效
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 10; i++) &#123;&#125;</span><br><span class="line">	console.log(i);</span><br><span class="line">	//ReferenceError: i is not define</span><br></pre></td></tr></table></figure>
+<pre><code>for循环还有一个特别之处，就是循环语句部分是一个父作用域，而循环体内部是一个单独的子作用域
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="built_in">let</span> i = 0; i &lt; 3; i++) &#123;</span><br><span class="line">	  <span class="built_in">let</span> i = <span class="string">'abc'</span>;</span><br><span class="line">	  console.log(i);</span><br><span class="line">	&#125;</span><br><span class="line">	// abc</span><br><span class="line">	// abc</span><br><span class="line">	// abc</span><br></pre></td></tr></table></figure>
+<pre><code>不存在变量提升 let 它所声明的变量一定要在声明后使用，否则报错。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// var 的情况</span><br><span class="line">	console.log(foo); // 输出undefined</span><br><span class="line">	var foo = 2;</span><br><span class="line">	</span><br><span class="line">	// <span class="built_in">let</span> 的情况</span><br><span class="line">	console.log(bar); // 报错ReferenceError</span><br><span class="line">	<span class="built_in">let</span> bar = 2;</span><br></pre></td></tr></table></figure>
+<pre><code>暂时性死区（temporal dead zone，简称 TDZ）：只要块级作用域内存在let命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响，对于typeof来说不再是安全的操作了
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var tmp = 123;</span><br><span class="line">	<span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">	  tmp = <span class="string">'abc'</span>; // ReferenceError</span><br><span class="line">	  <span class="built_in">let</span> tmp;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">typeof x; // ReferenceError</span><br><span class="line"><span class="built_in">let</span> x;</span><br></pre></td></tr></table></figure>
+<pre><code>不允许重复声明 
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 报错</span><br><span class="line">	<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	  <span class="built_in">let</span> a = 10;</span><br><span class="line">	  var a = 1;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	// 报错</span><br><span class="line">	<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">	  <span class="built_in">let</span> a = 10;</span><br><span class="line">	  <span class="built_in">let</span> a = 1;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="const-命令"><a href="#const-命令" class="headerlink" title="const 命令"></a>const 命令</h1><pre><code>const声明一个只读的常量。一旦声明，常量的值就不能改变。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const PI = 3.1415;</span><br><span class="line">PI // 3.1415</span><br><span class="line"></span><br><span class="line">PI = 3;</span><br><span class="line">// TypeError: Assignment to constant variable.</span><br></pre></td></tr></table></figure>
+<pre><code>const的作用域与let命令相同：只在声明所在的块级作用域内有效。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  const MAX = 5;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MAX // Uncaught ReferenceError: MAX is not defined</span><br></pre></td></tr></table></figure>
+<pre><code>const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  console.log(MAX); // ReferenceError</span><br><span class="line">  const MAX = 5;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>本质：实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。
+</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const foo = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">// 为 foo 添加一个属性，可以成功</span><br><span class="line">foo.prop = 123;</span><br><span class="line">foo.prop // 123</span><br><span class="line"></span><br><span class="line">// 将 foo 指向另一个对象，就会报错</span><br><span class="line">foo = &#123;&#125;; // TypeError: <span class="string">"foo"</span> is <span class="built_in">read</span>-only</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const a = [];</span><br><span class="line">a.push(<span class="string">'Hello'</span>); // 可执行</span><br><span class="line">a.length = 0;    // 可执行</span><br><span class="line">a = [<span class="string">'Dave'</span>];    // 报错</span><br></pre></td></tr></table></figure>
+<pre><code>如果真的想将对象冻结，应该使用Object.freeze方法。
+</code></pre><p>const foo = Object.freeze({});</p>
+<p>// 常规模式时，下面一行不起作用；<br>// 严格模式时，该行会报错<br>foo.prop = 123;</p>
+<h1 id="ES6-声明变量的六种方法"><a href="#ES6-声明变量的六种方法" class="headerlink" title="ES6 声明变量的六种方法"></a>ES6 声明变量的六种方法</h1><pre><code>ES5 只有两种声明变量的方法：var命令和function命令。ES6除了添加let和const命令，后面章节还会提到，另外两种声明变量的方法：import命令和class命令。所以，ES6 一共有6种声明变量的方法。
+</code></pre><h1 id="顶层对象请参考博客吧"><a href="#顶层对象请参考博客吧" class="headerlink" title="顶层对象请参考博客吧"></a>顶层对象请参考博客吧</h1>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/23/AngularJS学习2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -937,145 +1081,6 @@ git rm --cached filename 删除暂存区的文件，不会删除工作区。
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/09/15/require-js使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/09/15/require-js使用/" itemprop="url">require.js使用</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-15T00:00:00+08:00">
-                2016-09-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="问题：如何解决前端js出现的文件依赖和命名空间问题"><a href="#问题：如何解决前端js出现的文件依赖和命名空间问题" class="headerlink" title="问题：如何解决前端js出现的文件依赖和命名空间问题"></a>问题：如何解决前端js出现的文件依赖和命名空间问题</h1><pre><code>可以通过命名空间和采用模块化的方式解决，今天学的require.js可以同时解决这两个问题.
-</code></pre><h1 id="requirejs能带来什么好处"><a href="#requirejs能带来什么好处" class="headerlink" title="requirejs能带来什么好处"></a>requirejs能带来什么好处</h1><pre><code>1.异步加载，防止js加载阻塞页面渲染
-2.不必引用很多js文件
-3.以上两个问题可以解决
-</code></pre><h1 id="掌握模块化的思想"><a href="#掌握模块化的思想" class="headerlink" title="掌握模块化的思想"></a>掌握模块化的思想</h1><pre><code>模块化思想就是指将页面根据内容的关联性分解成不同的且相互独立的模块进行开发，每个模块之间没有必然的联系，互不影响。
-模块化思想的主要优势就体现在：提高重用性，提高开发效率，降低维护成本，提升代码质量等方面。
-</code></pre><h1 id="AMD-require-js-和CMD-sea-js-规范"><a href="#AMD-require-js-和CMD-sea-js-规范" class="headerlink" title="AMD(require.js)和CMD(sea.js)规范"></a>AMD(require.js)和CMD(sea.js)规范</h1><pre><code>AMD是&quot;Asynchronous Module Definition&quot;的缩写，意思就是&quot;异步模块定义&quot;。它采用异步方式加载模块，模块的加载不影响它后面语句的运行。所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。
-CMD规范，全称”Common Module Definition”，称为 通用模块加载规范 。一般也是用在浏览器端。浏览器端异步加载库Sea.js实现的就是CMD规范。在CMD规范中，一个模块就是一个文件。
-</code></pre><h1 id="引用require-js"><a href="#引用require-js" class="headerlink" title="引用require.js"></a>引用require.js</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script data-main=<span class="string">"main.js"</span> src=<span class="string">"js/require.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line"> data-main:指定网页程序的主模块,意思是整个网页的入口代码,所有代码都从这儿开始运行.以后不用再引入js代码了，由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。当我们在里面写了路径之后，以后引入js目录下面的直接写文件名不加后缀，否则不仅要加后缀还要加文件路径</span><br><span class="line"> require.js：引入模块</span><br><span class="line"> 下载地址：http://requirejs.org/docs/release/2.3.3/minified/require.js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程序入口（主模块main.js）</span></span><br><span class="line"><span class="comment">## 测试是否引入成功</span></span><br><span class="line">![一如](http://img.blog.csdn.net/20170306193718505?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)</span><br><span class="line">	</span><br><span class="line"><span class="comment">## 调用模块写法（放在mian.js中）</span></span><br><span class="line"></span><br><span class="line">``` bash</span><br><span class="line">require([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(1);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require 调用模块，接收二个参数。</span><br><span class="line">第1个参数是一个数组，表示所依赖的模块 (也就是js了) ；</span><br><span class="line">第2个参数是一个回调函数，当前面指定的模块都加载成功后，它将被调用。</span><br><span class="line"></span><br><span class="line"><span class="comment">## 依赖模块写法（独立单独的js--module.js）</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		alert(1);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 在入口函数添加依赖(main.js)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main.js</span><br><span class="line">	require([<span class="string">"js/module1.js"</span>,<span class="string">"js/module2.js"</span>],<span class="keyword">function</span>(m1)&#123;</span><br><span class="line">		   alert(<span class="string">"我是入口函数"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module1.js</span><br><span class="line">	define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	alert(<span class="string">"我是模块一"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module.js</span><br><span class="line">	define([],<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		 alert(<span class="string">"我是模块2"</span>);</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-<pre><code>结果：我是模块一  我是模块2   我是入口函数
-小结：由于依赖模块是异步的，所以必须先执行完，才能调用回调函数,两个依赖的顺序出现不一定按顺序来
-</code></pre><h2 id="加载文件（加载服务器文件）"><a href="#加载文件（加载服务器文件）" class="headerlink" title="加载文件（加载服务器文件）"></a>加载文件（加载服务器文件）</h2><p>//引入jquery</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">	  paths:&#123;</span><br><span class="line">	  	<span class="string">"jquery"</span>:[<span class="string">"http://libs.baidu.com/jquery/2.0.3/jquery"</span>]//可引入多个</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">require([<span class="string">"js/module1.js"</span>,<span class="string">"js/module2.js"</span>],<span class="keyword">function</span>(m1)&#123;</span><br><span class="line">	   alert(<span class="string">"我是入口函数"</span>);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">require([<span class="string">"jquery"</span>],<span class="keyword">function</span>($)&#123;</span><br><span class="line">		console.log(typeof $);//<span class="keyword">function</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="其实当我们在data-main-“js-main”这样设定其实相当于："><a href="#其实当我们在data-main-“js-main”这样设定其实相当于：" class="headerlink" title="其实当我们在data-main=“js/main”这样设定其实相当于："></a>其实当我们在data-main=“js/main”这样设定其实相当于：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	require.config(&#123;</span><br><span class="line">    baseUrl : <span class="string">"js"</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<h3 id="引入第三方模块"><a href="#引入第三方模块" class="headerlink" title="引入第三方模块"></a>引入第三方模块</h3><pre><code>暂时没学，回头补充
-
-补充：主模块的依赖模块是[&apos;jquery&apos;, &apos;module1&apos;, &apos;module2&apos;]。默认情况下，require.js假定这三个模块与main.js在同一个目录，文件名分别为 jquery.js，module1.js和module2.js，然后自动加载。
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1130,7 +1135,7 @@ CMD规范，全称”Common Module Definition”，称为 通用模块加载规�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-count">133</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1152,7 +1157,7 @@ CMD规范，全称”Common Module Definition”，称为 通用模块加载规�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

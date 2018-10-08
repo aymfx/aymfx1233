@@ -321,6 +321,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/30/node-js深入浅出笔记5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/30/node-js深入浅出笔记5/" itemprop="url">node.js深入浅出笔记5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-30T13:41:53+08:00">
+                2017-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Step-轻量级的流程控制库"><a href="#Step-轻量级的流程控制库" class="headerlink" title="Step 轻量级的流程控制库"></a>Step 轻量级的流程控制库</h1><blockquote>
+<p>只提供一个接口</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Step(task1,task2,task3);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>示例代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Step(<span class="function"><span class="keyword">function</span> <span class="title">readFile</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="keyword">this</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">readFile2</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,<span class="keyword">this</span>);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">done</span>(<span class="params">err,content</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(content);</span><br><span class="line">    &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>this 是Step内部的一个next()方法,将异步调用的结果传递给下一个任务作为参数，并调用执行</p>
+</blockquote>
+<h2 id="并行任务执行"><a href="#并行任务执行" class="headerlink" title="并行任务执行"></a>并行任务执行</h2><blockquote>
+<p>this有一个parallel()方法，可以告诉Step,需要等待所有任务结束才执行下一个任务</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Step = <span class="built_in">require</span>(<span class="string">'step'</span>);</span><br><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</span><br><span class="line">Step(<span class="function"><span class="keyword">function</span> <span class="title">readFile</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,<span class="keyword">this</span>.parallel());</span><br><span class="line">    fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,<span class="keyword">this</span>.parallel());</span><br><span class="line">    fs.readFile(<span class="string">'file3.txt'</span>,<span class="string">'utf-8'</span>,<span class="keyword">this</span>.parallel());</span><br><span class="line">&#125;,</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">done</span>(<span class="params">err,content1,content2,content3</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>书上说异步方法的结果传回的是多个参数，step将只会取前两个参数（不懂）</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> asyncCall = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        callback(<span class="literal">null</span>,<span class="string">'result1'</span>,<span class="string">'result2'</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用paraller()时，result2将会被丢弃</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Step的parallel()方法原理:每次执行时将内部的计数器加1,然后返回一个回调函数，这个回调函数在异步调用结束时才执行。当回调函数执行时，将计数器减1,当计数器为0时，告知所有的异步调用结束，Step执行下一个方法</p>
+</blockquote>
+<h2 id="结果分组-group"><a href="#结果分组-group" class="headerlink" title="结果分组 group"></a>结果分组 group</h2><blockquote>
+<p>看下示例代码基本能明白</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Step(</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">readDir</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            fs.readdir(_dirname,<span class="keyword">this</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">readFiles</span>(<span class="params">err,results</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">            <span class="keyword">var</span> group = <span class="keyword">this</span>.group();</span><br><span class="line"></span><br><span class="line">            results.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">filename</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="regexp">/\.js$/</span>.test(filename))&#123;</span><br><span class="line">                    fs.readFile(_dirname+<span class="string">'/'</span>+filename,<span class="string">'utf-8'</span>,group())</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="function"><span class="keyword">function</span> <span class="title">showAll</span>(<span class="params">err,files</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="keyword">throw</span> err;</span><br><span class="line">            <span class="built_in">console</span>.log(files);</span><br><span class="line">        &#125;</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+<h1 id="wind"><a href="#wind" class="headerlink" title="wind"></a>wind</h1><blockquote>
+<p>也是一个y异步的流程库，咱们中国人写的，做异步动画挺好的样子，我们来实现下异步动画排序的过程，先看看过程，再讲方法</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> compare = <span class="function"><span class="keyword">function</span>(<span class="params">x,y</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> x-y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> swapAsync = <span class="built_in">eval</span>(Wind.compile(<span class="string">'async'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">a,i,j</span>)</span>&#123;</span><br><span class="line">    $<span class="keyword">await</span>(Wind.Async.sleep(<span class="number">20</span>));<span class="comment">//休息20毫秒</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> t =a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">    paint(a);</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bubbleSort = <span class="built_in">eval</span>(Wind.compile(<span class="string">'async'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">array</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;array.length-i<span class="number">-1</span>;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(compare(array[j],array[i])&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                    $<span class="keyword">await</span>(swapAsync(array,j,j+<span class="number">1</span>))</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>eval(Wind.compile(‘async’,function(){}))</p>
+</blockquote>
+<ul>
+<li>Wind.compile()将普通的函数进行编译</li>
+<li>eval()执行代码</li>
+</ul>
+<blockquote>
+<p>Wind.Async.sleep()</p>
+</blockquote>
+<ul>
+<li>内置了对setTimeout()的封装</li>
+</ul>
+<blockquote>
+<p>$await()</p>
+</blockquote>
+<ul>
+<li>它不是一个方法，只是一个等待的占位符，告诉编译器需要等待</li>
+<li>他接受一个任务对象，表示任务结束才能继续执行，每个异步任务都可以转化为一个任务，wind正是基于任务模型实现的，这是一个将fs.readFile()调用转换成一个任务模型</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> Wind = <span class="built_in">require</span>(<span class="string">'wind'</span>);</span><br><span class="line"><span class="keyword">var</span> Task = Wind.Async.Task;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> readFileAsync = <span class="function"><span class="keyword">function</span>(<span class="params">file,encoding</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Task.create(<span class="function"><span class="keyword">function</span>(<span class="params">t</span>)</span>&#123;</span><br><span class="line">            fs.readFile(file,encoding,<span class="function"><span class="keyword">function</span>(<span class="params">err.file</span>)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(err) &#123;</span><br><span class="line">                    t.complete(<span class="string">'failure'</span>,err);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    t.complete(<span class="string">'success'</span>,file);</span><br><span class="line">                &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Wind串行展示</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> serial = <span class="built_in">eval</span>(Wind.compile(<span class="string">'async'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     <span class="keyword">var</span> file1 = $<span class="keyword">await</span>(readFileAsync(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>));</span><br><span class="line">     <span class="built_in">console</span>.log(file1);</span><br><span class="line">     <span class="keyword">var</span> file2 = $<span class="keyword">await</span>(readFileAsync(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>));</span><br><span class="line">     <span class="built_in">console</span>.log(file2);</span><br><span class="line">     <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> file3 = $<span class="keyword">await</span>(readFileAsync(<span class="string">'file3.txt'</span>,<span class="string">'utf-8'</span>))</span><br><span class="line">     &#125; <span class="keyword">catch</span>(err)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err)</span><br><span class="line">     &#125;</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">serial().start();</span><br><span class="line"></span><br><span class="line"><span class="comment">//file1 file2 error</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>并行效果展示</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> parallel = <span class="built_in">eval</span>(Wind.compile(<span class="string">'async'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> results = $<span class="keyword">await</span>(Task.whenAll(&#123;</span><br><span class="line">        file1:readFileAsync(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>);</span><br><span class="line">        file2:readFileAsync(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>);</span><br><span class="line">    &#125;))</span><br><span class="line">    <span class="built_in">console</span>.log(results.file1,results.file2);</span><br><span class="line">&#125;))</span><br><span class="line"></span><br><span class="line">parallel().start();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Wind好似同步编程的感觉，但是我们需要做一些麻烦的操作。</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/29/node-js深入浅出笔记4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -970,210 +1152,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/25/node-js深入浅出笔记7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/25/node-js深入浅出笔记7/" itemprop="url">node.js深入浅出笔记1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T10:16:34+08:00">
-                2017-08-25
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="commonjs的模块定义"><a href="#commonjs的模块定义" class="headerlink" title="commonjs的模块定义"></a>commonjs的模块定义</h1><blockquote>
-<p>模块引用 ，模块定义 模块标识</p>
-</blockquote>
-<h2 id="模块引用"><a href="#模块引用" class="headerlink" title="模块引用"></a>模块引用</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var math = require(<span class="string">'math'</span>); //require用于引用一个api模块，括号里面的称为模块标识</span><br></pre></td></tr></table></figure>
-<h2 id="模块的定义"><a href="#模块的定义" class="headerlink" title="模块的定义"></a>模块的定义</h2><blockquote>
-<p>在node中，一个文件就是一个模块，将方法挂在到exports对象上作为属性可以导出</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">exports.add = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//export 是唯一导出方法的方式</span></span><br></pre></td></tr></table></figure>
-<h2 id="模块标识"><a href="#模块标识" class="headerlink" title="模块标识"></a>模块标识</h2><blockquote>
-<p>指的就是require()中的参数</p>
-</blockquote>
-<ul>
-<li>核心模块 http fs path等</li>
-<li>.或者..开始的相对路劲的文件模块</li>
-<li>以/开始的绝对路劲的模块</li>
-<li>非路径形式的模块文件，自定模块</li>
-</ul>
-<h1 id="node-的模块实现"><a href="#node-的模块实现" class="headerlink" title="node 的模块实现"></a>node 的模块实现</h1><blockquote>
-<p>引入模块需要经历三个步奏 路劲定位 文件定位 编译执行</p>
-</blockquote>
-<h2 id="核心模块与用户模块的区别以及加载速度"><a href="#核心模块与用户模块的区别以及加载速度" class="headerlink" title="核心模块与用户模块的区别以及加载速度"></a>核心模块与用户模块的区别以及加载速度</h2><ul>
-<li>核心模块，在node启动时已经被编译好了，核心部分都写在内存，只需做路劲分析就好，加载速度最快</li>
-<li>文件模块，则是运行时动态加载，以上路径分析，文件定位，编译都要走，所以最慢呀</li>
-</ul>
-<h2 id="优先加载缓存"><a href="#优先加载缓存" class="headerlink" title="优先加载缓存"></a>优先加载缓存</h2><blockquote>
-<p>核心模块，和用户模块都会被缓存，优先去取缓存的东西，顺序–&gt;   缓存核心模块&lt;-&lt;-缓存用户模块&lt;-核心模块&lt;-用户模块</p>
-</blockquote>
-<h2 id="文件定位"><a href="#文件定位" class="headerlink" title="文件定位"></a>文件定位</h2><ul>
-<li>扩展名分析 : 查找顺序 .js &gt; .node &gt; .json</li>
-<li>目录分析和包 : 首先会检查包下面的package.json ,通过json.parse() 取出main属性指定文件名进行定位，如果main错误或不存在，则默认index文件名查找，还没找到就抛出异常</li>
-</ul>
-<h1 id="模块的编译"><a href="#模块的编译" class="headerlink" title="模块的编译"></a>模块的编译</h1><blockquote>
-<p>module对象</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Module</span>(<span class="params">id,parent</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.id = id ;</span><br><span class="line">    <span class="keyword">this</span>.exports =&#123;&#125;;</span><br><span class="line">    <span class="keyword">this</span>.parent = parent;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(parent &amp;&amp; parent.children) &#123;</span><br><span class="line">        parent.children.push(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.filename = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">this</span>.loaded  = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">this</span>.children = [];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>载入以及编译</p>
-</blockquote>
-<ul>
-<li>.js 用fs模块同步读取文件后进行编译</li>
-<li>.node 这是c/c++编写的扩展文件，通过dlopen()方式进行加载最后编译生成的文件</li>
-<li>.json 用fs模块同步读取文件后，用JSON.parse()解析返回结果</li>
-<li>其余扩展名，都被当做.js文件载入</li>
-</ul>
-<blockquote>
-<p>每个编译成功的模块，路劲作为索引都会缓存在Module.<em>cache对象上</em></p>
-</blockquote>
-<h2 id="举个-json的加载的例子"><a href="#举个-json的加载的例子" class="headerlink" title="举个.json的加载的例子"></a>举个.json的加载的例子</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Module._extensoins[.json] = <span class="function"><span class="keyword">function</span>(<span class="params">module,filename</span>)</span>&#123;</span><br><span class="line">    va content = NativeModule.require(<span class="string">'fs'</span>).readFileSync(filename,<span class="string">'utf-8'</span>);\</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        <span class="built_in">module</span>.exports = <span class="built_in">JSON</span>,parse(stripBOM(content));</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">        err.message = filename + <span class="string">":"</span> +err.message;</span><br><span class="line">        <span class="keyword">throw</span> err;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Module._extensions 会被赋值给require()的extensions属性</span></span><br></pre></td></tr></table></figure>
-<h1 id="Javascript模块的编译"><a href="#Javascript模块的编译" class="headerlink" title="Javascript模块的编译"></a>Javascript模块的编译</h1><blockquote>
-<p>由于模块文件实际在编译过程会被node包装，所以我们才可以调用几个常用的方法，包装后通过vm原生模块runInThisContext()方法执行（类似eval,有明确上下文，不污染全局），返回function对象</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//包装后</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">exports,require,module,_filename,_dirname</span>)</span>&#123;</span><br><span class="line">     <span class="comment">//模块内容</span></span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="编译核心模块"><a href="#编译核心模块" class="headerlink" title="编译核心模块"></a>编译核心模块</h1><blockquote>
-<p>源文件通过process.binding(‘natives’)取出，编译成功的模块缓存到NativeModule._cache对象上，文件模块则缓存Module.cache对象上</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">NativeModule</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.filename = id + <span class="string">'.js'</span>;</span><br><span class="line">    <span class="keyword">this</span>.id = id;</span><br><span class="line">    <span class="keyword">this</span>.exports = &#123;&#125;</span><br><span class="line">    <span class="keyword">this</span>.loaded = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">NativeModule._source = process.binding(<span class="string">'natives'</span>);</span><br><span class="line">NativeModule._cache = &#123;&#125;;</span><br></pre></td></tr></table></figure>
-<h1 id="c-c-核心模块的编译"><a href="#c-c-核心模块的编译" class="headerlink" title="c/c++核心模块的编译"></a>c/c++核心模块的编译</h1><blockquote>
-<p>由纯c/c++编写的部分统一称为内建模块，通常不被用户直接调用</p>
-</blockquote>
-<blockquote>
-<p>内建模块的导出 (依赖关系)</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件模块 &lt;--- 核心模块(javascript) &lt;---内建模块(c/c++)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>加载内建模块时，先创建exports空对象，然后调用get_builtin_module()方法取出内建模块对象，通过执行register_func()填充exports对象，最后将exports对象按模块名缓存，并返回给调用方完成导出</p>
-</blockquote>
-<h1 id="包与npm"><a href="#包与npm" class="headerlink" title="包与npm"></a>包与npm</h1><blockquote>
-<p>commonjs规范:前者用于组织包中的各种的文件，后者则用于描述包的相关信息，以供外部读取分析</p>
-</blockquote>
-<h2 id="包结构（符合commonjs规范）"><a href="#包结构（符合commonjs规范）" class="headerlink" title="包结构（符合commonjs规范）"></a>包结构（符合commonjs规范）</h2><ul>
-<li>package.json:包描述文件</li>
-<li>bin:存放二进制文件的目录</li>
-<li>lib:用于存放JavaScript代码的目录</li>
-<li>doc:用于存放文档的目录</li>
-<li>test:用于存放单元测试的代码</li>
-</ul>
-<h2 id="包描述文件（package-josn）与npm"><a href="#包描述文件（package-josn）与npm" class="headerlink" title="包描述文件（package.josn）与npm"></a>包描述文件（package.josn）与npm</h2><ul>
-<li>参考之前的文章</li>
-</ul>
-<h2 id="npm常用功能"><a href="#npm常用功能" class="headerlink" title="npm常用功能"></a>npm常用功能</h2><ul>
-<li>查看帮助 npm -v</li>
-<li>安装依赖包 npm i package</li>
-<li></li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1228,7 +1206,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1250,7 +1228,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

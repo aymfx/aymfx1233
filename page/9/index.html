@@ -321,6 +321,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/01/11/webpack笔记2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/11/webpack笔记2/" itemprop="url">webpack笔记2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T21:15:10+08:00">
+                2018-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="https://aymfx.github.io/img/a201801/a2.jpg" alt="目录"></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/01/10/webpack笔记1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -831,161 +952,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/09/29/node-js深入浅出笔记17/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/29/node-js深入浅出笔记17/" itemprop="url">node.js深入浅出笔记17</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T11:39:39+08:00">
-                2017-09-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="页面渲染"><a href="#页面渲染" class="headerlink" title="页面渲染"></a>页面渲染</h1><p>##内容响应</p>
-<blockquote>
-<p>MIME用于判断文件类型</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//这个插件可以自动转换</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> mine = <span class="built_in">require</span>(<span class="string">'mime'</span>)</span><br><span class="line"></span><br><span class="line">mime.lookup(<span class="string">"/xx/xx/file.txt"</span>)  =======&gt; <span class="string">'text/plain'</span></span><br><span class="line">mime.lookup(<span class="string">"file.txt"</span>)  =======&gt; <span class="string">'text/plain'</span></span><br><span class="line">mime.lookup(<span class="string">".txt"</span>)  =======&gt; <span class="string">'text/plain'</span></span><br><span class="line">mime.lookup(<span class="string">".html"</span>)  =======&gt; <span class="string">'text/html'</span></span><br><span class="line">    ......</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>响应附件的下载，通过Content-Disposition字段</p>
-<ul>
-<li>Content-Disposition:attachment;filename=’filename.ext’</li>
-</ul>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">res.sendfile = <span class="function"><span class="keyword">function</span> (<span class="params">filepath</span>) </span>&#123;</span><br><span class="line">    fs.stat(filepath,<span class="function"><span class="keyword">function</span>(<span class="params">err,stat</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> stream = fs.createReadStream(filepath);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//设置内容</span></span><br><span class="line">            res.setHeader(<span class="string">'Content-Type'</span>,mime.lookup(filepath));</span><br><span class="line">            <span class="comment">//设置长度</span></span><br><span class="line">            res.setHeader(<span class="string">"Content-Length"</span>,stat.size);</span><br><span class="line">            <span class="comment">//设置为附件</span></span><br><span class="line">            res.setHeader(<span class="string">'Content-Disposition'</span>,<span class="string">'attachement;filename="'</span>+path.basename(filepath)+<span class="string">'"'</span>);</span><br><span class="line">            res.writeHead(<span class="number">200</span>);</span><br><span class="line">            stream.pipe(res);</span><br><span class="line">        &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">&gt; 响应JSON</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span> javascript</span><br><span class="line"></span><br><span class="line">    res.json = <span class="function"><span class="keyword">function</span> (<span class="params">json</span>) </span>&#123;</span><br><span class="line">        res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'application/json'</span>);</span><br><span class="line">        res.writeHead(<span class="number">200</span>);</span><br><span class="line">        res.end(<span class="built_in">JSON</span>.stringify(json))</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>响应跳转</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">res.json = <span class="function"><span class="keyword">function</span> (<span class="params">url</span>) </span>&#123;</span><br><span class="line">    res.setHeader(<span class="string">'Location'</span>,url);</span><br><span class="line">    res.writeHead(<span class="number">302</span>);</span><br><span class="line">    res.end(<span class="string">'Redirect to '</span> + url)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="视图渲染"><a href="#视图渲染" class="headerlink" title="视图渲染"></a>视图渲染</h2><blockquote>
-<p>模板是带有特殊标签的html片段，通过数据的渲染，将数据填充到这些特殊的标签中，最后生成普通的带有数据的html片段，我们将其设计为render,参数就是模板的路径和数据</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">res.render = <span class="function"><span class="keyword">function</span> (<span class="params">view,data</span>) </span>&#123;</span><br><span class="line">    res.setHeader(<span class="string">'Content-Type'</span>,<span class="string">'text/html'</span>);</span><br><span class="line">    res.writeHead(<span class="number">200</span>);</span><br><span class="line">    <span class="comment">//实际渲染</span></span><br><span class="line">    <span class="keyword">var</span> html = render(view,data);</span><br><span class="line">    res.end(html);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>模板引擎渲染的方式</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170925/a2.png" alt="流程图"></p>
-<blockquote>
-<p>模板引擎渲染简单演示</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> render = <span class="function"><span class="keyword">function</span> (<span class="params">str,data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//模板技术就是替换特殊标签的技术</span></span><br><span class="line">    <span class="keyword">var</span> tpl = str.replace(<span class="regexp">/&lt;%=([\s\S]+?)%&gt;/g</span>,<span class="function"><span class="keyword">function</span>(<span class="params">match,code</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"'+obj."</span>+code+<span class="string">"+'"</span>;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    tpl = <span class="string">"var tpl= '"</span>+tpl + <span class="string">"'\n return tpl;"</span>;</span><br><span class="line">    <span class="keyword">var</span> complied = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'obj'</span>,tpl);</span><br><span class="line">    <span class="keyword">return</span> complied(data);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="keyword">var</span> tpl = <span class="string">'Hell &lt;%=username%&gt;'</span></span><br><span class="line"><span class="comment">//undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(render(tpl,&#123;<span class="attr">username</span>:<span class="string">'ly'</span>&#125;))</span><br><span class="line"><span class="comment">//VM326:1 Hell ly</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>模板安全,所有字符必须转义</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> <span class="built_in">escape</span> = <span class="function"><span class="keyword">function</span> (<span class="params">html</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">String</span>(html)</span><br><span class="line">            .replace(<span class="regexp">/&amp;(?!\w+;)/g</span>,<span class="string">'&amp;amp'</span>)</span><br><span class="line">            .replace(<span class="regexp">/&lt;/g</span>,<span class="string">'&amp;lt;'</span>)</span><br><span class="line">            .replace(<span class="regexp">/&gt;/g</span>,<span class="string">'&amp;gt;'</span>)</span><br><span class="line">            .replace(<span class="regexp">/"/g</span>,<span class="string">'&amp;quot;'</span>)</span><br><span class="line">            .replace(<span class="regexp">/'/g</span>,<span class="string">'&amp;#039;'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Bigpipe"><a href="#Bigpipe" class="headerlink" title="Bigpipe"></a>Bigpipe</h2><ul>
-<li>暂时不解释</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1040,7 +1006,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1062,7 +1028,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

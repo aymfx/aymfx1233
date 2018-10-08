@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+  
+
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon2.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon1.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="c," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="前言 最近在准备c++的考试，没办法只能把忘掉的C语言基础再补回来,做点笔记  基础C语言结构12345#include&amp;lt;stdio.h&amp;gt;int main()&amp;#123;  printf(&apos;欢迎来C语言世界&apos;)  return 0;&amp;#125;   #include &amp;lt;stdio.h&amp;gt;就是一条预处理命令，它的作用是通知C语言编译系统在对C程序进行正式编译之前需做一些预处理工">
+<meta name="keywords" content="c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;c语言基础&#39;">
+<meta property="og:url" content="http://aymfx.cn/2018/08/29/c语言基础/index.html">
+<meta property="og:site_name" content="AYMFX&#39;S BLOG">
+<meta property="og:description" content="前言 最近在准备c++的考试，没办法只能把忘掉的C语言基础再补回来,做点笔记  基础C语言结构12345#include&amp;lt;stdio.h&amp;gt;int main()&amp;#123;  printf(&apos;欢迎来C语言世界&apos;)  return 0;&amp;#125;   #include &amp;lt;stdio.h&amp;gt;就是一条预处理命令，它的作用是通知C语言编译系统在对C程序进行正式编译之前需做一些预处理工">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.mukewang.com/552b3d930001acdd04260268.jpg">
+<meta property="og:image" content="http://img.mukewang.com/547fd0af0001b55b06300091.jpg">
+<meta property="og:image" content="http://img.mukewang.com/55adb2e70001360607410143.jpg">
+<meta property="og:image" content="http://img.mukewang.com/547fd1250001132307420082.jpg">
+<meta property="og:image" content="http://img.mukewang.com/54856b620001e2ad04880099.jpg">
+<meta property="og:image" content="http://img.mukewang.com/549aa7070001c93b03810128.jpg">
+<meta property="og:image" content="http://img.mukewang.com/54ac8dfb000126ad04510145.jpg">
+<meta property="og:image" content="http://img.mukewang.com/5492bd4700016e9103370083.jpg">
+<meta property="og:image" content="http://img.mukewang.com/5481551100017fbe04250141.jpg">
+<meta property="og:image" content="http://img.mukewang.com/54816483000195a203180087.jpg">
+<meta property="og:image" content="http://img.mukewang.com/54817fa90001654403370200.jpg">
+<meta property="og:image" content="http://img.mukewang.com/549cf202000188f802600278.jpg">
+<meta property="og:image" content="http://img.mukewang.com/549cf0ad000157f603260281.jpg">
+<meta property="og:image" content="http://img.mukewang.com/549cf81d0001d6e205180223.jpg">
+<meta property="og:updated_time" content="2018-09-04T03:01:41.425Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="&#39;c语言基础&#39;">
+<meta name="twitter:description" content="前言 最近在准备c++的考试，没办法只能把忘掉的C语言基础再补回来,做点笔记  基础C语言结构12345#include&amp;lt;stdio.h&amp;gt;int main()&amp;#123;  printf(&apos;欢迎来C语言世界&apos;)  return 0;&amp;#125;   #include &amp;lt;stdio.h&amp;gt;就是一条预处理命令，它的作用是通知C语言编译系统在对C程序进行正式编译之前需做一些预处理工">
+<meta name="twitter:image" content="http://img.mukewang.com/552b3d930001acdd04260268.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'ly'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://aymfx.cn/2018/08/29/c语言基础/"/>
+
+
+
+
+
+  <title>'c语言基础' | AYMFX'S BLOG</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c2168f5ea571328ca4dcfdf0dc8f4607";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AYMFX'S BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">越努力，越幸运</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-heart">
+          <a href="/heart/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heart"></i> <br />
+            
+            心情日记
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-camera"></i> <br />
+            
+            记录点滴
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            时间线
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            我的介绍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-collection">
+          <a href="/collection/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            作品集
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/08/29/c语言基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">'c语言基础'</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-29T11:54:14+08:00">
+                2018-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o">本文总阅读量</i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>最近在准备c++的考试，没办法只能把忘掉的C语言基础再补回来,做点笔记</p>
+</blockquote>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="C语言结构"><a href="#C语言结构" class="headerlink" title="C语言结构"></a>C语言结构</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  printf('欢迎来C语言世界')</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> #include &lt;stdio.h&gt;就是一条预处理命令，它的作用是通知C语言编译系统在对C程序进行正式编译之前需做一些预处理工作。</p>
+</blockquote>
+<blockquote>
+<p>函数就是实现代码逻辑的一个小的单元</p>
+</blockquote>
+<blockquote>
+<p>在最新的C标准中，main函数前的类型为int而不是void</p>
+</blockquote>
+<blockquote>
+<p>一个C程序有且只有一个主函数，即main函数。</p>
+</blockquote>
+<h3 id="C语言注释方法有两种："><a href="#C语言注释方法有两种：" class="headerlink" title="C语言注释方法有两种："></a>C语言注释方法有两种：</h3><ul>
+<li>多行注释：  /<em> 注释内容 </em>/ </li>
+<li>单行注释：  //注释一行</li>
+</ul>
+<h3 id="标识符定义"><a href="#标识符定义" class="headerlink" title="标识符定义"></a>标识符定义</h3><blockquote>
+<p>C 语言规定，标识符可以是字母(A～Z，a～z)、数字(0～9)、下划线_组成的字符串，并且第一个字符必须是字母或下划线。</p>
+</blockquote>
+<p>(1)标识符的长度最好不要超过8位，因为在某些版本的C中规定标识符前8位有效，当两个标识符前8位相同时，则被认为是同一个标识符。 </p>
+<p>(2)标识符是严格区分大小写的。例如Imooc和imooc 是两个不同的标识符。 </p>
+<p>(3)标识符最好选择有意义的英文单词组成做到”见名知意”，不要使用中文。</p>
+<p>(4)标识符不能是C语言的关键字。</p>
+<h3 id="变量赋值"><a href="#变量赋值" class="headerlink" title="变量赋值"></a>变量赋值</h3><blockquote>
+<p>变量就是可以变化的量，而每个变量都会有一个名字（标识符）。变量占据内存中一定的存储单元。使用变量之前必须先定义变量，要区分变量名和变量值是两个不同的概念。就好比：住在房间里的客人与房间号是两个不同的概念。</p>
+</blockquote>
+<p>定义方式</p>
+<ul>
+<li>数据类型 变量名;</li>
+<li>数据类型 变量名，变量名，。。。;</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num;</span><br><span class="line"> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> num1,num2,num3;</span><br><span class="line">num1 = <span class="number">1</span>;</span><br><span class="line">num2 = <span class="number">2</span>;</span><br><span class="line">num3 = <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在定义中不允许连续赋值，如int a=b=c=5;是不合法的</p>
+</blockquote>
+<h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><blockquote>
+<p>C语言中，数据类型可分为：基本数据类型，构造数据类型，指针类型，空类型四大类</p>
+</blockquote>
+<p><img src="http://img.mukewang.com/552b3d930001acdd04260268.jpg" alt="数据类型"></p>
+<h4 id="基本数据类型-整型、实型与字符型"><a href="#基本数据类型-整型、实型与字符型" class="headerlink" title="基本数据类型 - 整型、实型与字符型"></a>基本数据类型 - 整型、实型与字符型</h4><p><img src="http://img.mukewang.com/547fd0af0001b55b06300091.jpg" alt="基本数据类型"></p>
+<p>整形</p>
+<p><img src="http://img.mukewang.com/55adb2e70001360607410143.jpg" alt="整形"></p>
+<blockquote>
+<p>int、short int、long int是根据编译环境的不同，所取范围不同。而其中short int和long int至少是表中所写范围，但是int在表中是以16位编译环境写的取值范围。另外 c语言int的取值范围在于他占用的字节数 ，不同的编译器，规定是不一样。ANSI标准定义int是占2个字节，TC是按ANSI标准的，它的int是占2个字节的。但是在VC里，一个int是占4个字节的</p>
+</blockquote>
+<p>浮点数</p>
+<p><img src="http://img.mukewang.com/547fd1250001132307420082.jpg" alt="浮点数"></p>
+<p>字符串</p>
+<blockquote>
+<p>C语言中不存在字符串变量，字符串只能存在字符数组中</p>
+</blockquote>
+<h3 id="格式化输出语句"><a href="#格式化输出语句" class="headerlink" title="格式化输出语句"></a>格式化输出语句</h3><blockquote>
+<p>格式化输出语句，也可以说是占位输出，是将各种类型的数据按照格式化后的类型及指定的位置从计算机上显示</p>
+</blockquote>
+<ul>
+<li>格式为：printf(“输出格式符”，输出项);</li>
+</ul>
+<p><img src="http://img.mukewang.com/54856b620001e2ad04880099.jpg" alt="格式符"></p>
+<h3 id="常亮"><a href="#常亮" class="headerlink" title="常亮"></a>常亮</h3><ul>
+<li>直接常量也称为字面量，是可以直接拿来使用，无需说明的量</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">1100</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%f\n"</span>,<span class="number">1.100</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%l\n"</span>,<span class="number">1.105990</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%c\n"</span>,<span class="string">"p"</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在C语言中，可以用一个标识符来表示一个常量，称之为符号常量。符号常量在使用之前必须先定义，其一般形式为：#define 标识符 常量值</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> PI 3.1415926</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"圆周率是多少%f\n"</span>,PI);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常量是不可改变的</p>
+<h3 id="自动类型转换"><a href="#自动类型转换" class="headerlink" title="自动类型转换"></a>自动类型转换</h3><p>自动转换发生在不同数据类型运算时，在编译的时候自动完成</p>
+<p><img src="http://img.mukewang.com/549aa7070001c93b03810128.jpg" alt="自动类型转换"></p>
+<ul>
+<li>char类型数据转换为int类型数据遵循ASCII码中的对应值</li>
+<li>字节小的可以向字节大的自动转换，但字节大的不能向字节小的自动转换</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="string">'a'</span>;</span><br><span class="line">    <span class="keyword">int</span> n = c ;       <span class="comment">//将c赋值给n</span></span><br><span class="line">    <span class="keyword">float</span> f = c ;     <span class="comment">//将c赋值给f</span></span><br><span class="line">    <span class="keyword">double</span> d = c;     <span class="comment">//将c赋值给d</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,n); <span class="comment">//97</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%f\n"</span>,f); <span class="comment">//97.000000</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lf\n"</span>,d); <span class="comment">//97.000000</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="强制类型转换"><a href="#强制类型转换" class="headerlink" title="强制类型转换"></a>强制类型转换</h3><p>强制类型转换是通过定义类型转换运算来实现的</p>
+<p> 形式为：(数据类型) (表达式) </p>
+<p>注意项:</p>
+<ul>
+<li>数据类型和表达式都必须加括号，如把(int)(x/2+y)写成(int)x/2+y则成了把x转换成int型之后再除2再与y相加了。</li>
+<li>转换后不会改变原数据的类型及变量值，只在本次运算中临时性转换。</li>
+<li>强制转换后的运算结果不遵循四舍五入原则</li>
+</ul>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><pre><code>※ 算术运算符  a+b  a*b a-b a/b  a%b
+</code></pre><p><img src="http://img.mukewang.com/54ac8dfb000126ad04510145.jpg" alt=""></p>
+<pre><code>※ 赋值运算符   a=b
+</code></pre><p><img src="http://img.mukewang.com/5492bd4700016e9103370083.jpg" alt=""></p>
+<pre><code>※ 关系运算符   &gt;  &lt;  = &gt;= &lt;=  !=
+</code></pre><p><img src="http://img.mukewang.com/5481551100017fbe04250141.jpg" alt=""></p>
+<pre><code>※ 逻辑运算符  &amp; || !
+</code></pre><p><img src="http://img.mukewang.com/54816483000195a203180087.jpg" alt=""></p>
+<pre><code>※ 三目运算符  a&gt;b ? &quot;a&quot; : &quot;b&quot;
+</code></pre><h3 id="运算符的优先级"><a href="#运算符的优先级" class="headerlink" title="运算符的优先级"></a>运算符的优先级</h3><p><img src="http://img.mukewang.com/54817fa90001654403370200.jpg" alt=""></p>
+<h3 id="if语句"><a href="#if语句" class="headerlink" title="if语句"></a>if语句</h3><p>if</p>
+<p><img src="http://img.mukewang.com/549cf202000188f802600278.jpg" alt=""></p>
+<p>if - else</p>
+<p><img src="http://img.mukewang.com/549cf0ad000157f603260281.jpg" alt=""></p>
+<p>if - else - if</p>
+<p><img src="http://img.mukewang.com/549cf81d0001d6e205180223.jpg" alt=""></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wexinPay.jpg" alt="ly 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifubaoPay.jpg" alt="ly 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+      <!-- 来必力City版安装代码 -->
+        <div id="lv-container" data-id="city" data-uid="MTAyMC8zNzE1MS8xMzY4NQ==">
+          <script type="text/javascript">
+          (function(d, s) {
+              var j, e = d.getElementsByTagName(s)[0];
+
+              if (typeof LivereTower === 'function') { return; }
+
+              j = d.createElement(s);
+              j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+              j.async = true;
+              e.parentNode.insertBefore(j, e);
+          })(document, 'script');
+          </script>
+        <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+        </div>
+        <!-- City版安装代码已完成 -->
+        <div class="post-tags">
+          
+            <a href="/tags/c/" rel="tag"># c</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/09/git秘钥生成/" rel="next" title="git秘钥生成">
+                <i class="fa fa-chevron-left"></i> git秘钥生成
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+      
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="ly" />
+            
+              <p class="site-author-name" itemprop="name">ly</p>
+              <p class="site-description motion-element" itemprop="description">前端码农一枚，喜欢看书以及跑步，还在努力前行着</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">132</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/aymfx" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:aymfx520@gmail.com" target="_blank" title="Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=86 src="//music.163.com/outchain/player?type=2&id=455543886&auto=0&height=66"></iframe>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#C语言结构"><span class="nav-number">2.1.</span> <span class="nav-text">C语言结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C语言注释方法有两种："><span class="nav-number">2.2.</span> <span class="nav-text">C语言注释方法有两种：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标识符定义"><span class="nav-number">2.3.</span> <span class="nav-text">标识符定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量赋值"><span class="nav-number">2.4.</span> <span class="nav-text">变量赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">2.5.</span> <span class="nav-text">基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本数据类型-整型、实型与字符型"><span class="nav-number">2.5.1.</span> <span class="nav-text">基本数据类型 - 整型、实型与字符型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#格式化输出语句"><span class="nav-number">2.6.</span> <span class="nav-text">格式化输出语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常亮"><span class="nav-number">2.7.</span> <span class="nav-text">常亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动类型转换"><span class="nav-number">2.8.</span> <span class="nav-text">自动类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制类型转换"><span class="nav-number">2.9.</span> <span class="nav-text">强制类型转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符"><span class="nav-number">2.10.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符的优先级"><span class="nav-number">2.11.</span> <span class="nav-text">运算符的优先级</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if语句"><span class="nav-number">2.12.</span> <span class="nav-text">if语句</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+      
+    </div>
+    
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">赣ICP备16012127号</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'manual') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

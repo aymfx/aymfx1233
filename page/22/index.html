@@ -321,6 +321,175 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/10/es6学习-数组的扩展/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/11/10/es6学习-数组的扩展/" itemprop="url">es6学习--数组的扩展</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T00:00:00+08:00">
+                2016-11-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h1><pre><code>Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。
+    必须具有length属性
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">	let arrayLike = &#123;</span><br><span class="line">    &apos;0&apos;: &apos;a&apos;,</span><br><span class="line">    &apos;1&apos;: &apos;b&apos;,</span><br><span class="line">    &apos;2&apos;: &apos;c&apos;,</span><br><span class="line">    length: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// ES5的写法</span><br><span class="line">var arr1 = [].slice.call(arrayLike); // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">let arr2 = Array.from(arrayLike); // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<pre><code>常见的类似数组的对象是DOM操作返回的NodeList集合，以及函数内部的arguments对象。Array.from都可以将它们转为真正的数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// NodeList对象</span><br><span class="line">let ps = document.querySelectorAll(&apos;p&apos;);</span><br><span class="line">Array.from(ps).forEach(function (p) &#123;</span><br><span class="line">  console.log(p);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// arguments对象</span><br><span class="line">function foo() &#123;</span><br><span class="line">  var args = Array.from(arguments);</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>只要是部署了Iterator接口的数据结构，Array.from都能将其转为数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.from(&apos;hello&apos;)</span><br><span class="line">	// [&apos;h&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o&apos;]</span><br><span class="line">	</span><br><span class="line">	let namesSet = new Set([&apos;a&apos;, &apos;b&apos;])</span><br><span class="line">	Array.from(namesSet) // [&apos;a&apos;, &apos;b&apos;]</span><br></pre></td></tr></table></figure>
+<pre><code>扩展运算符（...）也可以将某些数据结构转为数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// arguments对象</span><br><span class="line">function foo() &#123;</span><br><span class="line">  var args = [...arguments];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// NodeList对象</span><br><span class="line">[...document.querySelectorAll(&apos;div&apos;)]</span><br><span class="line"></span><br><span class="line">Array.from(&#123; length: 3 &#125;);</span><br><span class="line">// [ undefined, undefined, undefined ]</span><br></pre></td></tr></table></figure>
+<pre><code>Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Array.from(arrayLike, x =&gt; x * x);</span><br><span class="line">// 等同于</span><br><span class="line">Array.from(arrayLike).map(x =&gt; x * x);</span><br><span class="line"></span><br><span class="line">Array.from([1, 2, 3], (x) =&gt; x * x)</span><br><span class="line">// [1, 4, 9]</span><br></pre></td></tr></table></figure>
+<p>#Array.of()<br>    Array.of方法用于将一组值，转换为数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Array.of(3, 11, 8) // [3,11,8]</span><br><span class="line">Array.of(3) // [3]</span><br><span class="line">Array.of(3).length // 1</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.of() // []</span><br><span class="line">Array.of(undefined) // [undefined]</span><br><span class="line">Array.of(1) // [1]</span><br><span class="line">Array.of(1, 2) // [1, 2]</span><br></pre></td></tr></table></figure>
+<pre><code>Array.of方法可以用下面的代码模拟实现。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function ArrayOf()&#123;</span><br><span class="line">  return [].slice.call(arguments);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数组实例的copyWithin"><a href="#数组实例的copyWithin" class="headerlink" title="数组实例的copyWithin()"></a>数组实例的copyWithin()</h1><pre><code>数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。也就是说，使用这个方法，会修改当前数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.copyWithin(target, start = 0, end = this.length)</span><br><span class="line">它接受三个参数。</span><br><span class="line">			target（必需）：从该位置开始替换数据。</span><br><span class="line">			start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。</span><br><span class="line">			end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3)</span><br><span class="line">// [4, 5, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 将3号位复制到0号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// -2相当于3号位，-1相当于4号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, -2, -1)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 将3号位复制到0号位</span><br><span class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3)</span><br><span class="line">// &#123;0: 1, 3: 1, length: 5&#125;</span><br><span class="line"></span><br><span class="line">// 将2号位到数组结束，复制到0号位</span><br><span class="line">var i32a = new Int32Array([1, 2, 3, 4, 5]);</span><br><span class="line">i32a.copyWithin(0, 2);</span><br><span class="line">// Int32Array [3, 4, 5, 4, 5]</span><br><span class="line"></span><br><span class="line">// 对于没有部署TypedArray的copyWithin方法的平台</span><br><span class="line">// 需要采用下面的写法</span><br><span class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</span><br><span class="line">// Int32Array [4, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 将3号位复制到0号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// -2相当于3号位，-1相当于4号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, -2, -1)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 将3号位复制到0号位</span><br><span class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3)</span><br><span class="line">// &#123;0: 1, 3: 1, length: 5&#125;</span><br><span class="line"></span><br><span class="line">// 将2号位到数组结束，复制到0号位</span><br><span class="line">var i32a = new Int32Array([1, 2, 3, 4, 5]);</span><br><span class="line">i32a.copyWithin(0, 2);</span><br><span class="line">// Int32Array [3, 4, 5, 4, 5]</span><br><span class="line"></span><br><span class="line">// 对于没有部署TypedArray的copyWithin方法的平台</span><br><span class="line">// 需要采用下面的写法</span><br><span class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</span><br><span class="line">// Int32Array [4, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
+<h1 id="数组实例的find-和findIndex"><a href="#数组实例的find-和findIndex" class="headerlink" title="数组实例的find()和findIndex()"></a>数组实例的find()和findIndex()</h1><pre><code>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 4, -5, 10].find((n) =&gt; n &lt; 0)//-5</span><br></pre></td></tr></table></figure>
+<pre><code>find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。
+findIndex方法的用法与find方法非常类似返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 5, 10, 15].findIndex(function(value, index, arr) &#123;</span><br><span class="line">  return value &gt; 9;</span><br><span class="line">&#125;) // 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[NaN].indexOf(NaN)</span><br><span class="line">// -1</span><br><span class="line"></span><br><span class="line">[NaN].findIndex(y =&gt; Object.is(NaN, y))</span><br><span class="line">// 0</span><br></pre></td></tr></table></figure>
+<h1 id="数组实例的fill"><a href="#数组实例的fill" class="headerlink" title="数组实例的fill()"></a>数组实例的fill()</h1><pre><code>fill方法使用给定值，填充一个数组。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].fill(7)</span><br><span class="line">	// [7, 7, 7]</span><br><span class="line">	</span><br><span class="line">	new Array(3).fill(7)</span><br><span class="line">	// [7, 7, 7]</span><br></pre></td></tr></table></figure>
+<h1 id="数组实例的entries-，keys-和values"><a href="#数组实例的entries-，keys-和values" class="headerlink" title="数组实例的entries()，keys()和values()"></a>数组实例的entries()，keys()和values()</h1><pre><code>ES6提供三个新的方法——entries()，keys()和values()——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for (let index of [&apos;a&apos;, &apos;b&apos;].keys()) &#123;</span><br><span class="line">  console.log(index);</span><br><span class="line">&#125;</span><br><span class="line">// 0</span><br><span class="line">// 1</span><br><span class="line"></span><br><span class="line">for (let elem of [&apos;a&apos;, &apos;b&apos;].values()) &#123;</span><br><span class="line">  console.log(elem);</span><br><span class="line">&#125;</span><br><span class="line">// &apos;a&apos;</span><br><span class="line">// &apos;b&apos;</span><br><span class="line"></span><br><span class="line">for (let [index, elem] of [&apos;a&apos;, &apos;b&apos;].entries()) &#123;</span><br><span class="line">  console.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line">// 0 &quot;a&quot;</span><br><span class="line">// 1 &quot;b&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let letter = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line">let entries = letter.entries();</span><br><span class="line">console.log(entries.next().value); // [0, &apos;a&apos;]</span><br><span class="line">console.log(entries.next().value); // [1, &apos;b&apos;]</span><br><span class="line">console.log(entries.next().value); // [2, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<h1 id="数组实例的includes"><a href="#数组实例的includes" class="headerlink" title="数组实例的includes()"></a>数组实例的includes()</h1><pre><code>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。该方法属于ES7，但Babel转码器已经支持。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3].includes(2);     // true</span><br><span class="line">[1, 2, 3].includes(4);     // false</span><br><span class="line">[1, 2, NaN].includes(NaN); // true</span><br></pre></td></tr></table></figure>
+<pre><code>indexOf方法有两个缺点，一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。二是，它内部使用严格相当运算符（===）进行判断，这会导致对NaN的误判。
+</code></pre><h1 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h1><pre><code>数组的空位指，数组的某一个位置没有任何值。比如，Array构造函数返回的数组都是空位
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// forEach方法</span><br><span class="line">[,&apos;a&apos;].forEach((x,i) =&gt; console.log(i)); // 1</span><br><span class="line"></span><br><span class="line">// filter方法</span><br><span class="line">[&apos;a&apos;,,&apos;b&apos;].filter(x =&gt; true) // [&apos;a&apos;,&apos;b&apos;]</span><br><span class="line"></span><br><span class="line">// every方法</span><br><span class="line">[,&apos;a&apos;].every(x =&gt; x===&apos;a&apos;) // true</span><br><span class="line"></span><br><span class="line">// some方法</span><br><span class="line">[,&apos;a&apos;].some(x =&gt; x !== &apos;a&apos;) // false</span><br><span class="line"></span><br><span class="line">// map方法</span><br><span class="line">[,&apos;a&apos;].map(x =&gt; 1) // [,1]</span><br><span class="line"></span><br><span class="line">// join方法</span><br><span class="line">[,&apos;a&apos;,undefined,null].join(&apos;#&apos;) // &quot;#a##&quot;</span><br><span class="line"></span><br><span class="line">// toString方法</span><br><span class="line">[,&apos;a&apos;,undefined,null].toString() // &quot;,a,,&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">forEach(), filter(), every() 和some()都会跳过空位。</span><br><span class="line">map()会跳过空位，但会保留这个值</span><br><span class="line">join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。</span><br></pre></td></tr></table></figure>
+<pre><code>Array.from方法会将数组的空位，转为undefined，也就是说，这个方法不会忽略空位
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.from([&apos;a&apos;,,&apos;b&apos;])</span><br><span class="line">// [ &quot;a&quot;, undefined, &quot;b&quot; ]</span><br></pre></td></tr></table></figure>
+<pre><code>扩展运算符（...）也会将空位转为undefined。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...[&apos;a&apos;,,&apos;b&apos;]]</span><br><span class="line">// [ &quot;a&quot;, undefined, &quot;b&quot; ]</span><br></pre></td></tr></table></figure>
+<pre><code>copyWithin()会连空位一起拷贝。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[,&apos;a&apos;,&apos;b&apos;,,].copyWithin(2,0) // [,&quot;a&quot;,,&quot;a&quot;]</span><br></pre></td></tr></table></figure>
+<pre><code>fill()会将空位视为正常的数组位置。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Array(3).fill(&apos;a&apos;) // [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;]</span><br></pre></td></tr></table></figure>
+<pre><code>for...of循环也会遍历空位。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [, ,];</span><br><span class="line">for (let i of arr) &#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">// 1</span><br><span class="line">// 1</span><br></pre></td></tr></table></figure>
+<pre><code>entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// entries()</span><br><span class="line">[...[,&apos;a&apos;].entries()] // [[0,undefined], [1,&quot;a&quot;]]</span><br><span class="line"></span><br><span class="line">// keys()</span><br><span class="line">[...[,&apos;a&apos;].keys()] // [0,1]</span><br><span class="line"></span><br><span class="line">// values()</span><br><span class="line">[...[,&apos;a&apos;].values()] // [undefined,&quot;a&quot;]</span><br><span class="line"></span><br><span class="line">// find()</span><br><span class="line">[,&apos;a&apos;].find(x =&gt; true) // undefined</span><br><span class="line"></span><br><span class="line">// findIndex()</span><br><span class="line">[,&apos;a&apos;].findIndex(x =&gt; true) // 0</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/vue2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -887,175 +1056,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/23/AngularJS学习2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/23/AngularJS学习2/" itemprop="url">AngularJS学习2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-23T00:00:00+08:00">
-                2016-10-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="AngularJS-ng-model-指令"><a href="#AngularJS-ng-model-指令" class="headerlink" title="AngularJS ng-model 指令"></a>AngularJS ng-model 指令</h1><pre><code>ng-model 指令用于绑定应用程序数据到 HTML 控制器(input, select, textarea)的值。
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">    名字: &lt;input ng-model=<span class="string">"name"</span>&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.name = <span class="string">"ly"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<pre><code>可以实现双重绑定
-</code></pre><h1 id="验证用户输入"><a href="#验证用户输入" class="headerlink" title="验证用户输入"></a>验证用户输入</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body ng-app=<span class="string">"form"</span>&gt;</span><br><span class="line">		&lt;h2&gt;表单验证&lt;/h2&gt;</span><br><span class="line">		&lt;form ng-controller=<span class="string">'validateCtrl'</span> name=<span class="string">"myfrom"</span>&gt;</span><br><span class="line">			&lt;p&gt;用户名&lt;br /&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"user"</span> name=<span class="string">"user"</span> required=<span class="string">""</span>/&gt;</span><br><span class="line">			&lt;span style=<span class="string">"color:red"</span> ng-show=<span class="string">"myfrom.user.<span class="variable">$invalid</span> &amp;&amp; myfrom.user.<span class="variable">$dirty</span>"</span>&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.user.<span class="variable">$error</span>.required"</span>&gt;用户名是必填项&lt;/span&gt;</span><br><span class="line">			&lt;/span&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;邮箱:&lt;br /&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"email"</span> ng-model=<span class="string">"email"</span> required=<span class="string">""</span> name=<span class="string">"email"</span> /&gt;</span><br><span class="line">			&lt;span style=<span class="string">"color:red"</span> ng-show=<span class="string">"myfrom.email.<span class="variable">$invalid</span> &amp;&amp; myfrom.email.<span class="variable">$dirty</span>"</span>&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.email.<span class="variable">$error</span>.required"</span>&gt;邮箱是必填项&lt;/span&gt;</span><br><span class="line">				&lt;span ng-show=<span class="string">"myfrom.email.<span class="variable">$error</span>.email"</span>&gt;邮箱必须合法&lt;/span&gt;</span><br><span class="line">			&lt;/span&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;</span><br><span class="line">				&lt;input <span class="built_in">type</span>=<span class="string">"submit"</span> ng-disabled=<span class="string">"myfrom.user.<span class="variable">$invalid</span> &amp;&amp; myfrom.user.<span class="variable">$dirty</span> || myfrom.email.<span class="variable">$invalid</span> &amp;&amp; myfrom.email.<span class="variable">$dirty</span>"</span>/&gt;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">			var app=angular.module(<span class="string">'form'</span>,[]);</span><br><span class="line">	</span><br><span class="line">			app.controller(<span class="string">'validateCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">				    <span class="variable">$scope</span>.user = <span class="string">'John Doe'</span>;</span><br><span class="line">				    <span class="variable">$scope</span>.email = <span class="string">'john.doe@gmail.com'</span>;</span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--</span><br><span class="line"><span class="variable">$dirty</span>		表单有填写记录</span><br><span class="line"><span class="variable">$valid</span>		字段内容合法的</span><br><span class="line"><span class="variable">$invalid</span>	字段内容是非法的</span><br><span class="line"><span class="variable">$pristine</span>	表单没有填写记录</span><br><span class="line">提示信息会在 ng-show 属性返回 <span class="literal">true</span> 的情况下显示。</span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
-<p>#CSS 类</p>
-<pre><code>ng-model 指令基于它们的状态为 HTML 元素提供了 CSS 类
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">	input.ng-invalid &#123;/*元素名+状态值*/</span><br><span class="line">	    background-color: lightblue;  </span><br><span class="line">	&#125;</span><br><span class="line">	&lt;/style&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;form ng-app=<span class="string">""</span> name=<span class="string">"myForm"</span>&gt;</span><br><span class="line">	    输入你的名字:</span><br><span class="line">	    &lt;input name=<span class="string">"myAddress"</span> ng-model=<span class="string">"text"</span> required&gt;</span><br><span class="line">	&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<p>ng-model 指令根据表单域的状态添加/移除以下类：<br>ng-empty<br>ng-not-empty<br>ng-touched<br>ng-untouched<br>ng-valid<br>ng-invalid<br>ng-dirty  表单有填写记录<br>ng-pending  未发生时<br>ng-pristine 初始时</p>
-<h1 id="AngularJS-Scope-作用域"><a href="#AngularJS-Scope-作用域" class="headerlink" title="AngularJS Scope(作用域)"></a>AngularJS Scope(作用域)</h1><pre><code>Scope(作用域) 是应用在 HTML (视图) 和 JavaScript (控制器)之间的纽带。
-Scope 是一个对象，有可用的方法和属性。
-Scope 可应用在视图和控制器上。
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body ng-app=<span class="string">"event"</span>&gt;</span><br><span class="line">		&lt;div ng-controller=<span class="string">"personCtrl"</span>&gt;</span><br><span class="line"></span><br><span class="line">			&lt;button ng-click=<span class="string">"toggle()"</span>&gt;隐藏/显示&lt;/button&gt;</span><br><span class="line">			</span><br><span class="line">			&lt;p ng-hide=<span class="string">"myVar"</span>&gt;</span><br><span class="line">			名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"firstName"</span>&gt;&lt;br&gt;</span><br><span class="line">			姓名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"lastName"</span>&gt;&lt;br&gt;</span><br><span class="line">			&lt;br&gt;</span><br><span class="line">			Full Name: &#123;&#123;firstName + <span class="string">" "</span> + lastName&#125;&#125;</span><br><span class="line">			&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;!-----------分割线---------------------------------------------&gt;</span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">			var app=angular.module(<span class="string">'event'</span>,[]);</span><br><span class="line">			app.controller(<span class="string">'personCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">			    <span class="variable">$scope</span>.firstName = <span class="string">"John"</span>,   //属性</span><br><span class="line">			    <span class="variable">$scope</span>.lastName = <span class="string">"Doe"</span></span><br><span class="line">			    <span class="variable">$scope</span>.myVar = <span class="literal">false</span>;</span><br><span class="line">			    <span class="variable">$scope</span>.toggle = <span class="function"><span class="title">function</span></span>() &#123;  //方法</span><br><span class="line">			        <span class="variable">$scope</span>.myVar = !<span class="variable">$scope</span>.myVar;</span><br><span class="line">			    &#125;;</span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<pre><code>视图中，你不需要添加 $scope 前缀, 只需要添加属性名即可，如： {{firstName + " " + lastName}}。
-</code></pre><h1 id="Scope-概述"><a href="#Scope-概述" class="headerlink" title="Scope 概述"></a>Scope 概述</h1><pre><code>AngularJS 应用组成如下：
-    View(视图), 即 HTML。
-    Model(模型), 当前视图中可用的数据。
-    Controller(控制器), 即 JavaScript 函数，可以添加或修改属性。
-</code></pre><h1 id="Scope-作用范围"><a href="#Scope-作用范围" class="headerlink" title="Scope 作用范围"></a>Scope 作用范围</h1><pre><code>$scop只能管，它所在控制器定义的范围
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	    &lt;li ng-repeat=<span class="string">"x in names"</span>&gt;&#123;&#123;x&#125;&#125;&lt;/li&gt;//每个 &lt;li&gt; 元素可以访问当前的重复对象，这里对应的是一个字符串， 并使用变量 x 表示</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">	</span><br><span class="line">	app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">	    <span class="variable">$scope</span>.names = [<span class="string">"Emil"</span>, <span class="string">"Tobias"</span>, <span class="string">"Linus"</span>];</span><br><span class="line">	&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="根作用域"><a href="#根作用域" class="headerlink" title="根作用域"></a>根作用域</h1><pre><code>所有的应用都有一个 $rootScope，它可以作用在 ng-app 指令包含的所有 HTML 元素中。$rootScope 可作用于整个应用中。是各个 controller 中 scope 的桥梁。用 rootscope 定义的值，可以在各个 controller 中使用。
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;h1&gt;&#123;&#123;lastname&#125;&#125; 家族成员:&lt;/h1&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;ul&gt;</span><br><span class="line">	    &lt;li ng-repeat=<span class="string">"x in names"</span>&gt;&#123;&#123;x&#125;&#125; &#123;&#123;lastname&#125;&#125;&lt;/li&gt;</span><br><span class="line">	&lt;/ul&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">	var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">	</span><br><span class="line">	app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$rootScope</span>) &#123;</span><br><span class="line">	    <span class="variable">$scope</span>.names = [<span class="string">"Emil"</span>, <span class="string">"Tobias"</span>, <span class="string">"Linus"</span>];</span><br><span class="line">	    <span class="variable">$rootScope</span>.lastname = <span class="string">"Refsnes"</span>;</span><br><span class="line">	&#125;);</span><br><span class="line">	&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="AngularJS-控制器"><a href="#AngularJS-控制器" class="headerlink" title="AngularJS 控制器"></a>AngularJS 控制器</h1><pre><code>ng-controller 指令定义了应用程序控制器。控制器是 JavaScript 对象，由标准的 JavaScript 对象的构造函数 创建
-</code></pre><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;div ng-app=<span class="string">"myApp"</span> ng-controller=<span class="string">"myCtrl"</span>&gt;</span><br><span class="line"></span><br><span class="line">名: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"firstName"</span>&gt;&lt;br&gt;</span><br><span class="line">姓: &lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"lastName"</span>&gt;&lt;br&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">姓名: &#123;&#123;firstName + <span class="string">" "</span> + lastName&#125;&#125;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.firstName = <span class="string">"l"</span>;</span><br><span class="line">    <span class="variable">$scope</span>.lastName = <span class="string">"y"</span>;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<pre><code>控制器和scope一起使用，控制器的范围就是scope作用的范围
-</code></pre><h1 id="AngularJS-过滤器"><a href="#AngularJS-过滤器" class="headerlink" title="AngularJS 过滤器"></a>AngularJS 过滤器</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">1、uppercase，lowercase 大小写转换</span><br><span class="line">&#123;&#123; <span class="string">"lower cap string"</span> | uppercase &#125;&#125;   // 结果：LOWER CAP STRING</span><br><span class="line">&#123;&#123; <span class="string">"TANK is GOOD"</span> | lowercase &#125;&#125;      // 结果：tank is good</span><br><span class="line">2、date 格式化</span><br><span class="line">&#123;&#123;1490161945000 | date:<span class="string">"yyyy-MM-dd HH:mm:ss"</span>&#125;&#125; // 2017-03-22 13:52:25</span><br><span class="line">3、number 格式化（保留小数）</span><br><span class="line">&#123;&#123;149016.1945000 | number:2&#125;&#125;</span><br><span class="line">4、currency货币格式化</span><br><span class="line">&#123;&#123; 250 | currency &#125;&#125;            // 结果：<span class="variable">$250</span>.00</span><br><span class="line">&#123;&#123; 250 | currency:<span class="string">"RMB ￥ "</span> &#125;&#125;  // 结果：RMB ￥ 250.00</span><br><span class="line">5、filter查找</span><br><span class="line">输入过滤器可以通过一个管道字符（|）和一个过滤器添加到指令中，该过滤器后跟一个冒号和一个模型名称。</span><br><span class="line">filter 过滤器从数组中选择一个子集</span><br><span class="line"> // 查找name为iphone的行</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | filter:&#123;<span class="string">'name'</span>:<span class="string">'iphone'</span>&#125; &#125;&#125;        </span><br><span class="line">6、limitTo 截取</span><br><span class="line">&#123;&#123;<span class="string">"1234567890"</span> | limitTo :6&#125;&#125; // 从前面开始截取6位</span><br><span class="line">&#123;&#123;<span class="string">"1234567890"</span> | limitTo:-4&#125;&#125; // 从后面开始截取4位</span><br><span class="line">7、orderBy 排序</span><br><span class="line"> // 根id降序排</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | orderBy:<span class="string">'id'</span>:<span class="literal">true</span> &#125;&#125;</span><br><span class="line"></span><br><span class="line">// 根据id升序排</span><br><span class="line">&#123;&#123; [&#123;<span class="string">"age"</span>: 20,<span class="string">"id"</span>: 10,<span class="string">"name"</span>: <span class="string">"iphone"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 12,<span class="string">"id"</span>: 11,<span class="string">"name"</span>: <span class="string">"sunm xing"</span>&#125;,</span><br><span class="line">&#123;<span class="string">"age"</span>: 44,<span class="string">"id"</span>: 12,<span class="string">"name"</span>: <span class="string">"test abc"</span>&#125;</span><br><span class="line">] | orderBy:<span class="string">'id'</span> &#125;&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="自定义过滤器"><a href="#自定义过滤器" class="headerlink" title="自定义过滤器"></a>自定义过滤器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//过滤器 number   </span><br><span class="line">	&#123;&#123;10000 | filternumber &#125;&#125;  //100</span><br><span class="line">	app.filter(<span class="string">'filternumber'</span>,<span class="function"><span class="title">function</span></span>()&#123;  </span><br><span class="line">			<span class="built_in">return</span> <span class="keyword">function</span>(target)&#123;</span><br><span class="line">				target=target/100;</span><br><span class="line">				<span class="built_in">return</span> parseFloat(target);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;)</span><br></pre></td></tr></table></figure>
-<h1 id="AngularJS-服务-Service"><a href="#AngularJS-服务-Service" class="headerlink" title="AngularJS 服务(Service)"></a>AngularJS 服务(Service)</h1><pre><code>在 AngularJS 中，服务是一个函数或对象，可在你的 AngularJS 应用中使用。AngularJS 内建了30 多个服务。
-</code></pre><ul>
-<li>$location 服务，它可以返回当前页面的 URL 地址</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'customersCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$location</span>) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.myUrl = <span class="variable">$location</span>.absUrl();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>$http 是 AngularJS 应用中最常用的服务。 服务向服务器发送请求，应用响应服务器传送过来的数据。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> var app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, <span class="variable">$http</span>) &#123;</span><br><span class="line">    <span class="variable">$http</span>.get(<span class="string">"welcome.htm"</span>).<span class="keyword">then</span>(<span class="keyword">function</span> (response) &#123;</span><br><span class="line">        <span class="variable">$scope</span>.myWelcome = response.data;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<ul>
-<li>$timeout 服务 AngularJS $timeout 服务对应了 JS window.setTimeout 函数。</li>
-<li>$interval 服务 AngularJS $interval 服务对应了 JS window.setInterval 函数。</li>
-<li>创建自定义服务</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.service(<span class="string">'hexafy'</span>, <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    this.myFunc = <span class="keyword">function</span> (x) &#123;</span><br><span class="line">        <span class="built_in">return</span> x.toString(16);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, <span class="keyword">function</span>(<span class="variable">$scope</span>, hexafy) &#123;</span><br><span class="line">    <span class="variable">$scope</span>.hex = hexafy.myFunc(255);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="server的小demo"><a href="#server的小demo" class="headerlink" title="server的小demo"></a>server的小demo</h3><ul>
-<li>html页面</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html ng-app=<span class="string">"demo3"</span>&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">		&lt;title&gt;&lt;/title&gt;</span><br><span class="line">		</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;!--AngularJS 服务(Service)--&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo1"</span>&gt;</span><br><span class="line">			&lt;p&gt;获去url地址&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"我的地址是"</span>+myUrl&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo2"</span>&gt;</span><br><span class="line">			&lt;p&gt;获取服务端传来的数据&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo3"</span>&gt;</span><br><span class="line">			&lt;p&gt;延时定时器&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div id=<span class="string">""</span> ng-controller=<span class="string">"myDemo4"</span>&gt;</span><br><span class="line">			&lt;p&gt;定时器&lt;/p&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"刘洋说现在时间:"</span>+data&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;div ng-controller=<span class="string">"myDemo5"</span>&gt;</span><br><span class="line">			&lt;p&gt;自定义函数，讲数字转换成16进制数&lt;/p&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"data"</span>/&gt;</span><br><span class="line">			&lt;p&gt;&#123;&#123;<span class="string">"我是16进制数"</span>+data1&#125;&#125;&lt;/p&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;!--去抖动--&gt;</span><br><span class="line">		&lt;div ng-controller=<span class="string">"myDemo6"</span>&gt;</span><br><span class="line">			&lt;p&gt;用ajax发送请求&lt;/p&gt;</span><br><span class="line">			&lt;input <span class="built_in">type</span>=<span class="string">"text"</span> ng-model=<span class="string">"key"</span>/&gt;</span><br><span class="line">			&lt;ul&gt;</span><br><span class="line">				&lt;li ng-repeat=<span class="string">"x in arr"</span>&gt;</span><br><span class="line">					&#123;&#123;x.name&#125;&#125;</span><br><span class="line">				&lt;/li&gt;</span><br><span class="line">			&lt;/ul&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;script src=<span class="string">"js/angular.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script src=<span class="string">"js/server.js"</span> <span class="built_in">type</span>=<span class="string">"text/javascript"</span> charset=<span class="string">"utf-8"</span>&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>js页面</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">var app=angular.module(<span class="string">'demo3'</span>,[]);</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo1'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$location</span>"</span>,<span class="keyword">function</span>(s,l)&#123;</span><br><span class="line">	s.myUrl=l.absUrl();</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo2'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$http</span>"</span>,<span class="keyword">function</span>(s,h)&#123;</span><br><span class="line">	h.get(<span class="string">"other/welcome.php"</span>).<span class="keyword">then</span>(<span class="keyword">function</span>(r)&#123;</span><br><span class="line">		s.data=r.data;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo3'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$timeout</span>"</span>,<span class="keyword">function</span>(s,t)&#123;</span><br><span class="line">	s.data=<span class="string">"今天天气不错呀"</span>;</span><br><span class="line">	</span><br><span class="line">	t(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		s.data=<span class="string">"我们去爬山吧"</span></span><br><span class="line">	&#125;,2000)</span><br><span class="line"></span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo4'</span>,[<span class="string">'$scope'</span>,<span class="string">"<span class="variable">$interval</span>"</span>,<span class="keyword">function</span>(s,i)&#123;</span><br><span class="line">	s.data=new Date().toLocaleTimeString();</span><br><span class="line">	</span><br><span class="line">	i(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">		s.data=new Date().toLocaleTimeString();</span><br><span class="line">	&#125;,1000)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.service(<span class="string">'hexafy'</span>,<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">	  this.myfun=<span class="keyword">function</span>(x)&#123;</span><br><span class="line">	  	<span class="built_in">return</span> parseInt(x,16);</span><br><span class="line">	  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo5'</span>,[<span class="string">'$scope'</span>,<span class="string">'hexafy'</span>,<span class="keyword">function</span>(s,h)&#123;</span><br><span class="line">	  </span><br><span class="line">	  s.<span class="variable">$watch</span>(<span class="string">'data1'</span>,<span class="keyword">function</span>(newkey,oldkey)&#123;</span><br><span class="line">	  	    console.log(h.myfun(s.data));</span><br><span class="line">	  		s.data1=h.myfun(s.data);</span><br><span class="line">	  &#125;)</span><br><span class="line">&#125;])</span><br><span class="line"></span><br><span class="line">app.controller(<span class="string">'myDemo6'</span>,[<span class="string">'$scope'</span>,<span class="string">'$http'</span>,<span class="keyword">function</span>(scope,http)&#123;</span><br><span class="line">	//</span><br><span class="line">	<span class="keyword">function</span> debounce(fn,<span class="built_in">wait</span>)&#123;</span><br><span class="line">		var last=null;</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">			var arg=arguments;</span><br><span class="line">			var later=<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">				fn.apply(null,arg);</span><br><span class="line">			&#125;</span><br><span class="line">			clearTimeout(last);</span><br><span class="line">			last=setTimeout(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">				later();</span><br><span class="line">			&#125;,300);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	  scope.<span class="variable">$watch</span>(<span class="string">'key'</span>,debounce(<span class="keyword">function</span>(newv,old)&#123;</span><br><span class="line">	  			console.log(arguments,<span class="string">"woyou"</span>);</span><br><span class="line">	  	      http(&#123;</span><br><span class="line">	  	      		url:<span class="string">'/bgs/poi/search_poi_nearby'</span>,</span><br><span class="line">                     params: &#123;</span><br><span class="line">                       keyword: newv,</span><br><span class="line">                       offset: 0,</span><br><span class="line">                       <span class="built_in">limit</span>: 20</span><br><span class="line">                     &#125;</span><br><span class="line">                   &#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(data)&#123;</span><br><span class="line">                   		console.log(<span class="string">'hh'</span>,data.data);</span><br><span class="line">                   		scope.arr=data.data;</span><br><span class="line">                   &#125;,<span class="function"><span class="title">function</span></span>()&#123;&#125;)</span><br><span class="line">	  &#125;,300))</span><br><span class="line">&#125;])</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1110,7 +1110,7 @@ Scope 可应用在视图和控制器上。
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1132,7 +1132,7 @@ Scope 可应用在视图和控制器上。
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

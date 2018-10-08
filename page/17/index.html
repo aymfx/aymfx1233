@@ -321,6 +321,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/29/jQuery源码学习（2）-构造jquery对象（1）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/29/jQuery源码学习（2）-构造jquery对象（1）/" itemprop="url">jQuery源码学习（2）-构造jquery对象（1）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T00:00:00+08:00">
+                2017-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="构造函数jQuery"><a href="#构造函数jQuery" class="headerlink" title="构造函数jQuery"></a>构造函数jQuery</h1><blockquote>
+<p>jQuery(select [,context])</p>
+</blockquote>
+<ul>
+<li>第一个参数是选择器，用于选择docunment里面的html元素，当传入的参数不是选择器时，会返回一个空的jquery对象</li>
+<li>第二个是上下文对象，也就是限制从哪个范围开始查找元素，默认从document</li>
+<li>当指定了第二个参数，实际上就是调用了$(selsect).find(xxx)</li>
+</ul>
+<blockquote>
+<p>jQuery(html[,ownerDocument])、jQuery(html,props)</p>
+</blockquote>
+<ul>
+<li>html 表示如果是html代码，jquery将其转换成一个jquery对象，可以进行插入dom 操作<ul>
+<li>类似于:$(“<div>ly</div>“).appendTo(‘body’),可以是单标签</li>
+</ul>
+</li>
+<li>ownerDocument 表示可以创建新的文档对象，默认当前文档</li>
+<li>props 必须是单标签写法</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;&lt;div/&gt;&quot;, &#123;　　　　</span><br><span class="line">            &quot;class&quot;: &quot;test&quot;,</span><br><span class="line">            　　　　text: &quot;Click me!&quot;,</span><br><span class="line">            　　　　click: function() &#123;　　　　</span><br><span class="line">                $(this).toggleClass(&quot;bar&quot;);　　　</span><br><span class="line">            &#125;　　</span><br><span class="line">        &#125;).appendTo(&quot;body&quot;);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>jQuery(element) jQuery(elementArray)</p>
+</blockquote>
+<ul>
+<li>该方法是将dom元素封装成jquery元素然年调用jquery方法</li>
+<li>多用于事件的监听</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;div&apos;).click(function()&#123;</span><br><span class="line">    $(this).show();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>jQuery(object)</p>
+<ul>
+<li>对于普通的js对象也可以包装成jquery对象的</li>
+</ul>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var names = &#123;</span><br><span class="line">            first: &apos;liu&apos;,</span><br><span class="line">            last: &apos;yang&apos;</span><br><span class="line">        &#125;</span><br><span class="line">        var $names = $(names);</span><br><span class="line">        console.log($names);</span><br><span class="line">        $names.on(&apos;binds&apos;, function() &#123;</span><br><span class="line">            console.log(&apos;我叫&apos;, $names[0].first + $names[0].last);</span><br><span class="line">        &#125;)</span><br><span class="line">    $names.trigger(&apos;binds&apos;); //自动触发</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> jQuery(callback) </p>
+</blockquote>
+<ul>
+<li>如果传入一个函数，在document绑定一个ready事件监听函数，当dom加载时执行</li>
+<li>ready比load早执行，不是原生函数,它由DOMContentLoaded事件onreadystatechange事件以及函数doScrollCheck()的统称</li>
+</ul>
+<blockquote>
+<p>jQuery(jQuery object)</p>
+</blockquote>
+<ul>
+<li>如归传入的是jquery对象，会创建一个一样的副本，并且返回，他们引用的同一个地址</li>
+</ul>
+<blockquote>
+<p>jQuery()</p>
+</blockquote>
+<ul>
+<li>不传参则返回一个空的jquery对象</li>
+</ul>
+<h2 id="jQuery-fn-init-selector-context-rootjQuery"><a href="#jQuery-fn-init-selector-context-rootjQuery" class="headerlink" title="jQuery.fn.init(selector,context,rootjQuery)"></a>jQuery.fn.init(selector,context,rootjQuery)</h2><blockquote>
+<p>12个分支</p>
+</blockquote>
+<ul>
+<li>也就是有12种处理方式的写法，具体参考书吧</li>
+<li>以下也有讲解</li>
+</ul>
+<blockquote>
+<p>selector:接收的是dom对象</p>
+</blockquote>
+<blockquote>
+<p>context : 上下文对象</p>
+</blockquote>
+<blockquote>
+<p>rootjQuery</p>
+</blockquote>
+<ul>
+<li>用于以下情况</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//id查找失败</span><br><span class="line">if (elem.id !== match[2]) &#123;</span><br><span class="line">    return rootjQuery.find(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//selector是选择器且没有context</span><br><span class="line"></span><br><span class="line">if (!context || context.jquery) &#123;</span><br><span class="line">        return (context || rootjQuery).find(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//selector是函数</span><br><span class="line"></span><br><span class="line">if (jQuery.isFunction(selector)) &#123;</span><br><span class="line">        return rootjQuery.ready(selector);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">//怎么定义rootjQuery？</span><br><span class="line"> rootjQuery = jQuery(document);</span><br><span class="line"></span><br><span class="line">//如果判断选择器是false，返回的是空的$();</span><br><span class="line">    if (!selector) &#123;</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">//如果字符串是body，则获取document.body</span><br><span class="line">    if (selector === &quot;body&quot; &amp;&amp; !context &amp;&amp; document.body) &#123;</span><br><span class="line">        console.log(&quot;是我呀&quot;);</span><br><span class="line">        this.context = document;</span><br><span class="line">        this[0] = document.body;</span><br><span class="line">        this.selector = selector;</span><br><span class="line">        this.length = 1;</span><br><span class="line">        return this;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//用于匹配html代码以及id,第一个是selector 第二个是html或者undefind </span><br><span class="line">    quickExpr = /^(?:[^#&lt;]*(&lt;[\w\W]+&gt;)[^&gt;]*$|#([\w\-]*)$)/,</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//  匹配单标记</span><br><span class="line"></span><br><span class="line"> rsingleTag = /^&lt;(\w+)\s*\/?&gt;(?:&lt;\/\1&gt;)?$/,</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/28/jQuery源码学习（1）-总体架构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -806,212 +1000,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/19/react-生命周期/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/react-生命周期/" itemprop="url">react-生命周期</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T00:00:00+08:00">
-                2017-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="对于在哪里进行setState-的操作请看下面这个例子"><a href="#对于在哪里进行setState-的操作请看下面这个例子" class="headerlink" title="对于在哪里进行setState()的操作请看下面这个例子"></a>对于在哪里进行setState()的操作请看下面这个例子</h1><p>import React,{Component , PropTypes} from ‘react’<br>import ‘../css/Life.scss’;</p>
-<p>class Life extends Component{<br>      constructor (props) {<br>          super(props)<br>          this.state={<br>              count:1,<br>              name:’点我’,<br>              num:0<br>          }<br>          //有警告，页面能刷新正常运行，但是不会加1 此构造函数只执行一次<br>          // this.setState(prevState =&gt;({count:prevState.count+1}))<br>          console.log(“constructor”,this.props,0);<br>          this.handleEvent = this.handleEvent.bind(this)<br>      }</p>
-<pre><code>handleEvent () {
-
-    this.setState(prevState =&gt; ({count:prevState.count+1}))
-}
-
-static propsTyps = {
-    age:PropTypes.number,
-    sex:PropTypes.string,
-}
-
- static defaultProps = {
-
- }
-
- componentWillMount () {
-     //执行这个函数，然后加1，然后渲染 此构造函数只执行一次
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-    console.log(&quot;componentWillMount,&quot;,111);
- }
-
- render(){
-     console.log(&quot;render,&quot;,2222);
-     //有警告，且直接运行不了 Maximum call stack size exceeded
-     //  this.setState(prevState =&gt;({count:prevState.count+1}))
-    return (&lt;div&gt;
-          &lt;p&gt;计数:{this.state.count}&lt;/p&gt;
-          &lt;p&gt;年龄:{this.props.age}&lt;/p&gt;
-          &lt;button onClick={this.handleEvent}&gt;{this.state.name}&lt;/button&gt;
-    &lt;/div&gt;)
- }
-
- componentDidMount () {
-      //渲染后，执行这个函数，然后又加1，再次渲染---此钩子只执行一次
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(&quot;componentDidMount,&quot;,3333);
- }
-
- componentWillReceiveProps (nextProps) {
-     //这个主要用于父组件改变了传入的props，才进行触发事件
-     //这个也可以支持设置状态
-     //  this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(&quot;componentWillReceiveProps&quot;,nextProps,4444);
- }
-
- shouldComponentUpdate(nextProps,nextState) {
-     //他主要作用就是是否更新组件，true表示更新，false表示不更新
-     //这个也可以支持设置状态，但是书上说不可以，也许有别的原因
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-     // debugger;
-     console.log(nextState,nextProps,55555);
-     return true;
- }
-
- componentWillUpdate(nextProps,nextState) {
-      //放在这里容易造成死循环
-   // this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(nextState,nextProps,66666);
- }
-
- componentDidUpdate() {
-     //放在这里容易造成死循环,最好加判断
-     if(this.state.count&lt;20){
-         this.setState(prevState =&gt;({count:prevState.count+1}))
-     }
-
-     console.log(&apos;componentDidUpdate&apos;,77777);
- }
-</code></pre><p>}</p>
-<p>export default Life;</p>
-<blockquote>
-<p>上面是子组件 </p>
-</blockquote>
-<blockquote>
-<p>我是父组件</p>
-</blockquote>
-<p>import React, { Component } from ‘react’;<br>import logo from ‘./logo.svg’;<br>import ‘./css/App.scss’;<br>import Life from ‘./components/Life’</p>
-<p>class App extends Component {<br>    constructor(props) {<br>        super(props)<br>        this.state={<br>            age:18<br>        }<br>    }</p>
-<p>  render() {<br>    return (<br>      <div classname="App"><br>        <div classname="App-header"><br>          <img src="{logo}" classname="App-logo" alt="logo"><br>          <h2>Welcome to React</h2><br>        </div><br>        <div><br>            <life age="{this.state.age}" sex="男"><br>            <input type="text" value="{this.state.age}" onchange="{(e)=">{this.setState({age:e.target.value})}}/&gt;<br>        </life></div><br>      </div><br>    );<br>  }<br>}</p>
-<p>export default App;</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
-<p>现在学的比较浅，组件有 construct componentWillMount() 以及componentDidMount在初始化过程中只执行一次,其他钩子函数在数据状态改变时会执行。</p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/19/react-用sass编写css/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1187,7 +1175,7 @@ static propsTyps = {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1209,7 +1197,7 @@ static propsTyps = {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

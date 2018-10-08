@@ -321,6 +321,139 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/02/11/async与await体验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/11/async与await体验/" itemprop="url">async与await体验</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-11T00:00:00+08:00">
+                2017-02-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="async与await体验"><a href="#async与await体验" class="headerlink" title="async与await体验"></a>async与await体验</h1><blockquote>
+<p>第一次用es7的语法，在实际的开发中可能用的比较少，但是作为前端这也算是一个趋势，先留个坑，以后慢慢学习</p>
+</blockquote>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><blockquote>
+<p>async是一个异步的函数，通过它进行定义</p>
+</blockquote>
+<blockquote>
+<p>await只能用在async函数的里面，它的出现必须要等到一个promise返回结构才能继续执行</p>
+</blockquote>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123;</span><br><span class="line">			  resolve(&quot;ok&quot;);</span><br><span class="line">		&#125;,time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const test = async() =&gt; &#123;</span><br><span class="line">       console.log(&quot;start&quot;);</span><br><span class="line">       const ok = await sleep(3000);</span><br><span class="line"></span><br><span class="line">       console.log(ok);</span><br><span class="line"></span><br><span class="line">       console.log(&quot;end&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();  //start   ok  end</span><br></pre></td></tr></table></figure>
+<h2 id="捕捉错误"><a href="#捕捉错误" class="headerlink" title="捕捉错误"></a>捕捉错误</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt;&#123;</span><br><span class="line">		setTimeout(() =&gt; reject(&quot;你错了&quot;),time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const run = async() =&gt; &#123;</span><br><span class="line"></span><br><span class="line">	 try&#123;</span><br><span class="line"></span><br><span class="line">	 	console.log(&apos;start&apos;);</span><br><span class="line">	 	await sleep(3000);</span><br><span class="line">	 	console.log(&apos;end&apos;);</span><br><span class="line"></span><br><span class="line">	 &#125;catch(err)&#123;</span><br><span class="line">		console.log(err);</span><br><span class="line">	 &#125;finally&#123;</span><br><span class="line">	 	console.log(&apos;over&apos;);</span><br><span class="line">	 &#125;</span><br><span class="line">	 console.log(&apos;over1&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">run();//	start  你错了  over  over1</span><br></pre></td></tr></table></figure>
+<h2 id="循环多个await-它类似于同步代码-不用担心需要闭包才能解决问题"><a href="#循环多个await-它类似于同步代码-不用担心需要闭包才能解决问题" class="headerlink" title="循环多个await 它类似于同步代码 不用担心需要闭包才能解决问题"></a>循环多个await 它类似于同步代码 不用担心需要闭包才能解决问题</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">const sleep = (time) =&gt; new Promise((resolve,reject) =&gt;&#123;</span><br><span class="line">		setTimeout(() =&gt; resolve(true),time)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var run = async() =&gt; &#123;</span><br><span class="line">		for (let i = 0;i&lt;3;i++) &#123;</span><br><span class="line">			  console.log(`当前是第$&#123;i&#125;次等待..`);</span><br><span class="line">			  await sleep(1000);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">run();//当前是第0次等待..	当前是第1次等待..	当前是第2次等待..</span><br></pre></td></tr></table></figure>
+<h2 id="async返回的是什么-返回的是promise对象！！！！"><a href="#async返回的是什么-返回的是promise对象！！！！" class="headerlink" title="async返回的是什么  返回的是promise对象！！！！"></a>async返回的是什么  返回的是promise对象！！！！</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const add =async() =&gt; &#123;</span><br><span class="line">		return &quot;hello world&quot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(add()); //Promise &#123;[[PromiseStatus]]: &quot;resolved&quot;, [[PromiseValue]]: &quot;hello world&quot;&#125;</span><br><span class="line"></span><br><span class="line">add().then((value)=&gt;console.log(value));  //hello world</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/02/11/promise的用法深入3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1181,175 +1314,6 @@ p2
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/10/es6学习-数组的扩展/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/10/es6学习-数组的扩展/" itemprop="url">es6学习--数组的扩展</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-10T00:00:00+08:00">
-                2016-11-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Array-from"><a href="#Array-from" class="headerlink" title="Array.from()"></a>Array.from()</h1><pre><code>Array.from方法用于将两类对象转为真正的数组：类似数组的对象（array-like object）和可遍历（iterable）的对象（包括ES6新增的数据结构Set和Map）。
-    必须具有length属性
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">	let arrayLike = &#123;</span><br><span class="line">    &apos;0&apos;: &apos;a&apos;,</span><br><span class="line">    &apos;1&apos;: &apos;b&apos;,</span><br><span class="line">    &apos;2&apos;: &apos;c&apos;,</span><br><span class="line">    length: 3</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">// ES5的写法</span><br><span class="line">var arr1 = [].slice.call(arrayLike); // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br><span class="line"></span><br><span class="line">// ES6的写法</span><br><span class="line">let arr2 = Array.from(arrayLike); // [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
-<pre><code>常见的类似数组的对象是DOM操作返回的NodeList集合，以及函数内部的arguments对象。Array.from都可以将它们转为真正的数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// NodeList对象</span><br><span class="line">let ps = document.querySelectorAll(&apos;p&apos;);</span><br><span class="line">Array.from(ps).forEach(function (p) &#123;</span><br><span class="line">  console.log(p);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// arguments对象</span><br><span class="line">function foo() &#123;</span><br><span class="line">  var args = Array.from(arguments);</span><br><span class="line">  // ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<pre><code>只要是部署了Iterator接口的数据结构，Array.from都能将其转为数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.from(&apos;hello&apos;)</span><br><span class="line">	// [&apos;h&apos;, &apos;e&apos;, &apos;l&apos;, &apos;l&apos;, &apos;o&apos;]</span><br><span class="line">	</span><br><span class="line">	let namesSet = new Set([&apos;a&apos;, &apos;b&apos;])</span><br><span class="line">	Array.from(namesSet) // [&apos;a&apos;, &apos;b&apos;]</span><br></pre></td></tr></table></figure>
-<pre><code>扩展运算符（...）也可以将某些数据结构转为数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// arguments对象</span><br><span class="line">function foo() &#123;</span><br><span class="line">  var args = [...arguments];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// NodeList对象</span><br><span class="line">[...document.querySelectorAll(&apos;div&apos;)]</span><br><span class="line"></span><br><span class="line">Array.from(&#123; length: 3 &#125;);</span><br><span class="line">// [ undefined, undefined, undefined ]</span><br></pre></td></tr></table></figure>
-<pre><code>Array.from还可以接受第二个参数，作用类似于数组的map方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Array.from(arrayLike, x =&gt; x * x);</span><br><span class="line">// 等同于</span><br><span class="line">Array.from(arrayLike).map(x =&gt; x * x);</span><br><span class="line"></span><br><span class="line">Array.from([1, 2, 3], (x) =&gt; x * x)</span><br><span class="line">// [1, 4, 9]</span><br></pre></td></tr></table></figure>
-<p>#Array.of()<br>    Array.of方法用于将一组值，转换为数组。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Array.of(3, 11, 8) // [3,11,8]</span><br><span class="line">Array.of(3) // [3]</span><br><span class="line">Array.of(3).length // 1</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Array.of() // []</span><br><span class="line">Array.of(undefined) // [undefined]</span><br><span class="line">Array.of(1) // [1]</span><br><span class="line">Array.of(1, 2) // [1, 2]</span><br></pre></td></tr></table></figure>
-<pre><code>Array.of方法可以用下面的代码模拟实现。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function ArrayOf()&#123;</span><br><span class="line">  return [].slice.call(arguments);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="数组实例的copyWithin"><a href="#数组实例的copyWithin" class="headerlink" title="数组实例的copyWithin()"></a>数组实例的copyWithin()</h1><pre><code>数组实例的copyWithin方法，在当前数组内部，将指定位置的成员复制到其他位置（会覆盖原有成员），然后返回当前数组。也就是说，使用这个方法，会修改当前数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Array.prototype.copyWithin(target, start = 0, end = this.length)</span><br><span class="line">它接受三个参数。</span><br><span class="line">			target（必需）：从该位置开始替换数据。</span><br><span class="line">			start（可选）：从该位置开始读取数据，默认为0。如果为负值，表示倒数。</span><br><span class="line">			end（可选）：到该位置前停止读取数据，默认等于数组长度。如果为负值，表示倒数。</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3)</span><br><span class="line">// [4, 5, 3, 4, 5]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 将3号位复制到0号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// -2相当于3号位，-1相当于4号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, -2, -1)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 将3号位复制到0号位</span><br><span class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3)</span><br><span class="line">// &#123;0: 1, 3: 1, length: 5&#125;</span><br><span class="line"></span><br><span class="line">// 将2号位到数组结束，复制到0号位</span><br><span class="line">var i32a = new Int32Array([1, 2, 3, 4, 5]);</span><br><span class="line">i32a.copyWithin(0, 2);</span><br><span class="line">// Int32Array [3, 4, 5, 4, 5]</span><br><span class="line"></span><br><span class="line">// 对于没有部署TypedArray的copyWithin方法的平台</span><br><span class="line">// 需要采用下面的写法</span><br><span class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</span><br><span class="line">// Int32Array [4, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">// 将3号位复制到0号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, 3, 4)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// -2相当于3号位，-1相当于4号位</span><br><span class="line">[1, 2, 3, 4, 5].copyWithin(0, -2, -1)</span><br><span class="line">// [4, 2, 3, 4, 5]</span><br><span class="line"></span><br><span class="line">// 将3号位复制到0号位</span><br><span class="line">[].copyWithin.call(&#123;length: 5, 3: 1&#125;, 0, 3)</span><br><span class="line">// &#123;0: 1, 3: 1, length: 5&#125;</span><br><span class="line"></span><br><span class="line">// 将2号位到数组结束，复制到0号位</span><br><span class="line">var i32a = new Int32Array([1, 2, 3, 4, 5]);</span><br><span class="line">i32a.copyWithin(0, 2);</span><br><span class="line">// Int32Array [3, 4, 5, 4, 5]</span><br><span class="line"></span><br><span class="line">// 对于没有部署TypedArray的copyWithin方法的平台</span><br><span class="line">// 需要采用下面的写法</span><br><span class="line">[].copyWithin.call(new Int32Array([1, 2, 3, 4, 5]), 0, 3, 4);</span><br><span class="line">// Int32Array [4, 2, 3, 4, 5]</span><br></pre></td></tr></table></figure>
-<h1 id="数组实例的find-和findIndex"><a href="#数组实例的find-和findIndex" class="headerlink" title="数组实例的find()和findIndex()"></a>数组实例的find()和findIndex()</h1><pre><code>数组实例的find方法，用于找出第一个符合条件的数组成员。它的参数是一个回调函数，所有数组成员依次执行该回调函数，直到找出第一个返回值为true的成员，然后返回该成员。如果没有符合条件的成员，则返回undefined
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 4, -5, 10].find((n) =&gt; n &lt; 0)//-5</span><br></pre></td></tr></table></figure>
-<pre><code>find方法的回调函数可以接受三个参数，依次为当前的值、当前的位置和原数组。
-findIndex方法的用法与find方法非常类似返回第一个符合条件的数组成员的位置，如果所有成员都不符合条件，则返回-1。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 5, 10, 15].findIndex(function(value, index, arr) &#123;</span><br><span class="line">  return value &gt; 9;</span><br><span class="line">&#125;) // 2</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[NaN].indexOf(NaN)</span><br><span class="line">// -1</span><br><span class="line"></span><br><span class="line">[NaN].findIndex(y =&gt; Object.is(NaN, y))</span><br><span class="line">// 0</span><br></pre></td></tr></table></figure>
-<h1 id="数组实例的fill"><a href="#数组实例的fill" class="headerlink" title="数组实例的fill()"></a>数组实例的fill()</h1><pre><code>fill方法使用给定值，填充一个数组。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[&apos;a&apos;, &apos;b&apos;, &apos;c&apos;].fill(7)</span><br><span class="line">	// [7, 7, 7]</span><br><span class="line">	</span><br><span class="line">	new Array(3).fill(7)</span><br><span class="line">	// [7, 7, 7]</span><br></pre></td></tr></table></figure>
-<h1 id="数组实例的entries-，keys-和values"><a href="#数组实例的entries-，keys-和values" class="headerlink" title="数组实例的entries()，keys()和values()"></a>数组实例的entries()，keys()和values()</h1><pre><code>ES6提供三个新的方法——entries()，keys()和values()——用于遍历数组。它们都返回一个遍历器对象（详见《Iterator》一章），可以用for...of循环进行遍历，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">for (let index of [&apos;a&apos;, &apos;b&apos;].keys()) &#123;</span><br><span class="line">  console.log(index);</span><br><span class="line">&#125;</span><br><span class="line">// 0</span><br><span class="line">// 1</span><br><span class="line"></span><br><span class="line">for (let elem of [&apos;a&apos;, &apos;b&apos;].values()) &#123;</span><br><span class="line">  console.log(elem);</span><br><span class="line">&#125;</span><br><span class="line">// &apos;a&apos;</span><br><span class="line">// &apos;b&apos;</span><br><span class="line"></span><br><span class="line">for (let [index, elem] of [&apos;a&apos;, &apos;b&apos;].entries()) &#123;</span><br><span class="line">  console.log(index, elem);</span><br><span class="line">&#125;</span><br><span class="line">// 0 &quot;a&quot;</span><br><span class="line">// 1 &quot;b&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let letter = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];</span><br><span class="line">let entries = letter.entries();</span><br><span class="line">console.log(entries.next().value); // [0, &apos;a&apos;]</span><br><span class="line">console.log(entries.next().value); // [1, &apos;b&apos;]</span><br><span class="line">console.log(entries.next().value); // [2, &apos;c&apos;]</span><br></pre></td></tr></table></figure>
-<h1 id="数组实例的includes"><a href="#数组实例的includes" class="headerlink" title="数组实例的includes()"></a>数组实例的includes()</h1><pre><code>Array.prototype.includes方法返回一个布尔值，表示某个数组是否包含给定的值，与字符串的includes方法类似。该方法属于ES7，但Babel转码器已经支持。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3].includes(2);     // true</span><br><span class="line">[1, 2, 3].includes(4);     // false</span><br><span class="line">[1, 2, NaN].includes(NaN); // true</span><br></pre></td></tr></table></figure>
-<pre><code>indexOf方法有两个缺点，一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。二是，它内部使用严格相当运算符（===）进行判断，这会导致对NaN的误判。
-</code></pre><h1 id="数组的空位"><a href="#数组的空位" class="headerlink" title="数组的空位"></a>数组的空位</h1><pre><code>数组的空位指，数组的某一个位置没有任何值。比如，Array构造函数返回的数组都是空位
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// forEach方法</span><br><span class="line">[,&apos;a&apos;].forEach((x,i) =&gt; console.log(i)); // 1</span><br><span class="line"></span><br><span class="line">// filter方法</span><br><span class="line">[&apos;a&apos;,,&apos;b&apos;].filter(x =&gt; true) // [&apos;a&apos;,&apos;b&apos;]</span><br><span class="line"></span><br><span class="line">// every方法</span><br><span class="line">[,&apos;a&apos;].every(x =&gt; x===&apos;a&apos;) // true</span><br><span class="line"></span><br><span class="line">// some方法</span><br><span class="line">[,&apos;a&apos;].some(x =&gt; x !== &apos;a&apos;) // false</span><br><span class="line"></span><br><span class="line">// map方法</span><br><span class="line">[,&apos;a&apos;].map(x =&gt; 1) // [,1]</span><br><span class="line"></span><br><span class="line">// join方法</span><br><span class="line">[,&apos;a&apos;,undefined,null].join(&apos;#&apos;) // &quot;#a##&quot;</span><br><span class="line"></span><br><span class="line">// toString方法</span><br><span class="line">[,&apos;a&apos;,undefined,null].toString() // &quot;,a,,&quot;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">forEach(), filter(), every() 和some()都会跳过空位。</span><br><span class="line">map()会跳过空位，但会保留这个值</span><br><span class="line">join()和toString()会将空位视为undefined，而undefined和null会被处理成空字符串。</span><br></pre></td></tr></table></figure>
-<pre><code>Array.from方法会将数组的空位，转为undefined，也就是说，这个方法不会忽略空位
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Array.from([&apos;a&apos;,,&apos;b&apos;])</span><br><span class="line">// [ &quot;a&quot;, undefined, &quot;b&quot; ]</span><br></pre></td></tr></table></figure>
-<pre><code>扩展运算符（...）也会将空位转为undefined。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[...[&apos;a&apos;,,&apos;b&apos;]]</span><br><span class="line">// [ &quot;a&quot;, undefined, &quot;b&quot; ]</span><br></pre></td></tr></table></figure>
-<pre><code>copyWithin()会连空位一起拷贝。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[,&apos;a&apos;,&apos;b&apos;,,].copyWithin(2,0) // [,&quot;a&quot;,,&quot;a&quot;]</span><br></pre></td></tr></table></figure>
-<pre><code>fill()会将空位视为正常的数组位置。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">new Array(3).fill(&apos;a&apos;) // [&quot;a&quot;,&quot;a&quot;,&quot;a&quot;]</span><br></pre></td></tr></table></figure>
-<pre><code>for...of循环也会遍历空位。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let arr = [, ,];</span><br><span class="line">for (let i of arr) &#123;</span><br><span class="line">  console.log(1);</span><br><span class="line">&#125;</span><br><span class="line">// 1</span><br><span class="line">// 1</span><br></pre></td></tr></table></figure>
-<pre><code>entries()、keys()、values()、find()和findIndex()会将空位处理成undefined。
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// entries()</span><br><span class="line">[...[,&apos;a&apos;].entries()] // [[0,undefined], [1,&quot;a&quot;]]</span><br><span class="line"></span><br><span class="line">// keys()</span><br><span class="line">[...[,&apos;a&apos;].keys()] // [0,1]</span><br><span class="line"></span><br><span class="line">// values()</span><br><span class="line">[...[,&apos;a&apos;].values()] // [undefined,&quot;a&quot;]</span><br><span class="line"></span><br><span class="line">// find()</span><br><span class="line">[,&apos;a&apos;].find(x =&gt; true) // undefined</span><br><span class="line"></span><br><span class="line">// findIndex()</span><br><span class="line">[,&apos;a&apos;].findIndex(x =&gt; true) // 0</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/10/es6学习-字符串的扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1569,7 +1533,7 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">131</span>
+                  <span class="site-state-item-count">132</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1591,7 +1555,7 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">36</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

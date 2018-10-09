@@ -321,6 +321,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/10/05/mysql（php操作）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/05/mysql（php操作）/" itemprop="url">mysql（php操作）</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-05T00:00:00+08:00">
+                2016-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="警告："><a href="#警告：" class="headerlink" title="警告："></a>警告：</h1><pre><code>装mysql和卸载mysql要小心谨慎，心塞啊
+</code></pre><h1 id="mysql基本概念"><a href="#mysql基本概念" class="headerlink" title="mysql基本概念"></a>mysql基本概念</h1><h2 id="什么是数据库？"><a href="#什么是数据库？" class="headerlink" title="什么是数据库？"></a>什么是数据库？</h2><pre><code>数据库（Database）是按照数据结构来组织、存储和管理数据的仓库，每个数据库都有一个或多个不同的API用于创建，访问，管理，搜索和复制所保存的数据。我们也可以将数据存储在文件中，但是在文件中读写数据速度相对较慢。所以，现在我们使用关系型数据库管理系统（RDBMS）来存储和管理的大数据量。所谓的关系型数据库，是建立在关系模型基础上的数据库，借助于集合代数等数学概念和方法来处理数据库中的数据。
+</code></pre><h2 id="RDBMS即关系数据库管理系统-Relational-Database-Management-System-的特点"><a href="#RDBMS即关系数据库管理系统-Relational-Database-Management-System-的特点" class="headerlink" title="RDBMS即关系数据库管理系统(Relational Database Management System)的特点"></a>RDBMS即关系数据库管理系统(Relational Database Management System)的特点</h2><ul>
+<li>数据以表格的形式出现</li>
+<li>每行为各种记录名称</li>
+<li>每列为记录名称所对应的数据域</li>
+<li>许多的行和列组成一张表单</li>
+<li><p>若干的表单组成database</p>
+<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p>  数据库: 数据库是一些关联表的集合。.<br> 数据表: 表是数据的矩阵。在一个数据库中的表看起来像一个简单的电子表格。<br> 列: 一列(数据元素) 包含了相同的数据, 例如邮政编码的数据。<br> 行：一行（=元组，或记录）是一组相关的数据，例如一条用户订阅的数据。<br> 冗余：存储两倍数据，冗余可以使系统速度更快。<br> 主键：主键是唯一的。一个数据表中只能包含一个主键。你可以使用主键来查询数据。<br> 外键：外键用于关联两个表。<br> 复合键：复合键（组合键）将多个列作为一个索引键，一般用于复合索引。<br> 索引：使用索引可快速访问数据库表中的特定信息。索引是对数据库表中一列或多列的值进行排序的一种结构。类似于书籍的目录。<br> 参照完整性: 参照的完整性要求关系中不允许引用不存在的实体。与实体完整性是关系模型必须满足的完整性约束条件，目的是保证数据的一致性。</p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.mysql.com/downloads/" target="_blank" rel="noopener">https://www.mysql.com/downloads/</a></p>
+<h1 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h1><p> 小心就好，注意选择utf-8，用户名和密码记住，path要添加到系统上去</p>
+<h1 id="MySQL数据库过程中常用的命令"><a href="#MySQL数据库过程中常用的命令" class="headerlink" title="MySQL数据库过程中常用的命令"></a>MySQL数据库过程中常用的命令</h1><p>USE 数据库名</p>
+<p> 选择要操作的MySQL数据库，使用该命令后所有MySQL命令都只针对该数据库。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use ly;</span><br><span class="line">Database changed</span><br></pre></td></tr></table></figure>
+<p>show databases  数据库名</p>
+<pre><code>列出 MySQL 数据库管理系统的数据库列表
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW DATABASES;</span><br><span class="line">+--------------------+</span><br><span class="line">| Database           |</span><br><span class="line">+--------------------+</span><br><span class="line">| information_schema |</span><br><span class="line">| RUNOOB             |</span><br><span class="line">| cdcol              |</span><br><span class="line">| mysql              |</span><br><span class="line">| ly                 |</span><br><span class="line">|           		 |</span><br><span class="line">+--------------------+</span><br></pre></td></tr></table></figure>
+<p>SHOW TABLES</p>
+<pre><code>显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use RUNOOB;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; SHOW TABLES;</span><br><span class="line">+------------------+</span><br><span class="line">| Tables_in_runoob |</span><br><span class="line">+------------------+</span><br><span class="line">| employee_tbl     |</span><br><span class="line">| runoob_tbl       |</span><br><span class="line">| tcount_tbl       |</span><br><span class="line">+------------------+</span><br></pre></td></tr></table></figure>
+<p>SHOW COLUMNS FROM 数据表</p>
+<pre><code>显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW COLUMNS FROM ly_table;</span><br></pre></td></tr></table></figure>
+<p>SHOW INDEX FROM 数据表</p>
+<pre><code>显示数据表的详细索引信息，包括PRIMARY KEY（主键）
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW INDEX FROM ly_table;</span><br></pre></td></tr></table></figure>
+<p>SHOW TABLE STATUS LIKE 数据表\G</p>
+<pre><code>该命令将输出MySQL数据库管理系统的性能及统计信息
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; SHOW TABLE STATUS  FROM RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息</span><br><span class="line">mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE &apos;runoob%&apos;;     # 表名以runoob开头的表的信息</span><br><span class="line">mysql&gt; SHOW TABLE STATUS from RUNOOB LIKE &apos;runoob%&apos;\G;   # 加上 \G，查询结果按列打印</span><br></pre></td></tr></table></figure>
+<h1 id="php操作mysql"><a href="#php操作mysql" class="headerlink" title="php操作mysql"></a>php操作mysql</h1><h2 id="链接数据库"><a href="#链接数据库" class="headerlink" title="链接数据库"></a>链接数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//连接数据库</span><br><span class="line">	 <span class="variable">$conn</span>=mysql_connect(<span class="string">'localhost'</span>,<span class="string">'root'</span>,<span class="string">'123456'</span>);</span><br><span class="line">	/*</span><br><span class="line">	 * 第一参数：地址 	localhost代表本地</span><br><span class="line">	 * 第二参数:用户名 	默认root</span><br><span class="line">	 *第三个参数：密码	123456</span><br><span class="line">	 *  */</span><br><span class="line">	 //判断是否链接</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$conn</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'不能链接呀：'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 //关闭数据库链接</span><br><span class="line">	 mysql_close(<span class="variable">$conn</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="操作数据库"><a href="#操作数据库" class="headerlink" title="操作数据库"></a>操作数据库</h2><h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>1.mysql下创建数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; create database ly ;</span><br><span class="line">Query OK, 1 row affected (0.00 sec)</span><br></pre></td></tr></table></figure>
+<p>2.php创建数据库名，删除，选择</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//设置字符集</span><br><span class="line">header(<span class="string">'Content-Type:text/html;charset="utf-8"'</span>);</span><br><span class="line"> //创建数据库  mysql下：<span class="string">'create database 数据库名</span></span><br><span class="line"><span class="string">	 $sql='</span>create database ly<span class="string">';</span></span><br><span class="line"><span class="string">	 $retval=mysql_query($sql,$conn);//1.sql语句2.链接对象</span></span><br><span class="line"><span class="string">	 if(!$retval)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>创建失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br><span class="line"><span class="string">	 </span></span><br><span class="line"><span class="string">	 //选择数据库  mysql下：use 数据库名</span></span><br><span class="line"><span class="string">	 $flag=mysql_select_db("ly",$conn);//1.选择的数据库2.连接对象</span></span><br><span class="line"><span class="string">	 if(!$flag)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>选择失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br><span class="line"><span class="string">	 </span></span><br><span class="line"><span class="string">	//删除数据库 mysql下：drop database 数据库名</span></span><br><span class="line"><span class="string">	$sql='</span>drop database ly<span class="string">';</span></span><br><span class="line"><span class="string">	$retval=mysql_query($sql,$conn);</span></span><br><span class="line"><span class="string">	if(!$retval)&#123;</span></span><br><span class="line"><span class="string">	 	die('</span>删除数据库失败<span class="string">'.mysql_error());</span></span><br><span class="line"><span class="string">	 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="MySQL-数据类型"><a href="#MySQL-数据类型" class="headerlink" title="MySQL 数据类型"></a>MySQL 数据类型</h2><h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p><img src="http://img.blog.csdn.net/20170307163644473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""></p>
+<h3 id="日期和时间类型"><a href="#日期和时间类型" class="headerlink" title="日期和时间类型"></a>日期和时间类型</h3><p><img src="http://img.blog.csdn.net/20170307163801852?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><p><img src="http://img.blog.csdn.net/20170307163853868?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMjkxMDQ5OTk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="操作数据表"><a href="#操作数据表" class="headerlink" title="操作数据表"></a>操作数据表</h2><h3 id="mysql语法"><a href="#mysql语法" class="headerlink" title="mysql语法"></a>mysql语法</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; use ly;</span><br><span class="line">Database changed</span><br><span class="line">mysql&gt; CREATE TABLE w3cschool_tbl(</span><br><span class="line">   -&gt; ly_id INT NOT NULL AUTO_INCREMENT,</span><br><span class="line">   -&gt; ly_title VARCHAR(100) NOT NULL,</span><br><span class="line">   -&gt; ly_author VARCHAR(40) NOT NULL,</span><br><span class="line">   -&gt; submission_date DATE,</span><br><span class="line">   -&gt; PRIMARY KEY ( ly_id )</span><br><span class="line">   -&gt; );</span><br><span class="line">Query OK, 0 rows affected (0.16 sec)</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//创建表结构</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"create table yueguang("</span>.</span><br><span class="line">	 <span class="string">"yg_id tinyint not null auto_increment, "</span>.</span><br><span class="line">	 <span class="string">"yg_title varchar(100) not null, "</span>.</span><br><span class="line">	 <span class="string">"yg_atuhor varchar(40) not null, "</span>.</span><br><span class="line">	 <span class="string">"sub_date DATE, "</span>.</span><br><span class="line">	 <span class="string">"primary key (yg_id));"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'创建表失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//删除表</span><br><span class="line">/*<span class="variable">$sql</span>=<span class="string">'drop table yueguang'</span>;</span><br><span class="line"><span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line"><span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line"> 	die(<span class="string">'删除数据表失败'</span>.mysql_error());</span><br><span class="line"> &#125;*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">mysql_query(<span class="string">'SET NAMES UTF8'</span>);//设置字符集</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">"create table yueguang("</span>.</span><br><span class="line">	 <span class="string">"yg_id tinyint not null auto_increment, "</span>.</span><br><span class="line">	 <span class="string">"yg_title varchar(100) not null, "</span>.</span><br><span class="line">	 <span class="string">"yg_atuhor varchar(40) not null, "</span>.</span><br><span class="line">	 <span class="string">"sub_date DATE, "</span>.</span><br><span class="line">	 <span class="string">"primary key (yg_id));"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据库失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">'drop table yueguang'</span>;</span><br><span class="line">	<span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	<span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据表失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line"><span class="variable">$sql</span>=<span class="string">"insert into ly.yueguang(yg_title,yg_atuhor,sub_date) "</span>.</span><br><span class="line">	 <span class="string">"values('从你的全世界路过','张嘉佳',NOW());"</span>;</span><br><span class="line">	 <span class="variable">$retval</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$retval</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'插入失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"> //查询数据</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang"</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 //mysql_fetch_array: 从结果集中取得一行作为关联数组，或数字数组，或二者兼有</span><br><span class="line">	 //1.结果集 2.可选参数</span><br><span class="line">	 </span><br><span class="line">	 //MYSQL_NUM </span><br><span class="line">	 //print_r(mysql_fetch_array(<span class="variable">$result</span>,MYSQL_NUM));</span><br><span class="line">	 //显示数字Array ( [0] =&gt; 1 [1] =&gt; 挪威森林 [2] =&gt; 村上春树 [3] =&gt; 2017-03-07 )</span><br><span class="line">	 //MYSQL_ASSOC</span><br><span class="line">	 //print_r(mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC));</span><br><span class="line">	 //显示属性：Array ( [yg_id] =&gt; 1 [yg_title] =&gt; 挪威森林 [yg_atuhor] =&gt; 村上春树 [sub_date] =&gt; 2017-03-07 )</span><br><span class="line">	 </span><br><span class="line">	 //MYSQL_BOTH  默认</span><br><span class="line">	//print_r(mysql_fetch_array(<span class="variable">$result</span>));</span><br><span class="line">	 //Array ( [0] =&gt; 1 [yg_id] =&gt; 1 [1] =&gt; 挪威森林 [yg_title] =&gt; 挪威森林 [2] =&gt; 村上春树 [yg_atuhor] =&gt; 村上春树 [3] =&gt; 2017-03-07 [sub_date] =&gt; 2017-03-07 )</span><br><span class="line">	 </span><br><span class="line">	 <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">/*	我的id1:挪威森林:村上春树:2017-03-07 </span><br><span class="line">	我的id2:我的太阳:我的:2017-03-07 </span><br><span class="line">	我的id3:从你的全世界路过:张嘉佳:2017-03-07 */</span><br></pre></td></tr></table></figure>
+<h2 id="各种查询方法"><a href="#各种查询方法" class="headerlink" title="各种查询方法"></a>各种查询方法</h2><h3 id="MySQL-where-子句"><a href="#MySQL-where-子句" class="headerlink" title="MySQL where 子句"></a>MySQL where 子句</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//<span class="built_in">where</span></span><br><span class="line">	<span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	//我的id2:我的太阳:我的:2017-03-07</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">//updata更新数据</span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"update ly.yueguang set yg_title='我要太阳'"</span>.</span><br><span class="line">	 <span class="string">"where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'更新失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line">	 <span class="variable">$sql</span>=<span class="string">"select yg_id,yg_title,yg_atuhor,sub_date "</span>.</span><br><span class="line">	 <span class="string">"from ly.yueguang where yg_id=2 "</span>;</span><br><span class="line">	 <span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查询失败'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//删除数据项</span><br><span class="line">	<span class="variable">$sql</span>=<span class="string">"delete from ly.yueguang where yg_id=2"</span>;</span><br><span class="line">	<span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'删除数据项'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//like匹配</span><br><span class="line"> <span class="variable">$sql</span>=<span class="string">"select * from ly.yueguang where yg_atuhor like '%村%'"</span>;</span><br><span class="line"><span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line"> <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line"> 	die(<span class="string">'查找数据项'</span>.mysql_error());</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line"> 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> //我的id1:挪威森林:村上春树:2017-03-07</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">//排序</span><br><span class="line">	  <span class="variable">$sql</span>=<span class="string">"select * from ly.yueguang order by yg_id desc"</span>;</span><br><span class="line">	<span class="variable">$result</span>=mysql_query(<span class="variable">$sql</span>,<span class="variable">$conn</span>);</span><br><span class="line">	 <span class="keyword">if</span>(!<span class="variable">$result</span>)&#123;</span><br><span class="line">	 	die(<span class="string">'查找数据项'</span>.mysql_error());</span><br><span class="line">	 &#125;</span><br><span class="line">	 <span class="keyword">while</span>(<span class="variable">$rows</span>=mysql_fetch_array(<span class="variable">$result</span>,MYSQL_ASSOC))&#123;</span><br><span class="line">	 	<span class="built_in">echo</span> <span class="string">"我的id&#123;<span class="variable">$rows</span>['yg_id']&#125;:&#123;<span class="variable">$rows</span>['yg_title']&#125;:&#123;<span class="variable">$rows</span>['yg_atuhor']&#125;:&#123;<span class="variable">$rows</span>['sub_date']&#125; &lt;/br&gt;"</span>;</span><br><span class="line">	 &#125;</span><br><span class="line">	 </span><br><span class="line">	 /*我的id5:你的孤独虽败犹荣:刘同:2017-03-07 </span><br><span class="line">我的id4:摆渡人:佚名:2017-03-07 </span><br><span class="line">我的id3:从你的全世界路过:张嘉佳:2017-03-07 </span><br><span class="line">我的id1:挪威森林:村上春树:2017-03-07 */</span><br><span class="line"></span><br><span class="line">desc降序</span><br><span class="line">asc升序</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>暂时就写到这里，对于登录验证应该是够了，以下是学习的网站<br><a href="http://www.w3cschool.cn/mysql/mysql-group-by-statement.html" target="_blank" rel="noopener">http://www.w3cschool.cn/mysql/mysql-group-by-statement.html</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/09/15/require-js使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -869,356 +1039,6 @@ CMD规范，全称”Common Module Definition”，称为 通用模块加载规�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/08/03/javascipt字符串函数/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/08/03/javascipt字符串函数/" itemprop="url">javascipt字符串函数</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-03T00:00:00+08:00">
-                2016-08-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h1><h2 id="字符方法"><a href="#字符方法" class="headerlink" title="字符方法"></a>字符方法</h2><ul>
-<li>charAt()<ul>
-<li>功能:返回字符串第n个字符</li>
-<li>参数:超出范围-返回空字符串</li>
-<li>返回值:string中第n个字符的实际值</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;assddsddsad&quot;;</span><br><span class="line">console.log(str.charAt(3));//d</span><br><span class="line">console.log(str.charAt(20));//什么没有 空</span><br></pre></td></tr></table></figure>
-<ul>
-<li>charCodeAt()<ul>
-<li>功能:返回字符串中第n个字符的代码</li>
-<li>参数：num —-超出范围返回NaN</li>
-<li>返回值:<ul>
-<li>内容：string中第n个字符的Unicode编码</li>
-<li>范围:0~65535之间的16位整数</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;assddsddsad&quot;;</span><br><span class="line">console.log(str.charCodeAt(3));//100</span><br><span class="line">console.log(str.charCodeAt(20));//NaN</span><br></pre></td></tr></table></figure>
-<ul>
-<li>fromCharCode()<ul>
-<li>功能：根据字符串编码创建字符串</li>
-<li>参数:0个或多个整数 代表字符Unicode编码</li>
-<li>返回值:由指定编码字符组成的新字符串</li>
-<li>特性:静态方法,实为构造函数String()的属性</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(String.fromCharCode(520));//Ȉ</span><br><span class="line">console.log(String.fromCharCode(880));//Ͱ</span><br></pre></td></tr></table></figure>
-<h2 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h2><ul>
-<li>indexOf():从前向后检索字符串,看其是否含有指定子串</li>
-<li>lastIndexOf()：从后向前检索字符串,看其是否含有指定子串</li>
-<li>共性<ul>
-<li>功能:根据指定字符串查找下标位置</li>
-<li>参数<ul>
-<li>必选：将要查询的自字符串</li>
-<li>可选:开始查找的位置下标<ul>
-<li>值为负数:视作0</li>
-<li>省略:从默认位置开始</li>
-<li>超出0-length-1,返回-1</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>返回值<ul>
-<li>找到:子串首次出现的下标</li>
-<li>未找到:返回-1</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;asdalove&quot;;</span><br><span class="line">console.log(str.indexOf(&quot;2&quot;))//-1</span><br><span class="line">console.log(str.indexOf(&quot;2&quot;,8))//-1</span><br><span class="line">console.log(str.indexOf(&quot;a&quot;,2))//3</span><br><span class="line">console.log(str.indexOf(&quot;a&quot;,0))//0</span><br><span class="line">console.log(str.lastIndexOf(&quot;a&quot;,0))//0</span><br><span class="line">console.log(str.lastIndexOf(&quot;a&quot;,2))//0</span><br><span class="line">console.log(str.lastIndexOf(&quot;a&quot;,-100))//0</span><br><span class="line">console.log(str.lastIndexOf(&quot;a&quot;,20))//3 </span><br><span class="line">console.log(str.lastIndexOf(&quot;a&quot;,2))//0</span><br></pre></td></tr></table></figure>
-<h2 id="匹配方法"><a href="#匹配方法" class="headerlink" title="匹配方法"></a>匹配方法</h2><ul>
-<li>match()<ul>
-<li>功能:找到一个或多个正则表达式的匹配</li>
-<li>参数<ul>
-<li>要进行模式匹配的正则表达式</li>
-<li>非正则表达式-将其传递给RegExp()构造函数，并转换为正则表达式的对象</li>
-</ul>
-</li>
-<li>返回值：存放匹配结果的数组<ul>
-<li>有全局标记g<ul>
-<li>执行全局检索<ul>
-<li>找到：返回数组<ul>
-<li>内容:所有匹配的子串</li>
-<li>缺陷:<ul>
-<li>没有派生属性</li>
-<li>不提供与子表达式匹配的文本信息</li>
-<li>不声明每个匹配子串的位置</li>
-</ul>
-</li>
-<li>弥补:使用RegExp.exec()方法</li>
-</ul>
-</li>
-<li>没找到:返回null</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>无全局标记g<ul>
-<li>执行一次匹配<ul>
-<li>找到：返回数组<ul>
-<li>内容<ul>
-<li>第0个元素：匹配文本</li>
-<li>其他元素：与正则表达式匹配的文本</li>
-</ul>
-</li>
-<li>属性<ul>
-<li>input:调用该方法的字符串对象</li>
-<li>index:匹配为本的起始字符在字符串的位置</li>
-<li>lastIndex:匹配为本的末尾字符在字符串的位置</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>没找到:返回null</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;The rain in SPAIN stays mainly in the plain&quot;;</span><br><span class="line">console.log(str.match(/ain/g));//[&quot;ain&quot;, &quot;ain&quot;, &quot;ain&quot;]</span><br><span class="line">console.log(str.match(/ain/gi));//[&quot;ain&quot;, &quot;AIN&quot;, &quot;ain&quot;, &quot;AIN&quot;]   i可以保证不区分大小写</span><br><span class="line">console.log(str.match(/ain/));//[&quot;ain&quot;, index: 5, input: &quot;The rain in SPAIN stays mainly in the plain&quot;]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>search()<ul>
-<li>功能:检索字符串中正则表达式匹配的子串</li>
-<li>参数:与match()相同</li>
-<li>返回值<ul>
-<li>找到:字符串中第一个与正则表达式相匹配的子串的起始位置</li>
-<li>未找到:返回-1</li>
-</ul>
-</li>
-<li>特性:忽略全局标记g和lastIndex()属性</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;The rain in SPAIN stays mainly in the plain&quot;;</span><br><span class="line">console.log(str.search(&quot;in&quot;));//6</span><br></pre></td></tr></table></figure>
-<ul>
-<li>replace()<ul>
-<li>功能:替换一个正则表达式匹配的子串</li>
-<li>参数<ul>
-<li>参数1：需要进行替换正则表达式对象或字符串</li>
-<li>参数2:替换文本或替换函数</li>
-</ul>
-</li>
-<li>特性<ul>
-<li>如果参数1仅为字符串则只进行一次匹配替换，若代替所有的子串则必须制定全局标记g</li>
-<li>如果参数2仅为字符串则可使用特殊字符序列<ul>
-<li>$$==$</li>
-<li>$&amp;==匹配整个模式的子字符串</li>
-<li>$’==匹配的自字符串之前的子字符串</li>
-<li>$`==匹配的子字符串之后的子字符串</li>
-<li>$n==匹配第n个捕获的子字符串 n=0~9</li>
-<li>$nn==匹配第nn个捕获的子字符串 n=01~99</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str=&apos;i love you&apos;;</span><br><span class="line">console.log(str.replace(&apos;i&apos;,&apos;liuyang&apos;));</span><br></pre></td></tr></table></figure>
-<ul>
-<li>split<ul>
-<li>功能:根据指定的分割符将字符串分割成多个子串，并返回成数组</li>
-<li>参数<ul>
-<li>必须:指定的分隔符</li>
-<li>可选：指定数组的长度</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str = &quot;The rain in SPAIN stays mainly in the plain&quot;;</span><br><span class="line">console.log(str.split(&quot; &quot;));[&quot;The&quot;, &quot;rain&quot;, &quot;in&quot;, &quot;SPAIN&quot;, &quot;stays&quot;, &quot;mainly&quot;, &quot;in&quot;, &quot;the&quot;, &quot;plain&quot;]</span><br></pre></td></tr></table></figure>
-<h1 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h1><h2 id="拼接方法"><a href="#拼接方法" class="headerlink" title="拼接方法"></a>拼接方法</h2><ul>
-<li>concat<ul>
-<li>语法:string.concat(value,….)</li>
-<li>功能:链接字符串</li>
-<li>参数:要链接到string上的一个或多个值</li>
-<li>返回值:把所有参数都连接到字符串string上得到的新字符串</li>
-<li>特性：功能与”+”相同原始字符串的实际值并未正真被修改</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str1=&quot;i&quot;;</span><br><span class="line">var str2=&quot; love &quot;;</span><br><span class="line">var str3=&quot;you&quot;;</span><br><span class="line">console.log(str1.concat(str2,str3));//i love you</span><br></pre></td></tr></table></figure>
-<h2 id="截取方法"><a href="#截取方法" class="headerlink" title="截取方法"></a>截取方法</h2><h3 id="根据下标截取子串"><a href="#根据下标截取子串" class="headerlink" title="根据下标截取子串"></a>根据下标截取子串</h3><ul>
-<li>slice()<ul>
-<li>参数1：必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</li>
-<li>参数2：可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;abcdefghijk&quot;;</span><br><span class="line">console.log(str.slice(-7,-5))//4 6  ef</span><br><span class="line">console.log(str);//abcdefghijk</span><br></pre></td></tr></table></figure>
-<ul>
-<li>substring()<ul>
-<li>from:    必需。一个非负的整数，规定要提取的子串的第一个字符在 string Object 中的位置。</li>
-<li>to:    可选。一个非负的整数，比要提取的子串的最后一个字符在 string Object 中的位置多 1。如果省略该参数，那么返回的子串会一直到字符串的结尾。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;Hello world!&quot;;</span><br><span class="line">document.write(str.substring(3)+&quot;&lt;br&gt;&quot;);//lo world!</span><br><span class="line">document.write(str.substring(3,7));//lo w</span><br></pre></td></tr></table></figure>
-<h3 id="根据长度截取子串"><a href="#根据长度截取子串" class="headerlink" title="根据长度截取子串"></a>根据长度截取子串</h3><ul>
-<li>substr()<ul>
-<li>start:    必需。要抽取的子串的起始下标。必须是数值。如果是负数，那么该参数声明从字符串的尾部开始算起的位置。也就是说，-1 指字符串中最后一个字符，-2 指倒数第二个字符，以此类推。</li>
-<li>length:可选。子串中的字符数。必须是数值。如果省略了该参数，那么返回从 stringObject 的开始位置到结尾的字串。</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;abcdefghijk&quot;;</span><br><span class="line">console.log();</span><br><span class="line">console.log(str.substr(2,3));//cde</span><br><span class="line">console.log(str.substr(-20,5));//cdefghijk  从0开始</span><br><span class="line">console.log(str.substr(-2,5));//jk</span><br><span class="line">console.log(str.substr(2,20));//cdefghijk</span><br></pre></td></tr></table></figure>
-<h2 id="空格处理"><a href="#空格处理" class="headerlink" title="空格处理"></a>空格处理</h2><ul>
-<li>trim 清除前置及后置空格</li>
-<li>trimLeft:清除前置空格</li>
-<li>trimRight：清除后置空格</li>
-</ul>
-<h2 id="比较方法：localeCompare"><a href="#比较方法：localeCompare" class="headerlink" title="比较方法：localeCompare()"></a>比较方法：localeCompare()</h2><ul>
-<li>localeCompare()<ul>
-<li>功能:用本地特定顺序比较两个字符串</li>
-<li>参数:与原字符串进行比较的字符串</li>
-<li>返回值:说明比较的数字<ul>
-<li>负数:原字符串&lt;参数字符串</li>
-<li>0：原字符串=参数字符串</li>
-<li>正数:原字符串&gt;参数字符串</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var str=&quot;北京&quot;;</span><br><span class="line">var var2=&quot;北京&quot;;</span><br><span class="line">var res=str.localeCompare(var2);</span><br><span class="line">console.log(res); //0</span><br></pre></td></tr></table></figure>
-<h1 id="编码方法"><a href="#编码方法" class="headerlink" title="编码方法"></a>编码方法</h1><h1 id="字符串常规编码与解码"><a href="#字符串常规编码与解码" class="headerlink" title="#字符串常规编码与解码"></a>#字符串常规编码与解码</h1><ul>
-<li>escape()</li>
-<li>unescape()<h2 id="URI字符串编码与解码"><a href="#URI字符串编码与解码" class="headerlink" title="URI字符串编码与解码"></a>URI字符串编码与解码</h2></li>
-<li>encodeURI()</li>
-<li>decodeURI()<h2 id="URI组件编码与解码"><a href="#URI组件编码与解码" class="headerlink" title="URI组件编码与解码"></a>URI组件编码与解码</h2></li>
-<li>encodeURIComponent()</li>
-<li>decodeURIComponent()</li>
-</ul>
-<h1 id="转换方式"><a href="#转换方式" class="headerlink" title="转换方式"></a>转换方式</h1><h2 id="大小写转换"><a href="#大小写转换" class="headerlink" title="大小写转换"></a>大小写转换</h2><h3 id="转换为大写"><a href="#转换为大写" class="headerlink" title="转换为大写"></a>转换为大写</h3><ul>
-<li>toUpperCase();</li>
-<li>toLocaleUpperCase()  本地<h3 id="转换为小写"><a href="#转换为小写" class="headerlink" title="转换为小写"></a>转换为小写</h3></li>
-<li>toLowerCase();</li>
-<li>toLocaleLowerCase()本地<h3 id="代码转换"><a href="#代码转换" class="headerlink" title="代码转换"></a>代码转换</h3></li>
-<li>用js动态格式化html,但不具有语义性 ，舍弃</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1273,7 +1093,7 @@ CMD规范，全称”Common Module Definition”，称为 通用模块加载规�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

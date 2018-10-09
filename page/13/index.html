@@ -321,6 +321,167 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/31/node-js深入浅出笔记6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/31/node-js深入浅出笔记6/" itemprop="url">node.js深入浅出笔记6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-31T09:38:06+08:00">
+                2017-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="异步并发控制"><a href="#异步并发控制" class="headerlink" title="异步并发控制"></a>异步并发控制</h1><blockquote>
+<p>当我们同时发起很多请求时，产生的并发量过大，会导致下层服务器吃不消，我们需要做一点过载保护措施</p>
+</blockquote>
+<h2 id="bagpipe的解决方案"><a href="#bagpipe的解决方案" class="headerlink" title="bagpipe的解决方案"></a>bagpipe的解决方案</h2><ul>
+<li>通过一个队列来控制并发量</li>
+<li>如果当前调用发起的但为执行的异步调用量小于限定值，从队列中取出执行</li>
+<li>如果活跃调用达到限定值，调用暂时存放在队列中</li>
+<li>每个异步调用结束时，从队列中取出新的异步调用执行</li>
+</ul>
+<blockquote>
+<p>眼见为实 –&gt;</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> Bagpipe = <span class="built_in">require</span>(<span class="string">'bagpipe'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置并发数为10</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> bagpipe = <span class="keyword">new</span> Bagpipe(<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++) &#123;</span><br><span class="line">    bagpipe.push(<span class="keyword">async</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="comment">//异步回调</span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bagpipe.on(<span class="string">'full'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">length</span>)</span>&#123;</span><br><span class="line">    consoel.warn(<span class="string">"底层系统不能及时处理，待处理长度为:"</span>+length);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>上文push()方法核心实现，假设第一个参数是方法最后一个是回调函数，其余为其他参数,虽然看不懂，但是大神的代码也可以敲一敲，没准就通了</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Bagpipe.prototype.push = <span class="function"><span class="keyword">function</span>(<span class="params">method</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> args = [].slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> callback = args[args.length - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> callback !==<span class="string">'function'</span>)&#123;</span><br><span class="line">        args.push(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;&#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.options.disabled || <span class="keyword">this</span>.limt &lt;<span class="number">1</span> ) &#123;</span><br><span class="line">        method.apply(<span class="literal">null</span>,args);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 队列长度也超过限制长度时</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.queue.length &lt; <span class="keyword">this</span>.queueLength || !<span class="keyword">this</span>.options.refuse) &#123;</span><br><span class="line">        <span class="keyword">this</span>.queue.push(&#123;</span><br><span class="line">            method:method,</span><br><span class="line">            args:args</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'Too much async call in queue'</span>);</span><br><span class="line">        err.name = <span class="string">'TooMuchAsyncCallError'</span>;</span><br><span class="line">        callback(err);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span>.queue.length &gt;<span class="number">1</span>)&#123;</span><br><span class="line">        <span class="keyword">this</span>.emit(<span class="string">'full'</span>,<span class="keyword">this</span>.queue.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.next();</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将调用推入队列后，调用一次next()方式触发，next()定义如下</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 继续执行队列中的后续动作</span></span><br><span class="line">Bagpipe.prototype.next = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that =<span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">if</span>(that.active &lt; that.limit &amp;&amp; that.queue.length) &#123;</span><br><span class="line">        <span class="keyword">var</span> req = that.queue.shift();</span><br><span class="line">        that.run(req.method,req.args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>next()主要判断活跃调用的数量,如果正常调用内部的run()正真调用。这是为了判断回调函数是否执行</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Bagpipe.prototype.run = <span class="function"><span class="keyword">function</span>(<span class="params">method, args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">    that.active++;</span><br><span class="line">    <span class="keyword">var</span> callback = args[args.length - <span class="number">1</span>];</span><br><span class="line">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">    <span class="keyword">var</span> called = <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//注入逻辑</span></span><br><span class="line">    args[args.length - <span class="number">1</span>] = <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//清除定时器</span></span><br><span class="line">        <span class="keyword">if</span> (timer) &#123;</span><br><span class="line">            clearTimeout(timer);</span><br><span class="line">            timer = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//如果超时就不执行</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!called) &#123;</span><br><span class="line">        that._next();</span><br><span class="line">        callback.apply(<span class="literal">null</span>, <span class="built_in">arguments</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">            that.emit(<span class="string">'outdated'</span>, err);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> timeout = that.options.timeout;</span><br><span class="line">    <span class="keyword">if</span> (timeout) &#123;</span><br><span class="line">        timer = setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//set called as true</span></span><br><span class="line">            called = <span class="literal">true</span>;</span><br><span class="line">            that._next();</span><br><span class="line">            <span class="keyword">var</span> err = <span class="keyword">new</span> <span class="built_in">Error</span>(timeout + <span class="string">'ms timeout'</span>);</span><br><span class="line">            err.name = <span class="string">'BagpipeTimeoutError'</span>;</span><br><span class="line">            err.data = &#123;</span><br><span class="line">                name: method.name,</span><br><span class="line">                method: method.toString(),</span><br><span class="line">                args: args.slice(<span class="number">0</span>, <span class="number">-1</span>)</span><br><span class="line">            &#125;</span><br><span class="line">            callback(err)</span><br><span class="line">        &#125;, timeout)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    method.apply(<span class="literal">null</span>,args)</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>毕竟太多请求也是不行的，等待时间过长，所以我们可以加入拒绝模式</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bagpipe = <span class="keyword">new</span> Bagpipe(<span class="number">10</span>,&#123;</span><br><span class="line">    refuse:<span class="literal">true</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>超时控制，保证一些代码不会异步调用耗时太久出问题</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bagpipe = <span class="keyword">new</span> Bagpipe(<span class="number">10</span>,&#123;</span><br><span class="line">    timeout:<span class="number">3000</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="async的解决方案"><a href="#async的解决方案" class="headerlink" title="async的解决方案"></a>async的解决方案</h1><blockquote>
+<p>async 处理异步调用的限制   parallelLimit()</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">async</span>.parallelLimit([</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">        fs.readFile(<span class="string">'file1.txt'</span>,<span class="string">'utf-8'</span>,callback);</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">        fs.readFile(<span class="string">'file2.txt'</span>,<span class="string">'utf-8'</span>,callback);</span><br><span class="line">    &#125;</span><br><span class="line">    ],<span class="number">1</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,results</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//做点啥</span></span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过queue()可以实现动态添加并行任务</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> q = <span class="keyword">async</span>.queue(<span class="function"><span class="keyword">function</span>(<span class="params">file,callback</span>)</span>&#123;</span><br><span class="line">    fs.readFile(file,<span class="string">'utf-8'</span>,callback);</span><br><span class="line">&#125;,<span class="number">2</span>)</span><br><span class="line">q.drain = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//完成了队列的所有任务</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fs.readdirSync(<span class="string">'.'</span>).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">file</span>)</span>&#123;</span><br><span class="line">    q.push(file,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//做点啥啊  </span></span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/30/我不喜欢这个世界，我只喜欢你/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -877,233 +1038,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/27/node-js深入浅出笔记3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/27/node-js深入浅出笔记3/" itemprop="url">node.js深入浅出笔记3</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-27T00:00:00+08:00">
-                2017-08-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="异步编程"><a href="#异步编程" class="headerlink" title="异步编程"></a>异步编程</h1><h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><blockquote>
-<p>高阶函数可以把函数当成参数，或是将函数作为返回值的函数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">var</span> points = [<span class="number">90</span>,<span class="number">25</span>,<span class="number">89</span>,<span class="number">45</span>,<span class="number">36</span>,<span class="number">95</span>,<span class="number">56</span>,<span class="number">87</span>];</span><br><span class="line"></span><br><span class="line">    points.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a-b;</span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过改变不同的参数，可以决定排序方式</span></span><br></pre></td></tr></table></figure>
-<h2 id="偏函数的用法"><a href="#偏函数的用法" class="headerlink" title="偏函数的用法"></a>偏函数的用法</h2><blockquote>
-<p>意思指的是:创建一个调用另外一个部分–参数或者变量已经预置的函数</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//解释一下</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> toString  = <span class="built_in">Object</span>.prototype.toString;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isString = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object String]'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isFunction = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object Function]'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//以上这样写会产生很多累赘的代码,按照一下方式就是偏函数的用法</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> isType = <span class="function"><span class="keyword">function</span>(<span class="params">type</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> toString.call(obj) == <span class="string">'[object'</span>+type+<span class="string">']'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> isString = isType(<span class="string">'String'</span>);</span><br><span class="line"><span class="keyword">var</span> isFunction = isType(<span class="string">'Function'</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="node-的事件驱动的非阻塞i-o模型"><a href="#node-的事件驱动的非阻塞i-o模型" class="headerlink" title="node 的事件驱动的非阻塞i/ o模型"></a>node 的事件驱动的非阻塞i/ o模型</h2><blockquote>
-<p>如图所示</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/fileImage/day2017082604.png" alt="流程图"></p>
-<h2 id="异步编程的难点"><a href="#异步编程的难点" class="headerlink" title="异步编程的难点"></a>异步编程的难点</h2><blockquote>
-<p>异常处理的难点</p>
-</blockquote>
-<ul>
-<li>异步方法通常有两个阶段，一个是提交请求，异常并不一定发生在此处，try/catch的功效不会发挥功效，第二个是处理结果</li>
-<li>node在处理异常有一种约定俗成的规定，即异常将作为回调函数第一个参数返回，如果为空值则没有异常</li>
-<li>我们在编写异步时遵循的原则<ul>
-<li>必须执行调用者传入的回调函数</li>
-<li>正确传递回异常供调用者判断</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="comment">//示例代码</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">async</span> = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    process.nextTick(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> results = something;</span><br><span class="line">        <span class="keyword">if</span>(error)&#123;</span><br><span class="line">            <span class="keyword">return</span> callback(error);</span><br><span class="line">        &#125;</span><br><span class="line">        callback(<span class="literal">null</span>,results)</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>函数嵌套过深</p>
-</blockquote>
-<ul>
-<li>node多个异步调用</li>
-</ul>
-<blockquote>
-<p>阻塞代码</p>
-</blockquote>
-<ul>
-<li>不能用sleep()使线程睡眠</li>
-</ul>
-<blockquote>
-<p>多线程编程</p>
-</blockquote>
-<ul>
-<li>前端使用 web Workers </li>
-</ul>
-<p><img src="https://aymfx.github.io/img/fileImage/day2017082606.png" alt="流程图"></p>
-<blockquote>
-<p>异步转同步</p>
-</blockquote>
-<h2 id="异步编程的解决方案"><a href="#异步编程的解决方案" class="headerlink" title="异步编程的解决方案"></a>异步编程的解决方案</h2><h3 id="事件发布-订阅模式"><a href="#事件发布-订阅模式" class="headerlink" title="事件发布/订阅模式"></a>事件发布/订阅模式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//例子</span></span><br><span class="line"><span class="comment">//订阅</span></span><br><span class="line">emmiter.on(<span class="string">'event1'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">message</span>)</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(message);</span><br><span class="line"> &#125;)</span><br><span class="line"> <span class="comment">//发布</span></span><br><span class="line"> emmiter.emit(<span class="string">'event1'</span>,<span class="string">'i am ok'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="多异步之间的协作方案"><a href="#多异步之间的协作方案" class="headerlink" title="多异步之间的协作方案"></a>多异步之间的协作方案</h3><blockquote>
-<p>通过哨兵变量以及偏函数来解决</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> after = <span class="function"><span class="keyword">function</span>(<span class="params">times,callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> count = <span class="number">0</span> , results = &#123;&#125;;</span><br><span class="line">    retrun <span class="function"><span class="keyword">function</span>(<span class="params">key,value</span>) </span>&#123;</span><br><span class="line">        results[key] = value;</span><br><span class="line">        count++;</span><br><span class="line">        <span class="keyword">if</span>(count===times) &#123;</span><br><span class="line">            callback(results);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>利用EventProxy模块实现自由订阅组合事件</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> proxy = <span class="keyword">new</span> EventProxy();</span><br><span class="line"></span><br><span class="line">proxy.all(<span class="string">'template'</span>,<span class="string">'data'</span>,<span class="string">'resource'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">template,data,resource</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//TODO</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">'template_path'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,template</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'template'</span>,template);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">db.query(sql,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'data'</span>,data);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">http.get(<span class="function"><span class="keyword">function</span>(<span class="params">err,resource</span>)</span>&#123;</span><br><span class="line">    proxy.emit(<span class="string">'resource'</span>,resource)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>all() 事件，只有当参数列表的数据都获取到才执行回调函数</p>
-</blockquote>
-<blockquote>
-<p>tail() 事件，只要满足一个参数条件，就可以执行</p>
-</blockquote>
-<blockquote>
-<p>after(‘data’,10,callback) 事件 ,只有调用10次后才执行监听事件</p>
-</blockquote>
-<h3 id="EventProxy代码"><a href="#EventProxy代码" class="headerlink" title="EventProxy代码"></a>EventProxy代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">trigger : <span class="function"><span class="keyword">function</span>(<span class="params">eventName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> list,calls.ev.callback,args;</span><br><span class="line">    <span class="keyword">var</span> both = <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(!(calls = <span class="keyword">this</span>._callbacks)) <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">while</span>(both--)&#123;</span><br><span class="line">        ev = both ? eventName : <span class="string">'all'</span>;</span><br><span class="line">        <span class="keyword">if</span>(list = calls[ev]) &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>,l = list.length;i&lt;l;i++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!(callback = list[i]))&#123;</span><br><span class="line">                    list.splice(i,<span class="number">1</span>);i--;l--;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    args = both ? <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>,<span class="number">1</span>) : <span class="built_in">arguments</span>;</span><br><span class="line">                    callback[<span class="number">0</span>].apply(callback[<span class="number">1</span>] || <span class="keyword">this</span>,args);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>EventProxy异常处理代码</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">    exports.getContent = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> ep = <span class="keyword">new</span> EventProxy();</span><br><span class="line">    ep.all(<span class="string">'tpl'</span>,<span class="string">'data'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">tpl,data</span>)</span>&#123;</span><br><span class="line">        callback(<span class="literal">null</span>,&#123;</span><br><span class="line">            template:tpl,</span><br><span class="line">            data:data</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment">//侦听异常</span></span><br><span class="line">    ep.bind(<span class="string">'error'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">        ep.unbind();</span><br><span class="line">        callback(err)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    fs.readFile(<span class="string">'template_tpl'</span>,<span class="string">'utf-8'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,content</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> ep.emit(<span class="string">'error'</span>,err)</span><br><span class="line">        &#125;</span><br><span class="line">        ep.emit(<span class="string">'tpl'</span>,content)</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    db.get(<span class="string">'some sql'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,result</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">            <span class="keyword">return</span> ep.emit(<span class="string">'error'</span>,err);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        ep.emit(<span class="string">'data'</span>,result);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//优化后</span></span><br><span class="line"></span><br><span class="line">    ep.fail(callback);</span><br><span class="line"></span><br><span class="line">    fs.readFile(<span class="string">'template_path'</span>,<span class="string">'utf-8'</span>,ep.done(<span class="string">'tpl'</span>));</span><br><span class="line">    db.get(<span class="string">'sql'</span>,ep.done(<span class="string">'data'</span>))</span><br></pre></td></tr></table></figure>
-<h3 id="Promise-Deferred模式"><a href="#Promise-Deferred模式" class="headerlink" title="Promise/Deferred模式"></a>Promise/Deferred模式</h3><blockquote>
-<p>Promise/A</p>
-<ul>
-<li>三种状态：未完成状态 完成状态 失败状态</li>
-<li>状态一旦变化不能被更改</li>
-<li>状态不能逆反，切完成态和失败状态不能相互转换</li>
-</ul>
-</blockquote>
-<p> <img src="https://aymfx.github.io/img/fileImage/day2017082607.png" alt="流程图"></p>
-<ul>
-<li>可选择的将progress事件回调作为第三个方式</li>
-<li>then()只接受function对象，其余对象被忽略</li>
-<li>then()继续返回promise对象,以实现链式调用</li>
-<li>then(fulfillhandle,errorHandler,progressHandler)参数:</li>
-</ul>
-<blockquote>
-<p>简单的实现</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//将回调函数存放起来</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> <span class="keyword">var</span> <span class="built_in">Promise</span> = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">     EventEmitter.call(<span class="keyword">this</span>);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> util.inherits(<span class="built_in">Promise</span>,EventEmitter);</span><br><span class="line"></span><br><span class="line"> <span class="built_in">Promise</span>.prototype.then= <span class="function"><span class="keyword">function</span>(<span class="params">fulfilledHandle,errorHandler,progressHandler</span>)</span>&#123;</span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> fulfilledHandle ===<span class="string">'function'</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.once(<span class="string">'success'</span>,fulfilledHandle);</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> errorHandler === <span class="string">'function'</span>) &#123;</span><br><span class="line">         <span class="keyword">this</span>.once(<span class="string">'error'</span>,errorHandler)</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">if</span>(<span class="keyword">typeof</span> progressHandler === <span class="string">'function'</span>)&#123;</span><br><span class="line">         <span class="keyword">this</span>.on(<span class="string">'proress'</span>,progressHandler);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//deferred</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> Deferred = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.state = <span class="string">'unfulfilled'</span>;</span><br><span class="line">  <span class="keyword">this</span>.promise = <span class="keyword">new</span> <span class="built_in">Promise</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.resolve = <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.state = <span class="string">'fulfilled'</span>;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'success'</span>,obj);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.reject = <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.state = <span class="string">'failed'</span>;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'error'</span>,err);</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> Deferred.prototype.progress = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">     <span class="keyword">this</span>.promise.emit(<span class="string">'progress'</span>,err);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="没看懂，暂时跳过-研究下Q-和-when-库"><a href="#没看懂，暂时跳过-研究下Q-和-when-库" class="headerlink" title="没看懂，暂时跳过    研究下Q 和 when 库"></a>没看懂，暂时跳过    研究下Q 和 when 库</h3><h2 id="流程控制库"><a href="#流程控制库" class="headerlink" title="流程控制库"></a>流程控制库</h2><blockquote>
-<p>非规范的流程控制库  <a href="https://github.com/senchalabs/connect" target="_blank" rel="noopener">https://github.com/senchalabs/connect</a></p>
-</blockquote>
-<h3 id="尾触发与next"><a href="#尾触发与next" class="headerlink" title="尾触发与next"></a>尾触发与next</h3><blockquote>
-<p>需要手动调用才能持续执行后续调用的，我们将此称为尾触发 关键词 next</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//connect 暴露api</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> connect = <span class="built_in">require</span>(<span class="string">'connect'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> app = connect();</span><br><span class="line"><span class="comment">//中间件</span></span><br><span class="line"></span><br><span class="line">app.use(connect.staticCache())</span><br><span class="line">app.use(connect.static(_dirname+<span class="string">'/public'</span>));</span><br><span class="line">app.use(connect.cookieParser())</span><br><span class="line">app.use(connect.session());</span><br><span class="line">app.use(connect.query());</span><br><span class="line">app.use(connect.bodyParser());</span><br><span class="line">app.listen(<span class="number">30001</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>中间件利用了尾触发的机制,以下是最简单的中间件</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function(req,res,next) &#123;</span><br><span class="line">    //中间件</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>每个中间件传递请求对象，响应对象和尾触发函数，通过队列形成处理流 ，如图</p>
-</blockquote>
-<p><img src="https://aymfx.github.io/img/a20170828/a1.png" alt="流程图"></p>
-<h3 id="connect核心实现"><a href="#connect核心实现" class="headerlink" title="connect核心实现"></a>connect核心实现</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createServer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//创建了http服务器的request事件处理函数</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">app</span>(<span class="params">req,res</span>) </span>&#123;app.handle(req,res);&#125;</span><br><span class="line">    utils.merge(app,proto);</span><br><span class="line">    utils.merge(app,EventEmitter.prototype);</span><br><span class="line">    app.route = <span class="string">'/'</span>;</span><br><span class="line">    <span class="comment">//stack属性是这个服务器内部维护的中间件队列，代码在use()方法中提现</span></span><br><span class="line">    app.stack = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="built_in">arguments</span>.length;++i)&#123;</span><br><span class="line">        app.use(<span class="built_in">arguments</span>[i])</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> app;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="use-重要部分"><a href="#use-重要部分" class="headerlink" title="use()重要部分"></a>use()重要部分</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">app.use = <span class="function"><span class="keyword">function</span>(<span class="params">route,fn</span>)</span>&#123;</span><br><span class="line"><span class="comment">//some coede </span></span><br><span class="line"><span class="keyword">this</span>.stack.push(&#123;<span class="attr">route</span>:route,<span class="attr">handle</span>:fn&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="实现监听"><a href="#实现监听" class="headerlink" title="实现监听"></a>实现监听</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">app.listen = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> server = http.createServer(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">return</span> server.listen.apply(server,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="app-handle-每一个监听到的网络请求都将从这里开始处理"><a href="#app-handle-每一个监听到的网络请求都将从这里开始处理" class="headerlink" title="app.handle(),每一个监听到的网络请求都将从这里开始处理"></a>app.handle(),每一个监听到的网络请求都将从这里开始处理</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.handle = <span class="function"><span class="keyword">function</span>(<span class="params">req,res,out</span>) </span>&#123;</span><br><span class="line">    next();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1158,7 +1092,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

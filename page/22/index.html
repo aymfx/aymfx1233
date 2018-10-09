@@ -321,6 +321,253 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/02/04/promise的用法深入1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/02/04/promise的用法深入1/" itemprop="url">promise的用法深入1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-04T00:00:00+08:00">
+                2017-02-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Promise-的含义"><a href="#Promise-的含义" class="headerlink" title="Promise 的含义"></a>Promise 的含义</h1><p>  Promise 是异步编程的一种解决方案，比传统的解决方案——回调函数和事件——更合理和更强大。它由社区最早提出和实现，ES6将其写进了语言标准，统一了用法，原生提供了Promise对象。</p>
+<p>所谓Promise，简单说就是一个容器，里面保存着某个未来才会结束的事件（通常是一个异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息。Promise 提供统一的 API，各种异步操作都可以用同样的方法进行处理。</p>
+<p>Promise对象有以下两个特点。</p>
+<p>（1）对象的状态不受外界影响。Promise对象代表一个异步操作，有三种状态：Pending（进行中）、Resolved（已完成，又称 Fulfilled）和Rejected（已失败）。只有异步操作的结果，可以决定当前是哪一种状态，任何其他操作都无法改变这个状态。这也是Promise这个名字的由来，它的英语意思就是“承诺”，表示其他手段无法改变。</p>
+<p>（2）一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：从Pending变为Resolved和从Pending变为Rejected。只要这两种情况发生，状态就凝固了，不会再变了，会一直保持这个结果。如果改变已经发生了，你再对Promise对象添加回调函数，也会立即得到这个结果。这与事件（Event）完全不同，事件的特点是，如果你错过了它，再去监听，是得不到结果的。</p>
+<p>有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。</p>
+<p>Promise也有一些缺点。首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。第三，当处于Pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+<p>如果某些事件不断地反复发生，一般来说，使用 Stream 模式是比部署Promise更好的选择。<br>来自阮一峰的es6</p>
+<h1 id="基本示例"><a href="#基本示例" class="headerlink" title="基本示例"></a>基本示例</h1><p> ES6 规定，Promise对象是一个构造函数，用来生成Promise实例。</p>
+<p>下面代码创造了一个Promise实例。</p>
+<pre><code>var promise = new Promise(function(resolve, reject) {
+  // ... some code
+
+  if (/* 异步操作成功 */){
+    resolve(value);
+  } else {
+    reject(error);
+  }
+});
+</code></pre><p>Promise构造函数接受一个函数作为参数，该函数的两个参数分别是resolve和reject。它们是两个函数，由 JavaScript 引擎提供，不用自己部署。</p>
+<p>resolve函数的作用是，将Promise对象的状态从“未完成”变为“成功”（即从 Pending 变为 Resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；reject函数的作用是，将Promise对象的状态从“未完成”变为“失败”（即从 Pending 变为 Rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。</p>
+<p>Promise实例生成以后，可以用then方法分别指定Resolved状态和Reject状态的回调函数。</p>
+<pre><code>promise.then(function(value) {
+  // success
+}, function(error) {
+  // failure
+});
+</code></pre><p>then方法可以接受两个回调函数作为参数。第一个回调函数是Promise对象的状态变为Resolved时调用，第二个回调函数是Promise对象的状态变为Rejected时调用。其中，第二个函数是可选的，不一定要提供。这两个函数都接受Promise对象传出的值作为参数。</p>
+<p>下面是一个Promise对象的简单例子。</p>
+<pre><code>function timeout(ms) {
+  return new Promise((resolve, reject) =&gt; {
+    setTimeout(resolve, ms, &apos;done&apos;);
+  });
+}
+
+timeout(100).then((value) =&gt; {
+  console.log(value);
+});
+</code></pre><p>上面代码中，timeout方法返回一个Promise实例，表示一段时间以后才会发生的结果。过了指定的时间（ms参数）以后，Promise实例的状态变为Resolved，就会触发then方法绑定的回调函数。</p>
+<p>Promise 新建后就会立即执行。</p>
+<pre><code>let promise = new Promise(function(resolve, reject) {
+  console.log(&apos;Promise&apos;);
+  resolve();
+});
+
+promise.then(function() {
+  console.log(&apos;Resolved.&apos;);
+});
+
+console.log(&apos;Hi!&apos;);
+
+// Promise
+// Hi!
+// Resolved
+</code></pre><p>上面代码中，Promise 新建后立即执行，所以首先输出的是Promise。然后，then方法指定的回调函数，将在当前脚本所有同步任务执行完才会执行，所以Resolved最后输出。</p>
+<p>下面是异步加载图片的例子。</p>
+<pre><code>function loadImageAsync(url) {
+  return new Promise(function(resolve, reject) {
+    var image = new Image();
+
+    image.onload = function() {
+      resolve(image);
+    };
+
+    image.onerror = function() {
+      reject(new Error(&apos;Could not load image at &apos; + url));
+    };
+
+    image.src = url;
+  });
+}
+</code></pre><p>上面代码中，使用Promise包装了一个图片加载的异步操作。如果加载成功，就调用resolve方法，否则就调用reject方法。</p>
+<p>下面是一个用Promise对象实现的 Ajax 操作的例子。</p>
+<pre><code>var getJSON = function(url) {
+  var promise = new Promise(function(resolve, reject){
+    var client = new XMLHttpRequest();
+    client.open(&quot;GET&quot;, url);
+    client.onreadystatechange = handler;
+    client.responseType = &quot;json&quot;;
+    client.setRequestHeader(&quot;Accept&quot;, &quot;application/json&quot;);
+    client.send();
+
+    function handler() {
+      if (this.readyState !== 4) {
+        return;
+      }
+      if (this.status === 200) {
+        resolve(this.response);
+      } else {
+        reject(new Error(this.statusText));
+      }
+    };
+  });
+
+  return promise;
+};
+
+getJSON(&quot;/posts.json&quot;).then(function(json) {
+  console.log(&apos;Contents: &apos; + json);
+}, function(error) {
+  console.error(&apos;出错了&apos;, error);
+});
+</code></pre><p>上面代码中，getJSON是对 XMLHttpRequest 对象的封装，用于发出一个针对 JSON 数据的 HTTP 请求，并且返回一个Promise对象。需要注意的是，在getJSON内部，resolve函数和reject函数调用时，都带有参数。</p>
+<p>如果调用resolve函数和reject函数时带有参数，那么它们的参数会被传递给回调函数。reject函数的参数通常是Error对象的实例，表示抛出的错误；resolve函数的参数除了正常的值以外，还可能是另一个 Promise 实例，表示异步操作的结果有可能是一个值，也有可能是另一个异步操作，比如像下面这样。</p>
+<pre><code>var p1 = new Promise(function (resolve, reject) {
+  // ...
+});
+
+var p2 = new Promise(function (resolve, reject) {
+  // ...
+  resolve(p1);
+})
+</code></pre><p>上面代码中，p1和p2都是Promise的实例，但是p2的resolve方法将p1作为参数，即一个异步操作的结果是返回另一个异步操作。</p>
+<p>注意，这时p1的状态就会传递给p2，也就是说，p1的状态决定了p2的状态。如果p1的状态是Pending，那么p2的回调函数就会等待p1的状态改变；如果p1的状态已经是Resolved或者Rejected，那么p2的回调函数将会立刻执行。</p>
+<pre><code>var p1 = new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; reject(new Error(&apos;fail&apos;)), 3000)
+})
+
+var p2 = new Promise(function (resolve, reject) {
+  setTimeout(() =&gt; resolve(p1), 1000)
+})
+
+p2
+  .then(result =&gt; console.log(result))
+  .catch(error =&gt; console.log(error))
+// Error: fail
+</code></pre><p>上面代码中，p1是一个Promise，3秒之后变为rejected。p2的状态在1秒之后改变，resolve方法返回的是p1。由于p2返回的是另一个 Promise，导致p2自己的状态无效了，由p1的状态决定p2的状态。所以，后面的then语句都变成针对后者（p1）。又过了2秒，p1变为rejected，导致触发catch方法指定的回调函数。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/10/es6学习-数组的扩展/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -668,142 +915,6 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/vue2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/11/08/vue2/" itemprop="url">vue2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-08T00:00:00+08:00">
-                2016-11-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <!--markdown--># 条件与循环<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;我是显示的&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p v-else&gt;当条件不满足时我显示&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/unpkg.com/</span>vue/dist/vue.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">    var app = new Vue(&#123;</span></span><br><span class="line"><span class="string">        el: '#app',</span></span><br><span class="line"><span class="string">        data: &#123;</span></span><br><span class="line"><span class="string">            seen: false</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>v-if v-else 这两个指令 进行条件的判断</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">for</span>=<span class="string">"(ingredient,i) in ingredients"</span> :key=<span class="string">"i"</span>&gt;</span><br><span class="line">            &lt;h1&gt;&#123;&#123;ingredient&#125;&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">            &lt;p&gt;(&#123;&#123;i&#125;&#125;)&lt;/</span>p&gt;</span><br><span class="line">         &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">"person in persons"</span>&gt;</span><br><span class="line">            </span><br><span class="line">            &lt;span v-<span class="keyword">for</span>=<span class="string">"(value,key,index) in person"</span>&gt; <span class="xml"><span class="comment">&lt;!-- value 是键值,key是键名，index是下标--&gt;</span></span></span><br><span class="line"><span class="xml">                &#123;&#123;key&#125;&#125;: &#123;&#123;value&#125;&#125;--&#123;&#123;index&#125;&#125;</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">        &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span v-<span class="keyword">for</span>=<span class="string">"n in 10"</span>&gt;&#123;&#123;n&#125;&#125;,&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">		el:<span class="string">"#app"</span>,</span><br><span class="line">		data:&#123;</span><br><span class="line">		   ingredients:[<span class="string">'meat'</span>,<span class="string">'fruit'</span>,<span class="string">'cookies'</span>],</span><br><span class="line">           persons:[</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'vane'</span>,<span class="attr">age</span>:<span class="number">38</span>,<span class="attr">color</span>:<span class="string">'red'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'rose'</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">color</span>:<span class="string">'blue'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'jack'</span>,<span class="attr">age</span>:<span class="number">28</span>,<span class="attr">color</span>:<span class="string">'green'</span>&#125;</span><br><span class="line">           ]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&gt; v-for 进行循环判断 </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` javascript</span></span><br><span class="line"><span class="regexp">    &lt;div id="app"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;button v-on:click=<span class="string">"reserve"</span>&gt;翻转字符串&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'Ｉ　ＬＯＶＥ　ＹＯＵ'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line">                reserve() &#123;</span><br><span class="line">                    <span class="keyword">this</span>.value = <span class="keyword">this</span>.value.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>v-on 指令绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法</p>
-</blockquote>
-<h1 id="表单的指令"><a href="#表单的指令" class="headerlink" title="表单的指令"></a>表单的指令</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input v-model="value" /</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            value: <span class="string">'家具'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定</p>
-</blockquote>
-<h1 id="组件化应用构建"><a href="#组件化应用构建" class="headerlink" title="组件化应用构建"></a>组件化应用构建</h1><blockquote>
-<p>组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、自包含和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树<br><img src="http://cn.vuejs.org/images/components.png" alt="请输入图片描述"></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;todolist v-<span class="keyword">for</span>=<span class="string">"item in list"</span> v-bind:todo=<span class="string">"item"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">todolist</span>&gt;</span></span></span><br><span class="line">        &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        Vue.component(<span class="string">'todolist'</span>, &#123;</span><br><span class="line">            props: [<span class="string">'todo'</span>],</span><br><span class="line">            template: <span class="string">'&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'家具'</span>,</span><br><span class="line">                list: [&#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/模板语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -965,7 +1076,7 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/03/vue实例/">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2016/11/08/vue2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ly">
@@ -984,7 +1095,7 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/11/03/vue实例/" itemprop="url">vue实例</a></h1>
+                <a class="post-title-link" href="/2016/11/08/vue2/" itemprop="url">vue2</a></h1>
         
 
         <div class="post-meta">
@@ -996,8 +1107,8 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
               
                 <span class="post-meta-item-text">aymfx发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-03T00:00:00+08:00">
-                2016-11-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-11-08T00:00:00+08:00">
+                2016-11-08
               </time>
             
 
@@ -1036,24 +1147,22 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
       
         
           
-            <!--markdown--># vue实例<br># 构造器<br>&gt; 每个 Vue.js 应用都是通过构造函数 Vue 创建一个 Vue 的根实例 启动的<br><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line"><span class="comment">// 选项</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+            <!--markdown--># 条件与循环<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p v-<span class="keyword">if</span>=<span class="string">"seen"</span>&gt;我是显示的&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;p v-else&gt;当条件不满足时我显示&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="https:/</span><span class="regexp">/unpkg.com/</span>vue/dist/vue.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;script&gt;</span></span><br><span class="line"><span class="string">    var app = new Vue(&#123;</span></span><br><span class="line"><span class="string">        el: '#app',</span></span><br><span class="line"><span class="string">        data: &#123;</span></span><br><span class="line"><span class="string">            seen: false</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    &#125;)</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>扩展 Vue 构造器，从而用预定义选项创建可复用的组件构造器</p>
+<p>v-if v-else 这两个指令 进行条件的判断</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> MyComponent = Vue.extend(&#123;</span><br><span class="line"><span class="comment">// 扩展选项</span></span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建</span></span><br><span class="line"><span class="keyword">var</span> myComponentInstance = <span class="keyword">new</span> MyComponent()</span><br></pre></td></tr></table></figure>
-<h1 id="属性与方法"><a href="#属性与方法" class="headerlink" title="属性与方法"></a>属性与方法</h1><blockquote>
-<p>data 属性<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">data: data</span><br><span class="line">&#125;)</span><br><span class="line">vm.a === data.a <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// 设置属性也会影响到原始数据</span></span><br><span class="line">vm.a = <span class="number">2</span></span><br><span class="line">data.a <span class="comment">// -&gt; 2</span></span><br><span class="line"><span class="comment">// ... 反之亦然</span></span><br><span class="line">data.a = <span class="number">3</span></span><br><span class="line">vm.a <span class="comment">// -&gt; 3</span></span><br></pre></td></tr></table></figure></p>
-</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;div v-<span class="keyword">for</span>=<span class="string">"(ingredient,i) in ingredients"</span> :key=<span class="string">"i"</span>&gt;</span><br><span class="line">            &lt;h1&gt;&#123;&#123;ingredient&#125;&#125;&lt;<span class="regexp">/h1&gt;</span></span><br><span class="line"><span class="regexp">            &lt;p&gt;(&#123;&#123;i&#125;&#125;)&lt;/</span>p&gt;</span><br><span class="line">         &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li v-<span class="keyword">for</span>=<span class="string">"person in persons"</span>&gt;</span><br><span class="line">            </span><br><span class="line">            &lt;span v-<span class="keyword">for</span>=<span class="string">"(value,key,index) in person"</span>&gt; <span class="xml"><span class="comment">&lt;!-- value 是键值,key是键名，index是下标--&gt;</span></span></span><br><span class="line"><span class="xml">                &#123;&#123;key&#125;&#125;: &#123;&#123;value&#125;&#125;--&#123;&#123;index&#125;&#125;</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">        &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line">    &lt;span v-<span class="keyword">for</span>=<span class="string">"n in 10"</span>&gt;&#123;&#123;n&#125;&#125;,&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">	<span class="keyword">new</span> Vue(&#123;</span><br><span class="line">		el:<span class="string">"#app"</span>,</span><br><span class="line">		data:&#123;</span><br><span class="line">		   ingredients:[<span class="string">'meat'</span>,<span class="string">'fruit'</span>,<span class="string">'cookies'</span>],</span><br><span class="line">           persons:[</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'vane'</span>,<span class="attr">age</span>:<span class="number">38</span>,<span class="attr">color</span>:<span class="string">'red'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'rose'</span>,<span class="attr">age</span>:<span class="number">18</span>,<span class="attr">color</span>:<span class="string">'blue'</span>&#125;,</span><br><span class="line">               &#123;<span class="attr">name</span>:<span class="string">'jack'</span>,<span class="attr">age</span>:<span class="number">28</span>,<span class="attr">color</span>:<span class="string">'green'</span>&#125;</span><br><span class="line">           ]</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&gt; v-for 进行循环判断 </span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">``` javascript</span></span><br><span class="line"><span class="regexp">    &lt;div id="app"&gt;</span></span><br><span class="line"><span class="regexp">        &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;/</span>p&gt;</span><br><span class="line">        &lt;button v-on:click=<span class="string">"reserve"</span>&gt;翻转字符串&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'Ｉ　ＬＯＶＥ　ＹＯＵ'</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            methods: &#123;</span><br><span class="line">                reserve() &#123;</span><br><span class="line">                    <span class="keyword">this</span>.value = <span class="keyword">this</span>.value.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>Vue 实例暴露了一些有用的实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分</p>
+<p>v-on 指令绑定一个事件监听器，通过它调用我们 Vue 实例中定义的方法</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = &#123; <span class="attr">a</span>: <span class="number">1</span> &#125;</span><br><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">el: <span class="string">'#example'</span>,</span><br><span class="line">data: data</span><br><span class="line">&#125;)</span><br><span class="line">vm.$data === data <span class="comment">// -&gt; true</span></span><br><span class="line">vm.$el === <span class="built_in">document</span>.getElementById(<span class="string">'example'</span>) <span class="comment">// -&gt; true</span></span><br><span class="line"><span class="comment">// $watch 是一个实例方法</span></span><br><span class="line">vm.$watch(<span class="string">'a'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">newVal, oldVal</span>) </span>&#123;</span><br><span class="line"><span class="comment">// 这个回调将在 `vm.a`  改变后调用</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="表单的指令"><a href="#表单的指令" class="headerlink" title="表单的指令"></a>表单的指令</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;p&gt;&#123;&#123;value&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">    &lt;input v-model="value" /</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="vue.js"&gt;&lt;/</span>script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">        el: <span class="string">'#app'</span>,</span><br><span class="line">        data: &#123;</span><br><span class="line">            value: <span class="string">'家具'</span>,</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注意，不要在实例属性或者回调函数中（如 vm.$watch(‘a’, newVal =&gt; this.myMethod())）使用箭头函数。因为箭头函数绑定父上下文，所以 this 不会像预想的一样是 Vue 实例，而是 this.myMethod 未被定义。</p>
+<p>v-model 指令，它能轻松实现表单输入和应用状态之间的双向绑定</p>
 </blockquote>
-<h1 id="实例生命周期"><a href="#实例生命周期" class="headerlink" title="实例生命周期"></a>实例生命周期</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">data: &#123;</span><br><span class="line">    a: <span class="number">1</span></span><br><span class="line">&#125;,</span><br><span class="line">created: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// `this` 指向 vm 实例</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'a is: '</span> + <span class="keyword">this</span>.a)</span><br><span class="line">&#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// -&gt; "a is: 1"</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://cn.vuejs.org/images/lifecycle.png" alt="生命周期"></p>
-<p>原文:<a href="http://vuejs.org/guide/instance.html" target="_blank"></a></p>
+<h1 id="组件化应用构建"><a href="#组件化应用构建" class="headerlink" title="组件化应用构建"></a>组件化应用构建</h1><blockquote>
+<p>组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、自包含和通常可复用的组件构建大型应用。仔细想想，几乎任意类型的应用界面都可以抽象为一个组件树<br><img src="http://cn.vuejs.org/images/components.png" alt="请输入图片描述"></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">            &lt;todolist v-<span class="keyword">for</span>=<span class="string">"item in list"</span> v-bind:todo=<span class="string">"item"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">todolist</span>&gt;</span></span></span><br><span class="line">        &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">    &lt;script src=<span class="string">"vue.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        Vue.component(<span class="string">'todolist'</span>, &#123;</span><br><span class="line">            props: [<span class="string">'todo'</span>],</span><br><span class="line">            template: <span class="string">'&lt;li&gt;&#123;&#123;todo.text&#125;&#125;&lt;/li&gt;'</span></span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">            el: <span class="string">'#app'</span>,</span><br><span class="line">            data: &#123;</span><br><span class="line">                value: <span class="string">'家具'</span>,</span><br><span class="line">                list: [&#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'吃饭'</span></span><br><span class="line">                &#125;, &#123;</span><br><span class="line">                    text: <span class="string">'睡觉'</span></span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
           
         
@@ -1144,7 +1253,7 @@ findIndex方法的用法与find方法非常类似返回第一个符合条件的�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

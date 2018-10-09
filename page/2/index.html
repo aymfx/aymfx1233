@@ -321,6 +321,207 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/07/16/mysql配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/16/mysql配置/" itemprop="url">mysql配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T17:28:31+08:00">
+                2018-07-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="mysql-安装以及配置"><a href="#mysql-安装以及配置" class="headerlink" title="mysql 安装以及配置"></a>mysql 安装以及配置</h2><p>安装</p>
+<ol>
+<li>wget <a href="https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm" target="_blank" rel="noopener">https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm</a></li>
+<li>sudo rpm -Uvh mysql57-community-release-el7-11.noarch.rpm</li>
+<li>sudo yum install mysql-community-server</li>
+</ol>
+<p>修改密码</p>
+<p>1.获取密码</p>
+<blockquote>
+<p>sudo grep ‘temporary password’ /var/log/mysqld.log</p>
+</blockquote>
+<p>2.似乎没有获取到，如果获取到了就跳过吧</p>
+<blockquote>
+<p>执行这个 mysqld –initialize</p>
+</blockquote>
+<blockquote>
+<p>在执行上面的，获取到密码</p>
+</blockquote>
+<p>登录</p>
+<blockquote>
+<p>mysql -uroot -p 输入密码</p>
+</blockquote>
+<p>1.报错 Can’t connect to local MySQL server through socket ‘/var/lib/mysql/mysql.sock</p>
+<p>执行了下列命令好了</p>
+<blockquote>
+<p>1、停止命令： sudo systemctl stop mysqld.service</p>
+</blockquote>
+<blockquote>
+<p>2、启动命令： sudo systemctl start mysqld.service</p>
+</blockquote>
+<p>不行的话再执行</p>
+<blockquote>
+<p>chown mysql:mysql -R /var/lib/mysql<br>service mysqld start</p>
+</blockquote>
+<p>按照网上的解释因为服务没重启，所以没有生成这个临时的套接字文件</p>
+<p>输入密码，登录成功</p>
+<p>修改密码</p>
+<blockquote>
+<p>ALTER USER ‘root‘@’localhost’ IDENTIFIED BY ‘23456’;</p>
+</blockquote>
+<p>刷新下</p>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p>设置外网访问</p>
+<p>1.特定 ip 访问</p>
+<blockquote>
+<p>grant all privileges on _._ to ‘root‘@’192.168.1.1’ identified by ‘123456’ with grant option;</p>
+</blockquote>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+<p>2.都可以链接</p>
+<blockquote>
+<p>grant all privileges on _._ to ‘root‘@’%’ identified by ‘123456’ with grant option;</p>
+</blockquote>
+<blockquote>
+<p>flush privileges;</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/07/16/实现nodejs-express-nginx-mysql线上环境配置1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1212,229 +1413,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2018/06/15/趣味题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/06/15/趣味题/" itemprop="url">趣味题</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T16:52:16+08:00">
-                2018-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/js娱乐/" itemprop="url" rel="index">
-                    <span itemprop="name">js娱乐</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="趣味js"><a href="#趣味js" class="headerlink" title="趣味js"></a>趣味js</h2><blockquote>
-<p>周五了。学点趣味的东西放松下</p>
-</blockquote>
-<h4 id="“1”-“2”-“3”-map-parseInt-输出的是啥"><a href="#“1”-“2”-“3”-map-parseInt-输出的是啥" class="headerlink" title="[“1”, “2”, “3”].map(parseInt) 输出的是啥?"></a>[“1”, “2”, “3”].map(parseInt) 输出的是啥?</h4><blockquote>
-<p>答案: [1, NaN, NaN]</p>
-</blockquote>
-<p>map里面的函数有三个参数  </p>
-<ul>
-<li>数组的值、</li>
-<li>数组的下标</li>
-<li>数组</li>
-</ul>
-<p>parseInt 接收两个值</p>
-<ul>
-<li>string 必需。要被解析的字符串。</li>
-<li>radix 可选。表示要解析的数字的基数。该值介于 2 ~ 36 之间。如果省略该参数或其值为 0，则数字将以 10 为基础来解析。如果它以 “0x” 或 “0X” 开头，将以 16 为基数。如果该参数小于 2 或者大于 36，则 parseInt() 将返回 NaN</li>
-</ul>
-<p>即</p>
-<ul>
-<li>parseInt(‘1’,0) 1</li>
-<li>parseInt(‘2’,1) NaN</li>
-<li>parseInt(‘3’,2) NaN  二进制</li>
-</ul>
-<h4 id="typeof-null-null-instanceof-Object-输出的是啥"><a href="#typeof-null-null-instanceof-Object-输出的是啥" class="headerlink" title="[typeof null, null instanceof Object] 输出的是啥?"></a>[typeof null, null instanceof Object] 输出的是啥?</h4><blockquote>
-<p>答案: [[“object”, false]]  常识不解释</p>
-</blockquote>
-<h4 id="3-2-1-reduce-Math-pow-reduce-Math-pow-输出的是啥"><a href="#3-2-1-reduce-Math-pow-reduce-Math-pow-输出的是啥" class="headerlink" title="[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ] 输出的是啥?"></a>[ [3,2,1].reduce(Math.pow), [].reduce(Math.pow) ] 输出的是啥?</h4><blockquote>
-<p>答案: 数组为空时会报错</p>
-</blockquote>
-<p>reduce 四个参数</p>
-<ul>
-<li>total    必需。初始值, 或者计算结束后的返回值。</li>
-<li>currentValue    必需。当前元素</li>
-<li>currentIndex    可选。当前元素的索引</li>
-<li>arr    可选。当前元素所属的数组对象。</li>
-</ul>
-<p>即</p>
-<ul>
-<li>Math.pow(3,2)</li>
-<li>Math.pow(9,1)</li>
-</ul>
-<h4 id="下面输出啥？"><a href="#下面输出啥？" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> val = <span class="string">'smtg'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Value is '</span> + (val === <span class="string">'smtg'</span>) ? <span class="string">'Something'</span> : <span class="string">'Nothing'</span>);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案: Something  +运算符大于三目</p>
-</blockquote>
-<h4 id="下面输出啥？-1"><a href="#下面输出啥？-1" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ary = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line">ary[<span class="number">10</span>] = <span class="number">10</span>;</span><br><span class="line">ary.filter(<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123; <span class="keyword">return</span> x === <span class="literal">undefined</span>;&#125;);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案: []  Array.prototype.filter不会为空元素调用的</p>
-</blockquote>
-<h4 id="下面输出啥？-2"><a href="#下面输出啥？-2" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> two   = <span class="number">0.2</span></span><br><span class="line"><span class="keyword">var</span> one   = <span class="number">0.1</span></span><br><span class="line"><span class="keyword">var</span> eight = <span class="number">0.8</span></span><br><span class="line"><span class="keyword">var</span> six   = <span class="number">0.6</span></span><br><span class="line">[two - one == one, eight - six == two]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案:[true, false]  js精度问题</p>
-</blockquote>
-<h4 id="下面输出啥？-3"><a href="#下面输出啥？-3" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase(<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案:switch uses === internally and new String(x) !== x  内部是全等的？？</p>
-</blockquote>
-<h4 id="下面输出啥？-4"><a href="#下面输出啥？-4" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">showCase2</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">switch</span>(value) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'A'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case A'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'B'</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Case B'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="literal">undefined</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'undefined'</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Do not know!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">showCase2(<span class="built_in">String</span>(<span class="string">'A'</span>));</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案:Case A      String（x）不会创建一个对象，但会返回一个字符串，即typeof String（1）===“string” </p>
-</blockquote>
-<h4 id="下面输出啥？-5"><a href="#下面输出啥？-5" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isOdd</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEven</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num % <span class="number">2</span> == <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isSane</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> isEven(num) || isOdd(num);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">7</span>, <span class="number">4</span>, <span class="string">'13'</span>, <span class="number">-9</span>, <span class="literal">Infinity</span>];</span><br><span class="line">values.map(isSane);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案:[true, true, true, false, false]    无穷大％2给出NaN，-9％2给出-1（模运算符保持符号，所以它的结果只是可靠的，而不是0）</p>
-</blockquote>
-<h4 id="下面输出啥？-6"><a href="#下面输出啥？-6" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">8</span>)</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line"><span class="built_in">parseInt</span>(<span class="number">3</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案:3, NaN, NaN   3在基数2中不存在，所以显然这是一个NaN，但是0呢？ parseInt会考虑一个假基数，并假设你的意思是10，所以它返回3。</p>
-</blockquote>
-<h4 id="下面输出啥？-7"><a href="#下面输出啥？-7" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray( <span class="built_in">Array</span>.prototype )</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案true   Array.prototype是一个数组 </p>
-</blockquote>
-<h4 id="下面输出啥？-8"><a href="#下面输出啥？-8" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">0</span>];</span><br><span class="line"><span class="keyword">if</span> ([<span class="number">0</span>]) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a == <span class="literal">true</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"wut"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案false   作为一个布尔值被认为是真的[0]。唉，在比较中使用它时，它会以不同的方式转换</p>
-</blockquote>
-<h4 id="下面输出啥？-9"><a href="#下面输出啥？-9" class="headerlink" title="下面输出啥？"></a>下面输出啥？</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[]==[]</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>答案false   比较运算符按照啥来比较？？</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1489,7 +1467,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

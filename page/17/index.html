@@ -321,6 +321,140 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/02/解决下面点击时出现图片轮廓的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ly">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AYMFX'S BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/02/解决下面点击时出现图片轮廓的问题/" itemprop="url">解决下面点击时出现图片轮廓的问题</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">aymfx发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T00:00:00+08:00">
+                2017-08-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="解决下面点击时出现图片轮廓的问题"><a href="#解决下面点击时出现图片轮廓的问题" class="headerlink" title="解决下面点击时出现图片轮廓的问题"></a>解决下面点击时出现图片轮廓的问题</h1><blockquote>
+<p><a><img src=""></a></p>
+</blockquote>
+<blockquote>
+<p>解决方式</p>
+</blockquote>
+<pre><code>a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+</code></pre><blockquote>
+<p>tips： 适合pc和移动端的</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+    
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/08/01/node-review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1149,212 +1283,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://aymfx.cn/2017/07/19/react-生命周期/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ly">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AYMFX'S BLOG">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/19/react-生命周期/" itemprop="url">react-生命周期</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">aymfx发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-19T00:00:00+08:00">
-                2017-07-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="对于在哪里进行setState-的操作请看下面这个例子"><a href="#对于在哪里进行setState-的操作请看下面这个例子" class="headerlink" title="对于在哪里进行setState()的操作请看下面这个例子"></a>对于在哪里进行setState()的操作请看下面这个例子</h1><p>import React,{Component , PropTypes} from ‘react’<br>import ‘../css/Life.scss’;</p>
-<p>class Life extends Component{<br>      constructor (props) {<br>          super(props)<br>          this.state={<br>              count:1,<br>              name:’点我’,<br>              num:0<br>          }<br>          //有警告，页面能刷新正常运行，但是不会加1 此构造函数只执行一次<br>          // this.setState(prevState =&gt;({count:prevState.count+1}))<br>          console.log(“constructor”,this.props,0);<br>          this.handleEvent = this.handleEvent.bind(this)<br>      }</p>
-<pre><code>handleEvent () {
-
-    this.setState(prevState =&gt; ({count:prevState.count+1}))
-}
-
-static propsTyps = {
-    age:PropTypes.number,
-    sex:PropTypes.string,
-}
-
- static defaultProps = {
-
- }
-
- componentWillMount () {
-     //执行这个函数，然后加1，然后渲染 此构造函数只执行一次
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-    console.log(&quot;componentWillMount,&quot;,111);
- }
-
- render(){
-     console.log(&quot;render,&quot;,2222);
-     //有警告，且直接运行不了 Maximum call stack size exceeded
-     //  this.setState(prevState =&gt;({count:prevState.count+1}))
-    return (&lt;div&gt;
-          &lt;p&gt;计数:{this.state.count}&lt;/p&gt;
-          &lt;p&gt;年龄:{this.props.age}&lt;/p&gt;
-          &lt;button onClick={this.handleEvent}&gt;{this.state.name}&lt;/button&gt;
-    &lt;/div&gt;)
- }
-
- componentDidMount () {
-      //渲染后，执行这个函数，然后又加1，再次渲染---此钩子只执行一次
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(&quot;componentDidMount,&quot;,3333);
- }
-
- componentWillReceiveProps (nextProps) {
-     //这个主要用于父组件改变了传入的props，才进行触发事件
-     //这个也可以支持设置状态
-     //  this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(&quot;componentWillReceiveProps&quot;,nextProps,4444);
- }
-
- shouldComponentUpdate(nextProps,nextState) {
-     //他主要作用就是是否更新组件，true表示更新，false表示不更新
-     //这个也可以支持设置状态，但是书上说不可以，也许有别的原因
-     // this.setState(prevState =&gt;({count:prevState.count+1}))
-     // debugger;
-     console.log(nextState,nextProps,55555);
-     return true;
- }
-
- componentWillUpdate(nextProps,nextState) {
-      //放在这里容易造成死循环
-   // this.setState(prevState =&gt;({count:prevState.count+1}))
-     console.log(nextState,nextProps,66666);
- }
-
- componentDidUpdate() {
-     //放在这里容易造成死循环,最好加判断
-     if(this.state.count&lt;20){
-         this.setState(prevState =&gt;({count:prevState.count+1}))
-     }
-
-     console.log(&apos;componentDidUpdate&apos;,77777);
- }
-</code></pre><p>}</p>
-<p>export default Life;</p>
-<blockquote>
-<p>上面是子组件 </p>
-</blockquote>
-<blockquote>
-<p>我是父组件</p>
-</blockquote>
-<p>import React, { Component } from ‘react’;<br>import logo from ‘./logo.svg’;<br>import ‘./css/App.scss’;<br>import Life from ‘./components/Life’</p>
-<p>class App extends Component {<br>    constructor(props) {<br>        super(props)<br>        this.state={<br>            age:18<br>        }<br>    }</p>
-<p>  render() {<br>    return (<br>      <div classname="App"><br>        <div classname="App-header"><br>          <img src="{logo}" classname="App-logo" alt="logo"><br>          <h2>Welcome to React</h2><br>        </div><br>        <div><br>            <life age="{this.state.age}" sex="男"><br>            <input type="text" value="{this.state.age}" onchange="{(e)=">{this.setState({age:e.target.value})}}/&gt;<br>        </life></div><br>      </div><br>    );<br>  }<br>}</p>
-<p>export default App;</p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><blockquote>
-<p>现在学的比较浅，组件有 construct componentWillMount() 以及componentDidMount在初始化过程中只执行一次,其他钩子函数在数据状态改变时会执行。</p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-    
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1409,7 +1337,7 @@ static propsTyps = {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">133</span>
+                  <span class="site-state-item-count">134</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
